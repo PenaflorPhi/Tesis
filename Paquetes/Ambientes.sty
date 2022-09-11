@@ -1,0 +1,97 @@
+% ====================================
+% Commands and Renewcommands
+% ====================================
+
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\B}{\mathbb{B}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\D}{\mathcal{D}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\renewcommand{\S}{\mathbb{S}}
+
+\newcommand{\id}{\mathrm{Id}}
+\renewcommand{\dim}{\mathrm{dim}}
+\renewcommand{\sup}{\mathrm{sup}}
+\newcommand{\Int}{\mathrm{Int}}
+
+\renewcommand{\phi}{\varphi}
+\renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\theta}{\vartheta}
+
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\newcommand{\red}{\color{red}}
+\newcommand{\blue}{\color{blue}}
+\newcommand{\black}{\color{black}}
+
+\renewcommand{\it}{\textit}
+\renewcommand{\bf}{\textbf}
+
+\renewcommand{\la}{\langle}
+\renewcommand{\ra}{\rangle}
+
+
+\newcommand{\FIX}{
+	\begin{center}
+		\huge
+		----- \textit{\textbf{FIX}} -----
+		\normalsize
+	\end{center}
+}
+
+% ====================================
+% Environment
+% ====================================
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Teorema}[section]
+\newtheorem{corollary}[theorem]{Corolario}
+\newtheorem{lemma}[theorem]{Lema}
+\newtheorem{definition}{Definición}[section]
+\newtheorem{example}{Ejemplo}[section]
+\newtheorem{remark}{Nota}[section]
+\renewcommand\qedsymbol{$\blacksquare$}
+
+
+
+% ====================================
+% Capítulos y secciones
+% ====================================
+
+\renewcommand{\chaptertitlename}{}% chapter
+
+\titleformat
+      {\chapter} % Comando
+			[display] % Forma
+      {\FuenteCapitulo} % Formato del título
+			{\chaptertitlename} % Etiqueta
+			{-3.8cm}%4
+      {\chaptertitlename} 
+      [\vspace{-0.7cm}] % Espaciado
+
+
+\titleformat{\section}%0
+			[hang]
+      {\FuenteSeccion}
+			{\thesection\hspace*{10pt}}
+			{0pt}
+			{\raggedright}
+			[\phantomsection] % Esto hace que las hyperreferencias funcionen de manera correcta.
+
+\titleformat{\subsection}[hang]%
+			{\FuenteSubseccion}%
+			{\hspace{1.25cm}\thesubsection\hspace*{10pt}}%
+			{0pt}%
+			{\raggedright}%
+			[\phantomsection]
+			
+\titleformat{\subsubsection}[hang]%
+      {\FuenteSubssubseccion}%
+			{\hspace{1.25cm}\thesubsubsection\hspace*{10pt}}%
+			{0pt}%
+			{\raggedright}%
+			[\phantomsection]

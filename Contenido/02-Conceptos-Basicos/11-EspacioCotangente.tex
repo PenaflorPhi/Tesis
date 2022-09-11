@@ -1,0 +1,189 @@
+\section{El Espacio Dual}\label{Sección: Espacio Dual}
+\subsection{El Espacio Dual de un Espacio Vectorial}
+
+\begin{definition}[Espacio Dual]
+  Sea $V$ un espacio vectorial sobre un campo $\mathbb{K}$. Definiremos el \it{espacio dual (algebraico) de $V$}, denotado como $V^*$, como el conjunto de todos los mapas (en el sentido algebraico) $\phi: V \to \mathbb{K}$. A los elementos del espacios dual, $\omega \in V^*$, se les llamara \it{$1-$formas} o \it{covectores}
+\end{definition}
+
+Hacemos la aclaración de que estaremos trabajando con el espacio dual algebraico y por conveniencia lo llamaremos simplemente el espacio dual o dual, en nuestro caso no hace ninguna diferencia ni hay perdida de generalidad dado que estamos que estamos trabajando con espacios vectoriales de dimensión finita, por lo que el dual topológico y el dual algebraico coincidirán.
+
+\begin{example}
+  Si $M$ es una variedad suave y $F: M \to \R$ es una función suave, el diferencial de $F$ en un punto $p \in M$, $dF: T_p(M) \to \R$ es un covector.
+\end{example}
+
+Como veremos a continuación, el espacio dual es un espacio vectorial en sí mismo bajo las operaciones de suma y producto escalar definidas del siguiente modo:
+
+\begin{alignat*}{2}
+  (\omega+\nu)(x)&=\omega(x)+\nu(x), \quad &&\forall \omega,\nu \in V^{*}. \\
+  (a\omega)(x) &= a\omega(x), \quad &&\forall x\in V,\forall a \in\mathbb{K}
+\end{alignat*}
+
+Y más aún, este espacio vectorial es finito dimensión y la dimensión de $V*$ coincide con la dimensión de $V$.
+
+\begin{theorem}
+  Si $V$ es un espacio vectorial finito dimensional y $V^{*}$ es su espacio dual, entonces $\dim(V) = \dim(V^{*})$.
+\end{theorem}
+
+\begin{proof}
+  Sea $\{E_1, \dots, E_n\}$ una base para $V$. Definamos $n$ covectores, $\{\epsilon_1, \dots, \epsilon_n\}$ en $V^{*}$ del siguiente modo:
+  \[
+    \epsilon_i(E_j) = \delta_{ij} = \begin{cases}
+      1, & i = j\\
+      0, & i \neq j
+    \end{cases}
+  \]
+  Donde $\delta_{ij}$ es la delta de Kronecker, notemos que el conjunto $\{\epsilon_1, \dots, \epsilon_n\}$ es linealmente independiente. Por la linealidad de los covectores tenemos que si:
+\[
+  \sum_{i=1}^{n} a_i \epsilon_i(x) = 0, \quad a \in \mathbb{K}, x \in V
+\]
+
+  Entonces, si $x = E_j$:
+
+\begin{align*}
+  \sum_{i=1}^n a_i \epsilon_i (E_j) &= \sum_{i=1}^n a_j \delta_{ij} = a_i = 0
+\end{align*}
+
+  Esto implica que cada $a_i$ es nulo, por lo que $\{\epsilon_1, \dots, \epsilon_n\}$ es un conjunto linealmente independiente.
+
+  Ahora mostraremos que cada elemento en $V^{*}$ puede ser representado como una combinación lineal de elementos de $\{\epsilon_1, \dots, \epsilon_n\}$ de manera única. Cada $x \in V$ puede ser escrito como una combinación lineal:
+  \[
+    x = \sum_{i=1}^{n} \mu_{i} E_i, \quad \mu_i \in \K
+  \]
+  Por lo que si tomamos un covector $\epsilon \in V^{*}$ tendremos que para cada $x \in V$:
+  \begin{align*}
+    \epsilon(x) &= \epsilon
+    \left (\sum_{i=1}^{n} \mu_i E_i \right)\\
+    &= \sum_{i=1}^{n} \mu_i \epsilon \left(E_i \right)
+  \end{align*}
+
+  Por otro lado:
+  \begin{align*}
+    \epsilon_i(x) &= \epsilon_i\left(\sum_{i=1}^{n} \mu_i E_i\right) \\
+    &= \mu_i
+  \end{align*}
+
+  Por lo tanto, cada $\epsilon$ puede ser representado de manera única como una combinación lineal en términos de $\epsilon_i$ de la siguiente forma:
+  \[
+    \epsilon = \sum_{i=1}^{n} \epsilon_i \epsilon(E_i)
+  \]
+
+  Esto muestra que $\{\epsilon_1, \dots, \epsilon_n\}$ es una base para $V^{*}$ y por lo tanto $\dim(V) = \dim(V^{n})$.
+\end{proof}
+
+\begin{example}
+  La base del espacio dual $V*$ está dada como por los vectores file de la matriz inversa a la matriz formada por los vectores bases de $V$.
+
+  Consideremos una base para $\R^n$ y denotemos dicha base por $\{E_1,\dots,E_n\}$, cada uno de estos vectores puede ser representado como una matriz $1 \times n$ del siguiente modo:
+\[
+  E_1 = \begin{bmatrix}
+    E_1^1\\[12pt]
+    E_1^2\\[12pt]
+    \vdots\\[12pt]
+    E_1^n
+  \end{bmatrix}, E_2 = \begin{bmatrix}
+    E_2^1\\[12pt]
+    E_2^2 \\[12pt]
+    \vdots\\[12pt]
+    E_2^n
+  \end{bmatrix}, \hdots, E_n = \begin{bmatrix}
+    E_n^1\\[12pt]
+    E_n^2 \\[12pt]
+    \vdots\\[12pt]
+    E_n^n
+  \end{bmatrix} \in V
+\]
+
+  Por el teorema anterior sabemos que la base del espacio dual puede ser obtenida definiendo $n$ $1-$formas $\{\epsilon_1,\dots,\epsilon_n\}$ del siguiente modo:
+  \[
+    \epsilon_i (E_j) = \delta_{ij}
+  \]
+
+  Este nos dará $n \times n$ ecuaciones, las cuales podemos representar con el siguiente sistema de ecuaciones:
+
+\[
+  \begin{bmatrix}
+    \epsilon_{1}^{1}&\epsilon_{1}^{2}&\hdots&\epsilon_{1}^{n}\\[12pt]
+    \epsilon_{2}^{1}&\epsilon_{2}^{2}&\hdots&\epsilon_{2}^{n}\\[12pt]
+    \vdots & \vdots & \ddots & \vdots \\[12pt]
+    \epsilon_{n}^{1}&\epsilon_{n}^{2}&\hdots&\epsilon_{n}^{n}
+  \end{bmatrix}
+  \begin{bmatrix}
+    E_{1}^{1} & E_{2}^{1} & \hdots & E_{n}^{1}\\[12pt]
+    E_{1}^{2} & E_{2}^{2} & \hdots & E_{n}^{2}\\[12pt]
+    \vdots & \vdots & \ddots & \vdots \\[12pt]
+    E_{1}^{n} & E_{2}^{n} & \hdots & E_{n}^{n}
+  \end{bmatrix} = \begin{bmatrix}
+    1 & 0 & \hdots & 0\\
+    0 & 1 & \hdots & 0\\
+    \vdots & \vdots & \ddots & \vdots \\
+    0 & 0 & \hdots & 1
+  \end{bmatrix}
+\]
+
+  Llamaremos a la matriz formada por los coeficientes de los covectores $A$ y a la matriz formada por los coeficientes de la base de $V$, $B$. Claramente $B$ es una matriz dado que está formada por vectores de la base, que linealmente independientes. Por lo que para $A$ se tendrá la ecuación:
+  \[
+    A = IB^{-1} = B^{-1}
+  \]
+  Por lo tanto, $A$ estará formado por los vectores filas de $B^{-1}$.
+
+  En particular, si consideramos la base estándar de $\R^n$ esto nos dice que una base, a la cual llamaremos la base estándar del espacio dual, será:
+\begin{align*}
+  \epsilon_1 &= \begin{bmatrix} 1 & 0 & \dots & 0\end{bmatrix},\\
+  \epsilon_2 &= \begin{bmatrix} 0 & 1 & \dots & 0\end{bmatrix},\\
+             &\hdots \\
+  \epsilon_n &= \begin{bmatrix} 0 & 0 & \dots & 1\end{bmatrix}
+\end{align*}
+
+Esto tiene mucho sentido si pensamos que los vectores columnas son matrices $n \times 1$, esto es, transformaciones lineales de $\K$ a $\K^n$, y los covectores son transformaciones lineales de $\K^n$ a $\K$, matrices $1 \times n$
+\end{example}
+
+\begin{definition}
+  Sean $V$ y $W$ espacios vectoriales y sea $A: V \to W$ un mapa lineal. Definiremos al mapa $A^*: W^* \to V^*$ como:
+  \[
+    (A^{*}\omega)(v) = \omega(Av), \quad \omega \in W^{*}, v \in V
+  \]  
+  Llamaremos a este mapa, el \it{mapa dual} o \it{transpuesta de $A$}.
+\end{definition}
+
+\begin{lemma}
+  El mapa $A^{*}\omega$ es un covector en $V$ y $A^{*}$ es un mapa lineal.
+\end{lemma}
+
+\begin{proof}
+  Para ver que $A^{*}\omega$ es un covector basta notar que $\omega: W \to \K$ y $A: V \to W$, por lo que la composición será un mapa $\omega \circ A: V \to \K$, lo cual es, por definición, un covector en $V$.
+
+  La linealidad se tiene del simple hecho de que la composición de mapas lineal es un mapa lineal.
+\end{proof}
+
+\begin{lemma}
+Los mapas duales satisfacen las siguientes propiedades:
+  \begin{itemize}
+    \item $(A \circ B)^{*} = B^{*} \circ A^{*}$\\
+    \item $(\id_V)^{*} = V^{*} \to V^{*}$ es el mapa identidad en $V$.
+  \end{itemize}
+\end{lemma}
+
+\begin{proof}
+  Sean $V,W$ y $X$ espacios vectoriales sobre un campo $\K$, $A: W \to V$ y $B: X \to W$ mapas lineales, para cada $\omega \in V^{*}$:
+  
+\begin{align*}
+  (A\circ B)^{*}(\omega) &= \omega(A \circ B)\\
+\end{align*}
+
+Por otro lado tendremos que:
+  \begin{align*}
+    (B^* \circ A^*)(\omega) &= B^{*}(A^*(\omega)) \\
+    &= B^{*}(\omega(A)) \\
+    &= \omega(A) \circ B\\
+    &= (\omega \circ A) \circ B
+  \end{align*}
+
+  Para la identidad, $\id_V: V \to V$, para cada $\omega \in V*$ y cada $v \in V$ tenemos:
+
+  \begin{align*}
+    (\id_V)^{*}(\omega)(v) &= \omega(\id_V(v))\\
+    &= \omega(v)\\
+    &= \id_{V^{*}}
+  \end{align*}
+\end{proof}
+

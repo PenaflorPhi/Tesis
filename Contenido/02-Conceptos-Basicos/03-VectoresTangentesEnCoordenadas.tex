@@ -1,0 +1,233 @@
+\subsection{Vectores Tangentes en Coordenadas}\label{Subsección: Espacios Tangentes en Coordenadas}
+Las ideas presentadas anteriormente nos son de mucha utilidad, dado que como veremos en esta sección los espacios tangentes y los diferenciales nos permiten realizar cálculos concretos en las variedades suaves.
+
+Sean $M$ una variedad suave $n-$dimensional, $p \in M$ algún punto y $(U,\phi)$ una carta suave que contiene a $p$. Definiremos los mapas $\phi_i: U \to \R$ como $\phi_{i} = x_i \circ \phi$, donde $x_i$ son los elementos de la base estándar de $\R^n$.
+
+Si $f$ es un mapa suave definido en una vecindad de $p$, consideremos la siguiente colección:
+\[
+	\left. \frac{\partial}{\partial \phi_i} \right|_{p} f = \left. \frac{\partial}{\partial x_i} \right|_{\phi(p)} f \circ \phi^{-1}
+\]
+
+Evidentemente cada uno de los elementos son derivaciones, por lo que serán vectores tangente en $T_p(M)$, y por definición $\phi: U \to \R^n$ es un difeomorfismo. Sabiendo esto y por el lema \ref{Lemma: Diferencial de un Difeomorfismo} podemos garantizar que el diferencial $d_p\phi: T_p(M) \to T_{\phi(p)}(\R^n)$ es un isomorfismo de espacios vectoriales.
+
+\begin{lemma}\label{Lemma: Definicion Vector Coordenado}
+	Sean $M$ una variedad suave, $p \in M$ un punto arbitrario y $(U,\phi) = (U, \phi_1, \dots, \phi_n)$ una carta suave que contiene a $p$, entonces:
+	\[
+		d_p\phi \left( \left. \frac{\partial }{\partial \phi_i}\right|_{p}\right) = \left. \frac{\partial}{\partial x_i} \right|_{\phi_p}
+	\]
+\end{lemma}
+
+Sea $f: \R^n \to \R$ cualquier función suave definida en una vecindad de $\phi(p)$, se tendrá que:
+
+\begin{align*}
+	d_p\phi \left( \left. \frac{\partial}{\partial \phi_i} \right|_{p} \right) f & = \left. \frac{\partial}{\partial \phi_i} \right|_{p} f \circ \phi                    \\
+	                                                                             & = \left. \frac{\partial}{\partial x_i} \right|_{\phi(p)} f \circ \phi \circ \phi^{-1} \\
+	                                                                             & = \left. \frac{\partial}{\partial x_i}\right|_{\phi(p)} f
+\end{align*}
+
+\begin{theorem}
+	Sean $M$ una variedad suave, $p \in M$ y $(U,\phi) = (U, \phi_1, \dots, \phi_n)$ una carta suave que contiene a $p$. El espacio tangente $T_p(M)$ tiene como base a la colección:
+	\[
+		\left. \frac{\partial}{\partial \phi_1} \right|_p, \hdots, \left. \frac{\partial}{\partial \phi_n} \right|_p
+	\]
+\end{theorem}
+
+\begin{proof}
+	El corolario \ref{Corolario: Base de TpRn} nos dice que las derivadas parciales forman una base para $T_p(\R^n)$, además el lema anterior nos dice que el mapa:
+	\begin{align*}
+		d_p\phi: T_p(M)                                     & \to \T_{\phi(p)} (\R^n)                                        \\
+		\left. \frac{\partial}{\partial \phi_i} \right|_{p} & \mapsto \left. \frac{\partial}{\partial x_i} \right|_{\phi(p)}
+	\end{align*}
+
+	es un isomorfismo, y como los isomorfismos llevan bases de un espacio vectorial a bases de otros espacios vectoriales tendremos que el conjunto $\{ \frac{\partial}{\partial \phi_{i}}|_{p} \}_{i=1}^{n}$ es una base para $T_{p}(M)$.
+\end{proof}
+
+Como hemos mencionado, el diferencial de un mapa suave entre variedades ha sido de tal modo que este sea una generalización de la derivada total conocida del cálculo en $\R^n$, la cual puede ser representada por la matriz Jacobiana, sin embargo, una ventaja que tenemos con el diferencial es que es independiente de las coordenadas que se elijan, esto es, no depende de las bases que se pudiesen elegir para los espacios tangentes a las variedades. Aún así, es posible dar una representación matricial para el diferencial, evidentemente esta representación sí dependerá de las coordenadas elegidas.
+
+Comenzaremos viendo que en efecto, la representación matricial coincidirá con lo que se podría esperar en espacios euclidianos, esto es, que la matriz sea la matriz Jacobiana.
+
+Consideremos dos espacios euclidianos $\R^n$ y $\R^m$, representaremos sus bases estándar por $\{x_1, \dots, x_n\}$ y $\{y_1, \dots, y_m\}$ respectivamente. Sean $U \subseteq \R^n$ y $V \subseteq \R^m$ subconjuntos abiertos, $p \in U$ un punto arbitrario y $F: U \to V$ una función suave. Utilizando la regla de la cadena para calcular el diferencial de $F$ en $p$ tenemos:
+
+% Arreglar
+\begin{align*}
+	d_pF
+	\left(
+	\left. \frac{\partial}{\partial x_i} \right|_{p}
+	\right)
+	 & =
+	\left. \frac{\partial}{\partial x_i} \right|_{p} (f \circ F) \\
+	 & =
+	\sum_{j=1}^{n} \frac{\partial f}{\partial y_j} F(p)
+	\frac{\partial F_j}{\partial x_i} (p)                        \\
+	 & =
+	\sum_{j=1}^{n}
+	\left(
+	\frac{\partial F_j}{\partial x_i} (p)
+	\left.
+	\frac{\partial}{\partial y_j}
+	\right|_{F(p)}
+	\right) f                                                    \\
+	\implies d_p F
+	\left(
+	\left. \frac{\partial}{\partial x_i} \right|_p
+	\right)
+	 & =
+	\sum_{j=1}^{n}
+	\frac{\partial F_j}{\partial x_i} (p)
+	\left.
+	\frac{\partial}{\partial y_j}
+	\right|_{F(p)}
+\end{align*}
+
+Por lo tanto la representación matricial de $d_pF$ en términos de las bases elegidas para $\R^n$ y $\R^m$ es:
+
+\[
+	\begin{bmatrix}
+		\frac{\partial F_1}{\partial x_1}(p) & \hdots & \frac{\partial F_1}{\partial x_n}(p) \\[1em]
+		\vdots                               & \ddots & \vdots                               \\[1em]
+		\frac{\partial F_m}{\partial x_1}(p) & \hdots & \frac{\partial F_m}{\partial x_n}(p)
+	\end{bmatrix}
+\]
+Esto es precisamente lo que cabría esperarse, que la representación en coordenadas del diferencial de una función suave sea precisamente la matriz Jacobiana, por lo que coincide con la derivada total.
+
+Para ver qué sucede con el caso general consideremos dos variedades suaves $M$ y $N$, un punto $p \in M$ y un mapa suave $F: M \to N$. Tomemos dos cartas $(U,\phi)$ y $(V,\psi)$ que contengan a $p$ y $F(p)$ respectivamente.
+
+Como se vio en la sección \ref{Sección: Mapas Suaves} el mapa $F$ tiene una representación en coordenadas dada por $\hat{F} = \psi \circ F \circ \phi^{-1}: \phi(U \cap F^{-1}(V)) \to \psi(V)$. Por los cálculos anterior podemos representar el diferencial de $\hat{F}$ en $\phi(p)$ con respecto a la base estándar por la matriz Jacobiana de $\hat{F}$ en $\phi(p)$. Utilizando el hecho de que $F \circ \phi^{-1} = \psi^{-1} \circ \hat{F}$, calculando obtenemos:
+
+\begingroup
+\allowdisplaybreaks
+\begin{align*}
+	d_{p}F \left( \left. \frac{\partial}{\partial \phi_i} \right|_{p}\right) & =
+	d_p(\psi^{-1}\circ\hat{F}\circ \phi)\left(\left.\frac{\partial}{\partial \phi_i}\right |_p\right) \\
+	                                                                         & =
+	\left. d_p \psi^{-1} \right|_{\hat{F}(\phi(p))}
+	\Biggl(
+	d_{\phi(p)} \hat{F}
+	\Biggl(
+	\underbrace{d_p \phi
+		\left(
+		\left. \frac{\partial}{\partial \phi_i} \right|_{p}
+		\right)}_{\left. \frac{\partial}{\partial x_i} \right|_{\phi (p)}}
+	\Biggr)
+	\Biggr)                                                                                           \\
+	                                                                         & =
+	\left. d_p \psi^{-1} \right|_{\hat{F}(\phi(p))}
+	\left(
+	\sum_{j=1}^{n} \frac{\partial \hat{F_j}}{\partial x_i} \left( \phi(p) \right)
+	\left. \frac{\partial}{\partial y_j} \right|_{F(\phi(p))}
+	\right)                                                                                           \\
+	                                                                         & =
+	\sum_{j=1}^{n} \frac{\partial \hat{F}_j}{\partial x_i} (\phi(p))
+	\left. d_p \psi^{-1} \right|_{\hat{F}(\phi(p))}
+	\left(
+	\left. \frac{\partial}{\partial y_j}\right|_{F(\phi(p))}
+	\right)                                                                                           \\
+	                                                                         & =
+	\sum_{j=1}^{n} \frac{\partial \hat{F}_j}{\partial x_i} (\phi(p))
+	\left.
+	\frac{\partial}{\partial \psi_{j}}
+	\right|_{\hat{F}(\phi(p))}
+\end{align*}
+\endgroup
+
+Por lo tanto, podemos representar el diferencial $dF_p$ con la matriz Jacobiana de la representación coordenada del mapa $F$.
+
+Como estas representaciones dependen de la base elegida será necesario tener una manera en la que podamos transformar de unas coordenadas a otras. Consideremos una variedad suave $M$, dos cartas suaves $(U,\phi)=(U,\phi_1,\dots,\phi_n)$ y $(V,\psi)=(V,\psi_1,\dots,\psi_n)$, y un punto $p \in M$ que también pertenezca a la intersección $p \in U \cap V$. Los vectores tangentes en $p$ pueden ser representados respecto a las bases $\{\left. \frac{\partial}{\partial \phi_i} \right|_{p}\}_{i=1}^{n}$ y $\{\left. \frac{\partial}{\partial \psi_i} \right|_{p}\}_{i=1}^{n}$
+
+Naturalmente la representación de cualquier vector tangente está relacionada con cualquier otra representación, a continuación veremos cómo es que las representaciones están relacionadas. Tomemos el diferencial del mapa de transición $\psi \circ \phi^{-1}: \phi(U \cap V) \to \R^n$.
+
+\[
+	d_{\phi(p)}(\psi \circ \phi^{-1}) \left( \left. \frac{\partial}{\partial \phi_{i}} \right|_{\phi(p)} \right) = \sum_{j=1}^{n}\frac{\partial \psi_j}{\partial \phi_i} (\phi(p)) \left. \frac{\partial}{\partial \psi_{j}} \right|_{\psi(p)}
+\]
+
+Una consecuencia inmediata del lema \ref{Lemma: Definicion Vector Coordenado} es la siguiente representación de los vectores tangentes, de la cual, junto con la identidad anterior se seguirá la cadena de igualdades:
+
+\begin{align*}
+	\left. \frac{\partial}{\partial \phi_i}\right|_{p}
+	 & =
+  d_{\phi(p)} \left(\phi^{-1}\right)
+	\left(\left.
+	\frac{\partial}{\partial \phi_i}
+	\right|_{\phi(p)}\right)                                            \\
+	 & =
+	d_{\psi(p)}(\psi^{-1}) \circ d_{\phi(p)}\left(\psi \circ \phi^{-1}\right)
+	\left( \left.
+	\frac{\partial}{\partial \phi_i}
+	\right|_{\phi(p)}\right)                                            \\
+	 & =
+	d_{\psi(p)}(\psi^{-1}) \left(
+	\sum_{j=1}^{n}\frac{\partial \psi_j}{\partial \phi_i}(\phi(p))
+	\left.
+	\frac{\partial}{\partial \psi_j}
+	\right|_{\psi(p)} \right)                                           \\
+	 & = \sum_{j=1}^{n}\frac{\partial \psi_j}{\partial \phi_i}(\phi(p))
+	\left.
+	\frac{\partial}{\partial \psi_j}
+	\right|_{p}
+\end{align*}
+
+Por lo tanto, si tenemos un vector tangente $\omega \in T_p(M)$ con dos representaciones diferentes, digamos:
+
+\[
+	\omega = \sum_{i=1}^{n} v_i \frac{\partial}{\partial \phi_i}
+	\quad \text{y} \quad
+	\omega = \sum_{j=1}^{n} w_j \frac{\partial}{\partial \psi_j}
+\]
+Donde $v_i$ y $w_i$ son constantes que dependen de $\omega$, y podemos transformar las constantes del siguiente modo:
+
+\[
+	w_j = \sum_{i=1}^{n} \frac{\partial \psi_j}{\partial \phi_i} (\phi(p)) v_i
+\]
+
+\begin{example}
+	Consideremos el mapa de transición entre las coordenadas esféricas y las coordenadas estándar en subconjuntos abierto adecuados de $\R^{3}$ dado por $(x,y,z) = (r \cos \phi \sin \theta, r \sin \phi \sin \theta, r\cos \theta)$. Tomemos el punto $p \in \R^{3}$ con representación en coordenadas esféricas $p = (r,\theta,\phi) = (2,\frac{\pi}{4},\frac{\pi}{4})$ y tomemos un vector tangente $\omega \in T_p(\R^3)$ cuya representación en coordenadas polares esté dada por:
+	\[
+		\omega = \left. \frac{\partial}{\partial r} \right|_p -
+		\left. 2\frac{\partial}{\partial \theta} \right|_p +
+		\left. 3\frac{\partial}{\partial \phi} \right|_p
+	\]
+	Si queremos transformar este vector tangente a coordenadas estándar necesitaremos utilizar la formula que acabamos de deducir de cambio de coordenadas. Calculando las constantes $v_i$:
+	\begin{align*}
+		v_1 & =
+		\left. \frac{\partial}{\partial r} r\cos(\phi)\sin(\theta) \right|_p
+		\frac{\partial}{\partial x} +
+		\left. \frac{\partial}{\partial r} r\sin(\phi)\sin(\theta)\right|_p
+		\frac{\partial}{\partial y} +
+		\left. \frac{\partial}{\partial r}r\cos(\theta)\right|_{p}
+		\frac{\partial}{\partial z}                                         \\
+		    & = \cos(\phi)\sin(\theta)|_p \frac{\partial}{\partial x}
+		+ \sin(\phi)\sin(\theta)|_p  \frac{\partial}{\partial y}
+		+ \cos(\theta)|_p \frac{\partial}{\partial z}                       \\
+		    & = \frac{1}{2} \frac{\partial}{\partial x}
+		+ \frac{1}{2} \frac{\partial}{\partial y}
+		+ \frac{\sqrt{2}}{2} \frac{\partial}{\partial z}                    \\
+		v_2 & =
+		\left. \frac{\partial}{\partial \theta} r\cos(\phi)\sin(\theta) \right|_p
+		\frac{\partial}{\partial x} +
+		\left. \frac{\partial}{\partial \theta} r\sin(\phi)\sin(\theta)\right|_p
+		\frac{\partial}{\partial y} +
+		\left. \frac{\partial}{\partial \theta}r\cos(\theta)\right|_{p}
+		\frac{\partial}{\partial z}                                         \\
+		    & = r\cos(\phi)\cos(\theta)|_p \frac{\partial}{\partial x}
+		+ r\sin(\phi)\cos(\theta)|_p  \frac{\partial}{\partial y}
+		- r\sin(\theta)|_p \frac{\partial}{\partial z}                      \\
+		    & = \frac{\partial}{\partial x} + \frac{\partial }{\partial y}
+		- \frac{\partial}{\partial z}                                       \\
+		v_3 & =
+		\left. \frac{\partial}{\partial \phi} r\cos(\phi)\sin(\theta) \right|_p
+		\frac{\partial}{\partial x} +
+		\left. \frac{\partial}{\partial \phi} r\sin(\phi)\sin(\theta)\right|_p
+		\frac{\partial}{\partial y} +
+		\left. \frac{\partial}{\partial \phi} r\cos(\theta)\right|_{p}
+		\frac{\partial}{\partial z}                                         \\
+		    & = -r\sin(\phi)\sin(\theta)|_p \frac{\partial}{\partial x}
+		+ r\cos(\phi)\sin(\theta)|_p  \frac{\partial}{\partial y}           \\
+		    & = - \frac{\partial}{\partial x} + \frac{\partial}{\partial y}
+	\end{align*}
+
+	Por lo tanto, podemos sustituir en la ecuación que nos da el vector tangente para obtener su representación en coordenadas estándar, obteniendo:
+	\[ \omega =
+		\left. -\frac{9}{2} \frac{\partial}{\partial x} \right|_p +
+		\left. \frac{3}{2}\frac{\partial}{\partial y} \right|_p +
+		\left. \frac{\sqrt{2} - 4}{2} \frac{\partial}{\partial z} \right|_p\]
+\end{example}

@@ -1,0 +1,50 @@
+\begin{tikzpicture}[scale=1]
+
+%Variedad M
+\path[draw,use Hobby shortcut,closed=true]
+(-5,5.5) .. (-6,4) .. (-4,4) .. (-2,3.5) .. (-2.5,6);
+\filldraw (-3,5) circle (0.05);
+\node at (-3.25,5.25) {$p$};
+\node at (-2.25,4.35) {$U$};
+\draw[dashed] (-3,5) ellipse (0.6 and 0.8);
+\node at (-1.25,5.75) {$M$};
+
+%Variedad N
+\path[draw,use Hobby shortcut,closed=true]
+(5.5,6) .. (6,4) .. (4,3) .. (2,3.5) .. (2.5,5) .. (3.5,5.5);
+\filldraw (3.25,4) circle (0.05);
+\node at (2.75,3.6) {$F(p)$};
+\node at (4.25,5) {$V$};
+\draw[dashed](3.25,4) ellipse (1.2 and 0.9);
+\node at (2,5.25) {$N$};
+
+% Flecha M a N
+\draw[thick,->] (-1,6) arc (-60:-130:-2.5);
+\node at (0.25,6.75) {$F$};
+
+% Flecha M a Rm
+\draw[thick,->] (-3,4) arc (-10:20:-5);
+\node at (-3.5,2.75) {$\phi$};
+
+% Flecha N a Rn
+\draw[thick,->] (3.75,3.25) arc (10:-20:4);
+\node at (4.25,2) {$\psi$};
+
+%Eje Izquierdo
+\draw [<->] (-5,-1) -- (-1,-1);
+\draw [<->] (-4,-1.5) -- (-4,2.5);
+\node at (-5,2.5) {$\R^m$};
+\node at (-1,1.25) {$\phi(U)$};
+\draw[dashed] (-2.5, 0.25) circle (1);
+
+%Eje Derecho
+\draw [<->] (5,-1) -- (1,-1);
+\draw [<->] (2,-1.5) -- (2,2.5);
+\node at (1,2.5) {$\R^n$};
+\node at (4.5,0) {$\psi(V)$};
+\draw[dashed] (2.5, -0.25) circle (1.2);
+
+% Flecha Rn a Rm
+\draw[thick,->] (-2,-1.25) arc (60:120:-3.5);
+\node at (0,-2) {$\psi \circ F \circ \psi^{-1}$};
+\end{tikzpicture}

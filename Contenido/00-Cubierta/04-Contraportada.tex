@@ -1,0 +1,27 @@
+% Por alguna razón las guías son lo que mantienen el documento en su lugar. 
+% Para mosrtar o desaparecer las guías es necesario comentar el primer input. 
+% Guías-0 son las guías completamente transparentes.
+
+\thispagestyle{empty} % Esto deja la página sin numeración.
+\tikzexternaldisable % Desactiva el precompilado de figuras, ¡No quitar!
+\newgeometry{left=0.7cm, right=0.7cm, top=1.2cm, bottom=0.7cm} % Márgenes únicamente para esta sección.
+
+% Lema institucional.
+\begin{textblock*}{10cm}(3.01cm,12.9cm)
+	\begin{flushleft}
+    {\GilliusCinco “Lis de Veracruz: Arte, Ciencia, Luz”}\\[10pt]
+		{\GilliusSeis www.uv.mx}
+	\end{flushleft}
+\end{textblock*}
+
+% Adorno al pie de página.
+\begin{figure}[!b]
+	\includegraphics[height=9cm,left]{Figuras/0-UV/Inferior.png}
+\end{figure}
+
+% Guías de alineado.
+% \input{Figuras/0-UV/Guias.tex}
+\input{Figuras/0-UV/Guias-0.tex}
+
+\tikzexternalenable % Restaura la el precompilado de figuras.
+\restoregeometry % Restaura los margenes del documento.

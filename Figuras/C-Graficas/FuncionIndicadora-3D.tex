@@ -1,0 +1,23 @@
+\begin{tikzpicture}[scale=1.25]
+	\begin{axis}[
+      view={30}{30},
+			colormap/cool,
+			xmin=-2,
+			xmax=2.5,
+			ymin=-2.5,
+			ymax=2,
+			zmin=-0.25,
+			zmax=1.5,
+			% axis lines=middle,
+		]
+		\addplot3[
+			domain=-1.9:2.4,
+			domain y = -2.4:1.9,
+			patch,
+			patch type=bilinear,
+			shader=faceted interp,
+		]
+		{abs(x^2 + y^2) < 1 ? e^(-1 / (1 - abs(x^2 + y^2)) ) : 0 };
+
+	\end{axis}
+\end{tikzpicture}

@@ -1,0 +1,113 @@
+\appendix
+\chapter{Anexo: Topología de Variedades}\label{Anexo: Topologia De Variedades}
+Estudiaremos algunas de las propiedades topológicas que poseen las variedades, mostraremos que la propiedad de ser segundo numerable y Hausdorff nos permite concluir que las variedades son paracompactas, más adelante veremos cómo esta propiedad nos permite garantizar la existencia de particiones suaves de la unidad, más aún, es posible mostrar que en una variedad suave existe una equivalencia entre paracompacidad, la existencia de particiones suaves de la unidad y que la variedad sea metrizable.
+
+\begin{definition}[Espacio de Lindelöf]\label{Definición: Lindelöf}
+  Sea $X$ un espacio topológico. Diremos que $X$ es un \it{espacio de Lindelöf} si cada cubierta abierta tiene una subcubierta numerable.
+\end{definition}
+
+\begin{theorem}
+  Todo espacio topológico segundo numerable es un espacio de Lindelöf.
+\end{theorem}
+
+\begin{proof}
+  Sea $X$ un espacio topológico segundo numerable y sea $\mathcal{U}$ una cubierta abierta de $X$. Por definición de espacio segundo numerable existirá una base numerable $\mathcal{B}$ para $X$.
+
+  Definiremos el conjunto $\mathcal{B}' = \{B \in \mathcal{B} : B \subset U, U \subset \mathcal{U}\}$, esté conjunto es numerable dado que es un subconjunto de $\mathcal{B}$. Además dado que $\mathcal{U}$ es una cubierta abierta de $X$, para cada $x \in X$ existirá un subconjunto abierto $U$ que contiene a $x$, y dado que $\mathcal{B}$ es base de $X$ por definición existe un elemento $B \in \mathcal{B}$ tal que $x \in B \subset U$, por lo tanto $B \in \mathcal{B}'$
+
+  Ahora, para cada $B' \in \mathcal{B}'$ podemos tomar $U' \in \mathcal{U}$ tal que $B' \subset U'$. El conjunto formado por todos los elementos de está forma es un subconjunto numerable de $\mathcal{U}$ y es una cubierta de $X$ dado que cada $x \in X$ está contenido en algún $B' \in \mathcal{B}'$.
+\end{proof}
+
+\begin{definition}[Subconjunto Precompacto]\label{Definición: Subconjunto Precompacto}
+  Un subconjunto de un espacio topológico $X$ se dice que es \it{precompacto} en $X$ si su cerradura es compacta. 
+\end{definition} 
+
+
+\begin{definition}[Bolas Coordinadas Suaves]\label{Definición: Bolas Coordinadas Suaves}
+  Sea $M^n$ una variedad suave, $(U,\phi)$ una carta suave de $M$. Diremos que $U$ es una \it{bola coordinada suave} si $\phi(U) \subset \R^n$ es una bola abierta de $\R^n$.
+  
+  Además diremos que una bola coordinada suave $U \subseteq M$ es \it{regular} si existe una bola coordinada $U' \subseteq U$ y un mapa suave $\phi: U' \to \R^n$ tal que para algunos $r, r' \in \R^n$ se cumple:
+  \[
+    \phi(U) = B_r(U), \quad \phi(\overline{U}) = \overline{B}_r(0), \quad \phi(U') = B_{r'}(0)
+  \] 
+\end{definition}
+
+\begin{lemma}\label{Lemma: Bolas Precompactas}
+  Toda variedad topológica tiene una base numerable de bolas coordinadas precompactas.
+\end{lemma}
+
+\begin{proof}
+  Sea $M^n$ una variedad topológica. Cada punto $p \in M$ está contenido en alguna carta $(U,\phi)$ por lo que las cartas forman una cubierta abierta para $M$; dado que $M$ es segundo numerable por definición de variedad topológica, y por el teorema anterior, se garantiza que existirá una subcubierta numerable de cartas $\{(U_i,\phi_i)\}$ para $M$.
+
+  En el ejemplo \ref{Ex: Variedad Suave - Subvariedades Suaves} se mostró que los subconjuntos abiertos de una variedad topológica son en sí mismos variedades topológicas, por lo que el dominio de cada carta es una variedad topológica.
+
+  Consideremos un elemento $(U,\phi)$ de la subcubierta numerable de cartas. Sabemos que una base numerable para la topología de $\R^n$ es el conjunto $\mathcal{B}$ formado por las bolas con radios y centros racionales, por el teorema de Heine-Borel la cerradura de cada una de estás bolas es un conjunto compacto por lo que las bolas son precompactas. Como $\phi$ es un homeomorfismo entre $U$ y $\R^n$, el conjunto $\phi^{-1} (\mathcal{B})= \{\phi^{-1}(B): B \in \mathcal{B}\}$ será una base para la topología de $U$ formado por una cantidad numerable de bolas coordinadas precompactas.
+
+  Por lo tanto, el dominio de cada carta coordenada $U_i$ tiene una base de bolas coordenadas precompactas, y la unión de todas estas bases forma una base numerable de bolas precompactas en cada $U_i$ para la topología de $M$.
+\end{proof}
+
+
+Existe un resultado muy similar al anterior que funciona para variedades suaves, la demostración es idéntica, mutatis mutandis.
+
+\begin{lemma}\label{Lemma: Base Por Bolas Suaves}
+  Toda variedad suave tiene una base formada por una colección numerable de bolas coordinadas suaves.
+\end{lemma}
+
+Estos dos últimos lemas pueden ser generalizados a espacios topológicos si pedimos que el espacio tenga la siguiente propiedad.
+
+\begin{definition}[Compacidad Local]
+  Un espacio topológico $X$ se dice que es \it{localmente compacto} si cada punto tiene una vecindad contenida en un subconjunto compacto de $X$.
+\end{definition}
+
+\begin{corollary}
+  Toda variedad topológica es localmente compacta.
+\end{corollary}
+
+\begin{lemma}
+  Sea $X$ un espacio topológico de Hausdorff, segundo numerable y localmente compacto. Existe una base numerable y precompacta para $X$.
+\end{lemma}
+
+\begin{proof}
+  Sea $X$ un espacio topológico y $\mathcal{B}$ una base numerable para $X$. Dado que $X$ es localmente compacto, para cada $x \in X$ existe una vecindad $U_x$ compacta, y dado que $X$ es un espacio de Hausdorff, la cerradura de $\overline{U_x}$ también es un conjunto compacto.
+
+  Como $\mathcal{B}$ es una base de $X$, existirá un conjunto abierto $B \in \mathcal{B}$ tal que $x \in B \subseteq U_x$, es evidente que $\overline{B}$ es un conjunto cerrado en el compacto $\overline{U_x}$, por lo que $\overline{B}$ es compacto. Así, la colección formada por estos conjuntos con cerradura compacta es una base numerable y precompacta para $X$.
+\end{proof}
+
+
+\begin{definition}[Refinamiento]\label{Definición: Refinamiento}
+  Sea $X$ un espacio topológico y sean $\mathcal{U}$ y $\mathcal{V}$ cubiertas de $X$. Diremos que $\mathcal{V}$ es un \it{refinamiento de $\mathcal{U}$} si para cada $V \in \mathcal{V}$ existe al menos un $U \in \mathcal{U}$ tal que $V \subseteq U$.
+\end{definition}
+
+\begin{definition}[Cubierta Localmente Finita y Paracompacidad]
+  Sea $X$ un espacio topológico y $\mathcal{U}$ una cubierta abierta de $X$. Diremos que $\mathcal{U}$  es \it{localmente finita} si para cada $x$ existe una vecindad que interseca a lo más a un número finito de elementos de $U$.
+
+  También diremos que $X$ es un \it{espacio paracompacto} si para cada cubierta abierta existe un refinamiento localmente finito. 
+\end{definition}
+
+\begin{theorem} [Espacios Precompactos] \label{Teorema: Espacios Precompactos}
+ Sea $X$ un espacio de Hausdorff, segundo numerable y localmente compacto. $X$ es un espacio paracompacto.
+\end{theorem}
+
+\begin{proof}
+  Sea $\mathcal{B}$ una base numerable para $X$ formada por conjuntos precompactos. Definimos las colección $\mathcal{A}$ del siguiente modo:
+  \begin{align*}
+    A_1 &= B_1\\
+    &\vdots\\
+    A_k &= B_1 \cup \dots \cup B_{j_k}
+  \end{align*}
+
+  Luego, sea $j_{k+1}$ el entero positivo más pequeño y mayor que $j_k$ tal que: $\overline{A_k} \subset \cup_{i=1}^{j_{k+1}} B_i$. Definimos al conjunto $A_{k+1}$ como
+  \[
+    A_{k+1} = \bigcup_{i=1}^{j_{k+1}} B_i
+  \]
+
+  Con esta definición la colección $\mathcal{A}$ es una secuencia definida de manera inductiva y tal que cada $A_i$ es un conjunto compacto, $\overline{A_i} \subset A_{i+1}$ y $X = \cup_{i=1}^{\infty} A_i$.
+
+  Sea $\mathcal{U}$ una cubierta abierta de $X$. El conjunto $\overline{A_i} - A_{i-1}$ es compacto y por definición está contenido en el conjunto abierto $A_{i+1} - \overline{A_{i-2}}$. Para $i \geq 3$ podemos elegir una subcubierta finita de la cubierta abierta $\{U \cap (A_{i+1} - \overline{A_{i+2}}) : U \in \mathcal{U} \}$ del conjunto $\overline{A_{i}} - A_{i-1}$, y finalmente tomar una subcubierta finita de la cubierta abierta $\{U \cap A_3: U \in \mathcal{U}\}$ para el conjunto $\overline{A_2}$.
+
+Esta colección de conjuntos es la unión numerable de colecciones finita de conjuntos por lo que será una colección numerable de refinamientos localmente finitos de la cubierta abierta $\mathcal{U}$, la cual consiste de conjuntos precompactos.
+\end{proof}
+
+\begin{corollary} \label{Corolario: Variedades Precompactas}
+  Las variedades topológicas son paracompactas.
+\end{corollary}

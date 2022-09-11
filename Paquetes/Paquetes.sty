@@ -1,0 +1,56 @@
+% ====================================
+% Paquetes
+% ====================================
+\usepackage[
+	paper=letterpaper,
+	nohead,
+	includefoot,
+	includemp,
+	bindingoffset=0.5cm,
+	top=2cm,
+	left=2.3cm,
+	right=0.1cm,
+	bottom=2cm,
+]{geometry}
+
+\usepackage[T1]{fontenc}
+\usepackage{fontspec}
+\usepackage[spanish]{babel}
+\usepackage{amsmath,mathtools,amssymb,amsthm}
+\usepackage{multicol,graphicx,subcaption}
+\usepackage{cancel}
+\usepackage[autostyle]{csquotes}
+\usepackage{hyperref}
+\usepackage[export]{adjustbox} 
+\usepackage[absolute,overlay]{textpos} % Needed to place the text where we want.
+\usepackage{titlesec}
+
+% ====================================
+% Paquetes relacionados a TikZ
+% ====================================
+
+\usepackage{tikz,tikz-cd}
+\usepackage{pgfplots}
+\usepackage{tikz-3dplot}
+
+\usetikzlibrary{shapes,calc,positioning,arrows}
+\usetikzlibrary{babel}
+\usetikzlibrary{hobby}
+\usepgfplotslibrary{patchplots}
+\pgfplotsset{compat=1.18}
+
+\usepackage[
+	backend=biber,
+	style=apa,
+	citestyle=authoryear
+]{biblatex}
+\addbibresource{Contenido/B-Bibliografia/bibliografia.bib}
+
+% ====================================
+% Primera letra al estilo Bob Esponja
+% ====================================
+
+% \usepackage{lettrine}
+% \usepackage{GoudyIn}
+% \renewcommand{\LettrineFontHook}{\GoudyInfamily}
+

@@ -1,0 +1,26 @@
+\newfontfamily{\GilliusFont}{Gillius}[
+	Path            =   ./Paquetes/Fuentes/Gillius/,
+	Extension       =   .otf,
+	UprightFont     =   *ADFNo2-Regular,
+	BoldFont        =   *ADFNo2-Bold,
+	ItalicFont      =   *ADFNo2-Italic,
+	BoldItalicFont  =   *ADFNo2-BoldItalic,
+]
+
+\usepackage{newtxtext}
+% \usepackage{newtxmath} % Utiliza otra fuente para el ambiente matemático.
+
+\newcommand{\GilliusUno}{\fontsize{9pt}{12pt}\bfseries \GilliusFont}
+\newcommand{\GilliusDos}{\fontsize{10pt}{12pt}\GilliusFont}
+\newcommand{\GilliusTres}{\fontsize{14pt}{16pt}\GilliusFont}
+\newcommand{\GilliusCuatro}{\fontsize{10}{10}\bfseries\GilliusFont}
+\newcommand{\GilliusCinco}{\fontsize{12}{15}\GilliusFont}
+\newcommand{\GilliusSeis}{\fontsize{15}{15}\fontseries{b}\GilliusFont}
+\newcommand{\GilliusSiete}{\fontsize{12}{14}\GilliusFont}
+\newcommand{\GilliusOcho}{\fontsize{9}{11}\GilliusFont}
+\newcommand{\GilliusNueve}{\fontsize{9}{11}\fontshape{it}\GilliusFont}
+
+\newcommand{\FuenteCapitulo}{\fontsize{15}{17}\bfseries \GilliusFont}
+\newcommand{\FuenteSeccion}{\fontsize{14}{21} \bfseries\usekomafont{section}}
+\newcommand{\FuenteSubseccion}{\bfseries\fontsize{12}{21}\usekomafont{subsection}}
+\newcommand{\FuenteSubssubseccion}{\bfseries\itshape\fontsize{12}{21}\usekomafont{subsubsection}}
