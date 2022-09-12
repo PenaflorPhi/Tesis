@@ -22,7 +22,7 @@ Para abreviar escribiremos \enquote{Sea $M^n$ una variedad topológica},  en lug
 
 La definición que acabamos de dar no es única, en el sentido de que existen diferentes definiciones de lo que es una variedad, algunos autores debilitan algunas de las propiedades, por ejemplo, pidiendo que las variedades sean localmente Hausdorff, otros no piden que sean segundo numerables, y algunos otros piden que el homeomorfismo sea con una vecindad abierta de algún espacio de Banach.
 
-Las propiedades que nosotros pedimos, como iremos viendo a lo largo de está tesis, son bastante agradables para hacer cálculos, ya que, entre otras cosas, nos permitirán extender de manera sencilla funciones locales a toda la variedad y, eventualmente, definir está propiedad nos permitirá definir lo que es una variedad Riemanniana.
+Las propiedades que nosotros pedimos, como iremos viendo a lo largo de esta tesis, son bastante agradables para hacer cálculos, ya que, entre otras cosas, nos permitirán extender de manera sencilla funciones locales a toda la variedad y, eventualmente, definir esta propiedad nos permitirá definir lo que es una variedad Riemanniana.
 
 
 \begin{example}[Espacios Euclidianos]\label{Ex: Variedad Topologica - Espacios Euclidianos}
@@ -36,7 +36,7 @@ Las propiedades que nosotros pedimos, como iremos viendo a lo largo de está tes
 
 \begin{figure}[h]
 	\centering
-  \input{Figuras/A-Figuras/VariedadesTopologicasR2yR3.tex}
+	\input{Figuras/A-Figuras/VariedadesTopologicasR2yR3.tex}
 	\caption{$\R^2$ y $\R^3$ son variedades topológicas}
 \end{figure}
 
@@ -46,7 +46,7 @@ Las propiedades que nosotros pedimos, como iremos viendo a lo largo de está tes
 		\phi(x) = \frac{x}{r - \|x\|}
 	\]
 
-	Está función tiene por inversa a la función $\phi^{-1}: \R^n \to B_r(0)$ dada por:
+	Esta función tiene por inversa a la función $\phi^{-1}: \R^n \to B_r(0)$ dada por:
 	\[ \phi^{-1}(y) = \frac{ry}{1 + \|y\|}
 	\]
 	Dado que la inversa existe $\phi$ es necesariamente una biyección y dado que ambas funciones son diferenciables serán continuas, por lo que $\phi$ es un homeomorfismo de $B_r(0)$ sobre $\R^n$. Por lo tanto, cualquier bola abierta centrada en el origen será una variedad topológica. Existe un homeomorfismo natural entre una bola arbitraria en $\R^n$ y la bola unitaria en $\R^n$ por lo que esto se cumplirá para cualquier bola abierta en $\R^n$.
@@ -102,7 +102,9 @@ A continuación veremos algunos ejemplos más interesantes de variedades topoló
 	Dado que $\|y\| < 1$ la función estará bien definida para cada $y \in \B^n$ y además:
 	\begin{align*}
 		\|\phi_i^{\pm}(y)\| & = (1 + \| y \|^{2}) + \sum_{\substack{j=1, \\ j \neq i}}^{n+1} y_j^2 \\
-		                    & = (1 - \sum_{\substack{j=1,                \\ j \neq i}}^{n+1} y_j^2) + \sum_{\substack{j=1, \\ j \neq i}}^{n+1} y_j^2 \\
+		                    & = \left(
+		1 - \sum_{\substack{j=1,                                         \\ j \neq i}}^{n+1} y_j^2
+		\right) + \sum_{\substack{j=1,                                   \\ j \neq i}}^{n+1} y_j^2 \\
 		                    & = 1
 	\end{align*}
 

@@ -46,11 +46,11 @@ Como hemos mencionado, el diferencial de un mapa suave entre variedades ha sido 
 
 Comenzaremos viendo que en efecto, la representación matricial coincidirá con lo que se podría esperar en espacios euclidianos, esto es, que la matriz sea la matriz Jacobiana.
 
-Consideremos dos espacios euclidianos $\R^n$ y $\R^m$, representaremos sus bases estándar por $\{x_1, \dots, x_n\}$ y $\{y_1, \dots, y_m\}$ respectivamente. Sean $U \subseteq \R^n$ y $V \subseteq \R^m$ subconjuntos abiertos, $p \in U$ un punto arbitrario y $F: U \to V$ una función suave. Utilizando la regla de la cadena para calcular el diferencial de $F$ en $p$ tenemos:
+Consideremos dos espacios euclidianos $\R^n$ y $\R^m$, donde $\{x_1, \dots, x_n\}$ y $\{y_1, \dots, y_m\}$ son las bases estándar respectivas de cada espacio. Sean $U \subseteq \R^n$ y $V \subseteq \R^m$ subconjuntos abiertos, $p \in U$ un punto arbitrario y $F: U \to V$ una función suave. Utilizando la regla de la cadena para calcular el diferencial de $F$ en $p$ tenemos:
 
 % Arreglar
 \begin{align*}
-	d_pF
+	d_{p}F
 	\left(
 	\left. \frac{\partial}{\partial x_i} \right|_{p}
 	\right)
@@ -79,7 +79,7 @@ Consideremos dos espacios euclidianos $\R^n$ y $\R^m$, representaremos sus bases
 	\right|_{F(p)}
 \end{align*}
 
-Por lo tanto la representación matricial de $d_pF$ en términos de las bases elegidas para $\R^n$ y $\R^m$ es:
+Por lo tanto la representación matricial de $d_{p}F$ en términos de las bases elegidas para $\R^n$ y $\R^m$ es:
 
 \[
 	\begin{bmatrix}
@@ -108,8 +108,7 @@ Como se vio en la sección \ref{Sección: Mapas Suaves} el mapa $F$ tiene una re
 		\left(
 		\left. \frac{\partial}{\partial \phi_i} \right|_{p}
 		\right)}_{\left. \frac{\partial}{\partial x_i} \right|_{\phi (p)}}
-	\Biggr)
-	\Biggr)                                                                                           \\
+	\Biggr)	\Biggr)\\
 	                                                                         & =
 	\left. d_p \psi^{-1} \right|_{\hat{F}(\phi(p))}
 	\left(
@@ -145,7 +144,7 @@ Una consecuencia inmediata del lema \ref{Lemma: Definicion Vector Coordenado} es
 \begin{align*}
 	\left. \frac{\partial}{\partial \phi_i}\right|_{p}
 	 & =
-  d_{\phi(p)} \left(\phi^{-1}\right)
+	d_{\phi(p)} \left(\phi^{-1}\right)
 	\left(\left.
 	\frac{\partial}{\partial \phi_i}
 	\right|_{\phi(p)}\right)                                            \\
@@ -180,7 +179,7 @@ Donde $v_i$ y $w_i$ son constantes que dependen de $\omega$, y podemos transform
 \]
 
 \begin{example}
-	Consideremos el mapa de transición entre las coordenadas esféricas y las coordenadas estándar en subconjuntos abierto adecuados de $\R^{3}$ dado por $(x,y,z) = (r \cos \phi \sin \theta, r \sin \phi \sin \theta, r\cos \theta)$. Tomemos el punto $p \in \R^{3}$ con representación en coordenadas esféricas $p = (r,\theta,\phi) = (2,\frac{\pi}{4},\frac{\pi}{4})$ y tomemos un vector tangente $\omega \in T_p(\R^3)$ cuya representación en coordenadas polares esté dada por:
+	Consideremos el mapa de transición entre las coordenadas esféricas y las coordenadas estándar en subconjuntos abierto adecuados de $\R^{3}$, el cual esta por la igualdad $(x,y,z) = (r \cos \phi \sin \theta, r \sin \phi \sin \theta, r\cos \theta)$. Tomemos el punto $p \in \R^{3}$ con representación en coordenadas esféricas $p = (r,\theta,\phi) = (2,\frac{\pi}{4},\frac{\pi}{4})$ y tomemos un vector tangente $\omega \in T_p(\R^3)$ cuya representación en coordenadas polares esté dada por:
 	\[
 		\omega = \left. \frac{\partial}{\partial r} \right|_p -
 		\left. 2\frac{\partial}{\partial \theta} \right|_p +

@@ -61,7 +61,7 @@ En el siguiente ejemplo construiremos una función indicadora suave.
 	\]
 
 
-	Al ser $g$ el cociente de dos funciones suaves, y dado que el denominador no se anula en ningún punto, $g$ estará bien definida en todo $\R$ y además será suave. Lo que está función $g$ nos da es una transición suave del $0$ al $1$, por lo cual, será sencillo construir una función indicadora suave a partir de está, esto se logrará aplicando transformaciones sencillas.
+	Al ser $g$ el cociente de dos funciones suaves, y dado que el denominador no se anula en ningún punto, $g$ estará bien definida en todo $\R$ y además será suave. Lo que esta función $g$ nos da es una transición suave del $0$ al $1$, por lo cual, será sencillo construir una función indicadora suave a partir de esta, esto se logrará aplicando transformaciones sencillas.
 
 	Si tomamos $a,b \in \R$ tales que $a<b$, podemos hacer un cambio de variables del conjunto compacto $[a^2,b^2]$ al conjunto $[0,1]$ del siguiente modo:
 
@@ -69,7 +69,7 @@ En el siguiente ejemplo construiremos una función indicadora suave.
 		x \mapsto \frac{x - a^2}{b^2 - a^2}
 	\]
 
-	Esta transformación nos permite cambiar la escala de $g$  y trasladarla en el eje horizontal,es por está razón que se define $h: \R \to \R$ del siguiente modo,
+	Esta transformación nos permite cambiar la escala de $g$  y trasladarla en el eje horizontal,es por esta razón que se define $h: \R \to \R$ del siguiente modo,
 	\[
 		h(x) = g\left(\frac{x - a^2}{b^2 - a^2}\right)
 		\qquad \qquad
@@ -147,7 +147,7 @@ Lo que haremos a continuación será extender estas ideas, mostraremos que para 
 		\sup f \subset \phi^{-1} (\sup \sigma) \subset V
 	\]
 
-	Está claro que si $p \in V$, $f$ es suave en $p$ dado que $f(p)$ será la imagen de la composición de dos funciones suave. En el caso contrario, si $p \notin V$, entonces podremos elegir una carta $(W,\omega)$ que contengan a $p$ y tal que $W \cap \psi^{-1}(\sup \sigma) = \varnothing$. Entonce esta carta será también disjunta de $\sup f$, por lo que $f(W) \equiv 0$. Por lo tanto, $f$ será una función suave la cual es idénticamente $1$ en una vecindad de $V \subset U$ de $p$ y $\sup f \subset U$. Por lo tanto $f$ es una función indicadora suave en $q$ con soporte en $U$.
+	Es claro que si $p \in V$, $f$ es suave en $p$ dado que $f(p)$ será la imagen de la composición de dos funciones suave. En el caso contrario, si $p \notin V$, entonces podremos elegir una carta $(W,\omega)$ que contengan a $p$ y tal que $W \cap \psi^{-1}(\sup \sigma) = \varnothing$. Entonce esta carta será también disjunta de $\sup f$, por lo que $f(W) \equiv 0$. Por lo tanto, $f$ será una función suave la cual es idénticamente $1$ en una vecindad de $V \subset U$ de $p$ y $\sup f \subset U$. Por lo tanto $f$ es una función indicadora suave en $q$ con soporte en $U$.
 \end{proof}
 
 \begin{lemma}
@@ -200,7 +200,7 @@ Notemos que en el tercer punto de nuestra definición no tendremos problemas de 
 		\end{cases}
 	\]
 
-	Como se mostró en el lema \ref{Lemma: Existencia de Función Indicadora} estás funciones son suaves, más aún, son funciones indicadoras suaves y además $\sup f_i = \overline{B}_i$.
+	Como se mostró en el lema \ref{Lemma: Existencia de Función Indicadora} estas funciones son suaves, más aún, son funciones indicadoras suaves y además $\sup f_i = \overline{B}_i$.
 
 	Con estas funciones podemos definir la función $f: M \to \R$ como $f(p) = \sum_i f_i(x)$. Dado que los $\{B_i\}$ y $\{\overline{B}_i\}$ son localmente finitos, la suma será finita y por lo tanto convergerá. Cómo cada $f_i$ es no negativa en cada punto en $B_i$, y cada punto de $M$ está en algún $B_i$ por ser la colección una cubierta de $M$, se sigue que $f(p) > 0$ para cada $p \in M$. Y por cómo hemos definido $\rho$ cada $f_i$ estará normalizada por lo que $0 \leq f_i \leq 1$ y $\sum_i f_i \equiv 1$.
 

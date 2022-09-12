@@ -38,7 +38,7 @@ Verificar que dos cartas son suavemente compatibles es relativamente sencillo, d
 Por conveniencia, en lugar de escribir \enquote{Sea $(M,\A)$ una variedad suave} diremos simplemente \enquote{Sea $M$ una variedad suave}; esto cuando la estructura suave se pueda entender a partir del contexto o no sea necesario referirnos a ella de forma explícita.
 
 
-Si quisiéramos definir una función $f: M \to \R$ como suave, quizá pudiesemos haber estado inclinados a dar la siguiente definición: \enquote{Una función $f: M \to \R$ es diferenciable si y sólo si para cada carta $(U,\phi)$ se tiene que $f\circ \phi^{-1}: \phi(U) \to \R$ es una función diferenciable}, está definición podría parecernos más natural, sin embargo presenta un problema de ambigüedad ya que, para una misma variedad pueden existir muchos atlas diferentes que generan estructuras similares pero distintas, como veremos en los siguientes ejemplos.
+Si quisiéramos definir una función $f: M \to \R$ como suave, quizá pudiesemos haber estado inclinados a dar la siguiente definición: \enquote{Una función $f: M \to \R$ es diferenciable si y sólo si para cada carta $(U,\phi)$ se tiene que $f\circ \phi^{-1}: \phi(U) \to \R$ es una función diferenciable}, esta definición podría parecernos más natural, sin embargo presenta un problema de ambigüedad ya que, para una misma variedad pueden existir muchos atlas diferentes que generan estructuras similares pero distintas, como veremos en los siguientes ejemplos.
 
 \begin{figure}[h]
 	\begin{center}
@@ -62,7 +62,7 @@ Si quisiéramos definir una función $f: M \to \R$ como suave, quizá pudiesemos
 		\psi(x) = x^3
 	\]
 
-	Está función es un homeomorfismo, y por los ejemplos anteriores sabemos que $(\R, \psi(x))$ es una variedades suave, con la estructura definida por  $\psi$. Sin embargo, al considerar el mapa de transición tenemos que $\id_{\R} \circ \psi^{-1}(y) = y^{\frac{1}{3}}$, y está función no es diferenciable en el origen, por lo cual las cartas no son suavemente compatibles, y las estructuras determinadas por $(\R, \id_{\R})$ y $(\R,\psi)$ serán diferentes.
+	Esta función es un homeomorfismo, y por los ejemplos anteriores sabemos que $(\R, \psi(x))$ es una variedades suave, con la estructura definida por  $\psi$. Sin embargo, al considerar el mapa de transición tenemos que $\id_{\R} \circ \psi^{-1}(y) = y^{\frac{1}{3}}$, y esta función no es diferenciable en el origen, por lo cual las cartas no son suavemente compatibles, y las estructuras determinadas por $(\R, \id_{\R})$ y $(\R,\psi)$ serán diferentes.
 
 \end{example}
 
@@ -96,7 +96,7 @@ Para resolver este problema de ambigüedad es que hemos introducido el concepto 
 
 Lo que estos dos teoremas nos permiten hacer es definir de manera más sencilla la estructura suave para una variedad, ya que, en lugar de tener que describir un atlas maximal podemos simplemente escoger algún atlas suave y sabemos que la estructura determinada será única.
 
-Hay muchos ejemplos de variedad suaves y, como veremos a continuación, a cada una de las variedades topológicas que dimos como ejemplo anteriormente se le puede dar una estructura suave, sin embargo, esto no es cierto en general, hay ejemplos de variedades topológicas a las cuales no se les puede dar una estructura suave. Un resultado interesante que no veremos aquí es que, si $M^n$ es una variedad topológica con $n=1,2,3$, entonces a está se le puede dar una estructura suave, esto fue probado por James Munkres en 1960, la demostración puede ser consultada en \enquote{\textcite{munkres1960obstructions}}.
+Hay muchos ejemplos de variedad suaves y, como veremos a continuación, a cada una de las variedades topológicas que dimos como ejemplo anteriormente se le puede dar una estructura suave, sin embargo, esto no es cierto en general, hay ejemplos de variedades topológicas a las cuales no se les puede dar una estructura suave. Un resultado interesante que no veremos aquí es que, si $M^n$ es una variedad topológica con $n=1,2,3$, entonces a esta se le puede dar una estructura suave, esto fue probado por James Munkres en 1960, la demostración puede ser consultada en \enquote{\textcite{munkres1960obstructions}}.
 
 
 \begin{example}[Espacios Vectoriales Finito-Dimensionales]\label{Ex: Variedad Sauve - Espacios Vectoriales}
@@ -105,7 +105,7 @@ Hay muchos ejemplos de variedad suaves y, como veremos a continuación, a cada u
 	Es posible definir una métrica en $V$, la cual podemos definir del siguiente modo:
 	\[d(x,y) = \|x - y\|\]
 
-	Está métrica nos inducirá una topología, la cual hará de nuestro isomorfismo entre espacios vectoriales un homeomorfismo lineal entre espacios topologicos.
+	Esta métrica nos inducirá una topología, la cual hará de nuestro isomorfismo entre espacios vectoriales un homeomorfismo lineal entre espacios topologicos.
 
 	Al considerar algún otro homeomorfismo lineal $\psi: V \to \R^n$ se tendrá que la composición $\psi \circ \phi^{-1}: \phi(V) \to \R^n$ también es un homeomorfismo, por lo que tanto $\psi$ como $\phi$ determinan la misma topología en $V$. Al ser $\phi$ un homeomorfismo podemos garantizar que $V$ es Hausdorff y segundo numerable. Así, cada espacio vectorial real finito dimensional es una variedad topológica.
 

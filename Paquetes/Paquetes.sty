@@ -20,7 +20,6 @@
 \usepackage{multicol,graphicx,subcaption}
 \usepackage{cancel}
 \usepackage[autostyle]{csquotes}
-\usepackage{hyperref}
 \usepackage[export]{adjustbox} 
 \usepackage[absolute,overlay]{textpos} % Needed to place the text where we want.
 \usepackage{titlesec}
@@ -39,12 +38,18 @@
 \usepgfplotslibrary{patchplots}
 \pgfplotsset{compat=1.18}
 
+
+% ====================================
+% Bibliografía y Referencias
+% ====================================
+
 \usepackage[
 	backend=biber,
 	style=apa,
 	citestyle=authoryear
 ]{biblatex}
 \addbibresource{Contenido/B-Bibliografia/bibliografia.bib}
+\usepackage{hyperref}
 
 % ====================================
 % Primera letra al estilo Bob Esponja

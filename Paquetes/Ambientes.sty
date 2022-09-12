@@ -38,13 +38,13 @@
 \newcommand{\FIX}{
 	\begin{center}
 		\huge
-		----- \textit{\textbf{FIX}} -----
+		\textit{\textbf{FIX}}
 		\normalsize
 	\end{center}
 }
 
 % ====================================
-% Environment
+% Ambientes
 % ====================================
 
 \theoremstyle{definition}
@@ -56,42 +56,39 @@
 \newtheorem{remark}{Nota}[section]
 \renewcommand\qedsymbol{$\blacksquare$}
 
-
-
 % ====================================
 % Capítulos y secciones
 % ====================================
 
 \renewcommand{\chaptertitlename}{}% chapter
 
-\titleformat
-      {\chapter} % Comando
-			[display] % Forma
-      {\FuenteCapitulo} % Formato del título
-			{\chaptertitlename} % Etiqueta
-			{-3.8cm}%4
-      {\chaptertitlename} 
-      [\vspace{-0.7cm}] % Espaciado
+\titleformat{\chapter} % Comando
+[display] % Forma
+{\FuenteCapitulo} % Formato del título
+{\chaptertitlename} % Etiqueta
+{-3.8cm}%4
+{\chaptertitlename}
+[\vspace{-0.7cm}] % Espaciado
 
 
 \titleformat{\section}%0
-			[hang]
-      {\FuenteSeccion}
-			{\thesection\hspace*{10pt}}
-			{0pt}
-			{\raggedright}
-			[\phantomsection] % Esto hace que las hyperreferencias funcionen de manera correcta.
+[hang]
+{\FuenteSeccion}
+{\thesection\hspace*{10pt}}
+{0pt}
+{\raggedright}
+[\phantomsection] % Esto hace que las hyperreferencias funcionen de manera correcta.
 
 \titleformat{\subsection}[hang]%
-			{\FuenteSubseccion}%
-			{\hspace{1.25cm}\thesubsection\hspace*{10pt}}%
-			{0pt}%
-			{\raggedright}%
-			[\phantomsection]
-			
+{\FuenteSubseccion}%
+{\hspace{1.25cm}\thesubsection\hspace*{10pt}}%
+{0pt}%
+{\raggedright}%
+[\phantomsection]
+
 \titleformat{\subsubsection}[hang]%
-      {\FuenteSubssubseccion}%
-			{\hspace{1.25cm}\thesubsubsection\hspace*{10pt}}%
-			{0pt}%
-			{\raggedright}%
-			[\phantomsection]
+{\FuenteSubssubseccion}%
+{\hspace{1.25cm}\thesubsubsection\hspace*{10pt}}%
+{0pt}%
+{\raggedright}%
+[\phantomsection]

@@ -2,10 +2,10 @@
 \subsection{El Espacio Dual de un Espacio Vectorial}
 
 \begin{definition}[Espacio Dual]
-  Sea $V$ un espacio vectorial sobre un campo $\mathbb{K}$. Definiremos el \it{espacio dual (algebraico) de $V$}, denotado como $V^*$, como el conjunto de todos los mapas (en el sentido algebraico) $\phi: V \to \mathbb{K}$. A los elementos del espacios dual, $\omega \in V^*$, se les llamara \it{$1-$formas} o \it{covectores}
+  Sea $V$ un espacio vectorial sobre un campo $\mathbb{K}$. Definiremos el \it{espacio dual (algebraico) de $V$}, denotado como $V^*$, como el conjunto de todos los mapas (en el sentido algebraico) $\omega: V \to \mathbb{K}$. A un elemento del espacios dual, $\omega \in V^*$, se le llama \it{$1-$forma} o \it{covector}
 \end{definition}
 
-Hacemos la aclaración de que estaremos trabajando con el espacio dual algebraico y por conveniencia lo llamaremos simplemente el espacio dual o dual, en nuestro caso no hace ninguna diferencia ni hay perdida de generalidad dado que estamos que estamos trabajando con espacios vectoriales de dimensión finita, por lo que el dual topológico y el dual algebraico coincidirán.
+Hacemos la aclaración de que estaremos trabajando con el espacio dual algebraico y por conveniencia lo llamaremos simplemente el espacio dual o dual, en nuestro caso no hace ninguna diferencia ni hay perdida de generalidad dado que estamos trabajando con espacios vectoriales de dimensión finita, por lo que el dual topológico y el dual algebraico coincidirán.
 
 \begin{example}
   Si $M$ es una variedad suave y $F: M \to \R$ es una función suave, el diferencial de $F$ en un punto $p \in M$, $dF: T_p(M) \to \R$ es un covector.
@@ -18,7 +18,7 @@ Como veremos a continuación, el espacio dual es un espacio vectorial en sí mis
   (a\omega)(x) &= a\omega(x), \quad &&\forall x\in V,\forall a \in\mathbb{K}
 \end{alignat*}
 
-Y más aún, este espacio vectorial es finito dimensión y la dimensión de $V*$ coincide con la dimensión de $V$.
+Más aún, este espacio vectorial es finito dimensional y la dimensión de $V^{*}$ coincide con la dimensión de $V$.
 
 \begin{theorem}
   Si $V$ es un espacio vectorial finito dimensional y $V^{*}$ es su espacio dual, entonces $\dim(V) = \dim(V^{*})$.
@@ -34,7 +34,7 @@ Y más aún, este espacio vectorial es finito dimensión y la dimensión de $V*$
   \]
   Donde $\delta_{ij}$ es la delta de Kronecker, notemos que el conjunto $\{\epsilon_1, \dots, \epsilon_n\}$ es linealmente independiente. Por la linealidad de los covectores tenemos que si:
 \[
-  \sum_{i=1}^{n} a_i \epsilon_i(x) = 0, \quad a \in \mathbb{K}, x \in V
+  \sum_{i=1}^{n} a_i \epsilon_i(x) = 0, \quad a_{i} \in \mathbb{K}, x \in V
 \]
 
   Entonces, si $x = E_j$:
@@ -45,7 +45,7 @@ Y más aún, este espacio vectorial es finito dimensión y la dimensión de $V*$
 
   Esto implica que cada $a_i$ es nulo, por lo que $\{\epsilon_1, \dots, \epsilon_n\}$ es un conjunto linealmente independiente.
 
-  Ahora mostraremos que cada elemento en $V^{*}$ puede ser representado como una combinación lineal de elementos de $\{\epsilon_1, \dots, \epsilon_n\}$ de manera única. Cada $x \in V$ puede ser escrito como una combinación lineal:
+  Ahora mostraremos que cada elemento en $V^{*}$ puede ser representado como una combinación lineal de elementos de $\{\epsilon_1, \dots, \epsilon_n\}$. Cada $x \in V$ puede ser escrito como una combinación lineal:
   \[
     x = \sum_{i=1}^{n} \mu_{i} E_i, \quad \mu_i \in \K
   \]
@@ -62,7 +62,7 @@ Y más aún, este espacio vectorial es finito dimensión y la dimensión de $V*$
     &= \mu_i
   \end{align*}
 
-  Por lo tanto, cada $\epsilon$ puede ser representado de manera única como una combinación lineal en términos de $\epsilon_i$ de la siguiente forma:
+  Por lo tanto, cada $\epsilon$ puede ser representado como una combinación lineal en términos de $\epsilon_i$ de la siguiente forma:
   \[
     \epsilon = \sum_{i=1}^{n} \epsilon_i \epsilon(E_i)
   \]
@@ -71,7 +71,7 @@ Y más aún, este espacio vectorial es finito dimensión y la dimensión de $V*$
 \end{proof}
 
 \begin{example}
-  La base del espacio dual $V*$ está dada como por los vectores file de la matriz inversa a la matriz formada por los vectores bases de $V$.
+  La base del espacio dual $V^{*}$ está dada por los vectores fila de la matriz inversa a la matriz formada por los vectores bases de $V$.
 
   Consideremos una base para $\R^n$ y denotemos dicha base por $\{E_1,\dots,E_n\}$, cada uno de estos vectores puede ser representado como una matriz $1 \times n$ del siguiente modo:
 \[
@@ -128,10 +128,10 @@ Y más aún, este espacio vectorial es finito dimensión y la dimensión de $V*$
 
   En particular, si consideramos la base estándar de $\R^n$ esto nos dice que una base, a la cual llamaremos la base estándar del espacio dual, será:
 \begin{align*}
-  \epsilon_1 &= \begin{bmatrix} 1 & 0 & \dots & 0\end{bmatrix},\\
-  \epsilon_2 &= \begin{bmatrix} 0 & 1 & \dots & 0\end{bmatrix},\\
+  \epsilon_1 &= \begin{bmatrix} 1 & 0 & \cdots & 0\end{bmatrix},\\
+  \epsilon_2 &= \begin{bmatrix} 0 & 1 & \cdots & 0\end{bmatrix},\\
              &\hdots \\
-  \epsilon_n &= \begin{bmatrix} 0 & 0 & \dots & 1\end{bmatrix}
+  \epsilon_n &= \begin{bmatrix} 0 & 0 & \cdots & 1\end{bmatrix}
 \end{align*}
 
 Esto tiene mucho sentido si pensamos que los vectores columnas son matrices $n \times 1$, esto es, transformaciones lineales de $\K$ a $\K^n$, y los covectores son transformaciones lineales de $\K^n$ a $\K$, matrices $1 \times n$
@@ -150,15 +150,15 @@ Esto tiene mucho sentido si pensamos que los vectores columnas son matrices $n \
 \end{lemma}
 
 \begin{proof}
-  Para ver que $A^{*}\omega$ es un covector basta notar que $\omega: W \to \K$ y $A: V \to W$, por lo que la composición será un mapa $\omega \circ A: V \to \K$, lo cual es, por definición, un covector en $V$.
+  Para ver que $A^{*}\omega$ es un covector basta notar que $\omega: W \to \K$ y $A: V \to W$, por lo que la composición $\omega \circ A: V \to \K$ es un mapa que va de $V$ al campo $\mathbb{K}$, lo cual es, por definición, un covector en $V$.
 
-  La linealidad se tiene del simple hecho de que la composición de mapas lineal es un mapa lineal.
+  La linealidad de $A^{*}$ se tiene del hecho de que la composición de mapas lineal es un mapa lineal.
 \end{proof}
 
 \begin{lemma}
 Los mapas duales satisfacen las siguientes propiedades:
   \begin{itemize}
-    \item $(A \circ B)^{*} = B^{*} \circ A^{*}$\\
+    \item $(A \circ B)^{*} = B^{*} \circ A^{*}$.
     \item $(\id_V)^{*} = V^{*} \to V^{*}$ es el mapa identidad en $V$.
   \end{itemize}
 \end{lemma}
@@ -178,7 +178,7 @@ Por otro lado tendremos que:
     &= (\omega \circ A) \circ B
   \end{align*}
 
-  Para la identidad, $\id_V: V \to V$, para cada $\omega \in V*$ y cada $v \in V$ tenemos:
+  Para la identidad, $\id_V: V \to V$, para cada $\omega \in V^{*}$ y cada $v \in V$ tenemos:
 
   \begin{align*}
     (\id_V)^{*}(\omega)(v) &= \omega(\id_V(v))\\

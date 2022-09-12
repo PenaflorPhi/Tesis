@@ -1,8 +1,8 @@
 \documentclass[
   12pt,
-	twoside=false,%
 	openright,%
 	parskip=full,
+  % twoside=true,
 	chapterprefix=true,%	
 	headings=normal,%	
 	bibliography=totoc,%
@@ -13,7 +13,7 @@
 ]{scrreprt}
 
 % ====================================
-% Paqutes y Estilos
+% Paquetes y Estilos
 % ====================================
 
 \usepackage{Paquetes/Paquetes}
@@ -31,7 +31,7 @@
 \newcommand{\region}{Región Xalapa}
 \newcommand{\programa}{Licenciatura en Matemáticas}
 \newcommand{\titulo}{Cálculo de Geodésicas en el Disco de Poincaré}
-\newcommand{\DirectorUno}{Dr. Francisco Gabriel Zamora Hernandez}
+\newcommand{\DirectorUno}{Dr. Francisco Gabriel Hernández Zamora}
 \newcommand{\DirectorDos}{Dr. Evodio Muñoz Aguirre}
 
 
@@ -45,21 +45,12 @@
 % Portada, agradecimientos y dedicatoria
 % ====================================
 
-\pagestyle{empty}
-\input{Contenido/00-Cubierta/00-Portada.tex}
-\cleardoublepage
-
-\pagestyle{empty}
-\input{Contenido/00-Cubierta/01-Legal.tex}
-\cleardoublepage
-
 \pagenumbering{gobble}
+\input{Contenido/00-Cubierta/00-Portada.tex}
+\input{Contenido/00-Cubierta/01-Legal.tex}
 
-\pagestyle{empty}
+
 \input{Contenido/00-Cubierta/02-agradecimientos.tex}
-\cleardoublepage
-
-\pagestyle{empty}
 \input{Contenido/00-Cubierta/03-dedicatoria.tex}
 \cleardoublepage
 
@@ -69,11 +60,12 @@
 
 \setcounter{tocdepth}{3}
 \tableofcontents
+% \listoffigures
 \cleardoublepage
 
 \pagenumbering{arabic} % Esto activa la numeración de las páginas.
-\setcounter{page}{6}
 \pagestyle{plain} % Esto enumera cada una de las páginas, sin esto el número de página solo aparece en los cambios de sección.
+\setcounter{page}{1}
 
 % ====================================
 % Variedades y Mapas
@@ -103,8 +95,6 @@
 \input{Contenido/02-Conceptos-Basicos/11-EspacioCotangente.tex}
 \cleardoublepage
 \input{Contenido/02-Conceptos-Basicos/21-CamposVectoriales.tex}
-\cleardoublepage
-\input{Contenido/02-Conceptos-Basicos/31-AlgebrasMultilineales.tex}
 
 % ====================================
 % Anexos
@@ -112,6 +102,8 @@
 
 \cleardoublepage
 \input{Contenido/A-Anexos/01-ToplogiaDeVariedades.tex}
+\cleardoublepage
+\input{Contenido/A-Anexos/02-AlgebrasMultilineales.tex}
 
 % ====================================
 % Bibliografía

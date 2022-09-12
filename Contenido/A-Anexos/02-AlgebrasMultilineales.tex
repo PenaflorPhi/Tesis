@@ -1,0 +1,59 @@
+\chapter{Álgebra Multilineal y Tensores}\label{Sección: Álgebra Multilineal y Tensores}
+
+En las secciones anteriores hemos trabajado con los espacios tangentes a las variedades y hemos visto que estos tienen estructura de espacios vectoriales, para poder trabajar con varios espacios vectoriales de manera simultanea es necesario trabajar con álgebras multilineales, estas nos darán una generalización del concepto de vector, el cual será el tensor.
+
+\section{Álgebra Multilineal}
+
+Comenzaremos hablando de un tipo muy particular de mapa (en el sentido algebraico) multilineal, estos son mapas que toman dos elementos como entradas y son lineales en ambas entradas.
+
+Algunos mapas bilineales deberían sernos familiares como el producto escalar en espacios euclidianos o  el producto vectorial en $\R^3$
+
+\begin{definition}
+  Sean $V_1,V_2$ y $W$ espacios vectoriales sobre un campo $\mathbb{K}$, y sea $F: V_1 \times V_2 \to W$ un mapa. Diremos que $F$ es \it{bilineal} si cumple que:
+
+\begin{alignat*}{2}
+  F(\lambda x_1 + \mu x_2, y) &= \lambda F(x_1,y) + \mu F(x_2,y)  \quad x,x_1,x_2, \in V_1 &&, y,y_1,y_2 \in V_2\\
+  F(x, \lambda y_1 + \mu y_2) &= \lambda F(x,y_1) + \mu F(x,y_2) \quad &&\lambda ,\mu \in \mathbb{K}
+\end{alignat*}
+\end{definition}
+
+El conjunto formado por todos los elementos de $W$ de la forma $F(x,y), x\in V_1, y\in V_2$ no necesariamente es un espacio vectorial, sin embargo, el conjunto formado por todos los mapas bilineales de $V_1\times V_2$ a $W$, el cual denotaremos por $L(V_1,V_2;W)$ puede ser dotado con la estructura de un espacio vectorial si definimos la suma y el producto por un escalar como sigue:
+
+\begin{align*}
+  (F + G)(x,y) &= F(x,y) + G(x,y) & x\in V_1, y\in V_2\\
+  (\lambda F)(x,y) &= \lambda F(x,y) & \lambda \in \mathbb{K}, F,G \in L(V_1,V_2;W)
+\end{align*}
+
+  Como hemos mencionado, un ejemplo de un mapa bilineal es el producto escalar en $\R^n$, como recordatorio, el producto escalar es un mapa $\la \cdot , \cdot \ra: \R^n \times \R^n \to \R$ que definimos como:
+
+\[
+  \la x,y \ra = \sum_{i=1}^{n} x_i y_i, \quad\quad
+  \begin{array}{l}
+  x=[x_1,\dots,x_n] \in \R^n\\
+  y=[y_1,\dots,y_n] \in \R^n
+  \end{array}
+\] 
+
+Más adelante extenderemos la idea del producto escalar, esta es en gran parte la razón por la que estamos interesados en los mapas multilineales y los tensores ya que nos permitirán realizar algunos cálculos importantes en variedades, como por ejemplo medir ángulos.
+
+Ahora extenderemos la idea de un mapa bilineal.
+
+\begin{definition}
+  Sean $\{V_i\}_{i=1}^{n}$ y $W$ espacios vectoriales sobre un campo escalar $\mathbb{K}$, y  sea $F: V_1 \times \cdots \times V_n \to W$ un mapa. Diremos que $F$ es \it{$n$-lineal} o \it{multilineal} si cada $1 \leq i \leq n$ y cuales quiera $x_i,y_i \in V_i$ y $\lambda,\mu \in \mathbb{K}$ se cumple 
+
+  \[ F(x_1, \dots, \lambda x_i + \mu y_i, \dots, x_n) = \lambda F(x_1, \dots, x_i, \dots, x_n) + \mu F(x_1, \dots, y_i, \dots, x_n) \]
+\end{definition}
+
+De modo similar que con los mapas bilineales, al conjunto de todos los mapas multilineales de $V_1 \times \cdots \times V_n$ a $W$, denotado $L(V_1, \ldots, V_n; W)$, se le puede dar estructura de espacio vectorial al definir la suma y el producto por un escalar como sigue:
+
+\begin{align*}
+  (F+G)(x_1,\ldots,x_n) &= F(x_1,\ldots,x_n) + G(x_1,\ldots,x_n) & x_i \in V_i, \lambda \in \mathbb{K}\\
+  (\lambda F)(x_1,\ldots,x_n) &= \lambda F(x_1,\ldots,x_n) & F,G \in L(V_1,\ldots,V_n;W)
+\end{align*}
+
+  Evidentemente, todo mapa bilineal es multilineal, en particular podríamos decir que es $2-$lineal. Otro ejemplo de un mapa multilineal además del producto escalar es el determinante. Dado que si tomamos $n+1$ vectores, $x_1, \ldots, x_n, y \in \R^n$ y un escalar $\lambda \in \R$, el determinante es un mapa que va de $\R^n \times \cdots \times \R^n$ a $\R^n$ para el cual se cumple:
+\begin{align*}
+  \det(\begin{bmatrix}x_1 & \cdots & \lambda x_i + y & \cdots & x_n \end{bmatrix}) = \lambda &
+  \det(\begin{bmatrix}x_1 & \cdots &x_i&\cdots& x_n \end{bmatrix})\\ 
+    &+ \det(\begin{bmatrix}x_1 & \cdots & y & \cdots & x_n \end{bmatrix})
+\end{align*}

@@ -90,7 +90,7 @@ A las componentes del mapa $\hat{\phi}: TM \to \R^{2n}$ que hemos definido le ll
 
 Es importante tener claro que, si bien para algunas variedades es posible visualizar su fibrado tangente como el producto cartesiano de la variedad con $\R^n$ y esto nos da una cierta intuición de su estructura suave, como es el caso del fibrado tangente de $\R^n$, el cual será difeomorfas a $\R^{2n}$ o el fibrado tangente de $\S^{1}$, el cual es posible visualizar como un cilindro, no siempre es posible visualizar a los fibrados tangentes como el producto de variedades ya que los difeomorfismo no siempre están definidos de manera global.
 
-Ahora podemos considerar qué es lo que sucede cuando tomamos el diferencial en cada uno de los puntos de un mapa suave $F: M \to N$, donde $M$ y $N$, evidentemente este tendría que ser un mapa que vaya del fibrado tangente de $M$ al fibrado tangente de $N$, esto es, el diferencial de $F$ en cada punto de $M$, al cual llamaremos \it{diferencial global} es un mapa $dF: TM \to TN$, y como extensión que es del diferencial en un punto se tendría que al restringirnos a un espacio tangente particular $T_p(M)$, el diferencial global $dF$ coincidirá con el diferencial de $F$ en $p$, $d_pF$.
+Ahora podemos considerar qué es lo que sucede cuando tomamos el diferencial en cada uno de los puntos de un mapa suave $F: M \to N$, donde $M$ y $N$, evidentemente este tendría que ser un mapa que vaya del fibrado tangente de $M$ al fibrado tangente de $N$, esto es, el diferencial de $F$ en cada punto de $M$, al cual llamaremos \it{diferencial global} es un mapa $dF: TM \to TN$, y como extensión que es del diferencial en un punto se tendría que al restringirnos a un espacio tangente particular $T_p(M)$, el diferencial global $dF$ coincidirá con el diferencial de $F$ en $p$, $d_{p}F$.
 
 \begin{theorem}
 	Si $M^{n}$ y $N^{k}$ son variedades suaves y $F: M \to N$ es un mapa suave, el diferencial global $dF: TM \to TN$ es un mapa suave.
@@ -99,7 +99,7 @@ Ahora podemos considerar qué es lo que sucede cuando tomamos el diferencial en 
 \begin{proof}
 	Como se vio hace unos párrafos, el diferencial de $F$ en un punto $p$, $dF_p$ tiene una representación coordenada como:
 	\[
-		d_pF \left( \left. \frac{\partial}{\partial x_i} \right|_{p}\right)
+    d_{p}F \left( \left. \frac{\partial}{\partial x_i} \right|_{p}\right)
 		=
 		\sum_{i=1}^{n} \frac{\partial \hat{F}_j}{\partial x_i} (\phi(p)) \left. \frac{\partial}{\partial y_j} \right|_{F(p)}
 	\]
