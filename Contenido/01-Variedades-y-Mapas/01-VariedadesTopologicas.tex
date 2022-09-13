@@ -16,7 +16,7 @@ Para abreviar escribiremos \enquote{Sea $M^n$ una variedad topológica},  en lug
 \begin{figure}[h!]
 	\begin{center}
 		\input{./Figuras/A-Figuras/LocalmenteEuclidianoN.tex}
-		\caption{Ejemplo de un homeomorfismo de una variedad a $\R^{2}$}
+		\caption{Representación de un homeomorfismo de una variedad a $\R^{2}$.}
 	\end{center}
 \end{figure}
 
@@ -37,25 +37,25 @@ Las propiedades que nosotros pedimos, como iremos viendo a lo largo de esta tesi
 \begin{figure}[h]
 	\centering
 	\input{Figuras/A-Figuras/VariedadesTopologicasR2yR3.tex}
-	\caption{$\R^2$ y $\R^3$ son variedades topológicas}
+	\caption{$\R^2$ y $\R^3$ son variedades topológicas.}
 \end{figure}
 
 \begin{example}[Bolas Abiertas]\label{Ex: Variedad Topologica - Bolas Abiertas}
 	Otro ejemplo sencillo de variedad topológica son las bolas abiertas en $(\R^n,d)$, donde nuevamente $d$ es la función distancia usual. La topología inducida en la bola hereda el ser Hausdorff y la segundo numerabilidad. Sin pérdida de generalidad podemos suponer que la bola está centrada en el origen y tomarla como la vecindad abierta, así podremos tomar la función $\phi: B_r(0) \to \R^n$ definida por:
 	\[
-		\phi(x) = \frac{x}{r - \|x\|}
+		\phi(x) = \frac{x}{r - \|x\|}.
 	\]
 
-	Esta función tiene por inversa a la función $\phi^{-1}: \R^n \to B_r(0)$ dada por:
-	\[ \phi^{-1}(y) = \frac{ry}{1 + \|y\|}
+	Esta función tiene como inversa a la función $\phi^{-1}: \R^n \to B_r(0)$ dada por:
+	\[ \phi^{-1}(y) = \frac{ry}{1 + \|y\|}.
 	\]
-	Dado que la inversa existe $\phi$ es necesariamente una biyección y dado que ambas funciones son diferenciables serán continuas, por lo que $\phi$ es un homeomorfismo de $B_r(0)$ sobre $\R^n$. Por lo tanto, cualquier bola abierta centrada en el origen será una variedad topológica. Existe un homeomorfismo natural entre una bola arbitraria en $\R^n$ y la bola unitaria en $\R^n$ por lo que esto se cumplirá para cualquier bola abierta en $\R^n$.
+  Dado que la función inversa existe, $\phi$ es necesariamente una biyección y como ambas funciones son diferenciables serán continuas, por lo que $\phi$ es un homeomorfismo de $B_r(0)$ sobre $\R^n$. Por lo tanto, cualquier bola abierta centrada en el origen será una variedad topológica. Existe un homeomorfismo natural entre una bola arbitraria en $\R^n$ y la bola unitaria en $\R^n$, por lo cual cualquier bola abierta en $\R^n$ será una variedad topológica.
 \end{example}
 
-\begin{figure}
+\begin{figure}[h]
 	\centering
 	\input{./Figuras/A-Figuras/BolaAbierta.tex}
-	\caption{Una bola abierta en $\R^{2}$ es una variedad topológica}
+	\caption{Una bola abierta en $\R^{2}$ es una variedad topológica.}
 \end{figure}
 
 
@@ -80,23 +80,23 @@ A continuación veremos algunos ejemplos más interesantes de variedades topoló
 
 	Para mostrar que $\S^n$ es localmente euclidiana utilizaremos su proyección sobre el hiperplano $\R^{n}$. Para cada índice $i=1, \hdots, n+1$ definiremos los siguientes subconjuntos de $\S^n$:
 	\begin{align*}
-		U_{i}^{+} & = \{(x_1,\hdots,x_{n+1}) \in \R^{n+1}: x^i > 0\} \\
-		U_{i}^{-} & = \{(x_1,\hdots,x_{n+1}) \in \R^{n+1}: x^i < 0\}
+		U_{i}^{+} & = \{(x_1,\hdots,x_{n+1}) \in \R^{n+1}: x^i > 0\}, \\
+		U_{i}^{-} & = \{(x_1,\hdots,x_{n+1}) \in \R^{n+1}: x^i < 0\}.
 	\end{align*}
 
 	Notemos que tendremos $2n + 2$ de estos subconjuntos de $\S^n$ y que estos cubrirán a $\S^n$. Sean $\pi_i: \R^{n+1} \to \R^n$ las funciones proyección que omiten la $i-$ésima coordenada, esto es,
 	\[
-		\pi_i(x_1,\hdots,x_i,\hdots,x_{n+1}) = (x_1,\hdots,x_{i-1},x_{i+1}\hdots,x_{n+1})
+		\pi_i(x_1,\hdots,x_i,\hdots,x_{n+1}) = (x_1,\hdots,x_{i-1},x_{i+1}\hdots,x_{n+1}).
 	\]
 
 	La imagen de cualquier conjunto $U_{i}^{\pm}$ bajo $\pi_i$ será un subconjunto de la bola unidad $\B^n$ en $\R^n$, esto dado que para cualquier $x=(x_1, \hdots, x_{n+1}) \in U_{i}^{\pm}$ se tiene que
 	\[
-		\|\pi_i(x)\| = \sqrt{\sum_{j=1, j\neq i}^{n+1} x_j^2} < \sqrt{\sum_{j=1}^{n+1} x_j^2} = 1
+		\|\pi_i(x)\| = \sqrt{\sum_{j=1, j\neq i}^{n+1} x_j^2} < \sqrt{\sum_{j=1}^{n+1} x_j^2} = 1.
 	\]
 
 	Ahora definamos funciones $\phi_i^{\pm}: \B^n \to \R^{n+1}$ como sigue, para cada $y=(y_1, \dots, \hat{y_i}, \dots, y_n) \in \B^n$, donde $\hat{y_i}$ significa que no estamos considerando el $i-$ésimo termino:
 	\[
-		\phi_{i}^{\pm}(y_1, \hdots, y_n) =  (y_1, \hdots, y_{i-1}, \pm\sqrt{1 - \|y\|^2}, y_{i+1}, \hdots, y_{n+1})
+		\phi_{i}^{\pm}(y_1, \hdots, y_n) =  (y_1, \hdots, y_{i-1}, \pm\sqrt{1 - \|y\|^2}, y_{i+1}, \hdots, y_{n+1}).
 	\]
 
 	Dado que $\|y\| < 1$ la función estará bien definida para cada $y \in \B^n$ y además:
@@ -105,7 +105,7 @@ A continuación veremos algunos ejemplos más interesantes de variedades topoló
 		                    & = \left(
 		1 - \sum_{\substack{j=1,                                         \\ j \neq i}}^{n+1} y_j^2
 		\right) + \sum_{\substack{j=1,                                   \\ j \neq i}}^{n+1} y_j^2 \\
-		                    & = 1
+		                    & = 1.
 	\end{align*}
 
 	Por lo que $\phi_i^{\pm}(\B^n) \subset U_{i}^{\pm}$. Si ahora consideramos las restricciones $\tau_i^{\pm} = \pi_i |_{U_i^{\pm}}: U_i^{\pm} \to \B^n$ tendremos que $\tau_i^{\pm} \circ \phi_i^{\pm} = \id_{\B^n}$ y $\phi_i^{\pm} \circ \tau_i^{\pm} = \id_{U_i^{\pm}}$. Esto demostraría que existe una biyección entre cada uno de los conjuntos $U_i^{\pm}$ y la bola unidad $\B^n$ en $\R^n$, además de esto, tanto $\tau_i^{\pm}$ como $\phi_i^{\pm}$ son funciones continuas por lo que serán homeomorfismos, y, como cada $x \in S^n$ está contenido en algún $U_i^{\pm}$, concluimos que $\S^n$ es una variedad topológica de dimensión $n$.
@@ -123,7 +123,7 @@ A continuación veremos algunos ejemplos más interesantes de variedades topoló
 	En efecto, comencemos considerando el caso del producto de dos variedades. Sean $M_{1}^{n_1}$ y $M_{2}^{n_2}$ variedades topológicas. Como el producto arbitrario de espacios de Hausdorff es Hausdorff, tendremos que $M_1 \times M_2$ es Hausdorff. Además, como el producto numerable de espacios segundo numerables es segundo numerable $M_1 \times M_2$ es segundo numerable.
 	Para cada punto $(x,y) \in M_1 \times M_2$ existirá un conjunto abierto $U \times V$ donde $U$ es el dominio de una carta $(U,\phi)$ en $M_1$ que contiene que a $x$ y $V$ es el dominio de una carta $(V,\psi)$ que contiene a $y$, por definición de cartas coordenadas $\phi: U \to \R^{n_1}$ y $\psi: V \to \R^{n_2}$ son homeomorfismo, por lo que podemos definir la función $F: U \times V \to \R^{n_1 + n_2}$ como:
 	\[
-		F(x,y) = (\phi(x),\psi(y))
+		F(x,y) = (\phi(x),\psi(y)).
 	\]
 
 	Dado que $\phi$ y $\psi$ son homeomorfismo en particular serán funciones continuas, por lo que podemos garantizar que $F$ es continua y además es invertible, en particular, su inversa estará dada por $F^{-1}(a,b) = (\phi^{-1}(a),\psi^{-1}(b))$ y como las inversas de $\phi$  y $\psi$ también son continuas $F^{-1}$ es un mapa continuo. Así, $F$ es un homeomorfismo de $U \times V$ sobre $\R^{n_1 + n_2}$, como esto se cumple para cada punto $(x,y) \in M_1 \times M_2$ podemos concluir que el producto $M_1 \times M_2$ es una variedad topológica.
@@ -134,7 +134,7 @@ A continuación veremos algunos ejemplos más interesantes de variedades topoló
 \begin{example}[$n-$Toro]\label{Ex: Variedad Topologica - Toro}
 	El toro $n$-dimensional, que se denota por $\T^n$, y que se define como:
 	\[
-		\T^n = \underbrace{\S^1 \times \hdots \times \S^1}_{n-\text{veces}}
+		\T^n = \underbrace{\S^1 \times \hdots \times \S^1}_{n-\text{veces}}.
 	\]
 
 	Esto se puede ver a partir de los ejemplos \ref{Ex: Variedad Topologica - Esfera} y \ref{Ex: Variedad Topologica - Producto de Variedades}, ya que son el producto finito de variedades topológicas.
@@ -143,5 +143,5 @@ A continuación veremos algunos ejemplos más interesantes de variedades topoló
 \begin{figure}[h]
 	\centering
 	\input{./Figuras/A-Figuras/Toro.tex}
-	\caption{El toro $\mathbb{T}^{2}$ es una variedad topológica}
+	\caption{El toro $\mathbb{T}^{2}$ es una variedad topológica.}
 \end{figure}

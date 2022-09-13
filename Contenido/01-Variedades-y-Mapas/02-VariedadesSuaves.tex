@@ -63,7 +63,6 @@ Si quisiéramos definir una función $f: M \to \R$ como suave, quizá pudiesemos
 	\]
 
 	Esta función es un homeomorfismo, y por los ejemplos anteriores sabemos que $(\R, \psi(x))$ es una variedades suave, con la estructura definida por  $\psi$. Sin embargo, al considerar el mapa de transición tenemos que $\id_{\R} \circ \psi^{-1}(y) = y^{\frac{1}{3}}$, y esta función no es diferenciable en el origen, por lo cual las cartas no son suavemente compatibles, y las estructuras determinadas por $(\R, \id_{\R})$ y $(\R,\psi)$ serán diferentes.
-
 \end{example}
 
 Para resolver este problema de ambigüedad es que hemos introducido el concepto atlas maximal. Lo que el atlas maximal nos garantiza es que cada carta que sea suavemente compatible con cualquier otra carta en el atlas estará ya incluida en el mismo.
@@ -86,12 +85,11 @@ Para resolver este problema de ambigüedad es que hemos introducido el concepto 
 \end{theorem}
 
 \begin{proof}
-	\begin{itemize}
-		\item [$\implies$] Sean $\A$ y $\mathcal{B}$ dos atlas suaves en $M$ y que ambos determinan la misma estructura suave. Por el teorema anterior sabemos que esto significa que existe un atlas suave maximal $\mathcal{C}$ tal que $\A \subset \mathcal{C}$ y $\mathcal{B} \subset \mathcal{C}$.
+	Sean $\A$ y $\mathcal{B}$ dos atlas suaves en $M$ y que ambos determinan la misma estructura suave. Por el teorema anterior sabemos que esto significa que existe un atlas suave maximal $\mathcal{C}$ tal que $\A \subset \mathcal{C}$ y $\mathcal{B} \subset \mathcal{C}$.
 
-		      Si consideramos una carta $(U,\phi) \in \A \cup \mathcal{B}$ esta deberá estar contenida en $\A$ o $\mathcal{B}$, podemos suponer sin pérdida de generalidad que está contenida en $\A$, también estará contenida en $\mathcal{C}$ y por construcción cada carta en $\mathcal{C}$ debe ser suavemente compatible con cada carta en $\mathcal{B}$, análogamente para el caso en que la carta está contenida en $\mathcal{B}$. Por lo tanto, podemos concluir que $\A \cup \mathcal{B}$ es un atlas suave.
-		\item [$\impliedby$] Supongamos ahora que $\A \cup \mathcal{B}$ es un atlas suave. Dado que las estructuras suaves determinadas por $\A$ y $\mathcal{B}$ ambas contendrán a $\A \cup \mathcal{B}$, y que por el teorema anterior hay una única estructura suave que contiene a $\A \cup \mathcal{B}$ podemos concluir que $\A$ y $\mathcal{B}$ determinan la misma estructura suave.
-	\end{itemize}
+	Si consideramos una carta $(U,\phi) \in \A \cup \mathcal{B}$ esta deberá estar contenida en $\A$ o $\mathcal{B}$, podemos suponer sin pérdida de generalidad que está contenida en $\A$, también estará contenida en $\mathcal{C}$ y por construcción cada carta en $\mathcal{C}$ debe ser suavemente compatible con cada carta en $\mathcal{B}$, análogamente para el caso en que la carta está contenida en $\mathcal{B}$. Por lo tanto, podemos concluir que $\A \cup \mathcal{B}$ es un atlas suave.
+
+	Supongamos ahora que $\A \cup \mathcal{B}$ es un atlas suave. Dado que las estructuras suaves determinadas por $\A$ y $\mathcal{B}$ ambas contendrán a $\A \cup \mathcal{B}$, y que por el teorema anterior hay una única estructura suave que contiene a $\A \cup \mathcal{B}$ podemos concluir que $\A$ y $\mathcal{B}$ determinan la misma estructura suave.
 \end{proof}
 
 Lo que estos dos teoremas nos permiten hacer es definir de manera más sencilla la estructura suave para una variedad, ya que, en lugar de tener que describir un atlas maximal podemos simplemente escoger algún atlas suave y sabemos que la estructura determinada será única.
@@ -117,7 +115,6 @@ Hay muchos ejemplos de variedad suaves y, como veremos a continuación, a cada u
 
 	De modo similar al ejemplo \ref{Ex: Variedad Topologica - Bolas Abiertas} podemos mostrar que en general los subconjuntos abiertos de las variedades topológicas son, en sí mismos, variedades topológicas.
 
-
 	Si $M$ es una variedad topológica y $U \subset M$ es abierto, entonces la topología inducida en $U$ heredará el ser Hausdorff y segundo numerable. Cada punto en $U$ está contenido en una carta de la variedad; dicha carta restringida a $U$ y el mapa coordenado nos da un homeomorfismo entre $U$ y algún conjunto abierto en $\R^n$, por lo que $U$ es una variedad topológica. Usualmente cuando hablamos de un subconjunto abierto de una variedad para enfatizar nos referiremos a él como una \it{subvariedad abierta}.
 
 	Dado que $M$ es una variedad suave, existirá un atlas maximal $\A = \{(V_i,\phi_i) \}_{i \in I}$ en $M$, para cualquier conjunto abierto $U$ de $M$ podemos considerar el atlas:
@@ -127,18 +124,16 @@ Hay muchos ejemplos de variedad suaves y, como veremos a continuación, a cada u
 \end{example}
 
 \begin{example}[$n-$Esfera]
-	La $n$-esfera $\S^n$ es una variedad suave. 
+	La $n$-esfera $\S^n$ es una variedad suave.
 
-\begin{figure}[h]
-	\begin{center}
-		\input{./Figuras/A-Figuras/EsferaCartas.tex}
-		\caption{Representación de cuatro de las seis cartas suaves con las que cubrimos a la $2-$esfera.}
-	\end{center}
-\end{figure}
+	\begin{figure}[h]
+		\begin{center}
+			\input{./Figuras/A-Figuras/EsferaCartas.tex}
+			\caption{Representación de cuatro de las seis cartas suaves con las que cubrimos a la $2-$esfera.}
+		\end{center}
+	\end{figure}
 
-
-
-  Si consideramos los conjuntos de cartas que $\{(U_i^{\pm}, \phi_{i}^{\pm})\}_{i=1}^{n}$ y las inversas de estas funciones se definen en el ejemplo \ref{Ex: Variedad Topologica - Esfera}. Para cualesquiera dos cartas se tendrán dos casos, los índices $i,j$ son iguales o son diferentes. En el caso en que los índices son iguales se tiene que el mapa de transición es:
+	Si consideramos los conjuntos de cartas que $\{(U_i^{\pm}, \phi_{i}^{\pm})\}_{i=1}^{n}$ y las inversas de estas funciones se definen en el ejemplo \ref{Ex: Variedad Topologica - Esfera}. Para cualesquiera dos cartas se tendrán dos casos, los índices $i,j$ son iguales o son diferentes. En el caso en que los índices son iguales se tiene que el mapa de transición es:
 
 	\[ \phi_i^{+} \circ \left(\phi_{i}^{-}\right)^{-1} = \phi_i^{-} \circ \left(\phi_{i}^{+}\right)^{-1} = \id_{\B^n} \]
 	En el caso en el que los índices son diferentes tendremos que el mapa de transición está dado como:
@@ -146,7 +141,6 @@ Hay muchos ejemplos de variedad suaves y, como veremos a continuación, a cada u
 
 	En ambos casos las composiciones son diferenciables y en ningún punto cero, podemos concluir entonces que ambas son difeomorfismos. Por lo tanto determinan una estructura suave en $\S^n$.
 \end{example}
-
 
 \begin{example}[Producto Finito de Variedades Suaves]\label{Ex: Variedad Suave - Producto de Variedades Suaves}
 	Si $M_1^{n_1},\dots,M_k^{n_k}$ son variedades suaves entonces $M_1 \times \dots \times M_k$ es una variedad suave. Como se hizo en el ejemplo \ref{Ex: Variedad Topologica - Producto de Variedades} procederemos considerando el producto de únicamente dos variedades suaves, el caso para el producto de un número arbitrario pero finito se seguirá por inducción.
