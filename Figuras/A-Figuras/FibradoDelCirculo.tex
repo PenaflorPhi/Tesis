@@ -1,0 +1,66 @@
+\begin{tikzpicture}[scale=1.20]
+  \path[use as bounding box] (-1.05,-1.8) rectangle (1.05,1.8);
+
+	% Lineas Traseras
+	\draw[color=red,opacity=0.75] (0.1,-2.0) -- (0.1,0.0);
+	\draw[color=red,opacity=0.75] (0.3,-2.0) -- (0.3,0.0);
+	\draw[color=red,opacity=0.75] (0.5,-2.0) -- (0.5,0.0);
+	\draw[color=red,opacity=0.75] (0.7,-2.0) -- (0.7,0.0);
+	\draw[color=red,opacity=0.75] (0.9,-2.0) -- (0.9,0.0);
+	\draw[color=red,opacity=0.75] (-0.1,-2.0) -- (-0.1,0.0);
+	\draw[color=red,opacity=0.75] (-0.3,-2.0) -- (-0.3,0.0);
+	\draw[color=red,opacity=0.75] (-0.5,-2.0) -- (-0.5,0.0);
+	\draw[color=red,opacity=0.75] (-0.7,-2.0) -- (-0.7,0.0);
+	\draw[color=red,opacity=0.75] (-0.9,-2.0) -- (-0.9,0.0);
+	\fill[white] (-1,-1.5) arc (0:180:-1 and 0.25) -- (1,-2) -- (-1,-2)--(-1,-1.5);
+
+	% Elipse
+	\draw[blue,thick] (0,0) ellipse (1 and 0.25);
+
+	% Lineas Frontales
+	\draw[red] (0.0,-2.0) -- (0.0,0.0);
+	\draw[red] (0.2,-2.0) -- (0.2,0.0);
+	\draw[red] (0.4,-2.0) -- (0.4,0.0);
+	\draw[red] (0.6,-2.0) -- (0.6,0.0);
+	\draw[red] (0.8,-2.0) -- (0.8,0.0);
+	\draw[red] (1.0,-2.0) -- (1.0,0.0);
+	\draw[red] (-0.2,-2.0) -- (-0.2,0.0);
+	\draw[red] (-0.4,-2.0) -- (-0.4,0.0);
+	\draw[red] (-0.6,-2.0) -- (-0.6,0.0);
+	\draw[red] (-0.8,-2.0) -- (-0.8,0.0);
+	\draw[red] (-1.0,-2.0) -- (-1.0,0.0);
+
+  \draw[thick,white,fill=white] (-1,-1.50) arc (0:180:-1 and -0.25) -- (1,-2) -- (-1,-2) -- cycle;
+
+	\begin{scope}[rotate around={180:(0,0)}]
+	\draw[red] (0.1,-2.0) -- (0.1,0.0);
+	\draw[red] (0.3,-2.0) -- (0.3,0.0);
+	\draw[red] (0.5,-2.0) -- (0.5,0.0);
+	\draw[red] (0.7,-2.0) -- (0.7,0.0);
+	\draw[red] (0.9,-2.0) -- (0.9,0.0);
+	\draw[red] (-0.1,-2.0) -- (-0.1,0.0);
+	\draw[red] (-0.3,-2.0) -- (-0.3,0.0);
+	\draw[red] (-0.5,-2.0) -- (-0.5,0.0);
+	\draw[red] (-0.7,-2.0) -- (-0.7,0.0);
+	\draw[red] (-0.9,-2.0) -- (-0.9,0.0);
+	\fill[white] (-1,-1.5) arc (0:180:-1 and 0.25) -- (1,-2) -- (-1,-2)--(-1,-1.5);
+
+	% Elipse
+	\draw[blue,thick] (0,0) ellipse (1 and 0.25);
+
+	% Lineas Frontales
+	\draw[red] (0.0,-2.0) -- (0.0,0.0);
+	\draw[red] (0.2,-2.0) -- (0.2,0.0);
+	\draw[red] (0.4,-2.0) -- (0.4,0.0);
+	\draw[red] (0.6,-2.0) -- (0.6,0.0);
+	\draw[red] (0.8,-2.0) -- (0.8,0.0);
+	\draw[red] (1.0,-2.0) -- (1.0,0.0);
+	\draw[red] (-0.2,-2.0) -- (-0.2,0.0);
+	\draw[red] (-0.4,-2.0) -- (-0.4,0.0);
+	\draw[red] (-0.6,-2.0) -- (-0.6,0.0);
+	\draw[red] (-0.8,-2.0) -- (-0.8,0.0);
+	\draw[red] (-1.0,-2.0) -- (-1.0,0.0);
+
+	\draw[thick,white,fill=white] (-1,-1.5) arc (0:180:-1 and -0.25) -- (1,-2) -- (-1,-2) -- cycle;
+	\end{scope}
+\end{tikzpicture}

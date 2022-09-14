@@ -1,0 +1,42 @@
+\begin{tikzpicture}[scale=0.70]
+	\begin{axis}[
+			% grid=both,
+			xmin=-3*pi/2,
+			xmax=3*pi/2,
+			ymin=-1.6,
+			ymax=1.6,
+			axis lines=middle,
+			axis line style={latex-latex},
+			axis equal,
+		]
+
+		\addplot[
+			samples=200,
+			domain=-4*pi:4*pi,
+			color=blue,
+			thick,
+			smooth,
+		]
+		{sin(deg(x))};
+
+\addplot+[mark=*, mark options={black},mark size=1pt] coordinates {( -4.188790 , 0.866025 )};
+\addplot[thick, smooth,domain=-pi:pi,red] coordinates {(-4.188790,-5)(-4.188790,5)};
+\addplot+[mark=*, mark options={black},mark size=1pt] coordinates {( -3.141593 , -0.000000 )};
+\addplot[thick, smooth,domain=-pi:pi,red] coordinates {(-3.141593,-5)(-3.141593,5)};
+\addplot+[mark=*, mark options={black},mark size=1pt] coordinates {( -2.094395 , -0.866025 )};
+\addplot[thick, smooth,domain=-pi:pi,red] coordinates {(-2.094395,-5)(-2.094395,5)};
+\addplot+[mark=*, mark options={black},mark size=1pt] coordinates {( -1.047197 , -0.866025 )};
+\addplot[thick, smooth,domain=-pi:pi,red] coordinates {(-1.047197,-5)(-1.047197,5)};
+\addplot+[mark=*, mark options={black},mark size=1pt] coordinates {( 0.000000 , 0.000000 )};
+\addplot[thick, smooth,domain=-pi:pi,red] coordinates {(0.000000,-5)(0.000000,5)};
+\addplot+[mark=*, mark options={black},mark size=1pt] coordinates {( 1.047198 , 0.866025 )};
+\addplot[thick, smooth,domain=-pi:pi,red] coordinates {(1.047198,-5)(1.047198,5)};
+\addplot+[mark=*, mark options={black},mark size=1pt] coordinates {( 2.094395 , 0.866025 )};
+\addplot[thick, smooth,domain=-pi:pi,red] coordinates {(2.094395,-5)(2.094395,5)};
+\addplot+[mark=*, mark options={black},mark size=1pt] coordinates {( 3.141593 , -0.000000 )};
+\addplot[thick, smooth,domain=-pi:pi,red] coordinates {(3.141593,-5)(3.141593,5)};
+\addplot+[mark=*, mark options={black},mark size=1pt] coordinates {( 4.188790 , -0.866026 )};
+\addplot[thick, smooth,domain=-pi:pi,red] coordinates {(4.188790,-5)(4.188790,5)};	
+
+\end{axis}
+\end{tikzpicture}

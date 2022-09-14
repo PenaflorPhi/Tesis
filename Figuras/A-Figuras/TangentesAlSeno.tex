@@ -1,0 +1,43 @@
+\begin{tikzpicture}[scale=0.70]
+	\begin{axis}[
+			% grid=both,
+			xmin=-3*pi/2,
+			xmax=3*pi/2,
+			ymin=-1.6,
+			ymax=1.6,
+			axis lines=middle,
+			axis line style={latex-latex},
+			axis equal,
+		]
+
+		\addplot[
+			samples=200,
+			domain=-4*pi:4*pi,
+			color=blue,
+			thick,
+			smooth,
+		]
+		{sin(deg(x))};
+\addplot[domain=-5:5,color=red,thin]{-0.707107 * (x + 3.926991) + 0.707107};
+\addplot+[mark=*, mark options={black},mark size=1pt] coordinates {( -3.926991 , 0.707107 )};
+\addplot[domain=-5:5,color=red,thin]{-1.000000 * (x + 3.141593) + -0.000000};
+\addplot+[mark=*, mark options={black},mark size=1pt] coordinates {( -3.141593 , -0.000000 )};
+\addplot[domain=-5:5,color=red,thin]{-0.707107 * (x + 2.356194) + -0.707107};
+\addplot+[mark=*, mark options={black},mark size=1pt] coordinates {( -2.356194 , -0.707107 )};
+\addplot[domain=-5:5,color=red,thin]{0.000000 * (x + 1.570796) + -1.000000};
+\addplot+[mark=*, mark options={black},mark size=1pt] coordinates {( -1.570796 , -1.000000 )};
+\addplot[domain=-5:5,color=red,thin]{0.707107 * (x + 0.785398) + -0.707107};
+\addplot+[mark=*, mark options={black},mark size=1pt] coordinates {( -0.785398 , -0.707107 )};
+\addplot[domain=-5:5,color=red,thin]{1.000000 * (x - 0.000000) - -0.000000};
+\addplot+[mark=*, mark options={black},mark size=1pt] coordinates {( 0.000000 , 0.000000 )};
+\addplot[domain=-5:5,color=red,thin]{0.707107 * (x - 0.785398) - -0.707107};
+\addplot+[mark=*, mark options={black},mark size=1pt] coordinates {( 0.785398 , 0.707107 )};
+\addplot[domain=-5:5,color=red,thin]{-0.000000 * (x - 1.570796) - -1.000000};
+\addplot+[mark=*, mark options={black},mark size=1pt] coordinates {( 1.570796 , 1.000000 )};
+\addplot[domain=-5:5,color=red,thin]{-0.707107 * (x - 2.356195) - -0.707107};
+\addplot+[mark=*, mark options={black},mark size=1pt] coordinates {( 2.356195 , 0.707107 )};
+\addplot[domain=-5:5,color=red,thin]{-1.000000 * (x - 3.141593) - 0.000000};
+\addplot+[mark=*, mark options={black},mark size=1pt] coordinates {( 3.141593 , -0.000000 )};
+\addplot[domain=-5:5,color=red,thin]{-0.707107 * (x - 3.926991) - 0.707107};
+\addplot+[mark=*, mark options={black},mark size=1pt] coordinates {( 3.926991 , -0.707107 )};	\end{axis}
+\end{tikzpicture}

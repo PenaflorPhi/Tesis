@@ -59,19 +59,16 @@
 
 \newtheorem{DefinitionTemplate}{Definición}[section]
 \newenvironment{definition}
-  {\begin{DefinitionTemplate}}
-  {\renewcommand\qedsymbol
-    {$ \rule{0.25\textwidth}{0.25pt} $} 
-    \\ \qed \end{DefinitionTemplate}
-  }
+{\begin{DefinitionTemplate}}
+		{\renewcommand\qedsymbol
+		{$ \rule{0.25\textwidth}{0.25pt} $}
+		\leavevmode \\ \qed \end{DefinitionTemplate}
+}
 
-\newtheorem{ExampleTemplate}[theorem]{Ejemplo}   
+\newtheorem{ExampleTemplate}[theorem]{Ejemplo}
 \newenvironment{example}
 {\begin{ExampleTemplate}}
-{\renewcommand\qedsymbol{$ // $} \\ \qed \end{ExampleTemplate}}
-
-
-
+		{\renewcommand\qedsymbol{$//$} \leavevmode \\ \qed \end{ExampleTemplate}}
 
 % ====================================
 % Capítulos y secciones

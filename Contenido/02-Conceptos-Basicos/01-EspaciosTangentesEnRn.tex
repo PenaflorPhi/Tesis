@@ -1,5 +1,9 @@
-\chapter{Título Pendiente}\label{Capítulo: Conceptos Básicos}
+\chapter{Cálculo en Variedades}\label{Capítulo: Cálculo en Variedades}
 En este capítulo describiremos algunos conceptos básicos que eventualmente nos ayudarán a entender qué son las métricas, qué es una métrica Riemanniana y lo que son las variedades Riemannianas.
+
+\section{Espacios Tangentes}
+\subsection{Espacios Tangente en $\R^n$}
+
 
 Los primeros conceptos que estudiaremos serán los espacios y fibrados tangentes. Existen varias definiciones equivalentes para lo que es un espacio tangente; nosotros procederemos a definirlo a partir de lo que llamaremos derivaciones, este enfoque tiene algunas ventajas algebraicas y se puede justificar con conceptos conocidos de cálculo multivariable. Comenzaremos contextualizando lo que queremos decir por espacio tangente en $\R^n$ y después generalizaremos la idea a variedades suaves.
 
@@ -7,59 +11,56 @@ Antes de comenzar necesitamos hacer la siguiente aclaración sobre la notación 
 
 \begin{definition}[Vectores y Espacios Tangentes en $\R^n$]\label{Definición: Espacio Tangente en Rn}
 	Sea $a$ un punto en $\R^n$, definiremos el \it{espacio tangente a $\R^n$ en el punto $a$}, denotado por $T_a(\R^n)$, como el conjunto:
-	\[ \{a\} \times \R^n = \{(a,v): v \in \R^n\} \]
-
+	\[ \{a\} \times \R^n = \{(a,v): v \in \R^n\}. \]
 	Un \it{vector tangente} a $\R^n$ es un elemento de $T_a(\R^n)$ para algún $a \in \R^n$. Denotaremos a un vector tangente $(a,v)$ particular como $v_a$ o $v|_a$ o simplemente $v$ para abreviar.
 \end{definition}
 
 En palabras más simples, lo que esta definición nos está diciendo es que el espacio tangente a $\R^n$ en algún punto $a$ es la colección de todos los vectores en $\R^n$ con origen en $a$.
 
 Una de las propiedades más importantes del conjunto $T_a(\R^n)$ es que es un espacio vectorial bajo las operaciones
-
-\[ v_a + w_a = (v + w)_{a}, \quad c(v)_{a} = (cv)_{a} \]
-
+\[ v_a + w_a = (v + w)_{a}, \quad c(v)_{a} = (cv)_{a}. \]
 Por ser un espacio vectorial tendrá una base, no es difícil ver que si $\{e_i\}_{i=1}^n$ son los vectores de la base canónica para $\R^n$, entonces $\{e_i|_{a}\}_{i=1}^n = \{(a,e_i)\}_{i=1}^n$ será una base para $T_a(\R^n)$, al tener $n$ vectores básicos; llamamos a esta base la base estándar. $T_a(\R^n)$ será un espacio vectorial $n-$dimensional y por lo tanto será isomorfo a $\R^n$, de hecho $T_a(\R^n)$ es una copia de $\R^n$.
 
 \begin{center}
-\begin{figure}[h]
-	\centering
-	\begin{subfigure}{0.40\textwidth}
+	\begin{figure}[h]
 		\centering
-    \input{Figuras/A-Figuras/EspaciosTangentesEnR2.tex}
-	\end{subfigure}
-	\begin{subfigure}{0.40\textwidth}
-		\centering
-    \input{Figuras/A-Figuras/EspacioTangenteAlSeno.tex}
-	\end{subfigure}
-  \\[20pt]
-	\begin{subfigure}{0.40\textwidth}
-		\centering
-    \input{Figuras/A-Figuras/EspacioTangenteAlToro.tex}
-	\end{subfigure}
-	\begin{subfigure}{0.40\textwidth}
-		\centering
-    \input{./Figuras/A-Figuras/EspacioTangenteAEsfera.tex}
-	\end{subfigure}
-\caption{Visualización de espacios tangentes a diferentes variedades.}
-\end{figure}
+		\begin{subfigure}{0.30\textwidth}
+			\centering
+			\input{Figuras/A-Figuras/EspaciosTangentesEnR2.tex}
+		\end{subfigure}
+		\hspace{60pt}
+		\begin{subfigure}{0.30\textwidth}
+			\centering
+			\input{Figuras/A-Figuras/EspacioTangenteAlSeno.tex}
+		\end{subfigure}
+		\\[20pt]
+		\begin{subfigure}{0.30\textwidth}
+			\centering
+			\input{Figuras/A-Figuras/EspacioTangenteAlToro.tex}
+		\end{subfigure}
+		\hspace{60pt}
+		\begin{subfigure}{0.30\textwidth}
+			\centering
+			\input{./Figuras/A-Figuras/EspacioTangenteAEsfera.tex}
+		\end{subfigure}
+		\caption{Visualización de espacios tangentes a diferentes variedades.}
+	\end{figure}
 \end{center}
 
 Si en $\R^n$ consideramos un punto $a = (a_1, \dots, a_n)$ y un vector $v = \begin{bmatrix} v_1 \dots v_n \end{bmatrix}$, podemos dar la siguiente parametrización para la recta que pasa por $a$ con en la dirección de $v$:
-\[ \gamma(t) = (a_1 + tv_1, \dots, a_n + tv_n) \]
-
-
-
-
+\[ \gamma(t) = (a_1 + tv_1, \dots, a_n + tv_n). \]
 
 \begin{definition}[Derivada Direccional]\label{Definción: Derivada Direccional}
 	Sea $f: \R^n \to \R$ una función suave definida en una vecindad de un punto $a$ y $v \in T_a(\R^n)$, la \it{derivada direccional} de $f$ en $a$ en la dirección de $v$ se define como:
-	\[ D_v f = \left. \frac{d}{dt} \right|_{t=0} f(\gamma(t)) \]
+	\[ D_v f = \left. \frac{d}{dt} \right|_{t=0} f(\gamma(t)). \]
 \end{definition}
 
 Por la regla de la cadena podemos escribir la derivada direccional como:
-
-\[D_v f = \sum_{i=1}^{n} \frac{d \gamma_i(0)}{dt} \frac{\partial f}{\partial x_i} (a)
-	=\sum_{i=1}^n v_i \frac{\partial f}{\partial x_i} (a) \]
+\[
+	D_v f
+	= \sum_{i=1}^{n} \frac{d \gamma_i(0)}{dt} \frac{\partial f}{\partial x_i} (a)
+	= \sum_{i=1}^n v_i \frac{\partial f}{\partial x_i} (a).
+\]
 
 En este sentido, cada vector tangente $v_a \in T_a(\R^n)$ nos define un mapeo $D_v: C^{\infty}(\R^n) \to \R$ que nos da la derivada direccional de funciones suaves en un punto $a$ en la dirección de $v$. Dado que evaluamos la derivada direccional en el punto $a$, $D_v(f)$ será un número real.
 
@@ -75,13 +76,11 @@ Basados en esta propiedad daremos la siguiente definición
 
 \begin{definition}[Derivación en un punto]\label{Definición: Derivación en un punto de Rn}
 	Sea $a$ un punto en $\R^n$ y $\omega: C^{\infty}(\R^n) \to \R$, diremos que $\omega$ es una \it{derivación en $a$} si es lineal y cumple la regla de Leibniz, i.e., si $f$ y $g$ son funciones suaves definidas en una vecindad de $a$, $c$ una constante
-
 	\begin{itemize}
 		\item $\omega(cf) = c \omega(f)$.
 		\item $\omega(f+g) = \omega(f) + \omega(g)$.
 		\item $\omega(fg) = f(a) \omega(g) + g(a) \omega(f)$.
 	\end{itemize}
-
 	Denotaremos al conjunto de todas las derivaciones de $C^{\infty}(\R^n)$ en el punto $a$ como $\D_a(\R^n)$.
 \end{definition}
 
@@ -108,14 +107,14 @@ y más aún, con ayuda del siguiente lema probaremos que $\D_a(\R^n)$ es isomorf
 		      Esto implica que $\omega(f) = 0$.
 		\item Si $f(a) = g(a) = 0$, entonces por definición de derivación se tiene que:
 		      \[ \omega(fg)= f(a)\omega(g) + g(a)\omega(f) = 0  \]
-
 	\end{itemize}
 \end{proof}
 
 Dado que las derivadas direccionales en un punto $a$ son lineales y cumplen la regla de Leibniz, estas serán derivaciones en $a$ por definición. Esto implica que existe un operador lineal $\phi$ entre $T_a(\R^n)$ y $\D_a(\R^n)$ tal que:
 \begin{align*}
-	\phi: T_a(\R^n) & \to \D_a(\R^n)                                                                  \\
-	v               & \mapsto D_v = \left. \sum_{i=1}^{n} v_i \frac{\partial}{\partial x_i} \right|_a
+	\phi: T_a(\R^n) & \to \D_a(\R^n) \\
+	v               & \mapsto D_v =
+	\left. \sum_{i=1}^{n} v_i \frac{\partial}{\partial x_i} \right|_a
 \end{align*}
 
 \begin{theorem}\label{Teorema: Isomorfismo entre Espacio Tangente y Espacio de Derivaciones}
@@ -136,18 +135,18 @@ Dado que las derivadas direccionales en un punto $a$ son lineales y cumplen la r
 	Para mostrar que $\phi$ es una función sobreyectiva supongamos que $\omega \in \D_a(\R^n)$, esto es, $\omega$ es una derivación en el punto $a = (a_1, \dots, a_n)$, y sea $v = \begin{bmatrix} v_1 & \cdots & v_n \end{bmatrix}$ un vector en $T_a(\R^n)$. Podemos representar a $v$ en la base estándar de $\R^n$ como $v = \sum_{i=1}^{n} v_i e_i$, si definimos a $v$ de modo que cada $v_i$ sea el número real dado por la relación $v_i = \omega(x_i)$ tendremos que $\omega = D_v$.
 
 	En efecto, si $f: \R^n \to \R$ es una función suave definida en una vecindad de $a$, entonces, por el Teorema de Taylor tenemos que existen funciones suaves definidas en una vecindad de $a$ tal que:
-
-	\[
-		f(x) = f(a) + \sum_{i=1}^{n} \frac{\partial f}{\partial x_i} (a) (x_i - a_i) + \sum_{i=1}^{n} \sum_{j=1}^{n} (x_i - a_i)(x_j - a_j) \int_{0}^{1} (1-t) \frac{\partial^2 f}{\partial x_i \partial x_j} (a + t(x - a))
-	\]
+  \begin{align*}
+    f(x) = f(a) 
+    &+ \sum_{i=1}^{n} \frac{\partial f}{\partial x_i} (a) (x_i - a_i) \\
+    &+ \sum_{i=1}^{n} \sum_{j=1}^{n} (x_i - a_i)(x_j - a_j) \int_{0}^{1} (1-t) \frac{\partial^2 f}{\partial x_i \partial x_j} (a + t(x - a))
+  \end{align*}
 
 	Notemos lo siguiente, $f(a)$ es una constante y el último término es la suma del producto de dos funciones suaves, $(x_i - a_i)$ y $(x_j - a_j)$ por la integral; ambos términos se anulan en $x = a$, por lo que, por el lema anterior, al aplicar $\omega$ a la serie de Taylor el primer y el último término se anularan, obteniendo:
 	\begin{align*}
-		\omega(f) & = \omega(\sum_{i=1}^{n} \frac{\partial f}{\partial x_i} (a )(x_i - a_i))         \\
+		\omega(f) & = \omega(\sum_{i=1}^{n} \frac{\partial f}{\partial x_i} (a )(x_i - a_i))        \\
 		          & = \sum_{i=1}^{n} \frac{\partial f}{\partial x_i} (a)(\omega(x_i) - \omega(a_i)) \\
 		          & = \sum_{i=1}^{n} \frac{\partial f}{\partial x_i}(a) v_i = D_v f
 	\end{align*}
-
 	Por lo tanto $\phi$ es una función lineal, inyectiva y sobreyectiva entre espacios vectoriales, esto es, $\phi$ es un isomorfismo entre $T_a(\R^n)$ y $\D_a(\R^n)$.
 \end{proof}
 
@@ -156,14 +155,10 @@ Este teorema nos permite identificar el espacio tangente en un punto con el espa
 \begin{corollary}\label{Corolario: Base de TpRn}
 	Para cada $a \in \R^n$, las $n$ derivadas parciales
 	\[
-		\left. \frac{\partial }{\partial x_1} \right|_{a}, \dots, \left. \frac{\partial }{\partial x_n} \right|_{a}
+		\left. \frac{\partial }{\partial x_1} \right|_{a}, \dots, \left. \frac{\partial }{\partial x_n} \right|_{a},
 	\]
-
 	forman una base para el espacio tangente $T_a(\R^n)$.
 \end{corollary}
 
 Esta identificación nos permite escribir a los vectores de $\R^n$, $v = \begin{bmatrix} v_1 & \cdots & v_n \end{bmatrix}$ como una combinación lineal de la forma:
-
-\[
-  v = \left. \sum_{i = 1}^{n} v_i \frac{\partial}{\partial x_i} \right|_{a}
-\]
+\[ 	v = \left. \sum_{i = 1}^{n} v_i \frac{\partial}{\partial x_i} \right|_{a}.\]

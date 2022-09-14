@@ -4,9 +4,8 @@ El último teorema nos da una motivación sobre cómo podríamos definir lo que 
 \begin{definition}[Derivación En Un Punto De Una Variedad]
 	Sea $M$ una variedad suave y sea $p \in M$ un punto. Diremos que un mapa $\omega: C^{\infty}(M) \to \R$ es una \it{derivación} en $p$ si es lineal y además cumple que:
 	\[
-		\omega(fg) = f(p)\omega(g) + g(p)\omega(f), \quad \forall f,g \in C^{\infty}(M)
+		\omega(fg) = f(p)\omega(g) + g(p)\omega(f), \quad \forall f,g \in C^{\infty}(M).
 	\]
-
 	Llamaremos al conjunto de todas las derivaciones en un punto de una variedad al \it{espacio tangente} a la variedad en ese punto y lo denotamos por $T_p (M)$, de modo similar a los espacios de derivaciones en $\R^n$, el espacio tangente a una variedad es un espacio vectorial bajo las operaciones usuales. Llamaremos a los elementos de $T_p(M)$ \it{vectores tangentes a $M$ en $p$}.
 \end{definition}
 
@@ -14,7 +13,7 @@ El último teorema nos da una motivación sobre cómo podríamos definir lo que 
 	Supongamos que $M$ es una variedad suave, $p$ un punto de $M$, $\omega$ una derivación en $p$ y $f,g$ funcione suaves de $M$ a $\R$.
 	\begin{itemize}
 		\item Si $f$ es una función constante, entonces $\omega(f) = 0$.
-		\item Si $f(p) = g(p) = 0$, entonces $\omega(fg) = 0$
+		\item Si $f(p) = g(p) = 0$, entonces $\omega(fg) = 0$.
 	\end{itemize}
 \end{lemma}
 
@@ -24,14 +23,18 @@ El último teorema nos da una motivación sobre cómo podríamos definir lo que 
 
 Ahora estudiaremos como es que los mapas suaves afectan a los vectores tangentes. En el caso de los espacios Euclidianos cuando consideramos una función suave de $\R^m$ a $\R^n$ la matriz Jacobiana que representa a la derivada total de la función nos permite aproximar linealmente a la función en una vecindad mediantes vectores tangentes. En las variedades en general no podemos hablar de mapas lineales pero podemos extender la idea de la derivada total con un mapa lineal entre los espacios tangentes de las variedades, mapa al cual llamaremos diferencial o pushforward.
 
-\begin{definition}[Diferencial de una Función en un Punto]
+\begin{definition}[Diferencial de un Mapa Suave en un Punto]
 	Si $M$ y $N$ son variedades suaves y $F: M \to N$ es un mapa suave, entonce para cada punto $p \in M$ el mapa $F$ induce un mapa lineal entre los espacios tangentes $T_p(M)$ y $T_{F(p)}(N)$, denotado por $d_pF: T_p(M) \to T_{F(p)}(N)$, al cual llamaremos el \it{diferencial de $F$ en $p$}.
 
 	El mapa $d_pF$ está dado del siguiente modo: Dada una derivación $\omega \in T_p(M)$, $dF_p$ será la derivación en el punto $F(p) \in N$ que actúa sobre funciones suaves de $N$ a $\R$ como:
-	\[
-		d_pF(\omega)(f) = \omega(f \circ F)
-	\]
+	\[ d_pF(\omega)(f) = \omega(f \circ F). \]
 \end{definition}
+
+\begin{figure}[h]
+	\centering
+	\input{Figuras/A-Figuras/DiferencialDeUnMapaEnUnPunto.tex}
+	\caption{Representación del diferencial de un mapa suave en un punto.}
+\end{figure}
 
 El diferencial $d_pF$ está bien definido dado que $F: M \to N$ y $f: N \to \R$ son funciones suaves, esto implica que $f \circ F: M \to \R$ será una función suave, por lo que $\omega(f \circ F)$ tiene sentido, la linealidad se tiene como consecuencia de que $\omega$ sea lineal y, por último, $d_pF(\omega): C^{\infty}(N) \to \R$ es una derivación en $F(p)$ dado que si $f, g \in C^{\infty}(N)$ entonces:
 
@@ -39,7 +42,7 @@ El diferencial $d_pF$ está bien definido dado que $F: M \to N$ y $f: N \to \R$ 
 	d_pF(\omega)(fg) & = \omega((fg) \circ F)                                               \\
 	                 & = \omega((f \circ F)(g \circ F))                                     \\
 	                 & = (f \circ F)(p)\omega(g \circ F) + (g \circ F)(p) \omega(f \circ F) \\
-	                 & = (f \circ F)(p)d_pF(\omega)(g) + (g \circ F)(p)d_pF(\omega)(f)
+	                 & = (f \circ F)(p)d_pF(\omega)(g) + (g \circ F)(p)d_pF(\omega)(f).
 \end{align*}
 
 A continuación mostraremos algunas propiedades de los diferenciales de mapas suaves entre variedades, propiedades que son extensiones naturales de las propiedades conocidas de las derivadas totales del cálculo ordinario, como la linealidad del diferencial o la regla de la cadena.
@@ -51,9 +54,8 @@ A continuación mostraremos algunas propiedades de los diferenciales de mapas su
 \begin{proof}
 	Si $M$ es una variedad suave, $\id_M$ el mapa identidad en $M$, $p \in M$ un punto arbitrario y $\omega \in T_p(M)$ un vector tangente de $M$ en $p$, para cada $f \in C^{\infty}(M)$ se tiene:
 	\begin{align*}
-		d\id_{M}(\omega)(f) & = \omega(f \circ \id_M) = \omega(f)
+		d\id_{M}(\omega)(f) & = \omega(f \circ \id_M) = \omega(f).
 	\end{align*}
-
 	Dado que esto se cumple para cualquier $\omega \in T_p(M)$ y $f \in C^{\infty}(M)$, el diferencial será el mapa identidad en el espacio tangente.
 \end{proof}
 
@@ -67,9 +69,8 @@ A continuación mostraremos algunas propiedades de los diferenciales de mapas su
 		d_pF(\omega)(af + g) & = \omega((af + g) \circ F)               \\
 		                     & = \omega (af \circ F + g \circ F)        \\
 		                     & = a\omega(f \circ F) + \omega(g \circ F) \\
-		                     & = a d_pF (\omega)(f) + d_pF(\omega)(g)
+		                     & = a d_pF (\omega)(f) + d_pF(\omega)(g).
 	\end{align*}
-
 	Por lo tanto el diferencial de un mapa es un operador lineal.
 \end{proof}
 
@@ -100,10 +101,10 @@ A continuación mostraremos algunas propiedades de los diferenciales de mapas su
 \begin{proof}
 	Dado que $F$ es un difeomorfismo, por definición $F$ es invertible por lo que existe una función $F^{-1}: N \to M$ tal que $F^{-1} \circ F = \id_M$ y $F \circ F^{-1} = \id_N$. Por los lemas probados anteriormente se tiene:
 	\begin{align*}
-    d_p(F^{-1} \circ F)      & = d_{F(p)}F^{-1} \circ d_pF = \id_{T_p(M)}      \\
-    d_{F(p)}(F \circ F^{-1}) & = d_pF \circ d_{F(p)}F^{-1} = \id_{T_{F(p)}(N)} \\
+		d_p(F^{-1} \circ F)      & = d_{F(p)}F^{-1} \circ d_pF = \id_{T_p(M)}       \\
+		d_{F(p)}(F \circ F^{-1}) & = d_pF \circ d_{F(p)}F^{-1} = \id_{T_{F(p)}(N)}. \\
 	\end{align*}
-  Esto demuestra que tanto $d_pF$ como $d_{F(p)}F^{-1}$ son isomorfismos de espacios vectoriales dado que ambos son operadores lineales e invertibles, y además se comprueba que $(d_pF)^{-1} = d_{F(p)}F^{-1}$.
+	Esto demuestra que tanto $d_pF$ como $d_{F(p)}F^{-1}$ son isomorfismos de espacios vectoriales dado que ambos son operadores lineales e invertibles, y además se comprueba que $(d_pF)^{-1} = d_{F(p)}F^{-1}$.
 \end{proof}
 
 De modo similar a la derivada total, el diferencial nos permitirá realizar cálculos en coordenadas locales, sin embargo, por cómo hemos definido al diferencial, estos operan sobre funciones definidas de manera global sobre la variedad. Al ser una generalización de la derivada total es de esperarse que puedan operar sin ambigüedad sobre subconjuntos abiertos, veremos esto a continuación.
@@ -119,25 +120,28 @@ De modo similar a la derivada total, el diferencial nos permitirá realizar cál
 \end{proof}
 
 \begin{lemma}\label{Lemma: Espacio Tangente a Subvariedad}
-  Sea $M$ una variedad suave, $U \subseteq M$ un subconjunto abierto, y sea $\iota: U \to M$ el mapa de inclusión. Para cada $p \in U$, el diferencial $d_p\iota: T_p M \to T_pM$ es un isomorfismo de espacios vectoriales.
+	Sea $M$ una variedad suave, $U \subseteq M$ un subconjunto abierto, y sea $\iota: U \to M$ el mapa de inclusión. Para cada $p \in U$, el diferencial $d_p\iota: T_p M \to T_pM$ es un isomorfismo de espacios vectoriales.
 \end{lemma}
 
 \begin{proof}
 	Por el ejemplo \ref{Ex: Variedad Suave - Subvariedades Suaves} sabemos que $U$ es en sí misma una variedad suave por lo que no hay ambigüedad al considerar el espacio tangente en algún punto. La linealidad de la diferencial se tiene por definición de derivación.
 
-	Para mostrar que el diferencial es inyectivo mostraremos que el kernel es nulo. Supongamos que $\omega \in T_{p}(U)$ y $d_p\iota(\omega) = 0 \in T_{p}(M)$. Sea $V$ una vecindad de $p$ tal que $\overline{V} \subset U$. Si $f: U \to \R$ es una función suave, por el lema \ref{Lemma: Lema de Extensión para Funciones Suaves} podemos garantizar que existe una función $\hat{f}: M \to \R$ que coincide con $f$ en $\overline{V}$. Luego, por el lema anterior se tiene que, como $f$ y $\hat{f}|_{U}$ son funciones suaves que coinciden en una vecindad de $p$, entonces:
+	Para mostrar que el diferencial es inyectivo mostraremos que el kernel es nulo. Supongamos que $\omega \in T_{p}(U)$ y $d_p\iota(\omega) = 0 \in T_{p}(M)$. Sea $V$ una vecindad de $p$ tal que $\overline{V} \subset U$. Si $f: U \to \R$ es una función suave, por el lema \ref{Lemma: Lema de Extensión para Funciones Suaves} podemos garantizar que existe una función $\hat{f}: M \to \R$ que coincide con $f$ en $\overline{V}$. Luego, por el lema anterior se tiene que, como $f$ y $\hat{f}\big|_{U}$ son funciones suaves que coinciden en una vecindad de $p$, entonces:
 	\begin{align*}
-		\omega(f) & = \omega(\hat{f}|_{U}) = \omega(\hat{f} \circ \iota) \\
+		\omega(f) & = \omega \left(\hat{f} \big|_{U} \right)\\
+		          & = \omega(\hat{f} \circ \iota)   \\
 		          & = d_p\iota(\omega)(\hat{f}) = 0
 	\end{align*}
 
 	Esto se cumplirá para cada función suave $f \in C^{\infty}(U)$, por lo que $\omega \equiv 0$, lo cual implica que $d\iota_p$ es inyectiva.
 
 	Para mostrar que el diferencial del mapa de inclusión es sobreyectivo supongamos que $\omega \in T_p(M)$ es algún vector tangente arbitrario en $M$. Definamos al operador $\upsilon: C^{\infty}(U) \to \R$ de tal modo que $\upsilon(f) = \omega (\hat{f})$, donde $\hat{f}$ es cualquier función suave en $M$ que coincida con $f$ en $\overline{V}$, por el lema anterior $\upsilon(f)$ no depende de la elección de la función $\hat{f}$, por lo que $\upsilon$ está bien definida y es una derivación. Para cada función $g \in C^{\infty}(M)$ se cumple:
-	\[
-		d_p\iota(\upsilon)(g) = \upsilon(g \circ \iota) = \omega((g \circ \iota)|_{V}) = \omega(g)
-	\]
-
+	\begin{align*}
+		d_p\iota(\upsilon)(g)
+		 & = \upsilon(g \circ \iota)                                  \\
+		 & = \omega \left( (g \circ \iota) \big|_{V} \right) \\
+		 & = \omega(g).
+	\end{align*}
 	Por lo tanto, $d\iota_p$ es un sobreyectivo, y por lo tanto será un isomorfismo entre los espacios vectoriales $T_p(U)$ y $T_p(M)$.
 \end{proof}
 
@@ -153,6 +157,6 @@ Una consecuencia inmediata del teorema \ref{Teorema: Isomorfismo entre Espacio T
 
 \begin{corollary}
 	Sea $V$ un espacio vectorial finito dimensional con su estructura de variedad suave estándar. Para cada punto $a \in V$, el mapa $D_v: C^{\infty}(V) \to \R$ definido por:
-	\[D_vf = \left. \frac{d}{dt} \right|_{t=0} f(a+tv) \]
+	\[D_vf = \left. \frac{d}{dt} \right|_{t=0} f(a+tv), \]
 	es un isomorfismo de $V$a $T_a(V)$.
 \end{corollary}
