@@ -1,13 +1,14 @@
 \newgeometry{left=0.7cm, right=0.7cm, top=1.2cm, bottom=0.7cm} % Márgenes únicamente para esta sección.
 
 % Logosímbolo institucional.
+\tikzexternaldisable % Desactiva el precompilado de figuras, ¡No quitar!
 \begin{figure}
 	\includegraphics[height=4.3cm,right=19.375cm]{Figuras/0-UV/Logo.png}
 \end{figure}
 
 % Linea bajo el logosímbolo
 \begin{tikzpicture}[remember picture,overlay]
-	\draw[opacity=1]($(current page.north west)+(15.125cm,-5.60cm)$)--($(current page.north east)+(-1.5cm,-5.60cm)$);
+	\draw[opacity=1]($(current page.north west)+(14.9cm,-5.60cm)$)--($(current page.north west)+(20.19cm,-5.60cm)$);
 \end{tikzpicture}
 
 % Datos de la tesis.
@@ -31,4 +32,5 @@
 
 % \input{Figuras/0-UV/Guias.tex}
 
+\tikzexternalenable % Restaura la el precompilado de figuras.
 \restoregeometry % Restaura los margenes del documento.
