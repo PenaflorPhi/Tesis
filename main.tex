@@ -20,8 +20,8 @@
 \usepackage{Paquetes/Fuentes}
 \usepackage{Paquetes/Ambientes}
 \usetikzlibrary{external}
-% \tikzexternalize[prefix=Cache/]
-% \allowdisplaybreaks
+\tikzexternalize[prefix=Cache/]
+\allowdisplaybreaks
 
 % ====================================
 % Datos de la tesis
@@ -46,79 +46,79 @@
 % Portada, agradecimientos y dedicatoria
 % ====================================
 
-% \pagenumbering{gobble}
-% \input{Contenido/00-Cubierta/00-Portada.tex}
-% \input{Contenido/00-Cubierta/01-Legal.tex}
-% \cleardoublepage
+\pagenumbering{gobble}
+\input{Contenido/00-Cubierta/00-Portada.tex}
+\input{Contenido/00-Cubierta/01-Legal.tex}
+\cleardoublepage
 
-% % ====================================
-% % Tabla de Contenidos.
-% % ====================================
+% ====================================
+% Tabla de Contenidos.
+% ====================================
 
-% \setcounter{tocdepth}{3}
-% \tableofcontents
-% % \listoffigures
-% \cleardoublepage
+\setcounter{tocdepth}{3}
+\tableofcontents
+% \listoffigures
+\cleardoublepage
 
-% \pagenumbering{arabic} % Esto activa la numeración de las páginas.
-% \pagestyle{plain} % Esto enumera cada una de las páginas, sin esto el número de página solo aparece en los cambios de sección.
-% \setcounter{page}{1}
+\pagenumbering{arabic} % Esto activa la numeración de las páginas.
+\pagestyle{plain} % Esto enumera cada una de las páginas, sin esto el número de página solo aparece en los cambios de sección.
+\setcounter{page}{1}
 
-% % ====================================
-% % Variedades y Mapas
-% % ====================================
+% ====================================
+% Variedades y Mapas
+% ====================================
 
 
-% \input{Contenido/01-Variedades-y-Mapas/01-VariedadesTopologicas.tex}
-% \cleardoublepage
-% \input{Contenido/01-Variedades-y-Mapas/02-VariedadesSuaves.tex}
-% \cleardoublepage
-% \input{Contenido/01-Variedades-y-Mapas/03-MapasSuaves.tex}
-% \input{Contenido/01-Variedades-y-Mapas/04-Difeomorfismos.tex}
-% \input{Contenido/01-Variedades-y-Mapas/05-ParticionesDeLaUnidad.tex}
-% \cleardoublepage
+\input{Contenido/01-Variedades-y-Mapas/01-VariedadesTopologicas.tex}
+\cleardoublepage
+\input{Contenido/01-Variedades-y-Mapas/02-VariedadesSuaves.tex}
+\cleardoublepage
+\input{Contenido/01-Variedades-y-Mapas/03-MapasSuaves.tex}
+\input{Contenido/01-Variedades-y-Mapas/04-Difeomorfismos.tex}
+\input{Contenido/01-Variedades-y-Mapas/05-ParticionesDeLaUnidad.tex}
+\cleardoublepage
 
-% % ====================================
-% % Conceptos Básicos
-% % ====================================
+% ====================================
+% Conceptos Básicos
+% ====================================
 
-% \input{Contenido/02-Conceptos-Basicos/01-EspaciosTangentesEnRn.tex}
-% \input{Contenido/02-Conceptos-Basicos/02-EspaciosTangentesEnVariedades.tex}
-% \input{Contenido/02-Conceptos-Basicos/03-VectoresTangentesEnCoordenadas.tex}
-% \input{Contenido/02-Conceptos-Basicos/04-FibradoTangente.tex}
-% \input{Contenido/02-Conceptos-Basicos/05-CurvasEnVariedades.tex}
+\input{Contenido/02-Conceptos-Basicos/01-EspaciosTangentesEnRn.tex}
+\input{Contenido/02-Conceptos-Basicos/02-EspaciosTangentesEnVariedades.tex}
+\input{Contenido/02-Conceptos-Basicos/03-VectoresTangentesEnCoordenadas.tex}
+\input{Contenido/02-Conceptos-Basicos/04-FibradoTangente.tex}
+\input{Contenido/02-Conceptos-Basicos/05-CurvasEnVariedades.tex}
 \cleardoublepage
 \input{Contenido/02-Conceptos-Basicos/11-FibradosVectoriales.tex}
 \input{Contenido/02-Conceptos-Basicos/12-CamposVectoriales.tex}
 \input{Contenido/02-Conceptos-Basicos/13-CamposVectorialesComoDerivaciones.tex}
 \input{Contenido/02-Conceptos-Basicos/14-PushforwardDeCamposVectoriales.tex}
-% \cleardoublepage
-% \input{Contenido/02-Conceptos-Basicos/21-EspacioDual.tex}
-% \input{Contenido/02-Conceptos-Basicos/22-EspacioCotangente.tex}
+\cleardoublepage
+\input{Contenido/02-Conceptos-Basicos/21-EspacioDual.tex}
+\input{Contenido/02-Conceptos-Basicos/22-EspacioCotangente.tex}
 
-% % ====================================
-% % Anexos
-% % ====================================
+% ====================================
+% Anexos
+% ====================================
 
-% \cleardoublepage
-% \input{Contenido/A-Anexos/01-ToplogiaDeVariedades.tex}
-% \cleardoublepage
-% \input{Contenido/A-Anexos/02-AlgebrasMultilineales.tex}
+\cleardoublepage
+\input{Contenido/A-Anexos/01-ToplogiaDeVariedades.tex}
+\cleardoublepage
+\input{Contenido/A-Anexos/02-AlgebrasMultilineales.tex}
 
-% % ====================================
-% % Bibliografía
-% % ====================================
+% ====================================
+% Bibliografía
+% ====================================
 
-% \input{Contenido/B-Bibliografia/Bibliografia.tex}
-% \printbibliography
-% \cleardoublepage
+\input{Contenido/B-Bibliografia/Bibliografia.tex}
+\printbibliography
+\cleardoublepage
 
-% % ====================================
-% % Contraportada
-% % ====================================
+% ====================================
+% Contraportada
+% ====================================
 
-% \pagestyle{empty}
-% \input{Contenido/00-Cubierta/02-Contraportada.tex}
-% \cleardoublepage
+\pagestyle{empty}
+\input{Contenido/00-Cubierta/02-Contraportada.tex}
+\cleardoublepage
 
 \end{document}
