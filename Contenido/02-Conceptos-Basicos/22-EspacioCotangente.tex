@@ -2,15 +2,59 @@
 Ahora que sabemos que es el espacio dual podemos hablar del espacio espacio dual del espacio tangente a un punto de una variedad, espacio al cual llamaremos \it{espacio cotangente}.
 
 \begin{definition}
-  Sea $M$ una variedad suave y $p$ un punto en $M$. Definimos el \it{espacio cotangente de $M$ en $p$}, denotado $T_{p}^{*}(M)$, como el espacio dual del espacio tangente $T_p(M)$
-\[
-  T^{*}_p(M) = (T_p(M))^*.
-\]
-  Llamaremos \textit{covector tangente a $p$}, o \textit{covector en $p$} a los elementos de $T_p^{*}(M)$.
+	Sea $M$ una variedad suave y $p$ un punto en $M$. Definimos el \it{espacio cotangente de $M$ en $p$}, denotado $T_{p}^{*}(M)$, como el espacio dual del espacio tangente $T_p(M)$
+	\[
+		T^{*}_p(M) = (T_p(M))^*.
+	\]
+	Llamaremos \textit{covector tangente a $p$}, o \textit{covector en $p$} a los elementos de $T_p^{*}(M)$.
 \end{definition}
 
-Como se vio en el teorema \ref{Teorema: Dimensión del Espacio Dual} para cada base $\left\{\frac{\partial}{\partial \phi_1}, \ldots, \frac{\partial}{\partial \phi_n}\right\}$ es posible construir una base para el espacio dual $T_p^*(M)$, la cual denotaremos como $\{\lambda_1, \ldots, \lambda_n\}$ para la cual se cumpla:
+En la subsección \ref{Subsección: Espacios Tangentes en Coordenadas} estudiamos como es que, dado un punto $p$ en una variedad $M$ suave y una carta suave $(U,\phi) = (U,\phi_1,\ldots,\phi_n)$ que lo contenga, podemos escribir a cualquier vector en el espacio tangente a $M$ en $p$ como una combinación lineal. Retomando la notación vista en la sección de Campos Vectoriales \ref{Sección: Campos Vectoriales}, si $X(p)$ es un vector en $T_p(M)$, entonces podemos expresarlo como la combinación lineal:
+
 \[
-  \lambda_i \left(\frac{\partial}{\partial \phi_j}\right) = \delta_{ij},
+	X(p) = \sum_{i=1}^{n} X_i(p) \left. \frac{\partial}{\partial \phi_i} \right|_{p}.
 \]
-donde $\delta_{ij}$ es la delta de Kronecker. 
+
+Dado que estamos definiendo al espacio cotangente $T_{p}^{*}(M)$ como el espacio dual de $T_p(M)$, es posible expresar a cualquier vector en $\omega \in T_{p}^{*}(M)$ como una combinación lineal, y más aún, la base que utilizamos para representar a los vectores del espacio cotangente puede estar asociada a una base para el espacio tangente. Denotaremos a la base de $T_{p}^{*}(M)$ por $\{\lambda_1|_p, \ldots, \lambda_n|_p\}$, más adelante veremos que son estos elementos de la base y les daremos una notación diferente, por ahora bastará saber que si $\omega \in T_{p}^{*}(M)$, entonces lo podemos escribir como la combinación lineal:
+\[
+	\omega = \sum_{i=1}^{n} \omega_i \left. \lambda_i \right|_p,
+\]
+donde $\omega_i = \omega \left( \left. \frac{\partial}{\partial \phi_i} \right|_p\right)$.
+
+Al estar expresando a los vectores cotangentes como combinaciones lineales estamos trabajando con coordenadas, por lo que estás combinaciones lineales dependerán de nuestra elección de coordenadas. En la subsección \ref{Subsección: Espacios Tangentes en Coordenadas} vimos como es que podemos transformar de un sistema coordenado a otro.
+
+Dada un subconjunto abierto $U$ en una variedad suave $M$ podemos dar diferentes coordenadas locales en $U$, digamos $\{\phi_1,\ldots,\phi_n\}$ y $\{\psi_1,\ldots,\psi_n\}$. Hemos demostrado anteriormente que parea transformar de un sistema coordenado a al otro es posible utiliza la igualdad:
+\[
+	\left. \frac{\partial}{\partial \phi_i} \right|_p =
+	\sum_{j=1}^{n} \left. \frac{\partial \psi_j}{\partial \phi_i} (\phi(p))
+	\frac{\partial}{\partial \psi_j} \right|_{p}.
+\]
+Con esta igualdad y considerando un vector $\omega \in T_{p}^{*}(M)$ procederemos del siguiente modo, si tenemos dos bases $\{\lambda_1,\ldots,\lambda_n\}$ y $\{\hat{\lambda_1},\ldots,\hat{\lambda_n}\}$, las cuales están asociadas a $\{\phi_1, \ldots, \phi_n\}$ y $\{\phi_1, \ldots, \phi_n\}$ respectivamente, entonces podemos expresar a $\omega$ como:
+\[
+	\omega = \sum_{i=1}^{n} \left. \omega_i \lambda_i \right|_p
+	= \sum_{j=1}^{n} \left. \hat{\omega}_j \hat{\lambda}_j \right|_p.
+\]
+Para transformar de un sistema coordenado al otro utilizaremos la igualdad anterior y la manera que hemos dado para calcular a los coeficientes $\omega_i$, obteniendo la siguiente identidad.
+\begin{align*}
+	\omega_i & = \omega
+	\left(
+	\left. \frac{\partial}{\partial \phi_i} \right|_{p}
+	\right)                                                                       \\
+	         & = \omega
+	\left(
+	\sum_{j=1}^{n} \frac{\partial \psi_j}{\partial \phi_i} (\phi(p))
+	\left. \frac{\partial}{\partial \psi_j}\right|_{p} \right)                    \\
+	         & = \sum_{j=1}^{n} \frac{\partial \psi_j}{\partial \phi_i} (\phi(p))
+	\omega \left( \left. \frac{\partial}{\partial \psi_j}\right|_{p} \right)      \\
+	         & = \sum_{j=1}^{n} \frac{\partial \psi_j}{\partial \phi_i} (\phi(p))
+	\omega_j
+\end{align*}
+
+Los espacios cotangentes comparten muchas propiedades con los espacios tangentes, ambos son espacios vectoriales definidos para cada punto en una variedad suave. Al ser este el caso también es posible estudiar que es lo que sucede al considerar todos (o un subconjunto) de los espacios cotangentes a una variedad de manera simultanea. Cuando trabajamos con los espacios tangentes definimos el fibrado tangente, como es de esperarse, ahora definiremos el \it{fibrado cotangente} y describiremos algunas de sus propiedades.
+
+\begin{definition}
+  Sea $M$ una variedad suave, llamaremos a la unión disjunta de todos los espacios cotangentes, la cual denotaremos por $T^{*}M$, el \it{fibrado cotangente}.
+  \[ T^{*}M = \bigsqcup_{p \in M} T_{p}^{*}(M) = \bigcup_{p \in M} \{p\} \times T_{p}^{*}(M). \]
+\end{definition}
+
+Para el fibrado cotangente también existe un mapa $\pi: T^{*}M \to M$ que nos induce una topología en $T^{*}M$ la cual hace de $T^{*}M$ una variedad topológica, a la cual es posible darle una estructura suave; como cabría esperarse, este mapa está dado como $\pi(\omega) = p$, donde $\omega \in T_p^{*}(M)$.
