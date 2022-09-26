@@ -23,13 +23,13 @@ donde $\omega_i = \omega \left( \left. \frac{\partial}{\partial \phi_i} \right|_
 
 Al estar expresando a los vectores cotangentes como combinaciones lineales estamos trabajando con coordenadas, por lo que estás combinaciones lineales dependerán de nuestra elección de coordenadas. En la subsección \ref{Subsección: Espacios Tangentes en Coordenadas} vimos como es que podemos transformar de un sistema coordenado a otro.
 
-Dada un subconjunto abierto $U$ en una variedad suave $M$ podemos dar diferentes coordenadas locales en $U$, digamos $\{\phi_1,\ldots,\phi_n\}$ y $\{\psi_1,\ldots,\psi_n\}$. Hemos demostrado anteriormente que parea transformar de un sistema coordenado a al otro es posible utiliza la igualdad:
+Dado un subconjunto abierto $U$ en una variedad suave $M$ podemos dar diferentes coordenadas locales en $U$, digamos $\{\phi_1,\ldots,\phi_n\}$ y $\{\psi_1,\ldots,\psi_n\}$. Hemos demostrado anteriormente que parea transformar de un sistema coordenado a al otro es posible utiliza la igualdad:
 \[
 	\left. \frac{\partial}{\partial \phi_i} \right|_p =
 	\sum_{j=1}^{n} \left. \frac{\partial \psi_j}{\partial \phi_i} (\phi(p))
 	\frac{\partial}{\partial \psi_j} \right|_{p}.
 \]
-Con esta igualdad y considerando un vector $\omega \in T_{p}^{*}(M)$ procederemos del siguiente modo, si tenemos dos bases $\{\lambda_1,\ldots,\lambda_n\}$ y $\{\hat{\lambda_1},\ldots,\hat{\lambda_n}\}$, las cuales están asociadas a $\{\phi_1, \ldots, \phi_n\}$ y $\{\phi_1, \ldots, \phi_n\}$ respectivamente, entonces podemos expresar a $\omega$ como:
+Con esta igualdad y considerando un vector $\omega \in T_{p}^{*}(M)$ procederemos del siguiente modo, si tenemos dos bases $\{\lambda_1,\ldots,\lambda_n\}$ y $\{\hat{\lambda_1},\ldots,\hat{\lambda_n}\}$, las cuales estén asociadas a las bases $\{\phi_1, \ldots, \phi_n\}$ y $\{\phi_1, \ldots, \phi_n\}$ respectivamente, entonces podemos expresar a $\omega$ como:
 \[
 	\omega = \sum_{i=1}^{n} \left. \omega_i \lambda_i \right|_p
 	= \sum_{j=1}^{n} \left. \hat{\omega}_j \hat{\lambda}_j \right|_p.
@@ -47,14 +47,60 @@ Para transformar de un sistema coordenado al otro utilizaremos la igualdad anter
 	         & = \sum_{j=1}^{n} \frac{\partial \psi_j}{\partial \phi_i} (\phi(p))
 	\omega \left( \left. \frac{\partial}{\partial \psi_j}\right|_{p} \right)      \\
 	         & = \sum_{j=1}^{n} \frac{\partial \psi_j}{\partial \phi_i} (\phi(p))
-	\omega_j
+	\hat{\omega_j}
 \end{align*}
 
 Los espacios cotangentes comparten muchas propiedades con los espacios tangentes, ambos son espacios vectoriales definidos para cada punto en una variedad suave. Al ser este el caso también es posible estudiar que es lo que sucede al considerar todos (o un subconjunto) de los espacios cotangentes a una variedad de manera simultanea. Cuando trabajamos con los espacios tangentes definimos el fibrado tangente, como es de esperarse, ahora definiremos el \it{fibrado cotangente} y describiremos algunas de sus propiedades.
 
 \begin{definition}
-  Sea $M$ una variedad suave, llamaremos a la unión disjunta de todos los espacios cotangentes, la cual denotaremos por $T^{*}M$, el \it{fibrado cotangente}.
-  \[ T^{*}M = \bigsqcup_{p \in M} T_{p}^{*}(M) = \bigcup_{p \in M} \{p\} \times T_{p}^{*}(M). \]
+	Sea $M$ una variedad suave, llamaremos a la unión disjunta de todos los espacios cotangentes, la cual denotaremos por $T^{*}M$, el \it{fibrado cotangente}.
+	\[ T^{*}M = \bigsqcup_{p \in M} T_{p}^{*}(M) = \bigcup_{p \in M} \{p\} \times T_{p}^{*}(M). \]
 \end{definition}
 
 Para el fibrado cotangente también existe un mapa $\pi: T^{*}M \to M$ que nos induce una topología en $T^{*}M$ la cual hace de $T^{*}M$ una variedad topológica, a la cual es posible darle una estructura suave; como cabría esperarse, este mapa está dado como $\pi(\omega) = p$, donde $\omega \in T_p^{*}(M)$.
+
+Como acabamos de mencionar, dada una carta suave $(U,\phi) = (U,\phi_1,\ldots,\phi_n)$ en $M$, denotaremos por $\{\lambda_1|_p,\ldots,\lambda_n|_p\}$ a la base de $T^*(M)$, está base estará asociada, en el sentido de ser dual, a la base $\{\frac{\partial}{\partial \phi_1}|_p, \ldots, \frac{\partial}{\partial \phi_n}|_p\}$. Así, estamos definiendo $n$ mapas $\lambda_i: U \to T^{*}M$, a estos mapas les llamaremos \it{campos de covectores coordenados}.
+
+\begin{theorem}[El Fibrado Cotangente como Fibrado Vectorial]
+	Sea $M$ una variedad suave de dimensión $n$. El fibrado cotangent $T^{*}M$, con su mapa de proyección y su estructura de espacio vectorial en cada fibra, tiene una topología y una estructura suave que lo hacen un fibrado vectorial de rango $n$ sobre $M$.
+\end{theorem}
+
+\begin{proof}
+	Sea $(U,\phi) = (U,\phi_1, \ldots, \phi_n)$ una carta suave en $M$ y $p$ un punto en $U$. Cada $\omega \in T_{p}^{*}(M)$ puede ser representado de manera única como una combinación lineal:
+	\[
+		\omega = \sum_{i=1}^{n} \omega_i \lambda_i |_p,
+	\]
+	donde $\{\lambda_1, \ldots, \lambda_n \}$ es la base dual a $\{\frac{\partial}{\partial \phi_1}, \ldots, \frac{\partial}{\partial \phi_n}\}$. La unicidad de está representación nos da lugar para poder definir el siguiente mapa, el cual es trivialmente una biyección.
+	\begin{align*}
+		\Phi: T^*U                                   & \to U \times \R^n \\
+		\Phi( \sum_{i=1}^{n} \omega_i \lambda_i |_p) & =
+		(p, \omega_1, \ldots, \omega_n).
+	\end{align*}
+	Ahora, si $\mathcal{A}$ es la estructura suave maximal para $M$ y consideramos el dominio $U$ de cualquier carta suave podemos definir el conjunto $\mathcal{B}_U$ conformado por la colección de todos los subconjuntos abiertos de $T^{*}U$, y en base a estos conjuntos definiremos el conjunto $\mathcal{B}$, el cual será la unión de todos los $\mathcal{B}_U$.
+
+	El conjunto $\mathcal{B}$ es nuestro candidato natural para ser la base de la topología con la que dotaremos a $T^{*}M$, basta mostrar que, en efecto, $\mathcal{B}$ cumple el ser la base para una topología.
+
+	Es evidente que si $\mathcal{A}$ es la estructura suave maximal en $M$, entonces:
+	\[
+    T^{*}M = \bigsqcup_{a \in \mathcal{A}} T^{*}U_{\alpha}
+    \subset \bigcup_{U \in \mathcal{B}} U = T^*M.
+	\]
+	Luego, si $U$ y $V$ son los dominios de dos cartas suaves en $M$ y $A$ y $B$ son subconjuntos abiertos de $T^{*}U$ y $T^{*}V$ respectivamente entonces, $A \cap B$ es un subconjunto abierto de $T^{*}(U \cap V)$, esto dado que $A \cap T^{*}(U \cap V)$ es abierto en $T^{*}(U \cap V)$, y de modo similar $B \cap T^{*}(U \cap V)$ es abierto en $T^{*}(U \cap V)$, por lo que la siguiente cadena de igualdades será verdadera:
+	\begin{align*}
+		A \cap B & = A \cap B \cap T^{*}U \cap T^{*}V                       \\
+		         & = A \cap B \cap T^{*}(U \cap V)                          \\
+		         & = (A \cap T^{*}(U \cap V)) \cap (B \cap T^{*}(U \cap V)).
+	\end{align*}
+  Por lo tanto, $A \cap B$ es abierto en $T^{*}(U \cap V)$, y así se concluye que $\mathcal{B}$ es una base para la topología en $T^{*}M$.
+
+  La estructura suave de $T^{*}M$ se obtiene fácilmente al considerar los mapas $\Phi = (\phi_1 \circ \pi, \ldots, \phi_n \circ \pi, \omega_1, \ldots, \omega_n)$ como los mapas coordenados para las cartas suaves en $T^{*}M$, la demostración de este hecho es idéntica a la dada para mostrar que $TM$ también es una variedad suave.
+
+  Sabiendo todo esto, la terna $(T^{*}M, M, \pi)$ es, por definición, un fibrado vectorial de rango $n$ sobre M.
+\end{proof}
+
+Otra similitud entre el fibrado cotangente $T^{*}M$ y el fibrado tangente $TM$ de una variedad suave es que, dadas coordenadas locales suaves $\{\phi_1,\ldots,\phi_n\}$ para un subconjunto abierto $U$ de $M$, estas nos permiten dar coordenadas locales suaves en el fibrado cotangente. La carta $(\pi^{-1}(U), \hat{\phi})$, donde $\hat{\phi}: \pi^{-1}(U) \to \phi(U) \times \R^n$ es el mapa definido como:
+\[
+  \hat{\phi} \left(\sum_{i=1}^{n} \omega_i \lambda_i |p \right) 
+  = \left(\phi_1(p), \ldots, \phi_n(p), \omega_1, \ldots, \omega_n \right),
+\]
+es una carta coordenada suave en $T^{*}M$, esto dado que $\hat{\phi}$ se puede expresar como la composición de los mapas $(\phi \times \id_{\R^n}) \circ \Phi$, donde $\Phi$ es la trivialización de asociada a $(U,\phi)$ y que cada uno de los mapas en la composición es un difeomorfismo. Llamamos a estas coordenadas las \it{coordenadas naturales para $T^{*}M$}.
