@@ -1,5 +1,5 @@
 \section{Campos Vectoriales}\label{Sección: Campos Vectoriales}
-\subsection{Fibrados Vectoriales}
+\subsection{Fibrados Vectoriales}\label{Subsección: Fibrados Vectoriales}
 Siguiendo con la extensión y generalización que hemos estado realizando de conceptos conocidos de cálculo en espacios euclidianos, ahora extenderemos la idea de los campos vectoriales, estos objetos nos darán una forma de asignar a cada punto de una variedad un vector del espacio tangente.
 
 Para poder definir lo que es un campo vectorial primero hablaremos de lo que son los fibrados vectoriales, lo cual responderá a las preguntas ¿Por qué hemos decido llamar fibrados a la colección de espacios tangentes a una variedad?, y ¿qué es una fibra?
@@ -104,36 +104,3 @@ La definición de un módulo $\mathcal{M}$ sobre un anillo $\mathcal{R}$ coincid
 \end{proof}
 
 Los módulos, al ser una generalización del concepto de espacio vectorial también nos permitirán generalizar varios otros conceptos relacionados, como lo son las combinaciones lineales, la dependencia (o independencia) lineal o las bases, sin embargo, es importante no perder de vista que no todos los resultado que aplican para espacios vectoriales aplicaran para los módulos.
-
-
-% \begin{example}[Marco de una Trivialización]
-% 	Sea $(E,M,\pi)$ un fibrado vectorial suave de rango $k$.
-% 	Si $\phi: \pi^{-1}(U) \to U \times \R^k$ es la trivialización de $E$ sobre un subconjunto abierto $U$, entonces $\phi^{-1}$ lleva los marcos suaves vistos en el ejemplo anterior, $\{\hat{e}_1,\ldots,\hat{e}_k\}$ del producto fibrado $U \times \R^k$ a marcos suaves $\{\tau_1,\ldots,\tau_k\}$ para $E$ sobre $U$:
-% 	\[
-% 		\tau_i(p) = \phi^{-1}(\hat{e}_i(p)) = \phi^{-1}(p,e_i),
-% 		\quad
-% 		p \in U.
-% 	\]
-% 	Llamamos al marco $\{\tau_1,\ldots,\tau_k\}$ el \it{marco suave sobre $U$ de la trivialización de $\phi$}.
-% \end{example}
-
-% \begin{lemma}
-% 	Sea $(E,M,\pi)$ un fibrado vectorial suave, $\phi: \pi^{-1}(U) \to U \times \R^{k}$ la trivialización de $E$ sobre un subconjunto abierto $U \subset M$ y $\{\tau_1, \ldots, \tau_k\}$ el marco suave de la trivialización sobre $U$. Una sección $\sigma = \sum_{i=1}^{k} b_i \tau_i$ de $E$ sobre $U$ es suave si y solo si los coeficientes $b_i$ son todos suaves relativos al marco $\{\tau_1, \ldots,\tau_k\}$.
-% \end{lemma}
-
-% \begin{proof}
-% 	Supongamos que la sección $\sigma = \sum_{i=1}^k$ de $E$ es suave sobre $U$. Por definición esto significa que la composición $\phi \circ \sigma$ es suave. Por la linealidad de $\phi$ y la definición que hemos dado para $\tau_i$ se tiene la siguiente cadena de igualdades:
-% 	\begin{align*}
-% 		(\phi\circ\sigma)(p) & = \phi(\sigma(p))                                         \\
-% 		                     & = \phi \left( \sum_{i=1}^{k}b_i(p)\tau_i(p) \right)       \\
-% 		                     & = \left(\sum_{i=1}^{k}\phi(b_i(p)\tau_i(p))\right)        \\
-% 		                     & = \left(\sum_{i=1}^{k}b_i(p)\phi(\tau_i(p))\right)        \\
-% 		                     & = \left(\sum_{i=1}^{k}b_i(p)\phi(\phi^{-1}(p,e_i))\right) \\
-% 		                     & = \left(\sum_{i=1}^{k}b_i(p)(p,e_i)\right)                \\
-% 		                     & = \left(p,\sum_{i=1}^{k}b_i(p) e_i\right)                 \\
-% 	\end{align*}
-
-% 	Por lo tanto, los coeficientes $\b_i(p)$ son simplemente las fibras coordenadas de $s(p)$, como se vio en el ejemplo \ref{} relativas a la trivialización $\phi$. Dado que la composición $\phi \circ s$ es suave, cada una de las componentes $b_i$ es suave.
-
-% 	Ahora supongamos que cada $b_i$ es suave
-% \end{proof}

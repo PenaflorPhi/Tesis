@@ -1,7 +1,7 @@
 \subsection{El Espacio Cotangente}\label{Subsección: El Espacio Cotangente}
 Ahora que sabemos que es el espacio dual podemos hablar del espacio espacio dual del espacio tangente a un punto de una variedad, espacio al cual llamaremos \it{espacio cotangente}.
 
-\begin{definition}
+\begin{definition}[Covector en un punto]
 	Sea $M$ una variedad suave y $p$ un punto en $M$. Definimos el \it{espacio cotangente de $M$ en $p$}, denotado $T_{p}^{*}(M)$, como el espacio dual del espacio tangente $T_p(M)$
 	\[
 		T^{*}_p(M) = (T_p(M))^*.
@@ -101,6 +101,6 @@ Como acabamos de mencionar, dada una carta suave $(U,\phi) = (U,\phi_1,\ldots,\p
 Otra similitud entre el fibrado cotangente $T^{*}M$ y el fibrado tangente $TM$ de una variedad suave es que, dadas coordenadas locales suaves $\{\phi_1,\ldots,\phi_n\}$ para un subconjunto abierto $U$ de $M$, estas nos permiten dar coordenadas locales suaves en el fibrado cotangente. La carta $(\pi^{-1}(U), \hat{\phi})$, donde $\hat{\phi}: \pi^{-1}(U) \to \phi(U) \times \R^n$ es el mapa definido como:
 \[
   \hat{\phi} \left(\sum_{i=1}^{n} \omega_i \lambda_i |p \right) 
-  = \left(\phi_1(p), \ldots, \phi_n(p), \omega_1, \ldots, \omega_n \right),
+  = \left(\phi_1(p), \ldots, \phi_n(p), \omega_1(p), \ldots, \omega_n(p) \right),
 \]
 es una carta coordenada suave en $T^{*}M$, esto dado que $\hat{\phi}$ se puede expresar como la composición de los mapas $(\phi \times \id_{\R^n}) \circ \Phi$, donde $\Phi$ es la trivialización de asociada a $(U,\phi)$ y que cada uno de los mapas en la composición es un difeomorfismo. Llamamos a estas coordenadas las \it{coordenadas naturales para $T^{*}M$}.

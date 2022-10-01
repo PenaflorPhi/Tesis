@@ -1,2 +1,158 @@
 \subsection{Campos de Covectores}\label{Subsección: Campos de Covectores}
-Como es de esperarse, por lo visto en la sección de campos vectoriales \ref{Sección: Campos Vectoriales}, una sección del fibrado cotangente de una variedad será llamada un \it{campo de covectores}. Los campos de covectores pueden ser clasificados de modo similar a como se ha hecho con los campos vectoriales, diciendo que el campo es un \it{campo grueso de covectores} si es un campo no necesariamente suave o continuo, o que es un \it{campo suave de covectores} si es que el campo es suave.
+Como es de esperarse, por lo visto en la sección de campos vectoriales \ref{Sección: Campos Vectoriales}, una sección del fibrado cotangente de una variedad será llamada un \it{campo de covectores} o \it{$1-$forma (diferencial)}. Los campos de covectores pueden ser clasificados de modo similar a como se ha hecho con los campos vectoriales, diciendo que el campo es un \it{campo grueso de covectores} si es un campo no necesariamente suave o continuo, o que es un \it{campo suave de covectores} si es que el campo es suave.
+
+Las formas diferenciales son una generalización de las funciones en variedades; son asignaciones que toman puntos en la variedad y nos regresan covectores, en el anexo \ref{Sección: Álgebra Multilineal y Tensores} profundizamos un poco más sobre la clasificación de las formas y porque llamamos a estas $1-$formas.
+
+Los campos de covectores surgen de una manera bastante natural, de hecho, hemos estado haciendo uso de ellos sin siquiera mencionarlo. Si $X$ es un campo vectorial suave en $M$, $(U, \phi)$ es una carta suave, entonces para cada punto $p$ en $U$ tenemos que:
+\[
+	X(p) = \sum_{i=1}^{n} X_i \left. \frac{\partial}{\partial \phi_i} \right|_{p}.
+\]
+Estos coeficientes $X_i$ que dependen de $X(p)$ son funciones lineales $X_i: T_{p}M \to \R$ por lo que son covectores en $p$, haciendo variar al punto $p$ en $U$ tenemos que cada una de las funciones $X_i$ es un campo vectorial sobre $U$.
+
+Para denotar a la $1-$forma $\omega$ en algún punto $p$ de una variedad suave utilizaremos la notación de subíndice $\omega_p$ o $\omega|_{p}$ dependiendo de nuestras necesidades.
+
+Dada una carta suave $(U,\phi)$ en $M$ podemos expresar una $1-$forma $\omega$ en términos de los campos coordenados de covectores $\{\lambda_i\}_{i=1}^n$ asociados a las coordenadas locales $\{\phi_i\}_{i=1}^n$, esto se hace de la manera que podríamos esperar,
+\[
+	\omega = \sum_{i=1}^{n} \omega_i \lambda_i,
+\]
+donde $\omega_i$ son $n$ funciones las cuales se definen a partir de la propiedad:
+\[
+	\omega_i(p)
+	=
+	\omega_p \left(\left.
+	\frac{\partial}{\partial \phi_i}
+	\right|_{p}\right).
+\]
+Es importante notar que notemos que en la combinación lineal no estamos evaluando en ningún punto en especifico, este es la diferencial fundamental entre un simple covector y un campo de covectores, sin embargo, al poder variar los punto que se eligen es posible que el campo resultante no sea suave (o continuo). Estamos particularmente interesados en los campos de covectores suaves, es por esto que necesitamos dar algunas caracterizaciones para la suavidad del campo.
+
+\begin{theorem}\label{Teorema: Criterio de Suavidad para Campos de Covectores}
+	Sea $M$ una variedad suave y sea $\omega: M \to T^{*}M$ un campo grueso de covectores, las siguientes proposiciones son equivalentes:
+	\begin{enumerate}
+		\item $\omega$ es suave.
+		\item Para cada carta suave, las funciones componentes de $\omega$ son suaves.
+		\item Cada punto de $M$ está contenido en alguna coordenada en la cual $\omega$ tiene funciones componentes suaves.
+		\item Para campo suave $X \in \mathfrak{X}(M)$, la función $\omega(X)$ es suave en $M$.
+		\item Para cada subconjunto abierto $U \subseteq M$ y cada campo vectorial suave $X$ en $U$, la función $\omega(X): U \to \R$ es suave en $U$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+	Comenzaremos mostrando que $1 \implies 2$, supongamos que $\omega$ es suave. Dada una carta suave $(U, \phi)$ y un punto $p$ en $U$, podemos utilizar el mapa $\Phi: T^{*}U \to U \times \R^n$ definido anteriormente para expresar en coordenadas al campo en dicho punto:
+	\[
+		\Phi(\omega_p) = (\phi_1(p), \ldots,\phi_n(p), \omega_1(p), \ldots, \omega_n(p))
+	\]
+	Dado que $\Phi$ es un difeomorfismo, al componerlo con $\omega$ obtendremos que la composición es suave, esto implica que cada una de las coordenadas es suave.
+
+	La propiedad $2$ implica la propiedad $3$ de forma trivial dado que cada punto está contenido en el dominio de alguna carta suave.
+
+	Ahora probaremos que la propiedad $3$ implica a la propiedad $1$, supongamos que $p$ es un punto en $M$ y $(U,\phi)$ es una carta coordenada suave cuyo dominio contiene a $p$, por hipótesis tenemos que
+	\[
+		\Phi(\omega_p) = (\phi_1(p), \ldots,\phi_n(p), \omega_1(p), \ldots, \omega_n(p))
+	\]
+	cada una de las componentes es suave, por lo que $\omega$ es suave.
+
+	También es sencillo ver que la propiedades $1, 2$ y $3$ implican a la propiedad $4$. Si $\omega$ es una $1-$forma suave y $X$ es un campo suave, dada una carta suave $(U,\phi)$ podemos expresar a ambos como las combinaciones lineales:
+	\[
+		\omega = \sum_{i=1}^{n} \omega_i \lambda_i,
+		\quad \quad
+		X = \sum_{j=1}^{n} X_j \frac{\partial}{\partial \phi_j},
+	\]
+	donde $\{\lambda_i\}_{i=1}^{n}$ es la base asociada a $\{\phi_i\}_{i=1}^n$. Por linealidad de la $1-$forma se tiene que:
+	\begin{align*}
+		\omega(X) & =
+		\left(\sum_{i=1}^{n} \omega_i \lambda_i\right)
+		\left(\sum_{j=1}^{n} X_j \frac{\partial}{\partial \phi_j}\right)     \\
+		          & =
+		\sum_{i=1}^{n} \sum_{j=1}^{n}
+		\omega_i X_j \lambda_i \left(\frac{\partial}{\partial \phi_j}\right) \\
+		          & =
+		\sum_{i=1}^{n} \sum_{j=1}^{n}
+		\omega_i X_j \delta_{ij}                                             \\
+		          & =
+		\sum_{i=1}^{n} \omega_i X_i
+	\end{align*}
+	El cambio entre la segunda y la tercera igualdad se cumple por la propiedad vista en el teorema \ref{Teorema: Dimensión del Espacio Dual}, dado que $\omega$ es suave cada uno de las componentes $\omega_i$ en cualquier carta abierta, también, por el teorema \ref{Teorema: Primer Criterio de Suavidad Para Campos Vectoriales} se garantiza que las componentes $X_i$ son suaves. Como esto se cumple para cada punto $p$ en $M$ sabemos que $\omega(X)$ es suave.
+
+	Veamos que la propiedad $4$ implica la propiedad $5$. Sea $U$ un subconjunto abierto de $M$ y $X$ un campo vectorial suave en $U$.
+
+	Para cada punto $p \in U$ podemos tomar una vecindad $V_p \subset U$ y construir una función indicadora suave $\psi$ que sea idénticamente uno en la vecindad y con soporte en $U$, i.e.,
+	\[
+		\psi(q) = \begin{cases}
+			1, \quad & q \in V     \\
+			0, \quad & q \in M - U
+		\end{cases}
+	\]
+	De este modo definiremos el campo vectorial global $\hat{X} = \psi X$, este campo coincide con $X$ en la vecindad $V_p$, y esto se cumple para una vecindad de cada punto $p$ en $U$ por lo que $\omega(\hat{X})$ será suave en $U$.
+
+	Finalmente, la propiedad $5$ implica a la propiedad $2$ dado que para cada carta suave $\{U,\phi\}$ se tiene que $\{\frac{\partial}{\partial \phi_i}\}$ es un campo vectorial suave en $U$, por definición $\omega_i = \omega(\frac{\partial}{\partial \phi_i})$, por lo que cada $\omega_i$ es suave en cada carta $(U,\phi)$.
+\end{proof}
+
+\begin{definition}
+	Sea $M$ una variedad suave y sea $U \subseteq M$ un subconjunto abierto. Un \it{co-marco (local) para $M$ sobre $U$} es una $n-$tupla ordenada de $1-$formas $\{\epsilon_1, \ldots, \epsilon_n\}$ definidas en $U$ tales que $\{\epsilon_1|_p, \ldots, \epsilon_n|_p\}$ forma una base para $T_{p}^{*}M$ en cada punto $p \in U$. Si $U = M$ diremos que el co-marco es un \it{co-marco global}.
+\end{definition}
+
+\begin{example}
+	Sea $M$ una variedad suave y $(U,\phi)$ una carta suave, los covectores $\{\lambda_1, \ldots, \lambda_n\}$ duales a las funciones coordenadas $\{\phi_1, \ldots, \phi_n\}$ forman una base para $T_p^* M$ para cada $p \in U$ por lo que son un co-marco local. Al co-marco $\{\lambda_1, \ldots, \lambda_n\}$ le llamamos el \it{co-marco coordenado}.
+\end{example}
+
+Dado un marco $\{E_1, \ldots, E_n\}$ para $TM$ sobre un subconjunto abierto $U$, es siempre posible definir $n$ $1-$formas $\{\epsilon_1, \ldots, \epsilon_n\}$ como se vio en el Teorema \ref{Teorema: Dimensión del Espacio Dual}, definiendo a las $1-$formas por la propiedad $\epsilon_i(E_j) = \delta_{ij}$, de esta manera, $\{\epsilon_1,\ldots,\epsilon_n\}$ es un co-marco para $T^*M$ sobre U, al co-marco construido de esta manera le llamamos el \it{co-marco dual}. Este co-marco no tiene porque ser suave, ni siquiera necesita ser continuo, es por esto que daremos los siguientes resultados, los cuales nos ayudaran a garantizar la suavidad de los co-marcos, es por esto que daremos los siguientes resultados, los cuales nos ayudaran a garantizar la suavidad de los co-marcos.
+
+\begin{lemma}
+	Sea $M$ una variedad suave. Si $\{E_1,\ldots,E_n\}$ es un marco local grueso sobre un subconjunto abierto $U \subseteq M$ y $\{\epsilon_1,\ldots,\epsilon_n\}$ su co-marco dual, el marco $\{E_1,\ldots,E_n\}$ es suave si y solo si $\{\epsilon_1,\ldots, \epsilon_n\}$ es suave.
+\end{lemma}
+
+\begin{proof}
+	Sea $M$ una variedad suave, $U$ un subconjunto abierto y sean $\{E_1, \ldots, E_n\}$ y $\{\epsilon_1,\ldots,\epsilon_n\}$ un marco y co-marco sobre $U$ respectivamente. Dado cualquier punto $p \in U$ podemos tomar una carta suave $(V,\phi)$ en $U$, considerando a $U$ como variedad suave, y en $V$ podemos expresar a cada uno de los campos vectoriales y $1-$formas como combinaciones lineales:
+	\[
+		E_i = \sum_{j=1}^{n} E_j^i\frac{\partial}{\partial \phi_j},
+		\quad\quad
+		\epsilon_k = \sum_{l=1}^{n} \epsilon_l^k \lambda_l
+	\]
+	Por los teoremas \ref{Teorema: Primer Criterio de Suavidad Para Campos Vectoriales} y \ref{Teorema: Criterio de Suavidad para Campos de Covectores} sabemos que un campo vectorial y una $1-$forma $\epsilon_k$ son suaves en $V$ si y solo si los coeficientes $E_j^i$ y $\epsilon_l^k$ son todos funciones suaves en $V$. Consideremos las matrices formadas por los coeficientes $E_j^i$ y $\epsilon_l^k$, estas tienen la forma:
+	\[
+		E = \begin{bmatrix}
+			E_1^1  & E_1^2  & E_1^3  & \cdots & E_1^n  \\[10pt]
+			E_2^1  & E_2^2  & E_2^3  & \cdots & E_2^n  \\[10pt]
+			E_3^1  & E_3^2  & E_3^3  & \cdots & E_3^n  \\[10pt]
+			\vdots & \vdots & \vdots & \ddots & \vdots \\[10pt]
+			E_n^1  & E_n^2  & E_n^3  & \cdots & E_n^n  \\[10pt]
+		\end{bmatrix},
+		\quad\quad
+		\epsilon = \begin{bmatrix}
+			\epsilon_1^1 & \epsilon_2^1 & \epsilon_3^1 & \cdots & \epsilon_n^1 \\[10pt]
+			\epsilon_1^2 & \epsilon_2^2 & \epsilon_3^2 & \cdots & \epsilon_n^2 \\[10pt]
+			\epsilon_1^2 & \epsilon_2^3 & \epsilon_3^3 & \cdots & \epsilon_n^2 \\[10pt]
+			\vdots       & \vdots       & \vdots       & \ddots & \vdots       \\[10pt]
+			\epsilon_1^n & \epsilon_2^n & \epsilon_3^n & \cdots & \epsilon_n^n \\[10pt]
+		\end{bmatrix}
+	\]
+	Al ser  $\{\epsilon_1,\ldots,\epsilon_n\}$ el co-marco dual a $\{E_1,\ldots,E_n\}$ se tiene que $\epsilon_i(E_j) = \delta_{ij}$, por lo que las matrices anteriores serán inversas la una a la otra, es posible mostrar que la inversa de una matriz es suave si y solo si la matriz original es suave. Dado que este se puede hacer para cada vecindad de cualquier punto $p \in U$ podemos garantizar que $\{E_1,\ldots,E_n\}$ es un marco suave si y solo si $\{\epsilon_1,\ldots,\epsilon_n\}$ es un co-marco suave.
+\end{proof}
+
+Del mismo modo que los marcos locales nos permiten expresar a los campos vectoriales como combinaciones lineales, los co-marcos nos permiten expresar a las $1-$formas com combinaciones de estos.
+
+Dado un co-marco local $\{\epsilon_1,\ldots,\epsilon_n\}$ sobre un subconjunto abierto $U \subseteq M$, toda $1-$forma $\omega$ en $U$ puede ser expresada como la combinación lineal
+\[
+	\omega = \sum_{i=1}^{n} \omega_i \epsilon_i,
+\]
+donde $\omega_i: U \to \R$ son n funciones a las cuales llamamos \it{las componentes de $\omega$ con respecto al co-marco}, y que se definen como $\omega_i = \omega(E_i)$ donde $\{E_i\}_{i=1}^n$ es el marco dual al co-marco $\{\epsilon_1,\ldots,\epsilon_n\}$.
+
+Conociendo esta representación podemos dar una caracterización adicional de la suavidad de las $1-$formas.
+
+\begin{theorem}
+	Sea $M$ una variedad suave, y sea $\omega$ una $1-$forma gruesa en $M$. Si $\{\epsilon_1,\ldots,\epsilon_n\}$ es un co-marco suave en un subconjunto abierto $U \subseteq M$, entonces $\omega$ es suave en $U$ si y solo si las funciones componentes son suaves con respecto al $\{\epsilon_i\}_{i=1}^n$.
+\end{theorem}
+
+\begin{proof}
+	Consideremos que es lo que sucede cuando ponemos a $\omega$ en coordenadas. Sea $\Phi: T^{*}U \to U \times \R^n$ el mapa definido anteriormente, sabemos que este mapa es un difeomorfismo por lo que la composición $\Phi \circ \omega$, que expresamos:
+	\[
+		\Phi(\omega) = (E_1, \ldots, E_n, \omega_1, \ldots, \omega_n),
+	\]
+	donde $\{E_i\}_{i=1}^n$ es el marco dual a $\{\epsilon_i\}_{i=1}^n$, será suave en $U$ cada una de las componentes $\omega_i$ es suave.
+\end{proof}
+
+Denotaremos al conjunto de todos las $1-$formas en $M$ por $\mathfrak{X}^*(M)$. Como se mostró en la subsección \ref{Subsección: Fibrados Vectoriales} en el teorema \ref{Teorema: Los Fibrados Vectoriales Son Modulos}, las secciones de un fibrado vectorial forman un modulo sobre el anillo ode funcione suaves $C^{\infty}(M)$, en particular, esto es cierto para los elementos de $X^{*}(M)$, por lo que si tenemos $1-$formas $\omega,\nu \in \mathfrak{X}^*(M)$ y alguna función suave $f \in C^{\infty}M$ definiremos la suma de $1-$formas y el producto por funciones suaves de la manera usual.
+\begin{align*}
+	(\omega + \nu)(p) & = \omega_p + \nu_p, \quad p \in M \\
+	(f\omega)(p)      & = f(p)\omega_p.
+\end{align*}
