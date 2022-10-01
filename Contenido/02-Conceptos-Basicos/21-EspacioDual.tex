@@ -2,7 +2,7 @@
 \subsection{El Espacio Dual de un Espacio Vectorial}
 
 \begin{definition}[Espacio Dual]
-	Sea $V$ un espacio vectorial sobre un campo $\mathbb{F}$. Definiremos el \it{espacio dual (algebraico) de $V$}, denotado como $V^*$, como el conjunto de todos los mapas (en el sentido algebraico) $\omega: V \to \mathbb{F}$. A un elemento del espacios dual, $\omega \in V^*$, se le llama \it{$1-$forma} o \it{covector}
+	Sea $V$ un espacio vectorial sobre un campo $\mathbb{F}$. Definiremos el \it{espacio dual (algebraico) de $V$}, denotado como $V^*$, como el conjunto de todos los mapas (en el sentido algebraico) $\omega: V \to \mathbb{F}$. A un elemento del espacios dual, $\omega \in V^*$, se le llama \it{covector}.
 \end{definition}
 
 Hacemos la aclaración de que estaremos trabajando con el espacio dual algebraico y por conveniencia lo llamaremos simplemente el espacio dual o dual, en nuestro caso no hace ninguna diferencia ni hay perdida de generalidad dado que estamos trabajando con espacios vectoriales de dimensión finita, por lo que el dual topológico y el dual algebraico coincidirán.
@@ -85,7 +85,7 @@ Más aún, este espacio vectorial es finito dimensional y la dimensión de $V^{*
 			E_n^n
 		\end{bmatrix} \in V.
 	\]
-	Por el teorema anterior sabemos que la base del espacio dual puede ser obtenida definiendo $n$ $1-$formas, $\{\epsilon_1,\dots,\epsilon_n\}$, del siguiente modo:
+	Por el teorema anterior sabemos que la base del espacio dual puede ser obtenida definiendo $n$ covectores, $\{\epsilon_1,\dots,\epsilon_n\}$, del siguiente modo:
 	\[
 		\epsilon_i (E_j) = \delta_{ij}
 	\]
@@ -126,7 +126,7 @@ Más aún, este espacio vectorial es finito dimensional y la dimensión de $V^{*
 	Esto tiene mucho sentido si pensamos que los vectores columnas son matrices $n \times 1$, esto es, transformaciones lineales de $\mathbb{F}$ a $\mathbb{F}^n$, y los covectores son transformaciones lineales de $\mathbb{F}^n$ a $\mathbb{F}$, matrices $1 \times n$
 \end{example}
 
-\begin{definition}
+\begin{definition}[Mapa Dual]
 	Sean $V$ y $W$ espacios vectoriales y sea $A: V \to W$ un mapa lineal. Definiremos al mapa $A^*: W^* \to V^*$ como:
 	\[(A^{*}\omega)(v) = \omega(Av), \quad \omega \in W^{*}, v \in V.\]
 	Llamaremos a este mapa, el \it{mapa dual} o \it{transpuesta de $A$}.

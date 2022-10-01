@@ -1,0 +1,186 @@
+\subsection{El Diferencial}\label{Subsección: El Diferencial}
+En el cálculo diferencial usual estudiamos un campo vectorial sin profundizar demasiado en el, el gradiente. Dada una función suave $f$ en $\R^n$ definimos al gradiente de $f$ como:
+\[
+	\nabla f = \sum_{i=1}^{n} \frac{\partial f}{\partial x_i} x^i,
+\]
+donde $x_i$ son las coordenadas canónicas de $\R^n$; hemos visto que podemos identificar la base de $\R^n$ con la de $T\R^n$ dado que como espacios vectoriales estos son isomorfos, por lo cual el gradiente también puede ser expresado como la combinación lineal
+\[
+	\nabla f = \sum_{i=1}^{n} \frac{\partial f}{\partial x_i} \frac{\partial}{\partial x^i}.
+\]
+Una aplicación que podemos darle a los campos de covectores es que nos permiten dar una interpretación de las derivadas parciales de una función suave como componentes del campo de covectores, lo cual nos permite dar una generalización más general la cual sea libre de coordenadas.
+
+\begin{definition}[Diferencial de una función]
+	Sea $M$ una variedad suave y $f \in C^{\infty}(M)$, definiremos una $1-$forma la cual denotaremos por $df$, a la cual llamamos \it{diferencial de $f$}, que para cualquier punto $p \in M$ y cualquier vector tangente $X_p \in M$ se tiene que:
+	\[
+		(df)_p(X_p) = X_p f
+	\]
+\end{definition}
+
+Existe una relación entre el diferencial de una función que acabamos de definir y el diferencial de una función que estudiamos a lo largo de la sección \ref{Capítulo: Cálculo en Variedades}, y es que, estos objetos son esencialmente el mismo, simplemente que podemos dar interpretaciones diferentes de su significado.
+
+Para el siguiente resultado identificaremos al diferencial de una función descrito en la sección \ref{Capítulo: Cálculo en Variedades} utilizando el símbolo $f_*$, esto simplemente para poder distinguirlo del diferencial que acabamos de definir.
+
+\begin{theorem}
+	Si $f: M \to \R$ es una función suave, entonces para cada punto $p \in M$ y cada vector tangente $X_p \in T_pM$
+	\[
+		f_*(X_p) = (df)_p (X_p) \left. \frac{d}{dt} \right|_{f(p)}
+	\]
+\end{theorem}
+
+\begin{proof}
+	Por definición del diferencial de $f$ se tiene que $f_*$ es un vector tangente en $T_{f(p)}\R$, por lo cual debe existir un número real $\alpha$ tal que:
+	\[
+		f_*(X_p) = \alpha \left. \frac{d}{dt} \right|_{f(p)}
+	\]
+
+	Aplicando ambos lados de la igualdad a $t$ obtendremos:
+	\[
+		\alpha \left. \frac{d}{dt} \right|_{f(p)}t = f_*(X_p)(t)
+	\]
+	Por lo cual obtendremos la siguiente cadena de igualdades.
+	\begin{align*}
+		\alpha & = X_p(t \circ f) \\
+		       & = X_p(f)         \\
+		       & = (df)_p(X_p)
+	\end{align*}
+\end{proof}
+
+Esto lo que nos muestra es que podemos identificar al espacio tangente $T_{f(p)}\R$ con $\R$ bajo una identificación canónica,
+\[
+	\alpha \longleftrightarrow \alpha \frac{d}{dt}.
+\]
+Y es bajo esta identificación que ambos diferenciales, $d_*$ y $df$, pueden ser visto como el mismo objeto. En esta subsección exploraremos un poco la interpretación que podemos darle al diferencial de una función.
+
+\begin{lemma}
+	El diferencial de una función suave es una $1-$forma.
+\end{lemma}
+
+\begin{proof}
+	Sea $f: M \to \R$ una función suave, para cada punto $p \in M$, $df_p(X_p)$ depende linealmente del vector tangente $X_p$, esto se puede ver fácilmente, supongamos que $X_p, Y_p$ son vectores tangentes en $T_pM$ y $a$ es un escalar, entonces:
+	\begin{align*}
+		df_p( aX_p + Y_p) & = (a X_p + Y_p) f         \\
+		                  & = a X_p f + Y_p f         \\
+		                  & = a df_p(X_p) + df_p(Y_p)
+	\end{align*}
+	Además, por el teorema \ref{Teorema: Criterio de Suavidad para Campos de Covectores} podemos garantizar que $df$ es suave, dado que para cada campo vectorial $X$ se tiene que $df(X) = Xf$, que es la composición de funciones suaves.
+\end{proof}
+
+Siguiendo con la interceptación que podemos dar del diferencial, como ya mencionábamos, este es una generalización del gradiente, esto afirmación se justifica del siguiente modo:
+
+Sea $M$ una variedad suave y $(U,\phi)$ una carta suave en $M$, sea $\{\lambda_1, \ldots, \lambda_n\}$ el comarco dual a $\{\phi_1,\ldots, \phi_n\}$ en $U$. Al expresar $df$ como combinación lineal tenemos que:\[
+	df_p = \sum_{i=1}^n A_i(p) \lambda_i |_p
+\]
+donde $A_i: U \to \R$ son $n$ funciones, que, por como hemos definido a $df$ pueden ser calculadas como:
+\[
+	A_i(p)
+	= df_p \left( \left. \frac{\partial}{\partial \phi_i} \right|_{p}\right)
+	= \left. \frac{\partial}{\partial \phi_i} \right|_{p} f
+\]
+Por lo tanto, podemos expresar al diferencial en un punto como la combinación lineal:
+\[
+	df_p = \sum_{i=1}^n \frac{\partial f(p)}{\partial \phi_i} \lambda_i|_p
+\]
+Esta última igualdad tiene una consecuencia muy interesante, al considerar a la función $f$ como alguna de las funciones coordenadas $\phi_i$ lo que obtenemos es lo siguiente:
+\begin{align*}
+	d\phi_j|_p
+	 & = \sum_{i=1}^n \frac{\partial \phi_j(p)}{\partial \phi_i} \lambda_i |_p \\
+	 & = \sum_{i=1}^n \delta_{ij} \lambda_i|_p                                 \\
+	 & = \lambda_j
+\end{align*}
+Esto quiere decir que los covectores $\lambda_j$ que hemos estado utilizando hasta ahora, son, en realidad, el diferencial de las funciones coordenadas, por lo tanto, una mejor manera manera de expresar el diferencial de una función en un punto es:
+\[
+	df_p = \sum_{i=1}^n \frac{\partial f(p)}{\partial \phi_i} d\phi_i |_p
+\]
+O como una ecuación entre $1-$formas:
+\[
+	df = \sum_{i=1}^n \frac{\partial f}{\partial \phi_i} d\phi_i
+\]
+Como una generalización del gradiente hay propiedades muy naturales que se trasladan al diferencial, estas son una sencilla consecuencia de esta breve discusión y se siguen a partir de las propiedades de las derivadas parciales.
+\begin{corollary}
+	Sea $M$ una variedad suave y sean $f,g \in C^{\infty}(M-)$.
+	\begin{enumerate}
+		\item Si $a,b \in \R$, entonces $d(af+bg) = adf + bdg$.
+		\item $d(fg) = fdg + gdf$.
+		\item $d(\frac{f}{g}) = \frac{gdf - fdg}{g^2}$, en conjunto donde $g \neq 0$.
+		\item Si $J \subseteq \R$ es un intervalo que contiene a la imagen de $f$, y $h: J \to \R$ es una función suave, entonces $d(h \circ f) = (h' \circ f)df$.
+		\item Si $f$ es constante, entonces $df = 0$.
+	\end{enumerate}
+\end{corollary}
+
+En el cálculo en espacios euclidianos a los diferenciales se les suele introducir en el contexto de las derivadas, usualmente de la siguiente manera. Sea $E \subseteq \R^n$ un subconjunto abierto, $f: E \to \R^m$, y $x$ un punto en el subconjunto $E$. Decimos que la función es diferenciable en $x$ si existe una transformación lineal $A: \R^n \to R^m$ tal que:
+\[
+	\lim_{h \to 0} \left| \frac{f(x+h) - f(x) - Ah}{h} \right| = 0
+\]
+Esta definición nos está diciendo que le diferencial es la mejor aproximación lineal de la función $f$ en el punto $x$, la definición que nosotros acabamos puede ser interpretada de manera muy similar como la mejor aproximación lineal (en el espacio tangente) a la función, además de tener la ventaja que es invariante bajo cambios de coordenadas.
+
+Vimos en la subsección \ref{Subsección: Pushforward de Campos Vectoriales} como es que el pushforward de un campo vectorial lo que hace es empujarnos del fibrado tangente de una variedad al fibrado tangente de otra variedad, también se menciono que es posible realizar la acción contrario, ser "jalados" de regreso al fibrado tangente de la variedad original, esto se logra con el \it{pullback}.
+-
+\begin{definition}[Pullback]
+	Sea $F: M \to N$ un mapa suave entre variedades y $p$ un punto en $M$. Al mapa dual a $dF_p: T_pM \to T_{F(p)}N$ le llamamos \it{co-diferencial de $F$} o \it{pullback por $F$ en $p$}, a este mapa lo denotaremos como:
+	\[
+		dF_p^*: T_{F(p)}N \to T_pM
+	\]
+\end{definition}
+
+Por definición de mapa dual te tenemos que si $\omega_{F(p)}$ es un covector en $T_{F(p)}N$ y $X_p$ es un vector tangente en $T_pM$, entonces el diferencial el pullback es:
+\[
+	dF_{p}^{*}(\omega_{F(p)})(X_p) = \omega(dF_p(X_p))
+\]
+A diferencia de lo que sucede con los campos vectoriales y el pushforward, el pullback de una  $1-$forma suave siempre está bien definido. Si $\omega$ es una $1-$forma suave en $N$ y $F$ es un mapa suave, entonces podemos definir la $1-$forma gruesa $F^* \omega$ en $M$ como:
+\[
+	(F^*\omega)_p = dF^* (\omega_{F(p)})
+\]
+este actuará sobre vectores tangentes $X_p \in T_pM$ de la siguiente manera
+\[
+	(F^*\omega)_p(X_p) = \omega_{F(p)}(dF_p(X_p))
+\]
+Para dar condiciones de suavidad para el pullback primero daremos un par de propiedades que estos cumplen.
+\begin{lemma}
+	Sea $F: M \to N$ un mapa suave entre variedades. Si $u: N \to \R$ es una función continua y $\omega$ es una $1-$forma en $N$. Entonces:
+	\[
+		F^{*}(u \omega) = (u \circ F) F^*\omega
+	\]
+	Además, si $u$ es suave, entonces:
+	\[
+		F^* du = d(u \circ F)
+	\]
+\end{lemma}
+
+\begin{proof}
+	La primera igualdad se tiene que para cada $p \in M$ se tiene:
+	\begin{align*}
+		(F^{*}(u\omega))_p & = dF^{*}_{p} (u \omega_{F(p)})    \\
+		                   & = dF^*_p ( u(F(p)) \omega(F(p)) ) \\
+		                   & = u (F(p)) (F^{*}\omega)_p        \\
+		                   & = (u \circ F)_{p} F^{*}\omega_p   \\
+		                   & = ((u \circ F) F^*\omega)_p
+	\end{align*}
+	Por lo tanto $ F^{*}(u \omega) = (u \circ F) F^*\omega $.
+
+	Para la segunda igualdad tenemos que para cada vector tangente $X_p \in T_{p}M$:
+	\begin{align*}
+		(F^{*}du)(X_p) & = dF_{p}^{*} (du_{F(p)}))(X_p) \\
+		               & = du_{F(p)} (dF_{p}(X_p))      \\
+		               & = dF_p (X_p)u                  \\
+		               & = X_p (u \circ F)              \\
+		               & = d(u \circ F)_p (X_p)
+	\end{align*}
+\end{proof}
+
+\begin{theorem}
+	Sea $F: M \to N$ un mapa suave entre variedades y sea $\omega$ una $1-$forma en $N$. Entonces el pullback de $\omega$ por $F$ es continuo, además, si $\omega$ es suave, el pullback también lo es.
+\end{theorem}
+
+\begin{proof}
+	Sea $p$ un punto en $M$ y sea $(V, \psi)$ una carta suave en $N$ centrada en $F(p)$. Definimos $U = F^{-1}(U)$ y expresamos $\omega$ como la combinación lineal:
+	\[
+		\omega = \sum_{j=1}^{n} \omega_j d\psi_j,
+	\]
+	donde $\omega_j$ son funciones continuas en $V$, por el lema anterior tenemos que en $U$ se tiene:
+	\begin{align*}
+		F^{*} \omega & = F^{*} \left( \sum_{i=1}^{n} \omega_j d\psi_j \right) \\
+		             & = \sum_{j=1}^{n} (\omega_j \circ F)(F^{*} d\psi_j)     \\
+		             & = \sum_{j=1}^{n} (\omega_j \circ F)(d(\psi_j \circ F))
+	\end{align*}
+  Esta suma esta formada por el producto de la composición de una función continua con una función suave y la composición de funciones suaves, por lo tanto $F^{*}\omega$ es continua; si pidiéramos que $\omega$ fuera suave, entonces cada una de las funciones componentes $\omega_j$ sería suave, por lo cual tendríamos la suma del producto de funciones suaves, la cual es suave sería suave, por lo cual tendríamos la suma del producto de funciones suaves, la cual es suave..
+\end{proof}
