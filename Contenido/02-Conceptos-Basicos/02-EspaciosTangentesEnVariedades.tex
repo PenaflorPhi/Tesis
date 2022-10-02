@@ -21,10 +21,10 @@ El último teorema nos da una motivación sobre cómo podríamos definir lo que 
 	La demostración de este lema es idéntica a la demostración del lema \ref{Lemma: Propiedades de las Derivaciones}.
 \end{proof}
 
-Ahora estudiaremos como es que los mapas suaves afectan a los vectores tangentes. En el caso de los espacios Euclidianos cuando consideramos una función suave de $\R^m$ a $\R^n$ la matriz Jacobiana que representa a la derivada total de la función nos permite aproximar linealmente a la función en una vecindad mediantes vectores tangentes. En las variedades en general no podemos hablar de mapas lineales pero podemos extender la idea de la derivada total con un mapa lineal entre los espacios tangentes de las variedades, mapa al cual llamaremos diferencial o pushforward.
+Ahora estudiaremos como es que los mapas suaves afectan a los vectores tangentes. En el caso de los espacios Euclidianos cuando consideramos una función suave de $\R^m$ a $\R^n$ la matriz Jacobiana que representa a la derivada total de la función nos permite aproximar linealmente a la función en una vecindad mediante vectores tangentes. En las variedades en general no podemos hablar de mapas lineales, pero podemos extender la idea de la derivada total con un mapa lineal entre los espacios tangentes de las variedades, mapa al cual llamaremos diferencial o pushforward.
 
 \begin{definition}[Diferencial de un Mapa Suave en un Punto]
-	Si $M$ y $N$ son variedades suaves y $F: M \to N$ es un mapa suave, entonce para cada punto $p \in M$ el mapa $F$ induce un mapa lineal entre los espacios tangentes $T_p(M)$ y $T_{F(p)}(N)$, denotado por $d_pF: T_p(M) \to T_{F(p)}(N)$, al cual llamaremos el \it{diferencial de $F$ en $p$}.
+	Si $M$ y $N$ son variedades suaves y $F: M \to N$ es un mapa suave, entonces, para cada punto $p \in M$ el mapa $F$ induce un mapa lineal entre los espacios tangentes $T_p(M)$ y $T_{F(p)}(N)$, denotado por $d_pF: T_p(M) \to T_{F(p)}(N)$, al cual llamaremos el \it{diferencial de $F$ en $p$}.
 
 	El mapa $d_pF$ está dado del siguiente modo: Dada una derivación $\omega \in T_p(M)$, $dF_p$ será la derivación en el punto $F(p) \in N$ que actúa sobre funciones suaves de $N$ a $\R$ como:
 	\[ d_pF(\omega)(f) = \omega(f \circ F). \]
@@ -45,7 +45,7 @@ El diferencial $d_pF$ está bien definido dado que $F: M \to N$ y $f: N \to \R$ 
 	                 & = (f \circ F)(p)d_pF(\omega)(g) + (g \circ F)(p)d_pF(\omega)(f).
 \end{align*}
 
-A continuación mostraremos algunas propiedades de los diferenciales de mapas suaves entre variedades, propiedades que son extensiones naturales de las propiedades conocidas de las derivadas totales del cálculo ordinario, como la linealidad del diferencial o la regla de la cadena.
+A continuación, mostraremos algunas propiedades de los diferenciales de mapas suaves entre variedades, propiedades que son extensiones naturales de las propiedades conocidas de las derivadas totales del cálculo ordinario, como la linealidad del diferencial o la regla de la cadena.
 
 \begin{lemma}\label{Lemma: Diferencial del Mapa Identidad}
 	El diferencial del mapa identidad en una variedad es la identidad del espacio tangente a la variedad.
@@ -71,7 +71,7 @@ A continuación mostraremos algunas propiedades de los diferenciales de mapas su
 		                     & = a\omega(f \circ F) + \omega(g \circ F) \\
 		                     & = a d_pF (\omega)(f) + d_pF(\omega)(g).
 	\end{align*}
-	Por lo tanto el diferencial de un mapa es un operador lineal.
+	Por lo tanto, el diferencial de un mapa es un operador lineal.
 \end{proof}
 
 \begin{lemma}\label{Lemma: Regla de la Cadena para Diferenciales}
@@ -90,7 +90,7 @@ A continuación mostraremos algunas propiedades de los diferenciales de mapas su
 		                           & = (d_{F(p)}G \circ d_pF)(\omega)(f)
 	\end{align*}
 
-	Por lo tanto el diferencial de la composición cumple la regla de la cadena, más aún, es un mapa que lleva va del espacio tangente de $M$
+	Por lo tanto, el diferencial de la composición cumple la regla de la cadena, más aún, es un mapa que lleva va del espacio tangente de $M$
 	en $p$, $T_p(M)$, al espacio tangente de $P$ en $(G \circ F)(p)$, $T_{(G \circ F)(p)}(P)$.
 \end{proof}
 
@@ -116,7 +116,7 @@ De modo similar a la derivada total, el diferencial nos permitirá realizar cál
 \begin{proof}
 	Definamos la función $h = f - g$, $h$ es una función suave que sea anula en una vecindad de $p$. Sea $\psi \in C^{\infty}(M)$ una función indicadora suave tal que $\psi(p) \equiv 1$ si $p \in \sup h$ y tal que $\sup \psi \subseteq M - \{p\}$. Dado que $\psi \equiv 1$ donde $h$ es diferente de cero, el producto $\psi h$ es idénticamente $h$. Y, como $h(p) = \psi(p) = 0$, por el lema \ref{Lemma: Propiedades De Las Derivaciones En Variedades} se tendrá que $\omega (h) = \omega (\psi h) = 0$.
 
-	Por la linealidad de $\omega$ se sigue que $\omega(h) = \omega (f - g) = \omega(f) - \omega(g) = 0$, por lo tanto $\omega(f) = \omega(g)$.
+	Por la linealidad de $\omega$ se sigue que $\omega(h) = \omega (f - g) = \omega(f) - \omega(g) = 0$, por lo tanto, $\omega(f) = \omega(g)$.
 \end{proof}
 
 \begin{lemma}\label{Lemma: Espacio Tangente a Subvariedad}
@@ -150,7 +150,7 @@ De modo similar a la derivada total, el diferencial nos permitirá realizar cál
 \end{theorem}
 
 \begin{proof}
-	Para cada $p \in M$ podemos elegir una carta suave $(U, \phi)$ que contenga a $p$. Por definición $\phi$ es un difeomorfismo de $U$ a $\R^n$. El lema \ref{Lemma: Diferencial de un Difeomorfismo} nos dice que $T_{p}(U)$ y $T_{\phi(p)}(\R^n)$ son isomorfos, y el lema anterior garantiza que $T_{p}(U)$ y $T_{p}(M)$ también son isomorfos, por lo tanto se tiene que $T_{p}(M) \simeq T_{\phi(p)}(\R^n)$. De aquí que $\dim T_p(M) = \dim T_{\phi(p)}(\R^n) = n$.
+	Para cada $p \in M$ podemos elegir una carta suave $(U, \phi)$ que contenga a $p$. Por definición $\phi$ es un difeomorfismo de $U$ a $\R^n$. El lema \ref{Lemma: Diferencial de un Difeomorfismo} nos dice que $T_{p}(U)$ y $T_{\phi(p)}(\R^n)$ son isomorfos, y el lema anterior garantiza que $T_{p}(U)$ y $T_{p}(M)$ también son isomorfos, por lo tanto, $T_{p}(M) \simeq T_{\phi(p)}(\R^n)$. De aquí que $\dim T_p(M) = \dim T_{\phi(p)}(\R^n) = n$.
 \end{proof}
 
 Una consecuencia inmediata del teorema \ref{Teorema: Isomorfismo entre Espacio Tangente y Espacio de Derivaciones} y el teorema anterior, \ref{Teorema: Invariancia de la Dimensión} es el siguiente corolario que nos da una identificación canónica de los elementos de cualquier espacio vectorial finito dimensional con los elementos de su espacio tangente, y, a su vez, dar una identificación canónica entre cada espacio tangente a un punto de una variedad y un espacio vectorial.

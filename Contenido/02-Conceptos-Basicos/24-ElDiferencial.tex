@@ -1,5 +1,5 @@
 \subsection{El Diferencial}\label{Subsección: El Diferencial}
-En el cálculo diferencial usual estudiamos un campo vectorial sin profundizar demasiado en el, el gradiente. Dada una función suave $f$ en $\R^n$ definimos al gradiente de $f$ como:
+En el cálculo diferencial usual estudiamos un campo vectorial sin profundizar demasiado en él, el gradiente. Dada una función suave $f$ en $\R^n$ definimos al gradiente de $f$ como:
 \[
 	\nabla f = \sum_{i=1}^{n} \frac{\partial f}{\partial x_i} x^i,
 \]
@@ -70,7 +70,7 @@ Siguiendo con la interceptación que podemos dar del diferencial, como ya mencio
 Sea $M$ una variedad suave y $(U,\phi)$ una carta suave en $M$, sea $\{\lambda_1, \ldots, \lambda_n\}$ el comarco dual a $\{\phi_1,\ldots, \phi_n\}$ en $U$. Al expresar $df$ como combinación lineal tenemos que:\[
 	df_p = \sum_{i=1}^n A_i(p) \lambda_i |_p
 \]
-donde $A_i: U \to \R$ son $n$ funciones, que, por como hemos definido a $df$ pueden ser calculadas como:
+donde $A_i: U \to \R$ son $n$ funciones, que, por cómo hemos definido a $df$ pueden ser calculadas como:
 \[
 	A_i(p)
 	= df_p \left( \left. \frac{\partial}{\partial \phi_i} \right|_{p}\right)
@@ -87,7 +87,7 @@ Esta última igualdad tiene una consecuencia muy interesante, al considerar a la
 	 & = \sum_{i=1}^n \delta_{ij} \lambda_i|_p                                 \\
 	 & = \lambda_j
 \end{align*}
-Esto quiere decir que los covectores $\lambda_j$ que hemos estado utilizando hasta ahora, son, en realidad, el diferencial de las funciones coordenadas, por lo tanto, una mejor manera manera de expresar el diferencial de una función en un punto es:
+Esto quiere decir que los covectores $\lambda_j$ que hemos estado utilizando hasta ahora, son, en realidad, el diferencial de las funciones coordenadas, por lo tanto, una mejor manera de expresar el diferencial de una función en un punto es:
 \[
 	df_p = \sum_{i=1}^n \frac{\partial f(p)}{\partial \phi_i} d\phi_i |_p
 \]
@@ -113,7 +113,7 @@ En el cálculo en espacios euclidianos a los diferenciales se les suele introduc
 \]
 Esta definición nos está diciendo que le diferencial es la mejor aproximación lineal de la función $f$ en el punto $x$, la definición que nosotros acabamos puede ser interpretada de manera muy similar como la mejor aproximación lineal (en el espacio tangente) a la función, además de tener la ventaja que es invariante bajo cambios de coordenadas.
 
-Vimos en la subsección \ref{Subsección: Pushforward de Campos Vectoriales} como es que el pushforward de un campo vectorial lo que hace es empujarnos del fibrado tangente de una variedad al fibrado tangente de otra variedad, también se menciono que es posible realizar la acción contrario, ser "jalados" de regreso al fibrado tangente de la variedad original, esto se logra con el \it{pullback}.
+Vimos en la subsección \ref{Subsección: Pushforward de Campos Vectoriales} cómo es que el pushforward de un campo vectorial lo que hace es empujarnos del fibrado tangente de una variedad al fibrado tangente de otra variedad, también se mencionó que es posible realizar la acción contraria, ser "jalados" de regreso al fibrado tangente de la variedad original, esto se logra con el \it{pullback}.
 -
 \begin{definition}[Pullback]
 	Sea $F: M \to N$ un mapa suave entre variedades y $p$ un punto en $M$. Al mapa dual a $dF_p: T_pM \to T_{F(p)}N$ le llamamos \it{co-diferencial de $F$} o \it{pullback por $F$ en $p$}, a este mapa lo denotaremos como:
@@ -182,5 +182,5 @@ Para dar condiciones de suavidad para el pullback primero daremos un par de prop
 		             & = \sum_{j=1}^{n} (\omega_j \circ F)(F^{*} d\psi_j)     \\
 		             & = \sum_{j=1}^{n} (\omega_j \circ F)(d(\psi_j \circ F))
 	\end{align*}
-  Esta suma esta formada por el producto de la composición de una función continua con una función suave y la composición de funciones suaves, por lo tanto $F^{*}\omega$ es continua; si pidiéramos que $\omega$ fuera suave, entonces cada una de las funciones componentes $\omega_j$ sería suave, por lo cual tendríamos la suma del producto de funciones suaves, la cual es suave sería suave, por lo cual tendríamos la suma del producto de funciones suaves, la cual es suave..
+  Esta suma está formada por el producto de la composición de una función continua con una función suave y la composición de funciones suaves, por lo tanto $F^{*}\omega$ es continua; si pidiéramos que $\omega$ fuera suave, entonces cada una de las funciones componentes $\omega_j$ sería suave, por lo cual tendríamos la suma del producto de funciones suaves, la cual es suave sería suave, por lo cual tendríamos la suma del producto de funciones suaves, la cual es suave.
 \end{proof}

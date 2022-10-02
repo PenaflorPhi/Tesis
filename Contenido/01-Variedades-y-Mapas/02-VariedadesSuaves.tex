@@ -26,7 +26,7 @@ Verificar que dos cartas son suavemente compatibles es relativamente sencillo, d
 	Sea $M$ una variedad topológica. Un \it{atlas} en $M$, denotado como $\A$, es una colección indexada $\{(U_i,\phi_i)\}_{i\in I}$ de cartas en $M$ que cubren a la variedad, esto es:
 	\[\bigcup_{i \in I} U_i = M \]
 
-	Si cualesquiera dos cartas en un atlas son suavemente compatibles, entonces diremos que el atlas es un \it{atlas suave}. A las cartas que forman a un atlas suaves se les llama \it{cartas suaves}.
+	Si cualesquiera dos cartas en un atlas son suavemente compatibles, entonces diremos que el atlas es un \it{atlas suave}. A las cartas que forman a un atlas suave se les llama \it{cartas suaves}.
 
 	Un atlas $\A$ estará contenido en otro atlas $\mathcal{B}$ si cada carta $(U,\phi)$ que pertenece a $\A$ también pertenece a $\mathcal{B}$. Diremos que un atlas suave $\A$ es \it{maximal} si no está propiamente contenido en ningún atlas más grande.
 \end{definition}
@@ -38,7 +38,7 @@ Verificar que dos cartas son suavemente compatibles es relativamente sencillo, d
 Por conveniencia, en lugar de escribir \enquote{Sea $(M,\A)$ una variedad suave} diremos simplemente \enquote{Sea $M$ una variedad suave}; esto cuando la estructura suave se pueda entender a partir del contexto o no sea necesario referirnos a ella de forma explícita.
 
 
-Si quisiéramos definir una función $f: M \to \R$ como suave, quizá pudiesemos haber estado inclinados a dar la siguiente definición: \enquote{Una función $f: M \to \R$ es diferenciable si y sólo si para cada carta $(U,\phi)$ se tiene que $f\circ \phi^{-1}: \phi(U) \to \R$ es una función diferenciable}, esta definición podría parecernos más natural, sin embargo presenta un problema de ambigüedad ya que, para una misma variedad pueden existir muchos atlas diferentes que generan estructuras similares pero distintas, como veremos en los siguientes ejemplos.
+Si quisiéramos definir una función $f: M \to \R$ como suave, quizá pudiésemos haber estado inclinados a dar la siguiente definición: \enquote{Una función $f: M \to \R$ es diferenciable si y sólo si para cada carta $(U,\phi)$ se tiene que $f\circ \phi^{-1}: \phi(U) \to \R$ es una función diferenciable}, esta definición podría parecernos más natural, sin embargo, presenta un problema de ambigüedad ya que, para una misma variedad pueden existir muchos atlas diferentes que generan estructuras similares pero distintas, como veremos en los siguientes ejemplos.
 
 \begin{figure}[h]
 	\begin{center}
@@ -62,7 +62,7 @@ Si quisiéramos definir una función $f: M \to \R$ como suave, quizá pudiesemos
 		\psi(x) = x^3
 	\]
 
-	Esta función es un homeomorfismo, y por los ejemplos anteriores sabemos que $(\R, \psi(x))$ es una variedades suave, con la estructura definida por  $\psi$. Sin embargo, al considerar el mapa de transición tenemos que $\id_{\R} \circ \psi^{-1}(y) = y^{\frac{1}{3}}$, y esta función no es diferenciable en el origen, por lo cual las cartas no son suavemente compatibles, y las estructuras determinadas por $(\R, \id_{\R})$ y $(\R,\psi)$ serán diferentes.
+	Esta función es un homeomorfismo, y por los ejemplos anteriores sabemos que $(\R, \psi(x))$ es una variedad suave, con la estructura definida por  $\psi$. Sin embargo, al considerar el mapa de transición tenemos que $\id_{\R} \circ \psi^{-1}(y) = y^{\frac{1}{3}}$, y esta función no es diferenciable en el origen, por lo cual las cartas no son suavemente compatibles, y las estructuras determinadas por $(\R, \id_{\R})$ y $(\R,\psi)$ serán diferentes.
 \end{example}
 
 Para resolver este problema de ambigüedad es que hemos introducido el concepto atlas maximal. Lo que el atlas maximal nos garantiza es que cada carta que sea suavemente compatible con cualquier otra carta en el atlas estará ya incluida en el mismo.
@@ -103,7 +103,7 @@ Hay muchos ejemplos de variedad suaves y, como veremos a continuación, a cada u
 	Es posible definir una métrica en $V$, la cual podemos definir del siguiente modo:
 	\[d(x,y) = \|x - y\|\]
 
-	Esta métrica nos inducirá una topología, la cual hará de nuestro isomorfismo entre espacios vectoriales un homeomorfismo lineal entre espacios topologicos.
+    Esta métrica nos inducirá una topología, la cual hará de nuestro isomorfismo entre espacios vectoriales un homeomorfismo lineal entre espacios topológicos.
 
 	Al considerar algún otro homeomorfismo lineal $\psi: V \to \R^n$ se tendrá que la composición $\psi \circ \phi^{-1}: \phi(V) \to \R^n$ también es un homeomorfismo, por lo que tanto $\psi$ como $\phi$ determinan la misma topología en $V$. Al ser $\phi$ un homeomorfismo podemos garantizar que $V$ es Hausdorff y segundo numerable. Así, cada espacio vectorial real finito dimensional es una variedad topológica.
 
@@ -139,7 +139,7 @@ Hay muchos ejemplos de variedad suaves y, como veremos a continuación, a cada u
 	En el caso en el que los índices son diferentes tendremos que el mapa de transición está dado como:
 	\[ \phi_i^{+} \circ \left(\phi_{j}^{-}\right)^{-1}(u_1, \dots, u_n) = \left(u_1, \dots, \underbrace{\pm \sqrt{1 - \|u\|^2}}_{j-\text{ésimo término}},\dots, u_{i-1}, u_{i+1}, \dots, u_{n} \right) \]
 
-	En ambos casos las composiciones son diferenciables y en ningún punto cero, podemos concluir entonces que ambas son difeomorfismos. Por lo tanto determinan una estructura suave en $\S^n$.
+	En ambos casos las composiciones son diferenciables y en ningún punto cero, podemos concluir entonces que ambas son difeomorfismos. Por lo tanto, determinan una estructura suave en $\S^n$.
 \end{example}
 
 \begin{example}[Producto Finito de Variedades Suaves]\label{Ex: Variedad Suave - Producto de Variedades Suaves}
@@ -177,7 +177,7 @@ Para los ejemplos anteriores se ha mostrado que estas son variedades suaves come
 		                                                & = \phi_{\alpha}^{-1} (V \cap (\phi_{\beta} \circ \phi_{\alpha}^{-1})^{-1}(W))
 	\end{align*}
 
-	Por la propiedad 3 sabemos que $\phi_{\beta} \circ \phi_{\alpha}^{-1}$ es suave, por lo que en particular será un mapa continuo, luego $(\phi_{\beta} \circ \phi_{\alpha})^{-1}(W)$ será abierto en $\R^n$, dado que será un subconjunto abierto de $\phi_{\alpha}(U_{\alpha} \cap U_{\beta})$ y este es, en sí mismo, un subconjunto abierto de $\R^n$ por la propiedad 2. Por lo propiedad 1 se garantiza que $\phi_{\alpha}^{-1}(V) \cap \phi_{\beta}(W) \in \mathcal{B}$, esto es suficiente para mostrar que $\mathcal{B}$ es una pase para $M$.
+	Por la propiedad 3 sabemos que $\phi_{\beta} \circ \phi_{\alpha}^{-1}$ es suave, por lo que en particular será un mapa continuo, luego $(\phi_{\beta} \circ \phi_{\alpha})^{-1}(W)$ será abierto en $\R^n$, dado que será un subconjunto abierto de $\phi_{\alpha}(U_{\alpha} \cap U_{\beta})$ y este es, en sí mismo, un subconjunto abierto de $\R^n$ por la propiedad 2. Por lo propiedad 1 se garantiza que $\phi_{\alpha}^{-1}(V) \cap \phi_{\beta}(W) \in \mathcal{B}$, esto es suficiente para mostrar que $\mathcal{B}$ es una base para $M$.
 
 	Ahora mostraremos que $M$ con la topología dada por la base $\mathcal{B}$ es, en efecto, una variedad topológica.
 

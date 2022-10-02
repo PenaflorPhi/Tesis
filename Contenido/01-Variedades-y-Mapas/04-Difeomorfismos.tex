@@ -1,5 +1,5 @@
 \subsection{Difeomorfismos}\label{Subsección: Difeomorfismos}
-Ahora estudiaremos un tipo particular de mapa suave, los difeomorfismos. De modo similar a como los homeomorfismo preservan ciertas propiedades de los espacios topológicos, los difeomorfismos entre variedades suaves preservarán ciertas propiedades de la topología estructuras suaves.
+Ahora estudiaremos un tipo particular de mapa suave, los difeomorfismos. De modo similar a como los homeomorfismos preservan ciertas propiedades de los espacios topológicos, los difeomorfismos entre variedades suaves preservarán ciertas propiedades de la topología estructuras suaves.
 
 \begin{definition}[Difeomorfismo]\label{Definición: Difeomorfismo}
   Sean $M$ y $N$ variedades suaves y $f: M \to N$ un mapa cualquiera. Diremos que $f$ es un \it{difeomorfismo} si:
@@ -39,7 +39,7 @@ Sean $M, N$ y $P$ variedades suaves, $f: M \to N$ y $g: N \to P$ difeomorfismos.
 
   Por el teorema \ref{Teorema: Mapa a Producto de Variedades Suaves} sabemos que el producto $f_1 \times \dots \times f_k$ será un mapa suave de $\prod_{i=1}^{k} M_i$ a $\prod_{i=1}^k N_i$ si y sólo si cada una de las proyecciones $[\pi_{i}^{1} \circ (f_1 \times \dots \times f_k)](x_1,\dots,x_k) = f_i(x_i)$ son suaves.
 
-  Tomando la proyección $\pi_{i}^2: \prod_{i=1}^k M_i \to M_i$ dada $\pi_{i}^{2}(x_1,\dots,x_k) = x_i$ y componiendo con $f_i$ tenemos que $f_i \circ \pi_{i}^2 (x_1, \dots, x_k) = f_i(x_i)$, por lo que $\pi_i^1 \circ (f_1 \times \dots \times f_k) = \pi_i^2 \circ f_i$. Dado que $\pi_i^{2} \circ f_i$ es la composición de dos mapas suaves para cada $i=1,\dots,k$, podemos garantizar que $\pi_i^1 \circ (f_1 \times \dots \times f_k)$ es suave en cada una de sus componentes, y por lo tanto $f_1 \times \dots \times f_k$ es suave.
+  Tomando la proyección $\pi_{i}^2: \prod_{i=1}^k M_i \to M_i$ dada $\pi_{i}^{2}(x_1,\dots,x_k) = x_i$ y componiendo con $f_i$ tenemos que $f_i \circ \pi_{i}^2 (x_1, \dots, x_k) = f_i(x_i)$, por lo que $\pi_i^1 \circ (f_1 \times \dots \times f_k) = \pi_i^2 \circ f_i$. Dado que $\pi_i^{2} \circ f_i$ es la composición de dos mapas suaves para cada $i=1,\dots,k$, podemos garantizar que $\pi_i^1 \circ (f_1 \times \dots \times f_k)$ es suave en cada una de sus componentes, por lo cual, $f_1 \times \dots \times f_k$ es suave.
 
   Análogamente se probaría que $(f_1 \times \dots \times f_k)^{-1}$ es un mapa suave de $\prod_{i=1}^k N_i$ a $\prod_{i=1}^k M_i$ 
 \end{proof}
@@ -49,12 +49,12 @@ Sean $M, N$ y $P$ variedades suaves, $f: M \to N$ y $g: N \to P$ difeomorfismos.
 \end{theorem}
 
 \begin{proof}
-  La restricción de un homeomorfismo a un subconjunto abierto es nuevamente un homeomorfismo. Además, podemos expresar la restricción de una función a un conjunto como $f|_U = f \circ \iota$, donde $\iota: U \to M$ es el mapa de inclusión, como se demostró en el teorema \ref{Teorema: Mapa De Inclusion} este es suave, por lo tanto la composición será suave, lo que implica que $f|_U$ es suave.
+  La restricción de un homeomorfismo a un subconjunto abierto es nuevamente un homeomorfismo. Además, podemos expresar la restricción de una función a un conjunto como $f|_U = f \circ \iota$, donde $\iota: U \to M$ es el mapa de inclusión, como se demostró en el teorema \ref{Teorema: Mapa De Inclusion} este es suave, por lo tanto, la composición será suave, lo que implica que $f|_U$ es suave.
 
   Dado que $f$ es un homeomorfismo y $U$ es abierto se garantiza que $f(U)$ es un subconjunto abierto, y por el argumento anterior podemos concluir que $(f|_U)^{-1}$ es un mapa suave.
 \end{proof}
 
-Estas son algunas propiedades básicas de los difeomorfismos, a continuación veremos dos resultados que nos dicen que si tenemos un difeomorfismo entre dos variedades suaves estas son esencialmente la misma.
+Estas son algunas propiedades básicas de los difeomorfismos, a continuación, veremos dos resultados que nos dicen que si tenemos un difeomorfismo entre dos variedades suaves estas son esencialmente la misma.
 
 \begin{theorem}
   El conjunto de todas las variedades difeomorfas forma una clase de equivalencias. 
@@ -82,7 +82,7 @@ Estas son algunas propiedades básicas de los difeomorfismos, a continuación ve
     D(f \circ f^{-1})(y) &= Df(f^{-1}(y))Df^{-1}(x) = \id_{\R^m}
   \end{align*}
 
-  Donde $D$ representa la derivada total. De aquí podemos concluir que la matriz de la derivada total es invertible, y por un resultado básico de álgebra lineal tenemos que la matriz debe ser cuadrada, por lo tanto $m = n$.
+  Donde $D$ representa la derivada total. De aquí podemos concluir que la matriz de la derivada total es invertible, y por un resultado básico de álgebra lineal tenemos que la matriz debe ser cuadrada, por lo tanto, $m = n$.
 
   Ahora, si $p \in M$ es un punto arbitrario, $(U,\phi)$ y $(V,\psi)$ son cartas suaves que contienen a $p$ y $f(p)$ respectivamente, entonces la representación coordenada $\psi \circ f \circ \phi^{-1}: \R^m \to \R^n$ es un difeomorfismo. 
 \end{proof}

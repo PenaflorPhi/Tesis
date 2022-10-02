@@ -13,7 +13,7 @@ Estudiaremos algunas de las propiedades topológicas que poseen las variedades, 
 \begin{proof}
   Sea $X$ un espacio topológico segundo numerable y sea $\mathcal{U}$ una cubierta abierta de $X$. Por definición de espacio segundo numerable existirá una base numerable $\mathcal{B}$ para $X$.
 
-  Definiremos el conjunto $\mathcal{B}' = \{B \in \mathcal{B} : B \subset U, U \subset \mathcal{U}\}$, esté conjunto es numerable dado que es un subconjunto de $\mathcal{B}$. Además dado que $\mathcal{U}$ es una cubierta abierta de $X$, para cada $x \in X$ existirá un subconjunto abierto $U$ que contiene a $x$, y dado que $\mathcal{B}$ es base de $X$ por definición existe un elemento $B \in \mathcal{B}$ tal que $x \in B \subset U$, por lo tanto $B \in \mathcal{B}'$
+  Definiremos el conjunto $\mathcal{B}' = \{B \in \mathcal{B} : B \subset U, U \subset \mathcal{U}\}$, esté conjunto es numerable dado que es un subconjunto de $\mathcal{B}$. Además, dado que $\mathcal{U}$ es una cubierta abierta de $X$, para cada $x \in X$ existirá un subconjunto abierto $U$ que contiene a $x$, y dado que $\mathcal{B}$ es base de $X$ por definición existe un elemento $B \in \mathcal{B}$ tal que $x \in B \subset U$, por lo tanto $B \in \mathcal{B}'$
 
   Ahora, para cada $B' \in \mathcal{B}'$ podemos tomar $U' \in \mathcal{U}$ tal que $B' \subset U'$. El conjunto formado por todos los elementos de esta forma es un subconjunto numerable de $\mathcal{U}$ y es una cubierta de $X$ dado que cada $x \in X$ está contenido en algún $B' \in \mathcal{B}'$.
 \end{proof}
@@ -26,7 +26,7 @@ Estudiaremos algunas de las propiedades topológicas que poseen las variedades, 
 \begin{definition}[Bolas Coordinadas Suaves]\label{Definición: Bolas Coordinadas Suaves}
   Sea $M^n$ una variedad suave, $(U,\phi)$ una carta suave de $M$. Diremos que $U$ es una \it{bola coordinada suave} si $\phi(U) \subset \R^n$ es una bola abierta de $\R^n$.
   
-  Además diremos que una bola coordinada suave $U \subseteq M$ es \it{regular} si existe una bola coordinada $U' \subseteq U$ y un mapa suave $\phi: U' \to \R^n$ tal que para algunos $r, r' \in \R^n$ se cumple:
+  Además, diremos que una bola coordinada suave $U \subseteq M$ es \it{regular} si existe una bola coordinada $U' \subseteq U$ y un mapa suave $\phi: U' \to \R^n$ tal que para algunos $r, r' \in \R^n$ se cumple:
   \[
     \phi(U) = B_r(U), \quad \phi(\overline{U}) = \overline{B}_r(0), \quad \phi(U') = B_{r'}(0)
   \] 
@@ -89,7 +89,7 @@ Estos dos últimos lemas pueden ser generalizados a espacios topológicos si ped
 \end{theorem}
 
 \begin{proof}
-  Sea $\mathcal{B}$ una base numerable para $X$ formada por conjuntos precompactos. Definimos las colección $\mathcal{A}$ del siguiente modo:
+  Sea $\mathcal{B}$ una base numerable para $X$ formada por conjuntos precompactos. Definimos la colección $\mathcal{A}$ del siguiente modo:
   \begin{align*}
     A_1 &= B_1\\
     &\vdots\\

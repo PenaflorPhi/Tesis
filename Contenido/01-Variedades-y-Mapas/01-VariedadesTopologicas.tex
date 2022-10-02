@@ -5,7 +5,7 @@ Nuestro objeto de estudio fundamental serán las \it{variedades}, estos son espa
 \begin{definition}[Variedad Topológica]\label{Definición: Variedad Topologica}
 	Sea $M$ un espacio topológico, diremos que $M$ es una \it{variedad topológica $n$-dimensional} si:
 	\begin{enumerate}
-		\item $M$ es un \it{espacio de Hausdorff}; esto es, para cualesquiera par de puntos distintos $x_1,x_2$ de $M$ existen vecindades $U_1$ y $U_2$ de $x_1$ y $x_2$ respectivamente, que son disjuntas.
+		\item $M$ es un \it{espacio de Hausdorff}; esto es, para cualquier par de puntos distintos $x_1,x_2$ de $M$ existen vecindades $U_1$ y $U_2$ de $x_1$ y $x_2$ respectivamente, que son disjuntas.
 		\item $M$ es \it{segundo numerable}; esto es, la topología de $M$ tiene una base numerable.
 		\item $M$ es \it{localmente Euclidiano} de dimensión $n$; esto es, para cada punto $x$ de $M$ existe una vecindad abierta $U \subset M$ que contiene a $x$ y una función $\phi: U \to \R^n$ continua y con inversa continua, i.e., un \it{homeomorfismo}.
 	\end{enumerate}
@@ -29,7 +29,7 @@ Las propiedades que nosotros pedimos, como iremos viendo a lo largo de esta tesi
 	El ejemplo más sencillo de una variedad topológica es $(\R^n,d)$ donde $d$ es la función distancia usual.
 	\begin{enumerate}
 		\item Sabemos que es Hausdorff ya que para cualesquiera dos puntos $x_1,x_2 \in \R^n$ podemos considerar vecindades $V_r(x_1), V_r(x_2)$ donde $r < \frac{d(x,y)}{2}$ de modo que $V_r(x_1) \cap V_r(x_2) = \varnothing$.
-		\item Es segundo numerable ya que las bolas abiertas con radios racionales y centros racionales forman una base numerable para la topología.
+		\item Es segundo numerable ya que las bolas abiertas con radios y centros racionales forman una base numerable para la topología.
 		\item Para cada $x \in \R^n$ podemos considerar a $\R^n$ como la vecindad abierta y tomar la función identidad $\id: \R^n \to \R^n$ que, trivialmente, es un homeomorfismo.
 	\end{enumerate}
 \end{example}
@@ -63,11 +63,11 @@ Las propiedades que nosotros pedimos, como iremos viendo a lo largo de esta tesi
 	Sea $M^n$ una variedad topológica. Una \it{carta coordenada} en $M$ es un par $(U, \phi)$, donde $U$ es un subconjunto abierto de $M$ y $\phi: U \to \tilde{U}$ es un homeomorfismo de $U$ a un subconjunto abierto $\tilde{U} \subset \R^n$.
 \end{definition}
 
-Por definición de variedad topológica cada punto está contenido en el dominio de alguna carta. Dada un carta $(U,\phi)$ llamamos al conjunto $U$ el \it{dominio coordenado}, además, si $\phi(U)$ es una bola abierta en $\R^n$ llamaremos a $U$ una \it{bola coordinada}. Al homeomorfismo $\phi$ se le llama el \it{mapa coordenado (local)}, y a sus funciones componentes $(x^1,\hdots,x^n)$, definidas por $\phi(p) = (x^1(p), \hdots, x^n(p))$ se les conoce como las \it{coordenadas locales} en $U$.
+Por definición de variedad topológica cada punto está contenido en el dominio de alguna carta. Dada una carta $(U,\phi)$ llamamos al conjunto $U$ el \it{dominio coordenado}, además, si $\phi(U)$ es una bola abierta en $\R^n$ llamaremos a $U$ una \it{bola coordinada}. Al homeomorfismo $\phi$ se le llama el \it{mapa coordenado (local)}, y a sus funciones componentes $(x^1,\hdots,x^n)$, definidas por $\phi(p) = (x^1(p), \hdots, x^n(p))$ se les conoce como las \it{coordenadas locales} en $U$.
 
 Diremos que una carta $(U,\phi)$ está centrada en un punto $p \in M$ si se cumple que $\phi^{-1}(0) = p$. Geométricamente esto significa que la preimagen del punto $\{0\} \in \R^{n}$ es el punto $p$. Siempre podemos encontrar una carta centrada en $p$ ya que a la imagen de cualquier carta se le puede restar una constante.
 
-A continuación veremos algunos ejemplos más interesantes de variedades topológicas.
+A continuación, veremos algunos ejemplos más interesantes de variedades topológicas.
 
 \begin{example}[$n-$Esfera]\label{Ex: Variedad Topologica - Esfera}
 	La $n-$esfera unitaria, denotada como $\S^n$, y definida como el conjunto:
@@ -99,7 +99,7 @@ A continuación veremos algunos ejemplos más interesantes de variedades topoló
 		\phi_{i}^{\pm}(y_1, \hdots, y_n) =  (y_1, \hdots, y_{i-1}, \pm\sqrt{1 - \|y\|^2}, y_{i+1}, \hdots, y_{n+1}).
 	\]
 
-	Dado que $\|y\| < 1$ la función estará bien definida para cada $y \in \B^n$ y además:
+	Dado que $\|y\| < 1$ la función estará bien definida para cada $y \in \B^n$, además:
 	\begin{align*}
 		\|\phi_i^{\pm}(y)\| & = (1 + \| y \|^{2}) + \sum_{\substack{j=1, \\ j \neq i}}^{n+1} y_j^2 \\
 		                    & = \left(
@@ -126,7 +126,7 @@ A continuación veremos algunos ejemplos más interesantes de variedades topoló
 		F(x,y) = (\phi(x),\psi(y)).
 	\]
 
-	Dado que $\phi$ y $\psi$ son homeomorfismo en particular serán funciones continuas, por lo que podemos garantizar que $F$ es continua y además es invertible, en particular, su inversa estará dada por $F^{-1}(a,b) = (\phi^{-1}(a),\psi^{-1}(b))$ y como las inversas de $\phi$  y $\psi$ también son continuas $F^{-1}$ es un mapa continuo. Así, $F$ es un homeomorfismo de $U \times V$ sobre $\R^{n_1 + n_2}$, como esto se cumple para cada punto $(x,y) \in M_1 \times M_2$ podemos concluir que el producto $M_1 \times M_2$ es una variedad topológica.
+	Dado que $\phi$ y $\psi$ son homeomorfismo en particular serán funciones continuas, por lo que podemos garantizar que $F$ es continua y, además, es invertible; en particular su inversa estará dada por $F^{-1}(a,b) = (\phi^{-1}(a),\psi^{-1}(b))$ y como las inversas de $\phi$  y $\psi$ también son continuas $F^{-1}$ es un mapa continuo. Así, $F$ es un homeomorfismo de $U \times V$ sobre $\R^{n_1 + n_2}$, como esto se cumple para cada punto $(x,y) \in M_1 \times M_2$ podemos concluir que el producto $M_1 \times M_2$ es una variedad topológica.
 
 	El caso para el producto finito de variedades topológicas se sigue por inducción.
 \end{example}

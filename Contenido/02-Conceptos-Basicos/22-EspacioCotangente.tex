@@ -1,5 +1,5 @@
 \subsection{El Espacio Cotangente}\label{Subsección: El Espacio Cotangente}
-Ahora que sabemos que es el espacio dual podemos hablar del espacio espacio dual del espacio tangente a un punto de una variedad, espacio al cual llamaremos \it{espacio cotangente}.
+Ahora que sabemos que es el espacio dual podemos hablar del espacio dual al espacio tangente a un punto de una variedad, espacio al cual llamaremos \it{espacio cotangente}.
 
 \begin{definition}[Covector en un punto]
 	Sea $M$ una variedad suave y $p$ un punto en $M$. Definimos el \it{espacio cotangente de $M$ en $p$}, denotado $T_{p}^{*}(M)$, como el espacio dual del espacio tangente $T_p(M)$
@@ -21,7 +21,7 @@ Dado que estamos definiendo al espacio cotangente $T_{p}^{*}(M)$ como el espacio
 \]
 donde $\omega_i = \omega \left( \left. \frac{\partial}{\partial \phi_i} \right|_p\right)$.
 
-Al estar expresando a los vectores cotangentes como combinaciones lineales estamos trabajando con coordenadas, por lo que estás combinaciones lineales dependerán de nuestra elección de coordenadas. En la subsección \ref{Subsección: Espacios Tangentes en Coordenadas} vimos como es que podemos transformar de un sistema coordenado a otro.
+Al estar expresando a los vectores cotangentes como combinaciones lineales estamos trabajando con coordenadas, por lo que estás combinaciones lineales dependerán de nuestra elección de coordenadas. En la subsección \ref{Subsección: Espacios Tangentes en Coordenadas} vimos cómo es que podemos transformar de un sistema coordenado a otro.
 
 Dado un subconjunto abierto $U$ en una variedad suave $M$ podemos dar diferentes coordenadas locales en $U$, digamos $\{\phi_1,\ldots,\phi_n\}$ y $\{\psi_1,\ldots,\psi_n\}$. Hemos demostrado anteriormente que parea transformar de un sistema coordenado a al otro es posible utiliza la igualdad:
 \[
@@ -50,7 +50,7 @@ Para transformar de un sistema coordenado al otro utilizaremos la igualdad anter
 	\hat{\omega_j}
 \end{align*}
 
-Los espacios cotangentes comparten muchas propiedades con los espacios tangentes, ambos son espacios vectoriales definidos para cada punto en una variedad suave. Al ser este el caso también es posible estudiar que es lo que sucede al considerar todos (o un subconjunto) de los espacios cotangentes a una variedad de manera simultanea. Cuando trabajamos con los espacios tangentes definimos el fibrado tangente, como es de esperarse, ahora definiremos el \it{fibrado cotangente} y describiremos algunas de sus propiedades.
+Los espacios cotangentes comparten muchas propiedades con los espacios tangentes, ambos son espacios vectoriales definidos para cada punto en una variedad suave. Al ser este el caso también es posible estudiar qué es lo que sucede al considerar todos (o un subconjunto) de los espacios cotangentes a una variedad de manera simultánea. Cuando trabajamos con los espacios tangentes definimos el fibrado tangente, como es de esperarse, ahora definiremos el \it{fibrado cotangente} y describiremos algunas de sus propiedades.
 
 \begin{definition}
 	Sea $M$ una variedad suave, llamaremos a la unión disjunta de todos los espacios cotangentes, la cual denotaremos por $T^{*}M$, el \it{fibrado cotangente}.
@@ -62,7 +62,7 @@ Para el fibrado cotangente también existe un mapa $\pi: T^{*}M \to M$ que nos i
 Como acabamos de mencionar, dada una carta suave $(U,\phi) = (U,\phi_1,\ldots,\phi_n)$ en $M$, denotaremos por $\{\lambda_1|_p,\ldots,\lambda_n|_p\}$ a la base de $T^*(M)$, está base estará asociada, en el sentido de ser dual, a la base $\{\frac{\partial}{\partial \phi_1}|_p, \ldots, \frac{\partial}{\partial \phi_n}|_p\}$. Así, estamos definiendo $n$ mapas $\lambda_i: U \to T^{*}M$, a estos mapas les llamaremos \it{campos de covectores coordenados}.
 
 \begin{theorem}[El Fibrado Cotangente como Fibrado Vectorial]
-	Sea $M$ una variedad suave de dimensión $n$. El fibrado cotangent $T^{*}M$, con su mapa de proyección y su estructura de espacio vectorial en cada fibra, tiene una topología y una estructura suave que lo hacen un fibrado vectorial de rango $n$ sobre $M$.
+	Sea $M$ una variedad suave de dimensión $n$. El fibrado cotangente $T^{*}M$, con su mapa de proyección y su estructura de espacio vectorial en cada fibra, tiene una topología y una estructura suave que lo hacen un fibrado vectorial de rango $n$ sobre $M$.
 \end{theorem}
 
 \begin{proof}
@@ -70,7 +70,7 @@ Como acabamos de mencionar, dada una carta suave $(U,\phi) = (U,\phi_1,\ldots,\p
 	\[
 		\omega = \sum_{i=1}^{n} \omega_i \lambda_i |_p,
 	\]
-	donde $\{\lambda_1, \ldots, \lambda_n \}$ es la base dual a $\{\frac{\partial}{\partial \phi_1}, \ldots, \frac{\partial}{\partial \phi_n}\}$. La unicidad de está representación nos da lugar para poder definir el siguiente mapa, el cual es trivialmente una biyección.
+	donde $\{\lambda_1, \ldots, \lambda_n \}$ es la base dual a $\{\frac{\partial}{\partial \phi_1}, \ldots, \frac{\partial}{\partial \phi_n}\}$. La unicidad de esta representación nos da lugar para poder definir el siguiente mapa, el cual es trivialmente una biyección.
 	\begin{align*}
 		\Phi: T^*U                                   & \to U \times \R^n \\
 		\Phi( \sum_{i=1}^{n} \omega_i \lambda_i |_p) & =

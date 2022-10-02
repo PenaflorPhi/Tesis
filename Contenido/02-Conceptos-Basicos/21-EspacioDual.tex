@@ -2,7 +2,7 @@
 \subsection{El Espacio Dual de un Espacio Vectorial}
 
 \begin{definition}[Espacio Dual]
-	Sea $V$ un espacio vectorial sobre un campo $\mathbb{F}$. Definiremos el \it{espacio dual (algebraico) de $V$}, denotado como $V^*$, como el conjunto de todos los mapas (en el sentido algebraico) $\omega: V \to \mathbb{F}$. A un elemento del espacios dual, $\omega \in V^*$, se le llama \it{covector}.
+	Sea $V$ un espacio vectorial sobre un campo $\mathbb{F}$. Definiremos el \it{espacio dual (algebraico) de $V$}, denotado como $V^*$, como el conjunto de todos los mapas (en el sentido algebraico) $\omega: V \to \mathbb{F}$. A un elemento del espacio dual, $\omega \in V^*$, se le llama \it{covector}.
 \end{definition}
 
 Hacemos la aclaración de que estaremos trabajando con el espacio dual algebraico y por conveniencia lo llamaremos simplemente el espacio dual o dual, en nuestro caso no hace ninguna diferencia ni hay perdida de generalidad dado que estamos trabajando con espacios vectoriales de dimensión finita, por lo que el dual topológico y el dual algebraico coincidirán.
@@ -60,7 +60,7 @@ Más aún, este espacio vectorial es finito dimensional y la dimensión de $V^{*
 		\epsilon = \sum_{i=1}^{n} \epsilon_i \epsilon(E_i).
 	\]
 
-	Esto demuestra que $\{\epsilon_1, \dots, \epsilon_n\}$ es una base para $V^{*}$ y por lo tanto $\dim(V) = \dim(V^{n})$.
+	Esto demuestra que $\{\epsilon_1, \dots, \epsilon_n\}$ es una base para $V^{*}$ y, por lo tanto, $\dim(V) = \dim(V^{n})$.
 \end{proof}
 
 \begin{example}
@@ -123,7 +123,7 @@ Más aún, este espacio vectorial es finito dimensional y la dimensión de $V^{*
 		           & \vdots                                             \\
 		\epsilon_n & = \begin{bmatrix} 0 & 0 & \cdots & 1\end{bmatrix}.
 	\end{align*}
-	Esto tiene mucho sentido si pensamos que los vectores columnas son matrices $n \times 1$, esto es, transformaciones lineales de $\mathbb{F}$ a $\mathbb{F}^n$, y los covectores son transformaciones lineales de $\mathbb{F}^n$ a $\mathbb{F}$, matrices $1 \times n$
+	Esto tiene mucho sentido si pensamos en los vectores columna como matrices $n \times 1$, esto es, transformaciones lineales de $\mathbb{F}$ a $\mathbb{F}^n$, y los covectores son transformaciones lineales de $\mathbb{F}^n$ a $\mathbb{F}$, matrices $1 \times n$
 \end{example}
 
 \begin{definition}[Mapa Dual]
@@ -153,7 +153,7 @@ Más aún, este espacio vectorial es finito dimensional y la dimensión de $V^{*
 \begin{proof}
 	Sean $V,W$ y $X$ espacios vectoriales sobre un campo $\mathcal{F}$, $A: W \to V$ y $B: X \to W$ mapas lineales, para cada $\omega \in V^{*}$:
 	\[ (A\circ B)^{*}(\omega) = \omega(A \circ B). \]
-	Por otro lado tendremos que:
+	Por otro lado:
 	\begin{align*}
 		(B^* \circ A^*)(\omega) & = B^{*}(A^*(\omega))        \\
 		                        & = B^{*}(\omega(A))          \\

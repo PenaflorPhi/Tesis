@@ -46,7 +46,7 @@ En el siguiente ejemplo construiremos una función indicadora suave.
 			                   & = \left(t^2p'_k(t) + p_k(t) - 2ktp_k(t) \right) \frac{e^{-\frac{1}{t}}}{t^{2(k+1)}}
 		      \end{align*}
 
-		\item Claramente cuando tomamos los límite $\lim_{t \to 0^+} f^{(k)}(t)$ y $\lim_{t \to 0^-} f^{(k)}(t)$ ambos son cero.
+		\item Claramente cuando tomamos los límites $\lim_{t \to 0^+} f^{(k)}(t)$ y $\lim_{t \to 0^-} f^{(k)}(t)$ ambos son cero.
 	\end{enumerate}
 
 	Por lo tanto $f$ es una función suave en todo $\R$
@@ -61,7 +61,7 @@ En el siguiente ejemplo construiremos una función indicadora suave.
 	\]
 
 
-	Al ser $g$ el cociente de dos funciones suaves, y dado que el denominador no se anula en ningún punto, $g$ estará bien definida en todo $\R$ y además será suave. Lo que esta función $g$ nos da es una transición suave del $0$ al $1$, por lo cual, será sencillo construir una función indicadora suave a partir de esta, esto se logrará aplicando transformaciones sencillas.
+	Al ser $g$ el cociente de dos funciones suaves, y dado que el denominador no se anula en ningún punto, $g$ estará bien definida en todo $\R$, además será suave. Lo que esta función $g$ nos da es una transición suave del $0$ al $1$, por lo cual, será sencillo construir una función indicadora suave a partir de esta, esto se logrará aplicando transformaciones sencillas.
 
 	Si tomamos $a,b \in \R$ tales que $a<b$, podemos hacer un cambio de variables del conjunto compacto $[a^2,b^2]$ al conjunto $[0,1]$ del siguiente modo:
 
@@ -69,7 +69,7 @@ En el siguiente ejemplo construiremos una función indicadora suave.
 		x \mapsto \frac{x - a^2}{b^2 - a^2}
 	\]
 
-	Esta transformación nos permite cambiar la escala de $g$  y trasladarla en el eje horizontal,es por esta razón que se define $h: \R \to \R$ del siguiente modo,
+	Esta transformación nos permite cambiar la escala de $g$  y trasladarla en el eje horizontal; es por esta razón que se define $h: \R \to \R$ del siguiente modo,
 	\[
 		h(x) = g\left(\frac{x - a^2}{b^2 - a^2}\right)
 		\qquad \qquad
@@ -78,7 +78,7 @@ En el siguiente ejemplo construiremos una función indicadora suave.
 		\end{gathered}
 	\]
 
-	Y de este modo al tomar $a,b \in \R$ como se acaba de hacer se tendrá que para $h$ se cumple lo siguiente
+	Y de este modo al tomar $a,b \in \R$ cómo se acaba de hacer se tendrá que para $h$ se cumple lo siguiente
 
 	\[
 		h(x) = \begin{cases}
@@ -116,9 +116,9 @@ En el siguiente ejemplo construiremos una función indicadora suave.
 \end{example}
 
 \begin{figure}
-\centering
-\input{Figuras/C-Graficas/FuncionIndicadora-3D.tex}
-\caption{Representación de una función indicadora suave en $\R^2$}
+	\centering
+	\input{Figuras/C-Graficas/FuncionIndicadora-3D.tex}
+	\caption{Representación de una función indicadora suave en $\R^2$}
 \end{figure}
 
 
@@ -142,12 +142,12 @@ Lo que haremos a continuación será extender estas ideas, mostraremos que para 
 
 	Mostraremos que, en efecto, esta función es una función indicadora en $q$ con soporte en $U$.
 
-	Por cómo hemos construido $\sigma$ esta tiene soporte compacto, esto es, $\sup \sigma$ es un conjunto compacto, luego $\psi^{-1}(\sup \sigma)$ será la imagen continua de un conjunto compacto, i.e., $\psi^{-1}(\sup \sigma)$ es un compacto en $M$. Dado que $M$ es Hausdorff podemos garantizar que $\psi^{-1} (\sup \sigma)$ es cerrado. Por lo tanto tendremos que
+	Por cómo hemos construido $\sigma$ esta tiene soporte compacto, esto es, $\sup \sigma$ es un conjunto compacto, luego $\psi^{-1}(\sup \sigma)$ será la imagen continua de un conjunto compacto, i.e., $\psi^{-1}(\sup \sigma)$ es un compacto en $M$. Dado que $M$ es Hausdorff podemos garantizar que $\psi^{-1} (\sup \sigma)$ es cerrado. Por lo tanto, tendremos que
 	\[
 		\sup f \subset \phi^{-1} (\sup \sigma) \subset V
 	\]
 
-	Es claro que si $p \in V$, $f$ es suave en $p$ dado que $f(p)$ será la imagen de la composición de dos funciones suave. En el caso contrario, si $p \notin V$, entonces podremos elegir una carta $(W,\omega)$ que contengan a $p$ y tal que $W \cap \psi^{-1}(\sup \sigma) = \varnothing$. Entonce esta carta será también disjunta de $\sup f$, por lo que $f(W) \equiv 0$. Por lo tanto, $f$ será una función suave la cual es idénticamente $1$ en una vecindad de $V \subset U$ de $p$ y $\sup f \subset U$. Por lo tanto $f$ es una función indicadora suave en $q$ con soporte en $U$.
+	Es claro que si $p \in V$, $f$ es suave en $p$ dado que $f(p)$ será la imagen de la composición de dos funciones suave. En el caso contrario, si $p \notin V$, entonces podremos elegir una carta $(W,\omega)$ que contengan a $p$ y tal que $W \cap \psi^{-1}(\sup \sigma) = \varnothing$. Esta carta será también disjunta de $\sup f$, por lo que $f(W) \equiv 0$, así $f$ es una función suave, la cual es idénticamente $1$ en una vecindad de $V \subset U$ de $p$ y $\sup f \subset U$. Por lo tanto, $f$ es una función indicadora suave en $q$ con soporte en $U$.
 \end{proof}
 
 \begin{lemma}
@@ -200,11 +200,11 @@ Notemos que en el tercer punto de nuestra definición no tendremos problemas de 
 		\end{cases}
 	\]
 
-	Como se mostró en el lema \ref{Lemma: Existencia de Función Indicadora} estas funciones son suaves, más aún, son funciones indicadoras suaves y además $\sup f_i = \overline{B}_i$.
+	Como se mostró en el lema \ref{Lemma: Existencia de Función Indicadora} estas funciones son suaves, más aún, son funciones indicadoras suaves, además $\sup f_i = \overline{B}_i$.
 
 	Con estas funciones podemos definir la función $f: M \to \R$ como $f(p) = \sum_i f_i(x)$. Dado que los $\{B_i\}$ y $\{\overline{B}_i\}$ son localmente finitos, la suma será finita y por lo tanto convergerá. Cómo cada $f_i$ es no negativa en cada punto en $B_i$, y cada punto de $M$ está en algún $B_i$ por ser la colección una cubierta de $M$, se sigue que $f(p) > 0$ para cada $p \in M$. Y por cómo hemos definido $\rho$ cada $f_i$ estará normalizada por lo que $0 \leq f_i \leq 1$ y $\sum_i f_i \equiv 1$.
 
-	Por último hacemos un cambio de índices para nuestra funciones para que coincidan con los de la cubierta abierta $\mathcal{U}$. Dado que $\{B_i'\}$ es un refinamiento de $\mathcal{U}$, para cada $i$ podemos elegir algún índice $a(i) \in A$ tal que $B'_i \subseteq U_{a(i)}$. Para cada $\alpha \in A$ definimos la función $\psi_\alpha: M \to \R$ como:
+	Por último, hacemos un cambio de índices para nuestras funciones para que coincidan con los de la cubierta abierta $\mathcal{U}$. Dado que $\{B_i'\}$ es un refinamiento de $\mathcal{U}$, para cada $i$ podemos elegir algún índice $a(i) \in A$ tal que $B'_i \subseteq U_{a(i)}$. Para cada $\alpha \in A$ definimos la función $\psi_\alpha: M \to \R$ como:
 	\[
 		\psi_\alpha = \sum_{i : a(i) = \alpha} f_i
 	\]
@@ -217,7 +217,7 @@ Notemos que en el tercer punto de nuestra definición no tendremos problemas de 
 	Así, tendremos que la colección $\{\psi_{\alpha}\}$ es una partición de la unidad subordinada a $\mathcal{U}$.
 \end{proof}
 
-Los siguientes dos lemas nos darán maneras de extender funciones suaves utilizando particiones de la unidad, que en nuestro caso, es nuestro principal interés.
+Los siguientes dos lemas nos darán maneras de extender funciones suaves utilizando particiones de la unidad, que, en nuestro caso, es nuestro principal interés.
 
 \begin{lemma}
 	Sea $M$ una variedad suave, $p \in M$, $A \subset M$ un subconjunto arbitrario que contiene a $p$ y $f: A \to \R^{k}$ una función suave. Existe una extensión suave a un conjunto abierto que contiene a $A$, esto es, existe un conjunto abierto $U \subset M$ tal que $A \subset U$ y una función $\hat{f}: U \to \R^{k}$ tal que $\hat{f}|_{A \cap U} = f$.
@@ -231,7 +231,7 @@ Los siguientes dos lemas nos darán maneras de extender funciones suaves utiliza
 		\hat{f}(x) = \sum_{x \in B} \psi_p(x)f_p(x)
 	\]
 
-	$\hat{f}$ será una función suave que coincide con $f$ en el conjunto $U \cap A$, y por como se ha definido $U$, es claro que $A \subseteq U$.
+	$\hat{f}$ será una función suave que coincide con $f$ en el conjunto $U \cap A$, y por cómo se ha definido $U$, es claro que $A \subseteq U$.
 \end{proof}
 
 Notemos sin embargo que no siempre es posible extender una función suave a un conjunto más grande, en particular esto no siempre es posible si la función está definida en un conjunto abierto dado que el comportamiento de la función puede ser arbitrario. Como un ejemplo sencillo en $\R$ podemos tomar la función trigonométrica $\tan: (-\frac{\pi}{2}, \frac{\pi}{2}) \to \R$, para esta función no existe una extensión suave a un subconjunto abierto más grande.

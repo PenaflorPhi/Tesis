@@ -32,7 +32,7 @@ Por la definición que hemos dado de espacio tangente, estos están definidos en
 	\[ TM = \bigsqcup_{p \in M} T_p(M) = \bigcup_{p \in M} \{p\} \times T_p(M). \]
 \end{definition}
 
-Denotaremos a los elementos del conjunto como un par ordenado $(p, \omega)$, donde $p \in M$ y $\omega \in T_p(M)$. El fibrado tangente $TM$ tiene una mapa proyección natural sobre la variedad $M$, $\pi: TM \to M$ dado por $\pi(p,\omega)=p$.
+Denotaremos a los elementos del conjunto como un par ordenado $(p, \omega)$, donde $p \in M$ y $\omega \in T_p(M)$. El fibrado tangente $TM$ tiene un mapa proyección natural sobre la variedad $M$, $\pi: TM \to M$ dado por $\pi(p,\omega)=p$.
 
 \begin{theorem}\label{Teorema: Estructura de Variedad del Fibrado Tangente}
 	Sea $M^n$ una variedad suave, el fibrado tangente $TM$ tiene una topología natural y una estructura suave que vuelven a $TM$ una variedad suave $2n-$dimensional de tal modo que la proyección $\pi: TM \to M$ es suave con respecto a dicha estructura suave.
@@ -52,14 +52,14 @@ Denotaremos a los elementos del conjunto como un par ordenado $(p, \omega)$, don
 		=
 		\left(\phi_1(p), \dots, \phi_n(p), v_1, \dots, v_n \right).
 	\]
-
-	Por como estamos definiendo este mapa, la imagen de $\pi^{-1}(U)$ bajo $\hat{\phi}$, $\hat{\phi}(\pi^{-1})(U)$ será el conjunto $\phi(U) \times \R^n$, que es un subconjunto abierto de $\R^{2n}$, y trivialmente será una biyección dado que el mapa inverso existe, de hecho, este puede ser escrito explícitamente como:
+a
+	Por cómo estamos definiendo este mapa, la imagen de $\pi^{-1}(U)$ bajo $\hat{\phi}$, $\hat{\phi}(\pi^{-1})(U)$ será el conjunto $\phi(U) \times \R^n$, que es un subconjunto abierto de $\R^{2n}$, y trivialmente será una biyección dado que el mapa inverso existe, de hecho, este puede ser escrito explícitamente como:
 	\[
 		\hat{\phi}^{-1}(\phi_{1},\dots, \phi_{n}, v_1, \dots, v_n)
 		=
 		\sum_{i=1}^{n} v_i \left. \frac{\partial}{\partial \phi_i} \right|_{\phi^{-1}(p)}.
 	\]
-	Por lo tanto la condición 1 del lema se cumple.
+	Por lo tanto, la condición 1 del lema se cumple.
 
 	Para mostrar la segunda propiedad tomemos dos cartas suaves en $M$, $(U,\phi)$ y $(V,\psi)$, existirán cartas $(\pi^{-1}(U),\hat{\phi})$ y $(\pi^{-1}(V),\hat{\psi})$ en $TM$ correspondientes a las respectivas cartas en $M$. Notemos que, sin importar si la intersección es vacía se tiene que $\phi(U \cap V)$ y $\psi(U \cap V)$ son subconjuntos abiertos de $\R^n$, por lo que:
 	\begin{align*}
@@ -99,13 +99,13 @@ Denotaremos a los elementos del conjunto como un par ordenado $(p, \omega)$, don
 		\sum_{j=1}^{n} \frac{\partial \psi_n}{\partial \phi_j}(\phi(p))w_j
 		\Biggr).
 	\end{align*}
-	Por lo tanto cada una de las componentes es la composición de mapas suaves o la suma de mapas suaves, por lo que el mapa $\hat{\psi} \circ \phi^{-1}$ es suave, cumpliendo así la propiedad 3.
+	Por lo tanto, cada una de las componentes es la composición de mapas suaves o la suma de mapas suaves, por lo que el mapa $\hat{\psi} \circ \phi^{-1}$ es suave, cumpliendo así la propiedad 3.
 
 	Por la segundo numerabilidad de $M$ podemos elegir una colección numerable $\mathcal{U} = \{U_\alpha\}$ de cartas coordenadas, de la cual obtendremos la colección numerable $\{\pi^{-1}(U_\alpha)\}$ de cartas coordenadas que cubren a $TM$ y que como hemos visto cumplen las propiedades 1, 2 y 3, y la existencia de tal colección nos da la cuarta propiedad.
 
-	Para la quinta y última propiedad notemos que si se damos dos elementos $(p,\omega)$ y $(q, \nu)$ de $TM$ entonces hay dos posibilidades, $p = q$, en cuyo caso habrá un vecindad $\pi^{-1}(U)$ que contiene a ambos o $p \neq q$, en cuyo caso existan vecindades disjuntas $U,V$ en $M$ tales que $p \in U$ y $q \in V$, de modo que $\pi^{-1}(U)$ y $\pi^{-1}(V)$ serán vecindades disjuntas de $(p,\omega)$ y $(q,\nu)$.
+	Para la quinta y última propiedad notemos que si se damos dos elementos $(p,\omega)$ y $(q, \nu)$ de $TM$ entonces hay dos posibilidades, $p = q$, en cuyo caso habrá una vecindad $\pi^{-1}(U)$ que contiene a ambos o $p \neq q$, en cuyo caso existan vecindades disjuntas $U,V$ en $M$ tales que $p \in U$ y $q \in V$, de modo que $\pi^{-1}(U)$ y $\pi^{-1}(V)$ serán vecindades disjuntas de $(p,\omega)$ y $(q,\nu)$.
 
-	Por lo tanto podemos concluir que $TM$ es una variedad suave con la estructura suave dada por los conjuntos de la forma $\pi^{-1}(U)$. La suavidad de la proyección se garantiza por el teorema \ref{Teorema: Mapa a Producto de Variedades Suaves}.
+	Por lo tanto, podemos concluir que $TM$ es una variedad suave con la estructura suave dada por los conjuntos de la forma $\pi^{-1}(U)$. La suavidad de la proyección se garantiza por el teorema \ref{Teorema: Mapa a Producto de Variedades Suaves}.
 \end{proof}
 
 A las componentes del mapa $\hat{\phi}: TM \to \R^{2n}$ que hemos definido le llamaremos las \it{coordenadas naturales en $TM$}, este mapa es un difeomorfismo y da lugar al siguiente corolario.

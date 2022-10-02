@@ -14,7 +14,7 @@ Si $f$ es un mapa suave definido en una vecindad de $p$, tomaremos:
 	\right|_{\phi(p)}
 	\left( f \circ \phi^{-1} \right).
 \]
-Evidentemente cada $\frac{\partial}{\partial \phi_i}$ es una derivación, por lo que serán vectores tangente en $T_p(M)$, y por definición $\phi: U \to \R^n$ es un difeomorfismo. Sabiendo esto y por el lema \ref{Lemma: Diferencial de un Difeomorfismo} podemos garantizar que el diferencial $d_p\phi: T_p(M) \to T_{\phi(p)}(\R^n)$ es un isomorfismo de espacios vectoriales.
+Evidentemente cada $\frac{\partial}{\partial \phi_i}$ es una derivación, por lo que serán vectores tangentes en $T_p(M)$, y por definición $\phi: U \to \R^n$ es un difeomorfismo. Sabiendo esto y por el lema \ref{Lemma: Diferencial de un Difeomorfismo} podemos garantizar que el diferencial $d_p\phi: T_p(M) \to T_{\phi(p)}(\R^n)$ es un isomorfismo de espacios vectoriales.
 
 \begin{lemma}\label{Lemma: Definicion Vector Coordenado}
 	Sean $M$ una variedad suave, $p \in M$ un punto arbitrario y $(U,\phi) = (U, \phi_1, \dots, \phi_n)$ una carta suave que contiene a $p$, entonces:
@@ -54,9 +54,9 @@ Evidentemente cada $\frac{\partial}{\partial \phi_i}$ es una derivación, por lo
 	es un isomorfismo, y como los isomorfismos llevan bases de un espacio vectorial a bases de otros espacios vectoriales tendremos que el conjunto $\left\{ \frac{\partial}{\partial \phi_{i}}|_{p} \right\}_{i=1}^{n}$ es una base para $T_{p}(M)$.
 \end{proof}
 
-Como hemos mencionado, el diferencial de un mapa suave entre variedades ha sido de tal modo que este sea una generalización de la derivada total conocida del cálculo en $\R^n$, la cual puede ser representada por la matriz Jacobiana, sin embargo, una ventaja que tenemos con el diferencial es que es independiente de las coordenadas que se elijan, esto es, no depende de las bases que se pudiesen elegir para los espacios tangentes a las variedades. Aún así, es posible dar una representación matricial para el diferencial, evidentemente esta representación sí dependerá de las coordenadas elegidas.
+Como hemos mencionado, el diferencial de un mapa suave entre variedades ha sido de tal modo que este sea una generalización de la derivada total conocida del cálculo en $\R^n$, la cual puede ser representada por la matriz Jacobiana, sin embargo, una ventaja que tenemos con el diferencial es que es independiente de las coordenadas que se elijan, esto es, no depende de las bases que se pudiesen elegir para los espacios tangentes a las variedades. Aun así, es posible dar una representación matricial para el diferencial, evidentemente esta representación sí dependerá de las coordenadas elegidas.
 
-Comenzaremos viendo que en efecto, la representación matricial coincidirá con lo que se podría esperar en espacios euclidianos, esto es, que la matriz sea la matriz Jacobiana.
+Comenzaremos viendo que, en efecto, la representación matricial coincidirá con lo que se podría esperar en espacios euclidianos, esto es, que la matriz sea la matriz Jacobiana.
 
 Consideremos dos espacios euclidianos $\R^n$ y $\R^m$, donde $\{x_1, \dots, x_n\}$ y $\{y_1, \dots, y_m\}$ son las bases estándar respectivas de cada espacio. Sean $U \subseteq \R^n$ y $V \subseteq \R^m$ subconjuntos abiertos, $p \in U$ un punto arbitrario y $F: U \to V$ una función suave. Utilizando la regla de la cadena para calcular el diferencial de $F$ en $p$ tenemos:
 \begin{align*}
@@ -88,7 +88,7 @@ Consideremos dos espacios euclidianos $\R^n$ y $\R^m$, donde $\{x_1, \dots, x_n\
 	\frac{\partial}{\partial y_j}
 	\right|_{F(p)}.
 \end{align*}
-Por lo tanto la representación matricial de $d_{p}F$ en términos de las bases elegidas para $\R^n$ y $\R^m$ es:
+Por lo tanto, la representación matricial de $d_{p}F$ en términos de las bases elegidas para $\R^n$ y $\R^m$ es:
 
 \[
 	\begin{bmatrix}
@@ -146,7 +146,7 @@ Por lo tanto, podemos representar el diferencial $dF_p$ con la matriz Jacobiana 
 
 Como estas representaciones dependen de la base elegida será necesario tener una manera en la que podamos transformar de unas coordenadas a otras. Consideremos una variedad suave $M$, dos cartas suaves $(U,\phi)=(U,\phi_1,\dots,\phi_n)$ y $(V,\psi)=(V,\psi_1,\dots,\psi_n)$, y un punto $p \in M$ que también pertenezca a la intersección $p \in U \cap V$. Los vectores tangentes en $p$ pueden ser representados respecto a las bases $\left\{\left. \frac{\partial}{\partial \phi_i} \right|_{p}\right\}_{i=1}^{n}$ y $\left\{\left. \frac{\partial}{\partial \psi_i} \right|_{p}\right\}_{i=1}^{n}$.
 
-Naturalmente la representación de cualquier vector tangente está relacionada con cualquier otra representación, a continuación veremos cómo es que las representaciones están relacionadas. Tomemos el diferencial del mapa de transición $\psi \circ \phi^{-1}: \phi(U \cap V) \to \R^n$.
+Naturalmente la representación de cualquier vector tangente está relacionada con cualquier otra representación, a continuación, veremos cómo es que las representaciones están relacionadas. Tomemos el diferencial del mapa de transición $\psi \circ \phi^{-1}: \phi(U \cap V) \to \R^n$.
 
 \[
 	d_{\phi(p)}(\psi \circ \phi^{-1}) \left( \left. \frac{\partial}{\partial \phi_{i}} \right|_{\phi(p)} \right) = \sum_{j=1}^{n}\frac{\partial \psi_j}{\partial \phi_i} (\phi(p)) \left. \frac{\partial}{\partial \psi_{j}} \right|_{\psi(p)}.
@@ -190,13 +190,13 @@ Donde $v_i$ y $w_i$ son constantes que dependen de $\omega$, y podemos transform
 \]
 
 \begin{example}
-	Consideremos el mapa de transición entre las coordenadas esféricas y las coordenadas estándar en subconjuntos abierto adecuados de $\R^{3}$, el cual esta por la igualdad $(x,y,z) = (r \cos \phi \sin \theta, r \sin \phi \sin \theta, r\cos \theta)$. Tomemos el punto $p \in \R^{3}$ con representación en coordenadas esféricas $p = (r,\theta,\phi) = (2,\frac{\pi}{4},\frac{\pi}{4})$ y tomemos un vector tangente $\omega \in T_p(\R^3)$ cuya representación en coordenadas polares esté dada por:
+	Consideremos el mapa de transición entre las coordenadas esféricas y las coordenadas estándar en subconjuntos abiertos adecuados de $\R^{3}$, el cual está por la igualdad $(x,y,z) = (r \cos \phi \sin \theta, r \sin \phi \sin \theta, r\cos \theta)$. Tomemos el punto $p \in \R^{3}$ con representación en coordenadas esféricas $p = (r,\theta,\phi) = (2,\frac{\pi}{4},\frac{\pi}{4})$ y tomemos un vector tangente $\omega \in T_p(\R^3)$ cuya representación en coordenadas polares esté dada por:
 	\[
 		\omega = \left. \frac{\partial}{\partial r} \right|_p -
 		\left. 2\frac{\partial}{\partial \theta} \right|_p +
 		\left. 3\frac{\partial}{\partial \phi} \right|_p.
 	\]
-	Si queremos transformar este vector tangente a coordenadas estándar necesitaremos utilizar la formula que acabamos de deducir de cambio de coordenadas. Calculando las constantes $v_i$:
+	Si queremos transformar este vector tangente a coordenadas estándar necesitaremos utilizar la fórmula que acabamos de deducir de cambio de coordenadas. Calculando las constantes $v_i$:
 	\begin{align*}
 		v_1 & =
 		\left. \frac{\partial}{\partial r} r\cos(\phi)\sin(\theta) \right|_p

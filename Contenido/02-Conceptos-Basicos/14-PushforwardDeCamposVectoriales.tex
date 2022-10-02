@@ -6,7 +6,7 @@ El diferencial de un mapa suave en punto nos da la mejor aproximación lineal en
 	Sea $F: M \to N$ un mapa suave entre variedades, y sea $d_pF: T_p(M) \to T_{F(p)}(N)$ el diferencial de $F$ en el punto $p$. Si $X(p)$ es un vector tangente en $T_p(M)$ diremos que $d_{p}F(X(p))$ es el \it{pushforward} o la \it{aplicación tangente} de $X(p)$.
 \end{definition}
 
-El pushforward en general no es un campo vectorial, esto se observa fácilmente si consideramos un campo vectorial $X$ y dos punto $p,q \in M$ para los cuales se tenga que $t = F(p) = F(q)$, $X(p)$ y $X(q)$ serán aplicaciones tangentes en un mismo punto de $M$, sin embargo, esto no implica que $d_t(X(p)) = d_t(X(q))$.
+El pushforward en general no es un campo vectorial, esto se observa fácilmente si consideramos un campo vectorial $X$ y dos puntos $p,q \in M$ para los cuales se tenga que $t = F(p) = F(q)$, $X(p)$ y $X(q)$ serán aplicaciones tangentes en un mismo punto de $M$, sin embargo, esto no implica que $d_t(X(p)) = d_t(X(q))$.
 
 Más en general si $X$ es un campo vectorial y $F$ no es inyectiva existirán punto de $N$ para los cuales podemos obtener diferentes campos vectoriales al aplicarle al tomar el pushforward $dF(X)$ a diferentes puntos, y si $F$ no es sobreyectiva entonces no es posible asignar un vector del espacio tangente a ningún punto en $q$ que pertenezca a $N - F(M)$.
 
@@ -27,12 +27,12 @@ Para que el resultado de nuestro pushforward sea siempre un campo vectorial es n
 \end{lemma}
 
 \begin{proof}
-	Sea $p$ un punto de $M$ y sea $f: V \subseteq N \to \R$ una función suave, donde $V$ es una vecindad de $F(p)$. Por un lado tenemos que:
+	Sea $p$ un punto de $M$ y sea $f: V \subseteq N \to \R$ una función suave, donde $V$ es una vecindad de $F(p)$. Por un lado:
 	\begin{align*}
 		X(f \circ F)(p) & = X(p)(f \circ F) \\
 		                & = d_pF(X(p))f,
 	\end{align*}
-	Por el otro lado tendremos:
+	Por el otro lado tendremos que:
 	\begin{align*}
 		(Yf) \circ F(p) & = (Yf)(F(p)) \\
 		                & = Y(F(p))f,
@@ -56,4 +56,4 @@ Para que el resultado de nuestro pushforward sea siempre un campo vectorial es n
   Diremos que $dF(X)$ es el \it{pushforward del campo $X$ por $F$} si $F$ es un difeomorfismo, en cuyo caso $dF(X)$ es el campo suave definido de manera única visto en el teorema anterior.
 \end{definition}
 
-Podemos interpretar al pushforward de un campo vectorial no solo como una generalización de la derivada total, del mismo modo que como se vio en la sección \ref{Subsección: Espacios Tangentes en Coordenadas}, también podemos imaginarlo como una función que está empujando (\it{pushing}) a los vectores de una sección del fibrado tangente de una variedad $M$ a una sección del fibrado de otra variedad $N$; bajo está interpretación y como se estudiará más adelante, es posible moverlos hacía adelante (\it{pushing}) y hacía atrás (\it{pulling}), esto con ayuda del $\it{pull-back}$, objeto que estudiaremos en la siguiente sección.
+Podemos interpretar al pushforward de un campo vectorial no solo como una generalización de la derivada total, del mismo modo que como se vio en la sección \ref{Subsección: Espacios Tangentes en Coordenadas}, también podemos imaginarlo como una función que está empujando (\it{pushing}) a los vectores de una sección del fibrado tangente de una variedad $M$ a una sección del fibrado de otra variedad $N$; bajo está interpretación y como se estudiará más adelante, es posible moverlos hacía adelante (\it{pushing}) y hacía atrás (\it{pulling}), esto con ayuda del $\it{pullback}$, objeto que estudiaremos en la siguiente sección.

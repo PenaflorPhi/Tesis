@@ -23,7 +23,7 @@ donde $\omega_i$ son $n$ funciones las cuales se definen a partir de la propieda
 	\frac{\partial}{\partial \phi_i}
 	\right|_{p}\right).
 \]
-Es importante notar que notemos que en la combinación lineal no estamos evaluando en ningún punto en especifico, este es la diferencial fundamental entre un simple covector y un campo de covectores, sin embargo, al poder variar los punto que se eligen es posible que el campo resultante no sea suave (o continuo). Estamos particularmente interesados en los campos de covectores suaves, es por esto que necesitamos dar algunas caracterizaciones para la suavidad del campo.
+Es importante notar que notemos que en la combinación lineal no estamos evaluando en ningún punto en específico, este es la diferencia fundamental entre un simple covector y un campo de covectores, sin embargo, al poder variar los punto que se eligen es posible que el campo resultante no sea suave (o continuo). Estamos particularmente interesados en los campos de covectores suaves, es por esta razón que necesitamos dar algunas caracterizaciones para la suavidad del campo.
 
 \begin{theorem}\label{Teorema: Criterio de Suavidad para Campos de Covectores}
 	Sea $M$ una variedad suave y sea $\omega: M \to T^{*}M$ un campo grueso de covectores, las siguientes proposiciones son equivalentes:
@@ -51,7 +51,7 @@ Es importante notar que notemos que en la combinación lineal no estamos evaluan
 	\]
 	cada una de las componentes es suave, por lo que $\omega$ es suave.
 
-	También es sencillo ver que la propiedades $1, 2$ y $3$ implican a la propiedad $4$. Si $\omega$ es una $1-$forma suave y $X$ es un campo suave, dada una carta suave $(U,\phi)$ podemos expresar a ambos como las combinaciones lineales:
+	También es sencillo ver que las propiedades $1, 2$ y $3$ implican a la propiedad $4$. Si $\omega$ es una $1-$forma suave y $X$ es un campo suave, dada una carta suave $(U,\phi)$ podemos expresar a ambos como las combinaciones lineales:
 	\[
 		\omega = \sum_{i=1}^{n} \omega_i \lambda_i,
 		\quad \quad
@@ -71,7 +71,7 @@ Es importante notar que notemos que en la combinación lineal no estamos evaluan
 		          & =
 		\sum_{i=1}^{n} \omega_i X_i
 	\end{align*}
-	El cambio entre la segunda y la tercera igualdad se cumple por la propiedad vista en el teorema \ref{Teorema: Dimensión del Espacio Dual}, dado que $\omega$ es suave cada uno de las componentes $\omega_i$ en cualquier carta abierta, también, por el teorema \ref{Teorema: Primer Criterio de Suavidad Para Campos Vectoriales} se garantiza que las componentes $X_i$ son suaves. Como esto se cumple para cada punto $p$ en $M$ sabemos que $\omega(X)$ es suave.
+	El cambio entre la segunda y la tercera igualdad se cumple por la propiedad vista en el teorema \ref{Teorema: Dimensión del Espacio Dual}, dado que $\omega$ es suave cada una de las componentes $\omega_i$ en cualquier carta abierta, también, por el teorema \ref{Teorema: Primer Criterio de Suavidad Para Campos Vectoriales} se garantiza que las componentes $X_i$ son suaves. Como esto se cumple para cada punto $p$ en $M$ sabemos que $\omega(X)$ es suave.
 
 	Veamos que la propiedad $4$ implica la propiedad $5$. Sea $U$ un subconjunto abierto de $M$ y $X$ un campo vectorial suave en $U$.
 
@@ -95,7 +95,7 @@ Es importante notar que notemos que en la combinación lineal no estamos evaluan
 	Sea $M$ una variedad suave y $(U,\phi)$ una carta suave, los covectores $\{\lambda_1, \ldots, \lambda_n\}$ duales a las funciones coordenadas $\{\phi_1, \ldots, \phi_n\}$ forman una base para $T_p^* M$ para cada $p \in U$ por lo que son un co-marco local. Al co-marco $\{\lambda_1, \ldots, \lambda_n\}$ le llamamos el \it{co-marco coordenado}.
 \end{example}
 
-Dado un marco $\{E_1, \ldots, E_n\}$ para $TM$ sobre un subconjunto abierto $U$, es siempre posible definir $n$ $1-$formas $\{\epsilon_1, \ldots, \epsilon_n\}$ como se vio en el Teorema \ref{Teorema: Dimensión del Espacio Dual}, definiendo a las $1-$formas por la propiedad $\epsilon_i(E_j) = \delta_{ij}$, de esta manera, $\{\epsilon_1,\ldots,\epsilon_n\}$ es un co-marco para $T^*M$ sobre U, al co-marco construido de esta manera le llamamos el \it{co-marco dual}. Este co-marco no tiene porque ser suave, ni siquiera necesita ser continuo, es por esto que daremos los siguientes resultados, los cuales nos ayudaran a garantizar la suavidad de los co-marcos, es por esto que daremos los siguientes resultados, los cuales nos ayudaran a garantizar la suavidad de los co-marcos.
+Dado un marco $\{E_1, \ldots, E_n\}$ para $TM$ sobre un subconjunto abierto $U$, es siempre posible definir $n$ $1-$formas $\{\epsilon_1, \ldots, \epsilon_n\}$ cómo se vio en el Teorema \ref{Teorema: Dimensión del Espacio Dual}, definiendo a las $1-$formas por la propiedad $\epsilon_i(E_j) = \delta_{ij}$, de esta manera, $\{\epsilon_1,\ldots,\epsilon_n\}$ es un co-marco para $T^*M$ sobre U, al co-marco construido de esta manera le llamamos el \it{co-marco dual}. Este co-marco no tiene por qué ser suave, ni siquiera tiene por qué ser continuo. Los siguientes resultados nos ayudaran a garantizar la suavidad de los co-marcos.
 
 \begin{lemma}
 	Sea $M$ una variedad suave. Si $\{E_1,\ldots,E_n\}$ es un marco local grueso sobre un subconjunto abierto $U \subseteq M$ y $\{\epsilon_1,\ldots,\epsilon_n\}$ su co-marco dual, el marco $\{E_1,\ldots,E_n\}$ es suave si y solo si $\{\epsilon_1,\ldots, \epsilon_n\}$ es suave.
@@ -129,7 +129,7 @@ Dado un marco $\{E_1, \ldots, E_n\}$ para $TM$ sobre un subconjunto abierto $U$,
 	Al ser  $\{\epsilon_1,\ldots,\epsilon_n\}$ el co-marco dual a $\{E_1,\ldots,E_n\}$ se tiene que $\epsilon_i(E_j) = \delta_{ij}$, por lo que las matrices anteriores serán inversas la una a la otra, es posible mostrar que la inversa de una matriz es suave si y solo si la matriz original es suave. Dado que este se puede hacer para cada vecindad de cualquier punto $p \in U$ podemos garantizar que $\{E_1,\ldots,E_n\}$ es un marco suave si y solo si $\{\epsilon_1,\ldots,\epsilon_n\}$ es un co-marco suave.
 \end{proof}
 
-Del mismo modo que los marcos locales nos permiten expresar a los campos vectoriales como combinaciones lineales, los co-marcos nos permiten expresar a las $1-$formas com combinaciones de estos.
+Del mismo modo que los marcos locales nos permiten expresar a los campos vectoriales como combinaciones lineales, los co-marcos nos permiten expresar a las $1-$formas como combinaciones de estos.
 
 Dado un co-marco local $\{\epsilon_1,\ldots,\epsilon_n\}$ sobre un subconjunto abierto $U \subseteq M$, toda $1-$forma $\omega$ en $U$ puede ser expresada como la combinación lineal
 \[
@@ -151,7 +151,7 @@ Conociendo esta representación podemos dar una caracterización adicional de la
 	donde $\{E_i\}_{i=1}^n$ es el marco dual a $\{\epsilon_i\}_{i=1}^n$, será suave en $U$ cada una de las componentes $\omega_i$ es suave.
 \end{proof}
 
-Denotaremos al conjunto de todos las $1-$formas en $M$ por $\mathfrak{X}^*(M)$. Como se mostró en la subsección \ref{Subsección: Fibrados Vectoriales} en el teorema \ref{Teorema: Los Fibrados Vectoriales Son Modulos}, las secciones de un fibrado vectorial forman un modulo sobre el anillo ode funcione suaves $C^{\infty}(M)$, en particular, esto es cierto para los elementos de $X^{*}(M)$, por lo que si tenemos $1-$formas $\omega,\nu \in \mathfrak{X}^*(M)$ y alguna función suave $f \in C^{\infty}M$ definiremos la suma de $1-$formas y el producto por funciones suaves de la manera usual.
+Denotaremos al conjunto de todos las $1-$formas en $M$ por $\mathfrak{X}^*(M)$. Como se mostró en la subsección \ref{Subsección: Fibrados Vectoriales} en el teorema \ref{Teorema: Los Fibrados Vectoriales Son Modulos}, las secciones de un fibrado vectorial forman un módulo sobre el anillo de funcione suaves $C^{\infty}(M)$, en particular, esto es cierto para los elementos de $X^{*}(M)$, por lo que si tenemos $1-$formas $\omega,\nu \in \mathfrak{X}^*(M)$ y alguna función suave $f \in C^{\infty}M$ definiremos la suma de $1-$formas y el producto por funciones suaves de la manera usual.
 \begin{align*}
 	(\omega + \nu)(p) & = \omega_p + \nu_p, \quad p \in M \\
 	(f\omega)(p)      & = f(p)\omega_p.

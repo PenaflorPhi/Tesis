@@ -1,7 +1,7 @@
 \section{Mapas Suaves}\label{Sección: Mapas Suaves}
 Habiendo definido las variedades topológicas y las variedades suaves ahora nos interesará estudiar lo que son los mapas suaves, estos son difeomorfismos entre variedades, los difeomorfismos son funciones o mapas bajo los cuales la estructura suave se preserva.
 
-Haremos la siguiente distinción entre los términos \it{función} y \it{mapa}. Una mapa será una regla que a cada elemento de su dominio le asigna un elemento del contradominio, donde, el dominio y contradominio pueden ser variedades arbitrarias, mientras que una función será un tipo particular de mapa donde el contradominio es $\R^n$ para algún $n \in \N$.
+Haremos la siguiente distinción entre los términos \it{función} y \it{mapa}. Un mapa es una regla que a cada elemento de su dominio le asigna un elemento del contradominio, donde, el dominio y contradominio pueden ser variedades arbitrarias, mientras que una función será un tipo particular de mapa donde el contradominio es $\R^n$ para algún $n \in \N$.
 
 \begin{definition}[Funciones Suaves]\label{Definición: Función Suave}
 	Sea $M^n$ una variedad suave, $k$ un entero no negativo, y $f: M \to \R^{k}$ una función cualquiera. Diremos que $f$ es una \it{función suave} si para cada punto $p \in M$ existe una carta suave $(U,\phi)$ para $M$, cuyo dominio contiene a $p$ y tal que la composición de las funciones $f \circ \phi^{-1}$ es suave en el conjunto abierto $\phi(U) \subseteq \R^{n}$.
@@ -31,14 +31,14 @@ Podemos generalizar todavía más la noción de función suave si en lugar de re
 
 Nuevamente lo que estamos haciendo es trasladar el problema, de modo que podamos determinar si un mapa es suave utilizando los conocimientos que ya tenemos de cálculo en varias variables.
 
-A continuación mostraremos algunos resultados básicos sobre mapas suaves entre variedades, estos serán análogos a resultados de cálculo diferencial.
+A continuación, mostraremos algunos resultados básicos sobre mapas suaves entre variedades, estos serán análogos a resultados de cálculo diferencial.
 
 \begin{theorem}
 	Todo mapa suave es continuo.
 \end{theorem}
 
 \begin{proof}
-	Supongamos que $M$ y $N$ son variedades suaves y $f: M \to N$ es una mapa suave. Consideremos un punto arbitrario $p \in M$. Dado que $f$ es suave existirá un par de cartas $(U,\phi)$ y $(V,\psi)$ de $M$ y $N$ respectivamente, tales que:
+	Supongamos que $M$ y $N$ son variedades suaves y $f: M \to N$ es un mapa suave. Consideremos un punto arbitrario $p \in M$. Dado que $f$ es suave existirá un par de cartas $(U,\phi)$ y $(V,\psi)$ de $M$ y $N$ respectivamente, tales que:
 	\[
 		\psi \circ f \circ \phi^{-1}: \phi(U) \to \psi(V)
 	\]
@@ -65,7 +65,7 @@ A continuación mostraremos algunos resultados básicos sobre mapas suaves entre
 	\end{itemize}
 \end{proof}
 
-Este teorema lo que nos esta diciendo es que la suavidad es una propiedad local, también da pie al siguiente lema que nos permite construir mapas suaves.
+Este teorema lo que nos está diciendo es que la suavidad es una propiedad local, también da pie al siguiente lema que nos permite construir mapas suaves.
 
 \begin{corollary}[Lema de pegado para mapas suaves]
 	Sean $M$ y $N$ variedades suaves, y sea $\{U_{\alpha}\}_{\alpha \in A}$ una cubierta abierta de $M$. Supongamos que para cada $\alpha \in A$ tenemos un mapa suave $f_{\alpha}: U_{\alpha} \to N$ tal que el mapa coincide en intersecciones, i.e., $f_{\alpha}|_{U_\alpha \cap U_\beta} = f_{\beta}|_{U_\alpha \cap U_\beta}$ para cualesquiera $\alpha$ y $\beta$. Entonces existirá un mapa único $f:M \to N$ tal que $f|_{U_\alpha} = f_{\alpha}$ para cada $\alpha \in A$.
@@ -95,7 +95,7 @@ Este teorema lo que nos esta diciendo es que la suavidad es una propiedad local,
 \end{theorem}
 
 \begin{proof}
-	En efecto, consideremos un punto arbitrario $p \in M$ y cartas $(U,\phi)$ y $(V,\psi)$ de $M$ y $N$ respectivamente que contengan a $p$ y $c(p)$. Claramente se tendrá que $c(p) = c(U) \subset V$ y además $\psi \circ c \circ \phi^{-1}: \phi(U) \to \psi(c(p))$, por lo que la representación coordenada de $c$ es una función constante de $\R^{n_1}$ a $\R^{n_2}$, por lo tanto será suave lo cual implica que $c$ es suave.
+	En efecto, consideremos un punto arbitrario $p \in M$ y cartas $(U,\phi)$ y $(V,\psi)$ de $M$ y $N$ respectivamente que contengan a $p$ y $c(p)$. Claramente se tendrá que $c(p) = c(U) \subset V$ y, además $\psi \circ c \circ \phi^{-1}: \phi(U) \to \psi(c(p))$, por lo que la representación coordenada de $c$ es una función constante de $\R^{n_1}$ a $\R^{n_2}$, por lo tanto, será suave, lo cual implica que $c$ es suave.
 \end{proof}
 
 \begin{theorem}[El Mapa Identidad]
@@ -140,7 +140,7 @@ Este teorema lo que nos esta diciendo es que la suavidad es una propiedad local,
 			                                                            & = \omega \circ \phi^{-1}(x)
 		      \end{align*}
 
-		      Esto es una proyección de $\R^{n_1 + n_2}$ a $\R^{n_1}$ que sabemos es suave. Por lo tanto la proyección del producto de variedades suaves será suave en cada punto, esto implica que la proyección sobre una de las coordenadas es suave en todo el dominio.
+		      Esto es una proyección de $\R^{n_1 + n_2}$ a $\R^{n_1}$ que sabemos es suave. Por lo tanto, la proyección del producto de variedades suaves será suave en cada punto, esto implica que la proyección sobre una de las coordenadas es suave en todo el dominio.
 
 		\item Sea $f: N \to M_1 \times M_2$ un mapa suave, por el teorema \ref{Teorema: Composición de Mapas Suaves} sabemos que las composiciones $\pi_1 \circ f$ y $\pi_2 \circ f$ son suave.
 
@@ -170,7 +170,7 @@ Un hecho importante sobre el conjunto de funciones suaves, $C^{\infty}(M)$, es q
 	\end{itemize}
 \end{definition}
 
-Si ademas, para cada $x,y \in \mathcal{R}$ se tiene que $xy = yx$, entonces diremos que $\mathcal{R}$ es un \it{anillo conmutativo} y, si existe un elemento $1 \in \mathcal{R}$ tal que $1x = x1 = x$ para cada $x \in \mathcal{R}$, entonces diremos que $\mathcal{R}$ es un \it{anillo con identidad}.
+Si para cada $x,y \in \mathcal{R}$ se tiene que $xy = yx$, entonces diremos que $\mathcal{R}$ es un \it{anillo conmutativo} y, si existe un elemento $1 \in \mathcal{R}$ tal que $1x = x1 = x$ para cada $x \in \mathcal{R}$, entonces diremos que $\mathcal{R}$ es un \it{anillo con identidad}.
 
 Para probar que, en efecto, el conjunto de funciones suaves $C^{\infty}(M)$ es un anillo haremos uso del siguiente lema.
 
@@ -179,7 +179,7 @@ Para probar que, en efecto, el conjunto de funciones suaves $C^{\infty}(M)$ es u
 \end{lemma}
 
 \begin{proof}
-  Tomemos un $p \in M$ arbitrario y una carta $(U, \phi)$ que lo contenga. Por definición de función suave existirá un carta $(V,\psi)$ tal que la composición $f \circ \psi^{-1}: \psi(V) \to \R^{k}$ es suave.
+  Tomemos un punto $p \in M$ arbitrario y una carta $(U, \phi)$ que lo contenga. Por definición de función suave existirá una carta $(V,\psi)$ tal que la composición $f \circ \psi^{-1}: \psi(V) \to \R^{k}$ es suave.
 
   Al ser $(U,\phi)$ y $(V,\psi)$ cartas suaves, el mapa de transición $\psi \circ \phi^{-1}: \phi(U \cap v) \to \psi(U \cap V)$ es suave, por lo que $(f \circ \psi^{-1}) \circ (\psi \circ \phi^{-1}) = f \circ \phi^{-1}: \phi(U \cap V) \to \R^{k}$ es un mapa suave. Como $p$ es un punto arbitrario podemos concluir que esto cumplirá para cada punto de $U$, por lo cual $f \circ \phi^{-1}$ es suave en $\phi(U)$, para cada carta suave$(U,\phi)$.
 \end{proof}
@@ -195,9 +195,9 @@ Para probar que, en efecto, el conjunto de funciones suaves $C^{\infty}(M)$ es u
 \begin{proof}
   Consideremos dos funciones $f,g \in C^{\infty}(M)$, mostraremos que tanto la suma como el producto de estas funciones son suaves.
 
-  Por el lema anterior sabemos que para cualquier carta suave $(U,\phi)$, las composiciones $f \circ \phi^{-1}$ y $g \circ \phi^{-1}$ son suaves y, por como definimos la suma tenemos que $(f + g)\circ \phi^{-1} = (f \circ \phi^{-1}) + (g \circ \phi^{-1})$, esta la suma de funciones suaves en el sentido usual, la cual sabemos es suave.
+  Por el lema anterior sabemos que para cualquier carta suave $(U,\phi)$, las composiciones $f \circ \phi^{-1}$ y $g \circ \phi^{-1}$ son suaves y, por como definimos la suma tenemos que $(f + g)\circ \phi^{-1} = (f \circ \phi^{-1}) + (g \circ \phi^{-1})$, esta es una suma de funciones suaves en el sentido usual, la cual sabemos es suave.
 
   De modo similar para el producto se tendrá por definición que, $(fg)\circ\phi^{-1} = (f \circ \phi^{-1}) (g \circ \phi^{-1})$ y por el mismo motivo, por ser el producto de funciones suaves en el sentido usual, el producto $(fg) \circ \phi^{-1}$ es suave.
 
-  La conmutatividad, la asociatividad y la distributividad se tendrán del hecho que la suma y el producto cumplen estas propiedades se cumplen en $\R$, y como hemos visto anteriormente, las constantes también son mapa suaves, por lo que la unidad será la identidad.
+  La conmutatividad, la asociatividad y la distributividad se tendrán del hecho que la suma y el producto cumplen estas propiedades se cumplen en $\R$, y como hemos visto anteriormente, las constantes también son mapas suaves, por lo que la unidad será la identidad.
 \end{proof}

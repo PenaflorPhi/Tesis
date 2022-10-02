@@ -1,11 +1,11 @@
 \subsection{Campos Vectoriales}\label{Subsección: Campos Vectoriales}
 \begin{definition}[Campo Vectorial]
-	Un \it{campo vectorial} $X$ en una variedad $M$ es una sección del fibrado tangente $\pi: TM \to M$, esto es, $X: M \to TM$ es un mapa tal que $X(p) \in T_{p}(M)$ para cada $p \in M$. Además diremos que es un \it{campo vectorial suave} si $X$ es un mapa suave. Denotaremos al conjunto formado por todas los campos vectoriales suaves en $M$ como $\mathfrak{X}(M)$
+	Un \it{campo vectorial} $X$ en una variedad $M$ es una sección del fibrado tangente $\pi: TM \to M$, esto es, $X: M \to TM$ es un mapa tal que $X(p) \in T_{p}(M)$ para cada $p \in M$. Además, diremos que es un \it{campo vectorial suave} si $X$ es un mapa suave. Denotaremos al conjunto formado por todos los campos vectoriales suaves en $M$ como $\mathfrak{X}(M)$
 
-	Diremos que el mapa $X: M \to TM$ es un \it{campo vectorial grueso} is $X$ no es suave, un campo vectorial ni siquiera necesita ser continuo.
+	Diremos que el mapa $X: M \to TM$ es un \it{campo vectorial grueso} es $X$ no es suave, un campo vectorial ni siquiera necesita ser continuo.
 \end{definition}
 
-Por el lema \ref{Lemma: Espacio Tangente a Subvariedad}, para $M$ una variedad suave, si $U \subset M$ es abierto, $U$ será una subvariedad abierta, por lo que para cada $p \in U$ podemos identificar al espacio tangente $T_p(U)$ con el el espacio tangente $T_p(M)$, por lo tanto, si $X$ es un campo suave en $M$ y $U \subset M$ es abierto, la restricción $X|_{U}$ será un campo suave.
+Por el lema \ref{Lemma: Espacio Tangente a Subvariedad}, para $M$ una variedad suave, si $U \subset M$ es abierto, $U$ será una subvariedad abierta, por lo que para cada $p \in U$ podemos identificar al espacio tangente $T_p(U)$ con el espacio tangente $T_p(M)$, por lo tanto, si $X$ es un campo suave en $M$ y $U \subset M$ es abierto, la restricción $X|_{U}$ será un campo suave.
 
 \begin{theorem}[Criterio de Suavidad Para Campos Vectoriales]\label{Teorema: Primer Criterio de Suavidad Para Campos Vectoriales}
 	Sea $M$ una variedad suave, y sea $X: M \to TM$ un campo vectorial grueso. Si $(U,\phi) = (U,\phi_1,\phi_n)$ es una carta coordenada suave en $M$ la restricción de $X$ a $U$ es suave si y solo si las funciones componentes con respecto a $U$ son suaves.
@@ -55,7 +55,7 @@ Como se mencionaba al inicio de la sección, uno de nuestros principales interes
 	\[
 		X = \sum_{i=1}^n v_i \frac{\partial}{\partial \phi_i}.
 	\]
-	Ahora, multiplicando por $\psi$ obtenemos que $\psi X$ es un campo vectorial suave en $U$ con soporte en $V$ y para el cual se tiene que $v = X(p)$. Adicionalmente podemos notar que, por como hemos definido el campo vectorial este será constante, dado que los coeficientes de $v$ lo son.
+	Ahora, multiplicando por $\psi$ obtenemos que $\psi X$ es un campo vectorial suave en $U$ con soporte en $V$ y para el cual se tiene que $v = X(p)$. Adicionalmente podemos notar que, por la manera en que hemos definido al campo vectorial, este será constante, ya que los coeficientes de $v$ lo son.
 \end{proof}
 
 Este lema, junto con el ejemplo \ref{Ejemplo: Campo Vectorial en M} son muy importantes, ya que lo que nos están diciendo es que los campos vectoriales forman una base para el espacio tangente a cada punto de una variedad.
@@ -120,11 +120,11 @@ donde $X_i$ es la $i-$ésima componente del mapa $X$, componente que depende de 
 \end{theorem}
 
 \begin{proof}
-	Por definición de independencia lineal, el conjunto $\{X_1|_p, \ldots, X_k|_p\}$ es linealmente independiente en $T_p(M)$ para cada $p$ en $U$, por lo que podemos elegir vectores $v_{k+1},\ldots,v_n$ en $T_p(M)$ tales que $\{X_1|_p, \ldots, X_k|_p, v_{k+1}, \ldots, v_n\}$ sean linealmente independientes y por ende, formen una base para $T_p(M)$.
+	Por definición de independencia lineal, el conjunto $\{X_1|_p, \ldots, X_k|_p\}$ es linealmente independiente en $T_p(M)$ para cada $p$ en $U$, por lo que podemos elegir vectores $v_{k+1},\ldots,v_n$ en $T_p(M)$ tales que $\{X_1|_p, \ldots, X_k|_p, v_{k+1}, \ldots, v_n\}$ sean linealmente independientes y, por ende, formen una base para $T_p(M)$.
 
   Ahora, por el lema \ref{Lema: Existencia de Campo Vectorial Suave} sabemos que podemos extender cada vector en $T_p(M)$ a un campo suave $X_i$ constante, para esto, tomamos una carta suave $(V,\psi)$ que contenga a $a$ y definimos a cada uno de los campos vectoriales $X_i$, con $1 \leq i \leq n$, en $U \cap V$ como sigue:
 	\[
-		\left. X_i \right|_q = \begin{dcases}
+		\left. X_i \right|_q = \begin{cases}
 			\sum_{j=1}^{n}
 			\left.
 			X_i^j \frac{\partial}{\partial \psi_j}
@@ -133,17 +133,17 @@ donde $X_i$ es la $i-$ésima componente del mapa $X$, componente que depende de 
 			\left.
 			v_i^j \frac{\partial}{\partial \psi_j}
 			\right|_p, & \quad k < i \leq n
-		\end{dcases}
+		\end{cases}
 	\]
 	Cada uno de estos campos es suave; para $1 \leq i \leq k$ esto se tiene por hipótesis, para $k< i \leq n$ esto se tiene dado que los campos son constantes.
 
-	Por último, si consideramos el determinante $\det(X_1, \ldots, X_n)$, por construcción de los campos $X_i$, el determinante será no nulo en $p$, y además es suave en $U$, por lo tanto será no nulo en una vecindad $V$ de $p$. Así, podemos concluir que la $n$-tupla, $\{X_1,\ldots,X_n\}$, de campos vectoriales que hemos construido es linealmente independiente en $T_p(M)$ para cada $p \in U \cap V$, por tanto, es un marco local suave para $T_p(M)$ en $U \cap V$.
+	Por último, si consideramos el determinante $\det(X_1, \ldots, X_n)$, por construcción de los campos $X_i$, el determinante será no nulo en $p$, y además es suave en $U$, por lo tanto, será no nulo en una vecindad $V$ de $p$. Así, podemos concluir que la $n$-tupla, $\{X_1,\ldots,X_n\}$, de campos vectoriales que hemos construido es linealmente independiente en $T_p(M)$ para cada $p \in U \cap V$, por tanto, es un marco local suave para $T_p(M)$ en $U \cap V$.
 \end{proof}
 
 Un corolario de este resultado que de igual modo utiliza el lema \ref{Lema: Existencia de Campo Vectorial Suave} es que si tenemos una colección de vectores linealmente independientes en el espacio tangente es posible extenderlos de tal manera que los campos vectoriales que resultantes sean suaves y coincidan con los vectores tangentes en una vecindad.
 
 \begin{corollary}
-  Sea $M$ una variedad suave y $p$ un punto de $M$. Si $\{v_1, \ldots, v_k\}$ es una $k-$tupla de vectores linealmente independientes en $T_p(M)$, con $1 \leq k \leq n$, entonces existe una marco suave local 
+  Sea $M$ una variedad suave y $p$ un punto de $M$. Si $\{v_1, \ldots, v_k\}$ es una $k-$tupla de vectores linealmente independientes en $T_p(M)$, con $1 \leq k \leq n$, entonces existe un marco suave local 
   $\{X_1, \ldots, X_k\}$ tal que $X_i|_p = v_i$ para cada $1\leq i \leq k$.
 \end{corollary}
 
