@@ -1,0 +1,103 @@
+\chapter{Álgebra Multilineal y Tensores}\label{Sección: Álgebra Multilineal y Tensores}
+
+En este anexo describiremos lo que son los tensores, estos objetos nos darán una generalización del concepto de vector, además daremos un concepto básicas que necesitamos para entender a las métricas. Para comenzar necesitaremos dar algunas definiciones básicas de álgebra lineal.
+
+\section{Álgebra Multilineal}
+Comenzaremos definiendo a los anillos, estos son un tipo de estructura algebraica que generalizan el concepto de campo, en un anillo la multiplicación puede no ser asociativa y el inverso multiplicativo puede no existir para ningún elemento.
+
+\begin{definition}[Anillo]
+	Un \it{anillo} es un conjunto $\mathcal{R}$ junto con dos operaciones $(x,y) \to x + y$ y $(x,y) \to xy$, las cuales satisfacen las siguientes propiedades:
+	\begin{itemize}
+		\item $\mathcal{R}$ es un grupo conmutativo bajo la operación $(x,y) \to x + y$
+		\item $(xy)z = x(yz)$
+		\item $x(y + z) = xy + xz$ y $(y+z)x = yx + yz$
+	\end{itemize}
+
+	Si para cada $x,y \in \mathcal{R}$ se tiene que $xy = yx$, entonces diremos que $\mathcal{R}$ es un \it{anillo conmutativo} y, si existe un elemento $1 \in \mathcal{R}$ tal que $1x = x1 = x$ para cada $x \in \mathcal{R}$, entonces diremos que $\mathcal{R}$ es un \it{anillo con identidad}.
+\end{definition}
+
+Del mismo modo que como los anillos nos dan una generalización del concepto de campo, los módulos nos darán una generalización de los espacios vectoriales. La diferencia principal es que, mientras que los espacios vectoriales están definidos sobre un campo, los anillos estarán definidos sobre un anillo.
+
+\begin{definition}[Módulo]
+	Si $\mathcal{R}$ es un anillo con identidad. Diremos que un conjunto no vacío $\mathcal{M}$ es un \textit{$\mathcal{R}-$módulo} o un \it{módulo sobre $\mathcal{R}$} si:
+	\begin{itemize}
+		\item Hay una suma en $(\alpha,\beta) \to \alpha + \beta$ en $\mathcal{M}$ bajo la cual $\mathcal{M}$ es un grupo conmutativo.
+		\item Hay un producto $(c,\alpha) \to c \alpha$, donde $\alpha \in \mathcal{M}$ y $c \in \mathcal{R}$
+	\end{itemize}
+	Para los cuales se cumplen las siguientes igualdades:
+	\begin{gather*}
+		\begin{alignedat}{2}
+			(c_1 + c_2) \alpha                    & = c_1 \alpha + c_2 \alpha
+			& \hspace{6em} c(\alpha_1 + \alpha_2) & = c\alpha_1 + c\alpha_2 \\
+			c_1 c_2 \alpha                        & = c_1(c_2 \alpha)
+			& 1 \alpha                            & = \alpha.
+		\end{alignedat}
+	\end{gather*}
+\end{definition}
+Como ya mencionamos, la principal diferencia entre los anillos y los campos es que, para los campos el inverso multiplicativo siempre está definido para todo elemento distinto de cero, esto no ocurre con los anillos, por lo cuál, los resultados de espacios que dependan de está propiedad no se trasladarán a los módulos; sin embargo, existen otros conceptos que sí podemos generalizar a los módulos.
+
+\begin{definition}[Base Para Un Módulo]
+	Si $\mathcal{M}$ es un $\mathcal{R}-$módulo, diremos que un subconjunto $\{m_i\}_{i \in I}$ es linealmente independiente si la igualdad:
+	\[
+		\sum_{i \in I} r_i m_i = 0, \quad r_i \in \mathcal{R},
+	\]
+	únicamente se cumple cuando todos los $r_i$ son nulos.
+
+	Una \it{base} $\mathcal{B}$ para el módulo $\mathcal{M}$ es un subconjunto linealmente independiente que genera a $\mathcal{M}$, esto es, cada $m \in \mathcal{M}$ puede ser escrito como una combinación lineal:
+	\[m = \sum_{i \in I} r_i m_i, \quad r_i \in \mathcal{R}.\]
+	Para los módulos no es posible garantizar que si $\{m_i\}_{i \in I}$ es un conjunto linealmente dependiente entonces $m_j$ sea combinación lineal de los elementos del conjunto dado que la demostración de la proposición equivalente para espacios vectoriales hace uso del inverso multiplicativo; en consecuencia, tampoco podemos garantizar que todos los módulos tengan una base, como si ocurre con los espacios vectoriales, esto consecuencia del axioma de elección.
+\end{definition}
+
+\begin{definition}[Módulo Libre]
+	Diremos que un $\mathcal{R}-$módulo $\mathcal{M}$ es un \it{módulo libre} si existe una base para $\mathcal{M}$, además si $\mathcal{M}$ tiene una base formada por un número finito de elementos diremos que $\mathcal{M}$ es un \it{módulo libre finito generado por $n$ elementos}.
+\end{definition}
+
+No es difícil mostrar que si $\mathcal{M}$ es un $\mathcal{R}-$módulo libre con $n$ generadores entonces el subconjunto más pequeño de $\mathcal{M}$ que lo genera contiene $n$ elementos, al número $n$ se le llama el \it{rango} del módulo. Está idea es similar a la de la dimensión de un espacio vectorial y como ocurre con los espacios vectoriales si $\mathcal{M}$ es un módulo libre generado por un número finito de elementos entonces habrá un isomorfismo canónico entre el módulo $\mathcal{M}$ y $\mathcal{R}^n$.
+
+\begin{definition}[Módulo Dual]
+	Si $\mathcal{M}$ es un $\mathcal{R}-$módulo definiremos al \it{módulo dual $\mathcal{M}^{*}$} como el conjunto de todas las funciones lineales $f: \mathcal{M} \to \mathcal{R}$.
+\end{definition}
+
+Los módulos duales son análogos a los espacios duales y comparten muchas de las mismas propiedades, de hecho, podemos mostrar que si $\mathcal{M}$ es finito generado entonces $\mathcal{M}^*$ también lo es, y la demostración de este teorema es exactamente igual a la demostración de que un espacio vectorial $V$ tiene la misma dimensión que su espacio dual $V^{*}$.
+
+Ahora describiremos un tipo muy particular de mapa (en el sentido algebraico), los mapas multilineales, estos son mapas que son lineales en cada una de sus entradas. Algunos mapas multilineales deberían sernos familiares como el producto escalar en espacios euclidianos, el producto vectorial en $\R^3$ o las matrices.
+
+\begin{definition}[Mapa Multilineal]
+	Si $M, N$ y $P$ son $\mathcal{R}-$módulos diremos que un mapa:
+	\[
+		f: M \times N \to P
+	\]
+	es \it{bilineal} si $f$ es lineal en ambos factores, esto es:
+	\begin{alignat*}{2}
+		f(m_1 + m_2, n) & = f(m_1,n) + f(m_2,n),\quad  f(rm,n) & = rf(m,n) \\
+		f(m, n_1 + n_2) & = f(m,n_1) + f(m,n_2),\quad  f(m,rn) & = rf(m,n) \\
+	\end{alignat*}
+	Del mismo modo, si $M_1, \ldots, M_n, P$ son $\mathcal{R}-$módulos, diremos una función:
+	\[
+		f: M_1 \times \cdots \times M_n \to P
+	\]
+	es \it{multilineal} si es es lineal en cada uno de sus factores, esto es:
+	\begin{align*}
+		f(m_1, \ldots, m_i^1 + m_i^2, \ldots, m_n) & = f(m_1, \ldots, m_i^2, \ldots, m_n)           \\
+		                                           & \quad\quad +f(m_1, \ldots, m_i^2, \ldots, m_n) \\
+		f(m_1,\ldots , rm_i, \ldots, m_n)          & = r f(m_1,\ldots,m_i,\ldots, m_n)
+	\end{align*}
+\end{definition}
+
+A las funciones multilineales también se les conoce como \it{$n-$formas lineales}, una $1-$forma es simplemente una función lineal, una $2-$forma sería una función bilineal y así sucesivamente.
+
+Como hemos mencionado, un ejemplo de un mapa bilineal es el producto escalar en $\R^n$, como recordatorio, el producto escalar es un mapa $\la \cdot , \cdot \ra: \R^n \times \R^n \to \R$ que definimos como:
+\[
+	\la x,y \ra = \sum_{i=1}^{n} x_i y_i, \quad\quad
+	\begin{array}{l}
+		x=[x_1,\dots,x_n] \in \R^n \\
+		y=[y_1,\dots,y_n] \in \R^n
+	\end{array}
+\]
+En la sección \ref{Sección: Variedades Riemannianas} extendemos la idea del producto escalar a variedades, esta es en gran parte la razón por la que estamos interesados en los mapas multilineales y los tensores ya que nos permiten realizar algunos cálculos importantes, como por ejemplo medir ángulos.
+Otro ejemplo de un mapa multilineal además del producto escalar es el determinante. Dado que si tomamos $n+1$ vectores, $x_1, \ldots, x_n, y \in \R^n$ y un escalar $\lambda \in \R$, el determinante es un mapa que va de $\R^n \times \cdots \times \R^n$ a $\R^n$ para el cual se cumple:
+\begin{align*}
+	\det(\begin{bmatrix}x_1 & \cdots & \lambda x_i + y & \cdots & x_n \end{bmatrix}) = \lambda &
+	\det(\begin{bmatrix}x_1 & \cdots &x_i&\cdots& x_n \end{bmatrix})                                                                                                  \\
+	                                                                                           & + \det(\begin{bmatrix}x_1 & \cdots & y & \cdots & x_n \end{bmatrix})
+\end{align*}

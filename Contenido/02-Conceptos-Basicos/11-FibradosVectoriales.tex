@@ -38,24 +38,7 @@ Para poder definir lo que es un campo vectorial primero hablaremos de lo que son
 	Diremos que el mapa $\sigma$ es una \it{sección suave} si $\sigma$ es suave de $M$ a $E$. Denotaremos al conjunto de todas las secciones suaves de $E$ como $\Gamma(E)$.
 \end{definition}
 
-Como se vio en la sección \ref{Sección: Mapas Suaves}, el conjunto de funciones suaves, $C^{\infty}(M)$, es un anillo conmutativo con identidad bajo las operaciones de suma y producto, y de modo similar a como los anillos generalizan el concepto de campo, el siguiente concepto que definiremos, el módulo, nos da una generalización de lo que es un espacio vectorial, en donde los escalares son elementos de un anillo.
-
-\begin{definition}[Módulo]
-	Si $\mathcal{R}$ es un anillo con identidad. Diremos que un conjunto no vacío $\mathcal{M}$ es un \textit{$\mathcal{R}$-módulo} o un \it{módulo sobre $\mathcal{R}$} si:
-	\begin{itemize}
-		\item Hay una suma en $(\alpha,\beta) \to \alpha + \beta$ en $\mathcal{M}$ bajo la cual $\mathcal{M}$ es un grupo conmutativo.
-		\item Hay un producto $(c,\alpha) \to c \alpha$, donde $\alpha \in \mathcal{M}$ y $c \in \mathcal{R}$
-	\end{itemize}
-	Tales que:
-	\begin{align*}
-		(c_1 + c_2) \alpha     & = c_1 \alpha + c_2 \alpha \\
-		c(\alpha_1 + \alpha_2) & = c\alpha_1 + c\alpha_2   \\
-		c_1 c_2 \alpha         & = c_1(c_2 \alpha)         \\
-		1 \alpha               & = \alpha.
-	\end{align*}
-\end{definition}
-
-La definición de un módulo $\mathcal{M}$ sobre un anillo $\mathcal{R}$ coincide con la definición de espacio vectorial sobre un campo $\mathbb{F}$ cuando $\mathcal{R}$ es, en particular, un campo.
+Como se vio en la sección \ref{Sección: Mapas Suaves}, el conjunto de funciones suaves, $C^{\infty}(M)$, es un anillo conmutativo con identidad bajo las operaciones de suma y producto, una de las propiedad más importantes de los fibrados vectoriales es que estos son módulos sobre el anillo de funciones suaves.
 
 \begin{theorem}\label{Teorema: Los Fibrados Vectoriales Son Modulos}
 	Sea $(E,M, \pi)$ un fibrado vectorial suave, $\sigma, \tau \in \Gamma(E)$ y sea $f \in C^{\infty}(M)$. Si definimos la suma de secciones suaves y el producto por una función como sigue:
