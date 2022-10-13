@@ -29,13 +29,11 @@ Ahora estudiaremos como es que los mapas suaves afectan a los vectores tangentes
 	El mapa $d_pF$ está dado del siguiente modo: Dada una derivación $\omega \in T_p(M)$, $dF_p$ será la derivación en el punto $F(p) \in N$ que actúa sobre funciones suaves de $N$ a $\R$ como:
 	\[ d_pF(\omega)(f) = \omega(f \circ F). \]
 \end{definition}
-
 \begin{figure}[h]
 	\centering
 	\input{Figuras/A-Figuras/DiferencialDeUnMapaEnUnPunto.tex}
 	\caption{Representación del diferencial de un mapa suave en un punto.}
 \end{figure}
-
 El diferencial $d_pF$ está bien definido dado que $F: M \to N$ y $f: N \to \R$ son funciones suaves, esto implica que $f \circ F: M \to \R$ será una función suave, por lo que $\omega(f \circ F)$ tiene sentido, la linealidad se tiene como consecuencia de que $\omega$ sea lineal y, por último, $d_pF(\omega): C^{\infty}(N) \to \R$ es una derivación en $F(p)$ dado que si $f, g \in C^{\infty}(N)$ entonces:
 
 \begin{align*}
@@ -153,7 +151,7 @@ De modo similar a la derivada total, el diferencial nos permitirá realizar cál
 	Para cada $p \in M$ podemos elegir una carta suave $(U, \phi)$ que contenga a $p$. Por definición $\phi$ es un difeomorfismo de $U$ a $\R^n$. El lema \ref{Lemma: Diferencial de un Difeomorfismo} nos dice que $T_{p}(U)$ y $T_{\phi(p)}(\R^n)$ son isomorfos, y el lema anterior garantiza que $T_{p}(U)$ y $T_{p}(M)$ también son isomorfos, por lo tanto, $T_{p}(M) \simeq T_{\phi(p)}(\R^n)$. De aquí que $\dim T_p(M) = \dim T_{\phi(p)}(\R^n) = n$.
 \end{proof}
 
-Una consecuencia inmediata del teorema \ref{Teorema: Isomorfismo entre Espacio Tangente y Espacio de Derivaciones} y el teorema anterior, \ref{Teorema: Invariancia de la Dimensión} es el siguiente corolario que nos da una identificación canónica de los elementos de cualquier espacio vectorial finito dimensional con los elementos de su espacio tangente, y, a su vez, dar una identificación canónica entre cada espacio tangente a un punto de una variedad y un espacio vectorial.
+Una consecuencia inmediata del teorema \ref{Teorema: Isomorfismo entre Espacio Tangente y Espacio de Derivaciones} y el teorema anterior, es el siguiente corolario que nos da una identificación canónica de los elementos de cualquier espacio vectorial finito dimensional con los elementos de su espacio tangente, y, a su vez, dar una identificación canónica entre cada espacio tangente a un punto de una variedad y un espacio vectorial.
 
 \begin{corollary}
 	Sea $V$ un espacio vectorial finito dimensional con su estructura de variedad suave estándar. Para cada punto $a \in V$, el mapa $D_v: C^{\infty}(V) \to \R$ definido por:

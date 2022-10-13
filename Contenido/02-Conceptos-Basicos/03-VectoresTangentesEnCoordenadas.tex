@@ -20,7 +20,7 @@ Evidentemente cada $\frac{\partial}{\partial \phi_i}$ es una derivación, por lo
 	Sean $M$ una variedad suave, $p \in M$ un punto arbitrario y $(U,\phi) = (U, \phi_1, \dots, \phi_n)$ una carta suave que contiene a $p$, entonces:
 	\[
 		d_p\phi \left( \left. \frac{\partial }{\partial \phi_i}\right|_{p}\right)
-		= \left. \frac{\partial}{\partial x_i} \right|_{\phi_p}.
+    = \left. \frac{\partial}{\partial x_i} \right|_{\phi(p)}.
 	\]
 \end{lemma}
 
@@ -101,8 +101,8 @@ Por lo tanto, la representación matricial de $d_{p}F$ en términos de las bases
 Esto es precisamente lo que cabría esperarse, que la representación en coordenadas del diferencial de una función suave sea precisamente la matriz Jacobiana, por lo que coincide con la derivada total.
 
 Para ver qué sucede con el caso general consideremos dos variedades suaves $M$ y $N$, un punto $p \in M$ y un mapa suave $F: M \to N$. Tomemos dos cartas $(U,\phi)$ y $(V,\psi)$ que contengan a $p$ y $F(p)$ respectivamente.
-
 \begin{figure}[h]
+  \center
 	\input{Figuras/B-Diagramas/RepresentacionCoordenada}
 	\caption*{Diagrama de la representación coordenada de un mapa.}
 \end{figure}

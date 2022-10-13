@@ -1,14 +1,12 @@
 \subsection{Campos Vectoriales}\label{Subsección: Campos Vectoriales}
 \begin{definition}[Campo Vectorial]
-	Un \it{campo vectorial} $X$ en una variedad $M$ es una sección del fibrado tangente $\pi: TM \to M$, esto es, $X: M \to TM$ es un mapa tal que $X(p) \in T_{p}(M)$ para cada $p \in M$. Además, diremos que es un \it{campo vectorial suave} si $X$ es un mapa suave. Denotaremos al conjunto formado por todos los campos vectoriales suaves en $M$ como $\mathfrak{X}(M)$
-
-	Diremos que el mapa $X: M \to TM$ es un \it{campo vectorial grueso} es $X$ no es suave, un campo vectorial ni siquiera necesita ser continuo.
+	Un \it{campo vectorial} $X$ en una variedad $M$ es una sección del fibrado tangente $\pi: TM \to M$, esto es, $X: M \to TM$ es un mapa tal que $X(p) \in T_{p}(M)$ para cada $p \in M$. Además, diremos que es un \it{campo vectorial suave} si $X$ es un mapa suave. Denotaremos al conjunto formado por todos los campos vectoriales suaves en $M$ como $\mathfrak{X}(M)$.
 \end{definition}
 
 Por el lema \ref{Lemma: Espacio Tangente a Subvariedad}, para $M$ una variedad suave, si $U \subset M$ es abierto, $U$ será una subvariedad abierta, por lo que para cada $p \in U$ podemos identificar al espacio tangente $T_p(U)$ con el espacio tangente $T_p(M)$, por lo tanto, si $X$ es un campo suave en $M$ y $U \subset M$ es abierto, la restricción $X|_{U}$ será un campo suave.
 
 \begin{theorem}[Criterio de Suavidad Para Campos Vectoriales]\label{Teorema: Primer Criterio de Suavidad Para Campos Vectoriales}
-	Sea $M$ una variedad suave, y sea $X: M \to TM$ un campo vectorial grueso. Si $(U,\phi) = (U,\phi_1,\phi_n)$ es una carta coordenada suave en $M$ la restricción de $X$ a $U$ es suave si y solo si las funciones componentes con respecto a $U$ son suaves.
+	Sea $M$ una variedad suave, y sea $X: M \to TM$ un campo vectorial. Si $(U,\phi) = (U,\phi_1,\phi_n)$ es una carta coordenada suave en $M$ la restricción de $X$ a $U$ es suave si y solo si las funciones componentes con respecto a $U$ son suaves.
 \end{theorem}
 
 \begin{proof}
@@ -35,21 +33,21 @@ Como se mencionaba al inicio de la sección, uno de nuestros principales interes
 
 
 \begin{lemma}\label{Lema: Existencia de Campo Vectorial Suave}
-	Sea $M$ una variedad suave, $p$ un punto en $M$ y $v$ un vector en $T_p(M)$. Existe un campo vectorial $X$ con soporte compacto en una vecindad $U$ de $p$ para el cual $X(p) = v$.
+	Sean $M$ una variedad suave, $p$ un punto en $M$ y $v$ un vector en $T_p(M)$. Existe un campo vectorial $X$ con soporte compacto en una vecindad $U$ de $p$ para el cual $X(p) = v$.
 \end{lemma}
 
 \begin{proof}
-	Consideremos una carta suave en $(U,\phi)$ en $M$ la cual contenga a $p$. Por el lema \ref{Lemma: Existencia de Función Indicadora} sabemos que existe un subconjunto $V$ compacto de $U$ y una función indicador suave $\psi: U \to \R$ para la cual se cumple:
+	Consideremos una carta suave $(U,\phi)$ en $M$ la cual contenga a $p$. Por el lema \ref{Lemma: Existencia de Función Indicadora} sabemos que existe un subconjunto $V$ compacto de $U$ y una función indicador suave $\psi: U \to \R$ para la cual se cumple:
 	\[
 		\psi(p) = \begin{cases}
 			1, \quad & p \in V     \\
 			0, \quad & p \notin V.
 		\end{cases}
 	\]
-	Por el teorema \ref{Teorema: Base para el espacio tangente} sabemos que podemos expresar al vector $v$ como una combinación lineal utilizando la base del espacio tangente inducida por la carta elegida, obteniendo que:
+	Por el teorema \ref{Teorema: Base para el espacio tangente} sabemos que podemos expresar a cada vector $v$ en los puntos $q \in U$ como una combinación lineal utilizando la base del espacio tangente inducida por la carta elegida, obteniendo que:
 	\[
 		v = \sum_{i=1}^{n} v_i
-		\left. \frac{\partial}{\partial \phi_i} \right|_p,
+		\left. \frac{\partial}{\partial \phi_i} \right|_q,
 	\]
 	de modo que podemos definir un campo vectorial $V$ simplemente como:
 	\[

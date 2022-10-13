@@ -20,7 +20,7 @@ Uno de los casos más importantes de las funciones suaves son aquellas que van d
 Podemos generalizar todavía más la noción de función suave si en lugar de restringirnos a $\R^k$ como el contradominio de las funciones dejamos que el contradominio sea cualquier variedad, esto se logra de la siguiente manera.
 
 \begin{definition}[Mapa Suave]\label{Definición: Mapa Suave}
-	Sean $M^{k_1}$ y $N^{k_2}$ variedades suaves, y sea $f: M \to N$ un mapa cualquiera. Diremos que $f$ es un \it{mapa suave} si para cada $p \in M$ existen cartas $(U,\phi)$ para $M$ cuyo dominio contiene a $p$ y $(V,\psi)$ para $N$ cuyo dominio contiene a $f(p)$ y $f(U) \subseteq V$, y tal que la composición $\psi \circ f \circ \phi^{-1}: \phi(U) \to \psi(V)$ es una función suave. A la composición $\psi \circ f \circ \phi{-1}$ se le llama la \it{representación coordenada de} $f$ con respecto a las coordenadas dadas.
+	Sean $M^{k_1}$ y $N^{k_2}$ variedades suaves, y sea $f: M \to N$ un mapa cualquiera. Diremos que $f$ es un \it{mapa suave} si para cada $p \in M$ existen cartas $(U,\phi)$ para $M$ cuyo dominio contiene a $p$ y $(V,\psi)$ para $N$ cuyo dominio contiene a $f(p)$ y $f(U) \subseteq V$, y tal que la composición $\psi \circ f \circ \phi^{-1}: \phi(U) \to \psi(V)$ es una función suave. A la composición $\psi \circ f \circ \phi^{-1}$ se le llama la \it{representación coordenada de} $f$ con respecto a las coordenadas dadas.
 \end{definition}
 
 \begin{figure}[h]
@@ -184,7 +184,7 @@ Un hecho importante sobre el conjunto de funciones suaves, $C^{\infty}(M)$, es q
 
   Por el lema anterior sabemos que para cualquier carta suave $(U,\phi)$, las composiciones $f \circ \phi^{-1}$ y $g \circ \phi^{-1}$ son suaves y, por como definimos la suma tenemos que $(f + g)\circ \phi^{-1} = (f \circ \phi^{-1}) + (g \circ \phi^{-1})$, esta es una suma de funciones suaves en el sentido usual, la cual sabemos es suave.
 
-  De modo similar para el producto se tendrá por definición que, $(fg)\circ\phi^{-1} = (f \circ \phi^{-1}) (g \circ \phi^{-1})$ y por el mismo motivo, por ser el producto de funciones suaves en el sentido usual, el producto $(fg) \circ \phi^{-1}$ es suave.
+  De modo similar para el producto se tendrá por definición que, $(fg)\circ\phi^{-1} = (f \circ \phi^{-1}) (g \circ \phi^{-1})$ y por el mismo motivo, por ser el producto de funciones suaves en el sentido usual, el producto $fg$ es suave.
 
-  La conmutatividad, la asociatividad y la distributividad se tendrán del hecho que la suma y el producto cumplen estas propiedades se cumplen en $\R$, y como hemos visto anteriormente, las constantes también son mapas suaves, por lo que la unidad será la identidad.
+  La conmutatividad, la asociatividad y la distributividad se tienen dado que la suma y el producto cumplen poseen estas propiedades, la unidad será mapa identidad.
 \end{proof}

@@ -1,0 +1,52 @@
+\subsection{Tensores, El Producto Tensorial y la Propiedad Universal}\label{Subsección: Tensores y El Producto Tensorial}
+
+Existen diferentes maneras de definir lo que son los tensores, una de las maneras más comunes es la que utilizan los físicos, simplemente definiendo un conjunto de objetos que se transforman de una cierta manera. Nosotros estudiaremos dos maneras de definir a los tensores: como mapas multilineales y a través de la propiedad universal.
+
+Cada una de estas formas de definir a los tensores tiene sus ventajas y desventajas, al definir a los tensores como mapas multilineales estos dependen de las bases que elijamos para los espacios vectoriales, sin embargo, esto también nos permite realizar cálculos con ellos; por otro lado, el tratamiento utilizando la propiedad universal es mucho más general y nos libra de un acercamiento libre de coordenadas además de que es sencillo de generalizar a módulos, sin embargo, esto viene dado a cambio de ser mucho más abstracto. Al final de está subsección probaremos que estas maneras de ver a los tensores son equivalentes bajo un isomorfismo de espacios vectoriales.
+
+\begin{definition}[Producto Tensorial de Funciones]
+	Sean $\{V_i\}_{i=1}^{n}$ y $\{W_j\}_{j=1}^{m}$ espacios vectoriales sobre un campo $\mathbb{K}$, y sean $F \in L(V_1, \ldots, V_n; \mathbb{K})$ y $G \in L(W_1, \ldots, W_m; \mathbb{K})$ definimos la función
+	\[
+		F \otimes G : V_1 \times \cdots \times V_n \times W_1 \times \cdots \times W_m \to \mathbb{K}
+	\]
+	como:
+	\[
+		F \otimes G (v_1, \ldots, v_n, w_1, \ldots, w_m)
+		=
+		F(v_1, \ldots, v_n)G(w_1, \ldots, w_m)
+	\]
+	De la multilinealidad de $F$ y $G$ se sigue que $F \otimes G$ se sigue que $F \otimes G$ es una función multilineal, por lo cual $F \otimes G \in L(V_i,W_j; \mathbb{K})$, a la función $F \otimes G$ le llamamos el \it{producto tensorial de $F$ y $G$}.
+\end{definition}
+
+Notemos que una consecuencia natural de que $F$ y $G$ sean elementos de $L(V_i; \K)$ y $L(W_j; \K)$ es que el producto tensorial sea bilineal y asociativo. La bilinealidad se puede ver fácilmente considerando adicionalmente un mapa $H \in L(V_i;\K)$ y un escalar $a \in \K$, entonces:
+\begin{align*}
+	(aF + H) \otimes G (v_1, \ldots, v_n, w_1, \ldots, w_m)
+	 & =
+	(aF + H) (v_1,\ldots,v_n) G(w_1,\ldots, w_m) \\
+	 & =
+	\left[aF (v_1,\ldots, v_n) +  H(v_1,\ldots,v_n) \right]
+	G(w_1,\ldots, w_m)                           \\
+	 & =
+	aF(v_1,\ldots,v_n)G(w_1,\ldots,w_m)
+	\\ &\quad\quad\quad + H(v_1,\ldots,v_n)G(w_1,\ldots,w_m)\\
+	 & =
+	a(F \otimes G) + (H \otimes G).
+\end{align*}
+Exactamente de la misma manera se muestra que $\otimes$ es lineal en su segunda coordenada. La asociatividad del producto tensorial es una consecuencia de la asociatividad en el campo $\K$, para verlo consideremos espacios vectoriales $\{U_k\}_{k=1}^{p}$ y un mapa $H \in L(U_k;\K)$, tenemos que:
+\begin{align*}
+	(F \otimes G) \otimes H
+	(v_1, \ldots, v_n, w_1, \ldots, w_m, u_1, \ldots, u_p)
+	 & =
+	(F \otimes G) (v_1, \ldots, v_n, w_1, \ldots, w_m) H (u_1, \ldots, u_p) \\
+	 & =
+	\left[F(v_1, \ldots, v_n)G(w_1, \ldots, w_m)\right]
+	H(u_1, \ldots, u_p)                                                     \\
+	 & =
+	F(v_1, \ldots, v_n)
+	\left[G(w_1, \ldots, w_m)H(u_1, \ldots, u_p)\right]                     \\
+	 & =
+	F(v_1,\ldots,v_n)(G \otimes H)(w_1,\ldots,w_m,u_1,\ldots,u_p)           \\
+  &=
+  F \otimes (G \otimes H) 
+	(v_1, \ldots, v_n, w_1, \ldots, w_m, u_1, \ldots, u_p)
+\end{align*}

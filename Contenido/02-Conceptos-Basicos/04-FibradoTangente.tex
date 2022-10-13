@@ -1,6 +1,5 @@
 \subsection{El Fibrado Tangente}\label{Subsección: Fibrado Tangente}
-Por la definición que hemos dado de espacio tangente, estos están definidos en cada punto de una variedad suave, sin embargo, para algunos fines es más conveniente considerar todos los espacios tangentes a una variedad de forma simultánea. Es con este propósito que definiremos al Fibrado Tangente de una variedad suave, este objeto nos dará una manera de organizar los espacios tangentes de una variedad suave de tal modo que el objeto resultante sea en sí mismo una variedad suave.
-
+Por la definición que hemos dado de espacio tangente, este está definido en cada punto de una variedad suave, sin embargo, para algunos fines es más conveniente considerar todos los espacios tangentes a una variedad de forma simultánea. Es con este propósito que definiremos al \it{fibrado tangente} de una variedad suave. El fibrado tangente nos da una manera de organizar a los espacios tangentes de una variedad suave de tal modo que el objeto resultante sea en sí mismo una variedad suave.
 \begin{center}
 	\begin{figure}[h!]
 		\centering
@@ -26,7 +25,6 @@ Por la definición que hemos dado de espacio tangente, estos están definidos en
 		\caption{Representación del fibrado tangente de dos variedades, $\sin(x)$ y $\S^{1}$.}
 	\end{figure}
 \end{center}
-
 \begin{definition}[Fibrado Tangente]
 	Dada una variedad suave $M$, definimos el \it{fibrado tangente de $M$} o \it{haz tangente de $M$}, el cual denotaremos por $TM$, como la unión disjunta de todos los espacios tangentes a $M$:
 	\[ TM = \bigsqcup_{p \in M} T_p(M) = \bigcup_{p \in M} \{p\} \times T_p(M). \]
@@ -53,7 +51,7 @@ Denotaremos a los elementos del conjunto como un par ordenado $(p, \omega)$, don
 		\left(\phi_1(p), \dots, \phi_n(p), v_1, \dots, v_n \right).
 	\]
 	a
-	Por cómo estamos definiendo este mapa, la imagen de $\pi^{-1}(U)$ bajo $\hat{\phi}$, $\hat{\phi}(\pi^{-1})(U)$ será el conjunto $\phi(U) \times \R^n$, que es un subconjunto abierto de $\R^{2n}$, y trivialmente será una biyección dado que el mapa inverso existe, de hecho, este puede ser escrito explícitamente como:
+	Por como estamos definiendo este mapa, la imagen de $\pi^{-1}(U)$ bajo $\hat{\phi}$, $\hat{\phi}(\pi^{-1})(U)$ será el conjunto $\phi(U) \times \R^n$, que es un subconjunto abierto de $\R^{2n}$, y trivialmente será una biyección dado que el mapa inverso existe, de hecho, este puede ser escrito explícitamente como:
 	\[
 		\hat{\phi}^{-1}(\phi_{1},\dots, \phi_{n}, v_1, \dots, v_n)
 		=
@@ -119,6 +117,7 @@ Es importante tener claro que, si bien para algunas variedades es posible visual
 Ahora podemos considerar qué es lo que sucede cuando tomamos el diferencial en cada uno de los puntos de un mapa suave $F: M \to N$, donde $M$ y $N$, evidentemente este tendría que ser un mapa que vaya del fibrado tangente de $M$ al fibrado tangente de $N$, esto es, el diferencial de $F$ en cada punto de $M$, al cual llamaremos \it{diferencial global} es un mapa $dF: TM \to TN$, y como extensión que es del diferencial en un punto se tendría que al restringirnos a un espacio tangente particular $T_p(M)$, el diferencial global $dF$ coincidirá con el diferencial de $F$ en $p$, $d_{p}F$.
 
 \begin{figure}[h]
+  \center
 	\input{Figuras/B-Diagramas/DiferencialGlobal}
 	\caption*{Diagrama del diferencial global de un mapa entre dos variedades.}
 \end{figure}

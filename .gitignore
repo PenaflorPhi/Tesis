@@ -8,6 +8,9 @@
 *.xml
 *.toc
 *.md
+*.lof
+*.fdb_latexmk
+*.fls
 
 .Extra/
 .Temp/

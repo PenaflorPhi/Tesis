@@ -94,9 +94,9 @@ A continuación, veremos algunos ejemplos más interesantes de variedades topol�
 		\|\pi_i(x)\| = \sqrt{\sum_{j=1, j\neq i}^{n+1} x_j^2} < \sqrt{\sum_{j=1}^{n+1} x_j^2} = 1.
 	\]
 
-	Ahora definamos funciones $\phi_i^{\pm}: \B^n \to \R^{n+1}$ como sigue, para cada $y=(y_1, \dots, \hat{y_i}, \dots, y_n) \in \B^n$, donde $\hat{y_i}$ significa que no estamos considerando el $i-$ésimo termino:
+  Ahora definamos funciones $\phi_i^{\pm}: \B^n \to \R^{n+1}$ como sigue, para cada $y=(y_1, \dots, \hat{y_i}, \dots, y_{n+1}) \in \B^n$, donde $\hat{y_i}$ significa que no estamos considerando el $i-$ésimo termino:
 	\[
-		\phi_{i}^{\pm}(y_1, \hdots, y_n) =  (y_1, \hdots, y_{i-1}, \pm\sqrt{1 - \|y\|^2}, y_{i+1}, \hdots, y_{n+1}).
+    \phi_{i}^{\pm}(y_1, \hdots, y_{n+1}) =  (y_1, \hdots, y_{i-1}, \pm\sqrt{1 - \|y\|^2}, y_{i+1}, \hdots, y_{n+1}).
 	\]
 
 	Dado que $\|y\| < 1$ la función estará bien definida para cada $y \in \B^n$, además:
@@ -132,7 +132,7 @@ A continuación, veremos algunos ejemplos más interesantes de variedades topol�
 \end{example}
 
 \begin{example}[$n-$Toro]\label{Ex: Variedad Topologica - Toro}
-	El toro $n$-dimensional, que se denota por $\T^n$, y que se define como:
+	El toro $n$-dimensional, que se denota por $\T^n$, se define como:
 	\[
 		\T^n = \underbrace{\S^1 \times \hdots \times \S^1}_{n-\text{veces}}.
 	\]

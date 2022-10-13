@@ -1,5 +1,5 @@
 \subsection{Difeomorfismos}\label{Subsección: Difeomorfismos}
-Ahora estudiaremos un tipo particular de mapa suave, los difeomorfismos. De modo similar a como los homeomorfismos preservan ciertas propiedades de los espacios topológicos, los difeomorfismos entre variedades suaves preservarán ciertas propiedades de la topología estructuras suaves.
+Ahora estudiaremos un tipo particular de mapa suave, los difeomorfismos. De modo similar a como los homeomorfismos preservan ciertas propiedades de los espacios topológicos, los difeomorfismos entre variedades suaves preservarán ciertas propiedades de la estructura suave.
 
 \begin{definition}[Difeomorfismo]\label{Definición: Difeomorfismo}
   Sean $M$ y $N$ variedades suaves y $f: M \to N$ un mapa cualquiera. Diremos que $f$ es un \it{difeomorfismo} si:
@@ -23,25 +23,32 @@ Sean $M, N$ y $P$ variedades suaves, $f: M \to N$ y $g: N \to P$ difeomorfismos.
 \end{proof}
 
 \begin{theorem}
-  Sean $\{M_i\}_{i=1}^{k}$, $\{N_i\}_{i=1}^{k}$ variedades suaves y $f_i: M_i \to N_i$ difeomorfismos, el producto $f_1 \times \dots \times f_k: \prod_{i=1}^{k} M_i \to \prod_{i=1}^{k} N_i$ definido como:
+  Sean $M_1, \ldots, M_k$ y $N_1, \ldots N_k$ variedades suaves, y sean $f_i: M_i \to N_i$ difeomorfismos, el producto cartesiano de mapas $f_1 \times \cdots \times f_k : M_1 \times \cdots \times M_k \to N_1 \times \cdots \times N_k$ definido como:
   \[
-    (f_1 \times \dots \times f_k)(x_1, \dots, x_k) = (f_1(x_1), \dots, f_k(x_k))
+    (f_1 \times \cdots \times f_k)(x_1, \ldots, x_k)
+    = 
+    (f_1(x_1), \ldots, f(x_k)), 
   \]
   es un difeomorfismo.
 \end{theorem}
 
 \begin{proof}
-  El producto cartesiano de homeomorfismo es un homeomorfismo y la inversa es el producto de cada una de las componentes, esto es:
-  
+  Probaremos el caso para el producto cartesiano de dos mapas. Sean $M_1, M_2$ y $N_1, N_2$ variedades suaves, y sean $f: M_1 \to N_1$ y $g: M_2 \to N_2$ difeomorfismos.
+
+  Dado que el producto cartesiano de mapas continuos es continuo, $f \times g$ es un mapa continuo de $M_1 \times M_2$ a $N_1 \times N_2$, además, $f \times g$ es un mapa invertible, y su inversa está dada como el producto cartesiano de los mapas inversos a $f$ y $g$, esto es,
   \[
-    (f_1 \times \dots \times f_k)^{-1} = f_1^{-1} \times \dots \times f_k^{-1} 
+    (f \times g)^{-1} = f^{-1} \times g^{-1}
   \]
+  Y dado que $f$ y $g$ son difeomorfismos, en particular serán homeomorfismos, por lo cual sus inversas serán continuas, así podemos garantizar que $(f \times g)^{-1}$ es un mapa continuo y $f \times g$ es un homeomorfismo.
 
-  Por el teorema \ref{Teorema: Mapa a Producto de Variedades Suaves} sabemos que el producto $f_1 \times \dots \times f_k$ será un mapa suave de $\prod_{i=1}^{k} M_i$ a $\prod_{i=1}^k N_i$ si y sólo si cada una de las proyecciones $[\pi_{i}^{1} \circ (f_1 \times \dots \times f_k)](x_1,\dots,x_k) = f_i(x_i)$ son suaves.
 
-  Tomando la proyección $\pi_{i}^2: \prod_{i=1}^k M_i \to M_i$ dada $\pi_{i}^{2}(x_1,\dots,x_k) = x_i$ y componiendo con $f_i$ tenemos que $f_i \circ \pi_{i}^2 (x_1, \dots, x_k) = f_i(x_i)$, por lo que $\pi_i^1 \circ (f_1 \times \dots \times f_k) = \pi_i^2 \circ f_i$. Dado que $\pi_i^{2} \circ f_i$ es la composición de dos mapas suaves para cada $i=1,\dots,k$, podemos garantizar que $\pi_i^1 \circ (f_1 \times \dots \times f_k)$ es suave en cada una de sus componentes, por lo cual, $f_1 \times \dots \times f_k$ es suave.
+  Por el teorema \ref{Teorema: Mapa a Producto de Variedades Suaves} sabemos que el producto $f \times g$ es un mapa suave si y solo si cada una de sus componentes es suave, pero esto se tiene por hipótesis, dado que tanto $f$ como $g$ son suaves, y al tomar las proyecciones del producto cartesiano sobre sus mapas componentes obtenemos:
+  \begin{align*}
+    \pi_1 \circ (f \times g) &= f \\
+    \pi_2 \circ (f \times g) &= g
+  \end{align*}
 
-  Análogamente se probaría que $(f_1 \times \dots \times f_k)^{-1}$ es un mapa suave de $\prod_{i=1}^k N_i$ a $\prod_{i=1}^k M_i$ 
+  Del mismo modo podemos tomar las proyecciones del mapa $(f \times g)^{-1}$ y ver que estas proyecciones son suaves. Por lo tanto, el producto cartesiano de dos difeomorfismos es un difeomorfismo. El caso general se tiene por inducción.
 \end{proof}
 
 \begin{theorem}
@@ -76,7 +83,6 @@ Estas son algunas propiedades básicas de los difeomorfismos, a continuación, v
   Para probar este teorema primero probaremos un resultado similar en espacios euclidianos. Sean $\R^n$ y $\R^m$ espacios euclidianos y $f: \R^n \to \R^n$ un difeomorfismo, entonces $m = n$.
 
   Por ser un $f: \R^n \to \R^m$ difeomorfismo su función inversa  $f^{-1}: \R^m \to \R^n$ existirá. Por definición de función invertible tenemos que $f^{-1} \circ f (x) = x$ y $f \circ f^{-1}(y) = y$, por la regla de la cadena tenemos que:
-
   \begin{align*}
     D(f^{-1} \circ f)(x) &= Df^{-1}(f(x))Df(x) = \id_{\R^n}\\
     D(f \circ f^{-1})(y) &= Df(f^{-1}(y))Df^{-1}(x) = \id_{\R^m}

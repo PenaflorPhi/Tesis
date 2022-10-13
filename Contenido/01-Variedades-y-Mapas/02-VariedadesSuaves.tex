@@ -24,7 +24,7 @@ Verificar que dos cartas son suavemente compatibles es relativamente sencillo, d
 
 \begin{definition}[Atlas, Atlas Suave y Atlas Maximal]\label{Definición: Atlas}
 	Sea $M$ una variedad topológica. Un \it{atlas} en $M$, denotado como $\A$, es una colección indexada $\{(U_i,\phi_i)\}_{i\in I}$ de cartas en $M$ que cubren a la variedad, esto es:
-	\[\bigcup_{i \in I} U_i = M \]
+	\[\bigcup_{i \in I} U_i = M. \]
 
 	Si cualesquiera dos cartas en un atlas son suavemente compatibles, entonces diremos que el atlas es un \it{atlas suave}. A las cartas que forman a un atlas suave se les llama \it{cartas suaves}.
 
@@ -38,8 +38,7 @@ Verificar que dos cartas son suavemente compatibles es relativamente sencillo, d
 Por conveniencia, en lugar de escribir \enquote{Sea $(M,\A)$ una variedad suave} diremos simplemente \enquote{Sea $M$ una variedad suave}; esto cuando la estructura suave se pueda entender a partir del contexto o no sea necesario referirnos a ella de forma explícita.
 
 
-Si quisiéramos definir una función $f: M \to \R$ como suave, quizá pudiésemos haber estado inclinados a dar la siguiente definición: \enquote{Una función $f: M \to \R$ es diferenciable si y sólo si para cada carta $(U,\phi)$ se tiene que $f\circ \phi^{-1}: \phi(U) \to \R$ es una función diferenciable}, esta definición podría parecernos más natural, sin embargo, presenta un problema de ambigüedad ya que, para una misma variedad pueden existir muchos atlas diferentes que generan estructuras similares pero distintas, como veremos en los siguientes ejemplos.
-
+Si quisiéramos definir una función $f: M \to \R$ como suave, quizá pudiésemos haber estado inclinados a dar la siguiente definición: \enquote{Una función $f: M \to \R$ es diferenciable si y sólo si para cada carta $(U,\phi)$ se tiene que $f\circ \phi^{-1}: \phi(U) \to \R$ es una función diferenciable}, esta definición podría parecernos más natural, sin embargo, presenta un problema de ambigüedad ya que, para una misma variedad pueden existir muchos atlas diferentes y estos pueden generar la misma estructura o estructuras similares pero distintas, como veremos en los siguientes ejemplos.
 \begin{figure}[h]
 	\begin{center}
 		\input{./Figuras/A-Figuras/UnicaCarta.tex}
@@ -98,16 +97,15 @@ Hay muchos ejemplos de variedad suaves y, como veremos a continuación, a cada u
 
 
 \begin{example}[Espacios Vectoriales Finito-Dimensionales]\label{Ex: Variedad Sauve - Espacios Vectoriales}
-	Sea $V$ un espacio vectorial real finito dimensional. Sabemos que todo espacio vectorial tiene una base, supongamos que $\{x_1,\dots,x_n\}$ es dicha base. Existe un isomorfismo lineal canónico $\phi: V \to \R^n$ dado por:
-	\[ \phi(a_1 x_1 + \dots + a_n x_n) = (a_1, \dots, a_n) \]
-	Es posible definir una métrica en $V$, la cual podemos definir del siguiente modo:
-	\[d(x,y) = \|x - y\|\]
+  Sea $V$ un espacio vectorial finito dimensional. Sabemos que todo espacio vectorial tiene una base, esto como consecuencia del axioma de elección. Además, es posible hacer de cada espacio vectorial un espacio normado, y en el caso finito dimensional todas las normas en el espacio son equivalentes.
 
-    Esta métrica nos inducirá una topología, la cual hará de nuestro isomorfismo entre espacios vectoriales un homeomorfismo lineal entre espacios topológicos.
+  Digamos que $\{x_1, \ldots, x_n\}$ es una base para $V$ y que $\| \cdot \|: V \to \R$ es una norma en $V$, cada norma determina una topología en $V$, y para cada base podemos definir un isomorfismo lineal canónico $\phi: V \to \R^n$, este isomorfismo esta dado como:
+  \[
+    \phi\left( \sum_{i=1}^{n} a_i x_i\right) = (a_1, \ldots, a_n)
+  \]
+  Con respecto a la topología inducida por la norma y por la linealidad de $\phi$ podemos garantizar que $\phi$ es continua, y por el mismo argumento, que su inversa $\phi^{-1}$ también lo es. Podemos concluir que $\phi$ es un homeomorfismo entre $V$ y $\R^n$, por lo cual, $V$ con la topología inducida por la norma será una variedad topológica.
 
-	Al considerar algún otro homeomorfismo lineal $\psi: V \to \R^n$ se tendrá que la composición $\psi \circ \phi^{-1}: \phi(V) \to \R^n$ también es un homeomorfismo, por lo que tanto $\psi$ como $\phi$ determinan la misma topología en $V$. Al ser $\phi$ un homeomorfismo podemos garantizar que $V$ es Hausdorff y segundo numerable. Así, cada espacio vectorial real finito dimensional es una variedad topológica.
-
-	Podemos considerar el atlas formado por la carta $(V,\phi)$, donde $\phi$ es algún homeomorfismo lineal de $V$ a $\R^n$, por el ejemplo \ref{Ex: Variedad Suave - Carta Unica} que esta carta determinará una estructura suave para $V$.
+  La estructura suave está determinada por la carta única $(V, \phi)$ que cubre a todo el espacio vectorial, por lo tanto, todo espacio vectorial finito dimensional es una variedad suave.
 \end{example}
 
 \begin{example}[Subconjuntos Abiertos De Variedades Suaves]\label{Ex: Variedad Suave - Subvariedades Suaves}
@@ -129,7 +127,7 @@ Hay muchos ejemplos de variedad suaves y, como veremos a continuación, a cada u
 	\begin{figure}[h]
 		\begin{center}
 			\input{./Figuras/A-Figuras/EsferaCartas.tex}
-			\caption{Representación de cuatro de las seis cartas suaves con las que cubrimos a la $2-$esfera.}
+			\caption{Representación de dos de las seis cartas suaves con las que cubrimos a la $2-$esfera.}
 		\end{center}
 	\end{figure}
 
