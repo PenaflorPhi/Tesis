@@ -1,11 +1,12 @@
 \subsection{Campos Vectoriales Como Derivaciones}\label{Subsección: Campos Vectoriales Como Derivaciones}
-El tratamiento que hemos dado hasta ahora de los campos vectoriales ha sido bastante abstracto, sin embargo, es posible estudiar a los campos vectoriales como objetos ya conocidos, operadores lineales. Esto nos dará algunas alternativas para tratar con ellos que pueden ser de gran utilidad más adelante.
+
+El tratamiento que hemos dado hasta ahora ha sido bastante abstracto. En esta subsección estudiaremos a los campos vectoriales como objetos ya conocidos, operadores lineales, más en específico, como derivaciones. Esto nos dará otra manera en la que podemos entender a los campos vectoriales y nos permitirá utilizar algunos de los resultados vistos en las secciones anteriores, lo cual será de gran utilidad más adelante.
 
 En la subsección de espacios tangentes a variedades (\ref{Subsección: Espacios Tangentes en Variedades}), un vector tangente a un punto $p$ de una variedad suave se definió como una derivación en el punto $p$, esto es, $\omega \in T_p(M)$ si es un mapa lineal $\omega: C^{\infty}(M) \to \R$ que cumple la regla de Leibniz:
 \[
 	\omega(fg) = f(p)\omega(g) + g(p) \omega(f), \quad f,g \in C^{\infty}(M),
 \]
-Es importante que recordemos esta definición ya que, de manera similar a como dada una carta suave $(U,\phi)$ en una variedad $M$ es posible escribir tanto a los vectores tangentes como a los campos vectoriales como una combinación lineal en términos de las derivadas parciales $\{\frac{\partial}{\partial \phi_i}\}$, también es posible dar una definición para los campos vectoriales de tal forma que estos sean derivaciones.
+Es importante recordar esta definición ya que, es posible escribir tanto a los vectores tangentes como a los campos vectoriales como una combinación lineal en términos de las derivadas parciales $\{\frac{\partial}{\partial \phi_i}\}$. Además, es posible dar una definición para los campos vectoriales de tal forma que estos sean derivaciones.
 
 Para ver que esto es posible notemos lo siguiente, si $X$ es un campo vectorial en $\mathfrak{X}(M)$ y $f$ es una función suave definida en un subconjunto abierto $U$ de $M$, podemos definir la función $Xf: U \to \R$ como:
 \[
@@ -14,7 +15,7 @@ Para ver que esto es posible notemos lo siguiente, si $X$ es un campo vectorial 
 y al construir a la función $Xf$ de este modo obtendremos el siguiente lema, que nos da un criterio alternativo de suavidad para un campo vectorial.
 
 \begin{lemma}
-	Sea $M$ una variedad suave y sea $X:M \to TM$ un campo vectorial grueso. Las siguientes propiedades son equivalentes:
+	Sea $M$ una variedad suave y sea $X:M \to TM$ un campo vectorial. Las siguientes propiedades son equivalentes:
 	\begin{enumerate}
 		\item X es un campo vectorial suave.
 		\item Para cada función suave $f \in C^{\infty}(M)$, la función $Xf$ es suave en $M$.
@@ -36,7 +37,7 @@ y al construir a la función $Xf$ de este modo obtendremos el siguiente lema, qu
 	\end{align*}
 	y por el teorema \ref{Teorema: Primer Criterio de Suavidad Para Campos Vectoriales} sabemos que cada $X_i$ es suave en $U$, por lo tanto $Xf$ será suave en una vecindad de cada punto de la variedad, esto significa que $Xf$ es suave en $M$.
 
-	Ahora supongamos que para cada función suave $f \in C^{\infty}(M)$ se tiene que la función $Xf$ es suave en $M$. Tomemos alguna función  suave $f \in C^{\infty}(M)$ y una carta suave $(U,\phi)$ en $M$, por resultados ya vistos sabemos que para cada punto $p \in U$ es posible construir una función indicadora suave $\psi$ con soporte en $U$ para la cual se tenga que $\psi(p) = 1$ y que sea nula en $M - \sup(\psi)$; de este modo construiremos la función $\hat{f} = \psi f$, está función es suave en todo $M$, en particular lo será en cada punto de $U$, y como se tiene que $\hat{f} \equiv f$ en $U$, podemos concluir que $f$ es suave en $U$.
+	Ahora supongamos que para cada función suave $f \in C^{\infty}(M)$ se tiene que la función $Xf$ es suave en $M$. Tomemos alguna función  suave $f \in C^{\infty}(M)$ y una carta suave $(U,\phi)$ en $M$, por resultados ya vistos sabemos que para cada punto $p \in U$ es posible construir una función indicadora suave $\psi$ con soporte en $U$ para la cual se tenga que $\psi(p) = 1$ y que sea nula en $M - \sup(\psi)$; de este modo construiremos la función $\hat{f} = \psi f$, esta función es suave en todo $M$, en particular lo será en cada punto de $U$, y como se tiene que $\hat{f} \equiv f$ en $U$, podemos concluir que $f$ es suave en $U$.
 
 	Finalmente supongamos que si $U$ es cualquier subconjunto abierto de $M$ y $f$ es una función suave entonces $Xf$ es suave. Al considerar las coordenadas locales $\{\phi_1, \ldots, \phi_n\}$ de $U$ tendremos que cada $\phi_i$ es una función suave en $U$ y al aplicarle el campo suave podemos expresarla como una combinación lineal en términos de las componentes de esta,
 	\begin{align*}
@@ -47,7 +48,7 @@ y al construir a la función $Xf$ de este modo obtendremos el siguiente lema, qu
 	Por lo tanto, cada una de las funciones componentes de $X$ es suave, así concluimos que $X$ es un campo suave.
 \end{proof}
 
-Lo que este lema está haciendo, además de darnos más condiciones para poder comprobar la suavidad de un campo vectorial es decirnos que cada campo vectorial nos está definiendo un mapa lineal y por la forma que tiene este mapa, este cumplirá la regla de Leibniz, por lo tanto, podemos verlo como una derivación.
+Lo que este lema está haciendo, además de darnos más condiciones para poder comprobar la suavidad de un campo vectorial, es decirnos que cada campo vectorial nos está definiendo un mapa lineal y que por la forma que tiene este mapa, cumplirá la regla de Leibniz, por lo tanto, podemos verlo como una derivación.
 
 \begin{definition}[Campo Vectorial]
 	Un \it{campo vectorial} $X$ en una variedad suave $M$ es un mapa lineal $X: C^{\infty}(M) \to C^{\infty}(M)$ que cumple la regla del producto

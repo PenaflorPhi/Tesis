@@ -53,10 +53,10 @@ Como se mencionaba al inicio de la sección, uno de nuestros principales interes
 	\[
 		X = \sum_{i=1}^n v_i \frac{\partial}{\partial \phi_i}.
 	\]
-	Ahora, multiplicando por $\psi$ obtenemos que $\psi X$ es un campo vectorial suave en $U$ con soporte en $V$ y para el cual se tiene que $v = X(p)$. Adicionalmente podemos notar que, por la manera en que hemos definido al campo vectorial, este será constante, ya que los coeficientes de $v$ lo son.
+	Ahora, multiplicando por $\psi$ obtenemos que $\psi X$ es un campo vectorial suave en $U$ con soporte en $V$ y para el cual se tiene que $v = X(p)$.
 \end{proof}
 
-Este lema, junto con el ejemplo \ref{Ejemplo: Campo Vectorial en M} son muy importantes, ya que lo que nos están diciendo es que los campos vectoriales forman una base para el espacio tangente a cada punto de una variedad.
+Este lema, junto con el ejemplo \ref{Ejemplo: Campo Vectorial en M} son muy importantes, ya que lo que nos están diciendo es que los campos vectoriales generan una base para el espacio tangente a cada punto de una variedad.
 
 Es posible extender este resultado, de modo que podamos extender un campo vectorial suave definido en un subconjunto de la variedad a toda la variedad, con este fin damos la siguiente definición y el siguiente lema.
 
@@ -133,7 +133,7 @@ donde $X_i$ es la $i-$ésima componente del mapa $X$, componente que depende de 
 			\right|_p, & \quad k < i \leq n
 		\end{cases}
 	\]
-	Cada uno de estos campos es suave; para $1 \leq i \leq k$ esto se tiene por hipótesis, para $k< i \leq n$ esto se tiene dado que los campos son constantes.
+	Cada uno de estos campos es suave; para $1 \leq i \leq k$ esto se tiene por hipótesis, para $k< i \leq n$ esto se tiene dado que los campos son suaves.
 
 	Por último, si consideramos el determinante $\det(X_1, \ldots, X_n)$, por construcción de los campos $X_i$, el determinante será no nulo en $p$, y además es suave en $U$, por lo tanto, será no nulo en una vecindad $V$ de $p$. Así, podemos concluir que la $n$-tupla, $\{X_1,\ldots,X_n\}$, de campos vectoriales que hemos construido es linealmente independiente en $T_p(M)$ para cada $p \in U \cap V$, por tanto, es un marco local suave para $T_p(M)$ en $U \cap V$.
 \end{proof}
