@@ -7,10 +7,10 @@ donde $x_i$ son las coordenadas canónicas de $\R^n$; hemos visto que podemos id
 \[
 	\nabla f = \sum_{i=1}^{n} \frac{\partial f}{\partial x_i} \frac{\partial}{\partial x^i}.
 \]
-Una aplicación que podemos darle a los campos de covectores es que nos permiten dar una interpretación de las derivadas parciales de una función suave como componentes del campo de covectores, lo cual nos permite dar una generalización más general la cual sea libre de coordenadas.
+Una aplicación que podemos darle a los campos de covectores es que nos permiten dar una interpretación de las derivadas parciales de una función suave como componentes del campo de covectores, lo cual nos permite dar una generalización que sea libre de coordenadas.
 
 \begin{definition}[Diferencial de una función]
-	Sea $M$ una variedad suave y $f \in C^{\infty}(M)$, definiremos una $1-$forma la cual denotaremos por $df$, a la cual llamamos \it{diferencial de $f$}, que para cualquier punto $p \in M$ y cualquier vector tangente $X_p \in M$ se tiene que:
+	Sean $M$ una variedad suave y $f \in C^{\infty}(M)$, definiremos de la siguiente manera una $1-$forma, denotada por $df$, a la cual llamamos \it{diferencial de $f$}; para cualquier punto $p \in M$ y cualquier vector tangente $X_p \in M$ se tiene que:
 	\[
 		(df)_p(X_p) = X_p f
 	\]
@@ -62,15 +62,15 @@ Y es bajo esta identificación que ambos diferenciales, $d_*$ y $df$, pueden ser
 		                  & = a X_p f + Y_p f         \\
 		                  & = a df_p(X_p) + df_p(Y_p)
 	\end{align*}
-	Además, por el teorema \ref{Teorema: Criterio de Suavidad para Campos de Covectores} podemos garantizar que $df$ es suave, dado que para cada campo vectorial $X$ se tiene que $df(X) = Xf$, que es la composición de funciones suaves.
+	Además, por el teorema \ref{Teorema: Criterio de Suavidad para Campos de Covectores} podemos garantizar que $df$ es suave, dado que para cada campo vectorial $X$ se tiene que $df(X) = Xf$, es la composición de funciones suaves.
 \end{proof}
 
-Siguiendo con la interceptación que podemos dar del diferencial, como ya mencionábamos, este es una generalización del gradiente, esto afirmación se justifica del siguiente modo:
+Siguiendo con la interceptación que podemos dar del diferencial, como ya mencionábamos, este es una generalización del gradiente, esta afirmación se justifica del siguiente modo:
 
 Sea $M$ una variedad suave y $(U,\phi)$ una carta suave en $M$, sea $\{\lambda_1, \ldots, \lambda_n\}$ el comarco dual a $\{\phi_1,\ldots, \phi_n\}$ en $U$. Al expresar $df$ como combinación lineal tenemos que:\[
 	df_p = \sum_{i=1}^n A_i(p) \lambda_i |_p
 \]
-donde $A_i: U \to \R$ son $n$ funciones, que, por cómo hemos definido a $df$ pueden ser calculadas como:
+donde $A_i: U \to \R$ son $n$ funciones, que, por como hemos definido a $df$ pueden ser calculadas como:
 \[
 	A_i(p)
 	= df_p \left( \left. \frac{\partial}{\partial \phi_i} \right|_{p}\right)
@@ -111,10 +111,10 @@ En el cálculo en espacios euclidianos a los diferenciales se les suele introduc
 \[
 	\lim_{h \to 0} \left| \frac{f(x+h) - f(x) - Ah}{h} \right| = 0
 \]
-Esta definición nos está diciendo que le diferencial es la mejor aproximación lineal de la función $f$ en el punto $x$, la definición que nosotros acabamos puede ser interpretada de manera muy similar como la mejor aproximación lineal (en el espacio tangente) a la función, además de tener la ventaja que es invariante bajo cambios de coordenadas.
+Esta definición nos está diciendo que el diferencial es la mejor aproximación lineal de la función $f$ en el punto $x$, la definición que nosotros acabamos de dar puede ser interpretada de manera muy similar como la mejor aproximación lineal (en el espacio tangente) a la función, además de tener la ventaja de ser invariante bajo cambios de coordenadas.
 
 Vimos en la subsección \ref{Subsección: Pushforward de Campos Vectoriales} cómo es que el pushforward de un campo vectorial lo que hace es empujarnos del fibrado tangente de una variedad al fibrado tangente de otra variedad, también se mencionó que es posible realizar la acción contraria, ser \enquote{jalados} de regreso al fibrado tangente de la variedad original, esto se logra con el \it{pullback}.
--
+
 \begin{definition}[Pullback]
 	Sea $F: M \to N$ un mapa suave entre variedades y $p$ un punto en $M$. Al mapa dual a $dF_p: T_pM \to T_{F(p)}N$ le llamamos \it{co-diferencial de $F$} o \it{pullback por $F$ en $p$}, a este mapa lo denotaremos como:
 	\[
@@ -122,11 +122,11 @@ Vimos en la subsección \ref{Subsección: Pushforward de Campos Vectoriales} có
 	\]
 \end{definition}
 
-Por definición de mapa dual te tenemos que si $\omega_{F(p)}$ es un covector en $T_{F(p)}N$ y $X_p$ es un vector tangente en $T_pM$, entonces el diferencial el pullback es:
+Por definición de mapa dual te tenemos que si $\omega_{F(p)}$ es un covector en $T_{F(p)}N$ y $X_p$ es un vector tangente en $T_pM$, entonces el pullback es:
 \[
 	dF_{p}^{*}(\omega_{F(p)})(X_p) = \omega(dF_p(X_p))
 \]
-A diferencia de lo que sucede con los campos vectoriales y el pushforward, el pullback de una  $1-$forma suave siempre está bien definido. Si $\omega$ es una $1-$forma suave en $N$ y $F$ es un mapa suave, entonces podemos definir la $1-$forma gruesa $F^* \omega$ en $M$ como:
+A diferencia de lo que sucede con los campos vectoriales y el pushforward, el pullback de una  $1-$forma suave siempre está bien definido. Si $\omega$ es una $1-$forma suave en $N$ y $F$ es un mapa suave, entonces podemos definir la $1-$forma $F^* \omega$ en $M$ como:
 \[
 	(F^*\omega)_p = dF^* (\omega_{F(p)})
 \]
@@ -147,7 +147,7 @@ Para dar condiciones de suavidad para el pullback primero daremos un par de prop
 \end{lemma}
 
 \begin{proof}
-	La primera igualdad se tiene que para cada $p \in M$ se tiene:
+	La primera igualdad se obtiene de la siguiente manera, para cada $p \in M$:
 	\begin{align*}
 		(F^{*}(u\omega))_p & = dF^{*}_{p} (u \omega_{F(p)})    \\
 		                   & = dF^*_p ( u(F(p)) \omega(F(p)) ) \\
@@ -172,15 +172,18 @@ Para dar condiciones de suavidad para el pullback primero daremos un par de prop
 \end{theorem}
 
 \begin{proof}
-	Sea $p$ un punto en $M$ y sea $(V, \psi)$ una carta suave en $N$ centrada en $F(p)$. Definimos $U = F^{-1}(U)$ y expresamos $\omega$ como la combinación lineal:
+	Sean $p$ un punto en $M$ y $(V, \psi)$ una carta suave en $N$ centrada alrededor de $F(p)$. Por hipótesis $F$ es un mapa continuo, por lo cual, podemos garantizar que existe una carta suave $(U,\phi)$ centrada en $p$ para la cual $F(U) \subset V$. Consideremos una $1-$forma $\omega$ en $V$, podemos expresar a $\omega$ como la combinación lineal:
 	\[
-		\omega = \sum_{j=1}^{n} \omega_j d\psi_j,
+		\omega = \sum_{j=1}^{k} \omega_j d\psi_j,
 	\]
-	donde $\omega_j$ son funciones continuas en $V$, por el lema anterior tenemos que en $U$ se tiene:
+	donde $\omega_j$ son funciones continuas en $V$. Por el lema anterior se tendrá la siguiente cadena de igualdades:
 	\begin{align*}
-		F^{*} \omega & = F^{*} \left( \sum_{i=1}^{n} \omega_j d\psi_j \right) \\
-		             & = \sum_{j=1}^{n} (\omega_j \circ F)(F^{*} d\psi_j)     \\
-		             & = \sum_{j=1}^{n} (\omega_j \circ F)(d(\psi_j \circ F))
+		F^{*}\omega & = F^{*}
+		\left(\sum_{j=1}^{k} \omega_j d\psi_j\right)   \\
+		            & =
+		\sum_{j=1}^{k} (\omega_j\circ F)(F^{*}d\psi_j) \\
+		            & =
+    \sum_{j=1}^{k} (\omega_j \circ F) (d(\psi_j \circ F))
 	\end{align*}
-  Esta suma está formada por el producto de la composición de una función continua con una función suave y la composición de funciones suaves, por lo tanto $F^{*}\omega$ es continua; si pidiéramos que $\omega$ fuera suave, entonces cada una de las funciones componentes $\omega_j$ sería suave, por lo cual tendríamos la suma del producto de funciones suaves, la cual es suave sería suave, por lo cual tendríamos la suma del producto de funciones suaves, la cual es suave.
+  Esta suma está formada por el producto de la composición de una función continua con una función suave y la composición de funciones suaves, por lo tanto $F^{*}\omega$ es continua. Si pidiéramos que $\omega$ fuera suave, entonces cada una de las funciones componentes $\omega_j$ sería suave, por lo cual tendríamos una suma de productos de funciones suaves, la cual sería suave.
 \end{proof}

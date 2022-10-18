@@ -2,10 +2,10 @@
 \subsection{El Espacio Dual de un Espacio Vectorial}
 
 \begin{definition}[Espacio Dual]
-	Sea $V$ un espacio vectorial sobre un campo $\mathbb{F}$. Definiremos el \it{espacio dual (algebraico) de $V$}, denotado como $V^*$, como el conjunto de todos los mapas (en el sentido algebraico) $\omega: V \to \mathbb{F}$. A un elemento del espacio dual, $\omega \in V^*$, se le llama \it{covector}.
+	Sea $V$ un espacio vectorial sobre un campo $\mathbb{F}$. Definiremos el \it{espacio dual (algebraico) de $V$}, denotado como $V^*$, como el conjunto de todos los mapas lineales $\omega: V \to \mathbb{F}$. A un elemento del espacio dual, $\omega \in V^*$, se le llama \it{covector}.
 \end{definition}
 
-Hacemos la aclaración de que estaremos trabajando con el espacio dual algebraico y por conveniencia lo llamaremos simplemente el espacio dual o dual, en nuestro caso no hace ninguna diferencia ni hay perdida de generalidad dado que estamos trabajando con espacios vectoriales de dimensión finita, por lo que el dual topológico y el dual algebraico coincidirán.
+Hacemos la aclaración de que estaremos trabajando con el espacio dual algebraico y por conveniencia lo llamaremos simplemente el espacio dual o dual, en nuestro caso no hace ninguna diferencia ni hay pérdida de generalidad dado que estamos trabajando con espacios vectoriales de dimensión finita, por lo que el dual topológico y el dual algebraico coincidirán.
 
 \begin{example}
 	Si $M$ es una variedad suave y $F: M \to \R$ es una función suave, el diferencial de $F$ en un punto $p \in M$, $dF: T_p(M) \to \R$ es un covector.
@@ -44,7 +44,7 @@ Más aún, este espacio vectorial es finito dimensional y la dimensión de $V^{*
 	\[
 		x = \sum_{i=1}^{n} \mu_{i} E_i, \quad \mu_i \in \mathbb{F}
 	\]
-	Por lo que si tomamos un covector $\epsilon \in V^{*}$ tendremos que para cada $x \in V$:
+	Por lo que si tomamos un covector $\epsilon \in V^{*}$ tendremos que:
 	\begin{align*}
 		\epsilon(x) & = \epsilon
 		\left (\sum_{i=1}^{n} \mu_i E_i \right)                          \\
@@ -110,7 +110,7 @@ Más aún, este espacio vectorial es finito dimensional y la dimensión de $V^{*
 		\end{bmatrix}.
 	\]
 
-	Llamaremos a la matriz formada por los coeficientes de los covectores $A$ y a la matriz formada por los coeficientes de la base de $V$, $B$. Claramente $B$ es una matriz dado que está formada por vectores de la base, que linealmente independientes. Por lo que para $A$ se tendrá la ecuación:
+	Llamaremos a la matriz formada por los coeficientes de los covectores $A$ y a la matriz formada por los coeficientes de la base de $V$, $B$. Claramente $B$ es una matriz dado que está formada por vectores de la base, que son linealmente independientes. Por lo que para $A$ se tendrá la ecuación:
 	\[
 		A = IB^{-1} = B^{-1}.
 	\]
@@ -137,7 +137,7 @@ Más aún, este espacio vectorial es finito dimensional y la dimensión de $V^{*
 \end{lemma}
 
 \begin{proof}
-	Para ver que $A^{*}\omega$ es un covector basta notar que $A: V \to W$ y $\omega: W \to \mathbb{F}$, por lo que la composición $\omega \circ A: V \to \mathcal{F}$ es un mapa que va de $V$ al campo $\mathbb{F}$, lo cual es, por definición, un covector en $V$.
+	Para ver que $A^{*}\omega$ es un covector basta notar que $A: V \to W$ y $\omega: W \to \mathbb{F}$, por lo que la composición $\omega \circ A: V \to \mathbb{F}$ es un mapa lineal que va de $V$ al campo $\mathbb{F}$, lo cual es, por definición, un covector en $V$.
 
 	La linealidad de $A^{*}$ se tiene del hecho de que la composición de mapas lineal es un mapa lineal.
 \end{proof}
@@ -146,29 +146,29 @@ Más aún, este espacio vectorial es finito dimensional y la dimensión de $V^{*
 	Los mapas duales satisfacen las siguientes propiedades:
 	\begin{itemize}
 		\item $(A \circ B)^{*} = B^{*} \circ A^{*}$.
-		\item $(\id_V)^{*} = V^{*} \to V^{*}$ es el mapa identidad en $V$.
+		\item $(\id_V)^{*} = V^{*} \to V^{*}$ es el mapa identidad en $V^{*}$.
 	\end{itemize}
 \end{lemma}
 
 \begin{proof}
-	Sean $V,W$ y $X$ espacios vectoriales sobre un campo $\mathcal{F}$, $A: W \to V$ y $B: X \to W$ mapas lineales, para cada $\omega \in V^{*}$:
+	Sean $V,W$ y $X$ espacios vectoriales sobre un campo $\mathbb{F}$, $A: W \to V$ y $B: X \to W$ mapas lineales, para cada $\omega \in V^{*}$:
 	\[ (A\circ B)^{*}(\omega) = \omega(A \circ B). \]
 	Por otro lado:
 	\begin{align*}
 		(B^* \circ A^*)(\omega) & = B^{*}(A^*(\omega))        \\
 		                        & = B^{*}(\omega(A))          \\
-		                        & = \omega(A) \circ B         \\
+		                        & = (\omega(A))(B)            \\
+		                        & = (\omega \circ A) (B)      \\
 		                        & = (\omega \circ A) \circ B.
 	\end{align*}
 	Para la identidad, $\id_V: V \to V$, para cada $\omega \in V^{*}$ y cada $v \in V$ tenemos:
-	\begin{align*}
-		(\id_V)^{*}(\omega)(v) & = \omega(\id_V(v)) \\
-		                       & = \omega(v)        \\
-		                       & = \id_{V^{*}}.
-	\end{align*}
+	\[
+		(\id_V)^{*}(\omega)(v) = \omega(\id_V(v)) = \omega(v)
+	\]
+	Por lo tanto, $(\id_V)^{*} = \id_{V^{*}}$
 \end{proof}
 
-Al ser $V^{*}$ un espacio vectorial en sí mismo, es posible definir su dual, al cual llamaremos \it{segundo espacio dual} o \it{espacio bidual}, y que denotaremos por $V^{**}$, a los elementos del espacio bidual los denotaremos con letras griegas mayúsculas, esto simplemente para distinguirlos de los elementos el espacio dual.
+Al ser $V^{*}$ un espacio vectorial en sí mismo, es posible definir su dual, al cual llamaremos \it{segundo espacio dual} o \it{espacio bidual}, y que denotaremos por $V^{**}$, a los elementos del espacio bidual los denotaremos con letras griegas mayúsculas, esto simplemente para distinguirlos de los elementos del espacio dual.
 
 El bidual es también un espacio con propiedades bastante interesantes, sus elementos son funcionales lineales que toman covectores del espacio dual y regresan escalares, pero quizá la propiedad más interesante es que existe un isomorfismo natural entre el bidual $V^{**}$ y $V$, el cual no depende de la elección de bases.
 
@@ -181,17 +181,17 @@ El bidual es también un espacio con propiedades bastante interesantes, sus elem
 	\[
 		\Phi(v)(\omega) = \omega(v), \quad v \in V, \omega \in V^{*}
 	\]
-	Primero mostraremos que para cada $v \in V$, $\Phi(v)(\omega)$ depende de forma lineal de $\omega$, esto implicará que $\Phi(v) \in V^{**}$ dado que $\omega(v) \in \mathbb{F}$. Sean $v \in V$, $\omega,\nu \in V^{*}$ y $c \in \mathbb{F}$, tendremos que:
+	Primero mostraremos que para cada $v \in V$, $\Phi(v)(\omega)$ depende de $\omega$, esto implicará que $\Phi(v) \in V^{**}$ dado que $\omega(v) \in \mathbb{F}$. Sean $v \in V$, $\omega,\nu \in V^{*}$ y $c \in \mathbb{F}$, tendremos que:
 	\begin{align*}
 		\Phi(v)(\omega + \nu) & = (\omega + \nu)(v)              \\
 		                      & = \omega(v) + \nu(v)             \\
 		                      & = \Phi(v)(\omega) + \Phi(v)(\nu) \\
 		\Phi(v)(c \omega)     & = (c\omega)(v)                   \\
-    &= c(\omega(v))\\
-    &= c(\Psi(v)(\omega))
+		                      & = c(\omega(v))                   \\
+		                      & = c(\Phi(v)(\omega))
 	\end{align*}
 
-  Ahora mostraremos que $\Phi: V \to V^{**}$ es un funcional lineal. Sean $u,v \in V$, $\omega \in V^{*}$ y $c \in \mathbb{F}$, tenemos que:
+	Ahora mostraremos que $\Phi: V \to V^{**}$ es un funcional lineal. Sean $u,v \in V$, $\omega \in V^{*}$ y $c \in \mathbb{F}$, tenemos que:
 	\begin{align*}
 		\Phi(u + v)(\omega) & = \omega(u + v)                     \\
 		                    & = \omega(u) + \omega(v)             \\
