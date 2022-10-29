@@ -1,0 +1,280 @@
+\section{Clasificación de Tensores}
+\label{Sección: Clasificación de Tensores}
+Ahora que sabemos que son los productos tensoriales podemos hablar de sus
+elementos, los tensores. En esta sección daremos algunas definiciones que
+nos permitirán clasificarlos de una manera que nos es útil.
+
+\begin{definition}[Tensores covariantes, contravariantes y mixtos]
+	Sea $V$ un espacio vectorial sobre un campo $\K$, y sean $k$ y $l$ enteros no
+	negativos. Diremos que:
+	\begin{enumerate}
+		\item Una función multilineal $\alpha: V^{k} \to \K$ es un \it{tensor
+			      covariante de rango $k$} o un \it{$k-$tensor covariante}.
+		      Denotaremos al conjunto de tensores contravariantes de rango $k$ por
+		      $\mathfrak{T}^k(V)$.
+		\item Una función multilineal $\alpha: (V^l)^* \to \K$ es un \it{tensor
+			      contravariante de rango $l$} o un \it{$l-$tensor contravariante}.
+		      Denotaremos al conjunto de tensores contravariantes de rango $l$ por
+		      $\mathfrak{T}_l(V)$.
+		\item Una función multilineal $\alpha: V^k \times (V^l)^* \to \K$ es un
+		      \it{$(k,l)-$tensor} o un \it{tensor mixto de tipo $(k,l)$}.
+		      Denotaremos al conjunto de todos los tensores de tipo $(k,l)$ por
+		      $\mathfrak{T}_{l}^{k}(V)$.
+	\end{enumerate}
+\end{definition}
+
+\begin{example}
+	Algunos tensores, tanto covariante, como contravariantes y de rango mixto ya
+	nos son familiares. Mencionaremos algunos de ellos.
+	\begin{itemize}
+		\item Los $0-$tensores, tanto covariantes como contravariantes son
+		      simplemente escalares del campo.
+		\item Las formas bilineales son, por definición, $2-$tensores covariantes.
+		      Más en general, una forma $k-$lineal es un $k-$tensor covariante.
+		\item El producto escalar de dos vectores en $\R^{n}$ es un $2-$tensor
+		      covariante.
+		\item El diferencial de un mapa es un $l-$tensor contravariante, donde $l$
+		      es la dimensión de la variedad suave sobre la cual definimos al mapa.
+		\item Todo endomorfismo es un $(1,1)-$tensor. De hecho, existe un
+		      isomorfismo entre el conjunto de endomorfismo de un espacio
+		      vectorial,
+		      $\mathrm{End}(V)$, y el conjunto de tensores mixtos de tipo $(1,1)$,
+		      $\mathfrak{T}_{1}^{1}(V)$.
+	\end{itemize}
+\end{example}
+
+No es difícil ver que los tensores mixtos que hemos definido son una
+generalización de los tensores covariantes y de los tensores contravariantes,
+podemos dar algunas relaciones que son verdaderas para estos espacios.
+\begin{align*}
+	\mathfrak{T}_{0}^{0}(V) & = \mathfrak{T}^{0}(V) = \mathfrak{T}_{0}(V) = \K \\
+	\mathfrak{T}_{0}^{1}(V) & = \mathfrak{T}^{1}(V) = V                        \\
+	\mathfrak{T}_{1}^{0}(V) & = \mathfrak{T}_{0}(V) = V^{*}                    \\
+	\mathfrak{T}_{k}^{0}(V) & = \mathfrak{T}^{k}(V)                            \\
+	\mathfrak{T}_{l}^{0}(V) & = \mathfrak{T}_{l}(V)
+\end{align*}
+
+Por el teorema \ref{Teorema: Isomorfismo Entre Tensores y Funciones} sabemos que
+el espacio de tensores mixtos $\mathfrak{T}_{l}^{k}(V)$ debe ser isomorfo al
+producto tensorial de $V^k$ con $(V^l)^*$, esto es,
+\[
+	\mathfrak{T}_{l}^{k}(V) \cong \underbrace{V \ot \cdots \ot V}_{k-\text{veces}}
+	\ot \underbrace{V^* \ot \cdots \ot V^*}_{l-\text{veces}}
+\]
+es por este isomorfismo y las relaciones dadas anteriormente que podemos
+enunciar el siguiente corolario, el cual nos describe, de manera explícita, las
+bases para los espacios de tensores.
+
+\begin{corollary}
+	Sea $V$ un espacio vectorial $n-$dimensional. Sean $\{E_1, \ldots, E_n\}$ una
+	base para $V$ y $\{\epsilon_1, \ldots, \epsilon_n\}$ una base para el espacio
+	dual $V^{*}$, no necesariamente la base correspondiente. Entonces:
+	\begin{itemize}
+		\item Una base para el espacio de $k-$tensores covariantes
+		      $\mathfrak{T}^{k}(V)$ es el conjunto:
+		      \[
+			      \{\epsilon^{i_1} \ot \cdots \ot \epsilon^{i_k}: 1 \leq i_1 ,\ldots,
+			      i_k \leq n\}
+		      \]
+		\item Una base para el espacio de $l-$tensores contravariantes
+		      $\mathfrak{T}_l(V)$ es el conjunto:
+		      \[
+			      \{E_{i_1} \ot \cdots \ot E_{i_l}: 1 \leq i_1, \ldots, i_l \leq n\}
+		      \]
+		\item Una base para el espacio de tensores mixtos de tipo $(k,l)$,
+		      $\mathfrak{T}_{l}^{k}(V)$, es el conjunto:
+		      \[
+			      \{E_{i_1} \ot \cdots \ot E_{i_k} \ot \epsilon_{j_1} \ot \cdots \ot
+			      \epsilon_{j_l}: 1 \leq i_1, \ldots, i_k \leq n, 1 \leq j_1, \ldots,
+			      j_l \leq n\}
+		      \]
+	\end{itemize}
+\end{corollary}
+
+Esta clasificación que hemos dado para los elementos de los productos tensoriales
+nos está hablando acerca de los espacios vectoriales sobre los cuales estamos
+definiendo estos tensores. Ahora veremos otra manera de clasificarlos, la cual
+no es mutuamente exclusiva con la clasificación que acabamos de dar, esta
+manera de clasificar a los tensores nos dirá como es que estos se comportan
+cuando sus argumentos son reordenados.
+
+\begin{definition}[Tensores simétricos y antisimétricos]
+	Sea $V$ un espacio vectorial y $\alpha$ un tensor covariante en $T^{k}(V)$.
+	Diremos que:
+	\begin{itemize}
+		\item $\alpha$ es un \it{tensor simétrico} si para cualquier conjunto de
+		      vectores $v_1, \ldots, v_k \in V$ y cualquier par de índices $1 \leq i
+			      \leq j \leq k$ se cumple que:
+		      \[
+			      \alpha(v_1,\ldots,v_i,\ldots,v_j,\ldots,v_k) =
+			      \alpha(v_1,\ldots,v_j,\ldots,v_i,\ldots,v_k)
+		      \]
+		\item $\alpha$ es un \it{tensor antisimétrico} si para cualquier conjunto de
+		      vectores $v_1, \ldots, v_k \in V$ y cualquier par de índices $1 \leq i
+			      \leq j \leq k$ se cumple que:
+		      \[
+			      \alpha(v_1,\ldots,v_i,\ldots,v_j,\ldots,v_k) =
+			      -\alpha(v_1,\ldots,v_j,\ldots,v_i,\ldots,v_k)
+		      \]
+	\end{itemize}
+\end{definition}
+
+Estamos interesados particularmente en los tensores simétricos, ya que, uno de
+nuestros objetivos principales es el estudiar el tensor de Riemann, el cual se
+define como un tensor simétrico, sin embargo, los tensores antisimétricos
+también son muy importantes; es posible mostrar que cualquier $2-$tensor
+covariante puede ser escrito como la suma de un tensor simétrico y un tensor
+antisimétrico.
+
+El conjunto de todos los tensores simétricos en el espacio $\mathfrak{T}^{k}(V)$
+es un subespacio de este, al subespacio formado por los tensores
+simétricos en $\mathfrak{T}^{k}(V)$ lo denotaremos por $\Sigma^{k}(V)$. A
+continuación, demostraremos algunas de las propiedades que se cumplen para estos 
+tensores.
+
+Recordemos que una \it{permutación} en un conjunto $A = \{1, \ldots, k\}$ es
+una biyección $\sigma: A \to A$; al conjunto de todas las permutaciones
+en un conjunto de $k$ elementos le llamamos el \it{grupo de simetrías de $k$
+	símbolos} y lo denotamos por $S_k$.
+
+\begin{definition}[Simetrización de un tensor]
+	Dados un $k-$tensor covariante $\alpha$ y una permutación $\sigma \in S_{k}$,
+	definiremos al $k-$tensor covariante $\sigma(\alpha)$ como:
+	\[
+		\sigma(\alpha)(v_1,\ldots,v_k) = \alpha(v_{\sigma(1)},\ldots,v_{\sigma(k)}).
+	\]
+	Definimos la función $\mathrm{Sym}: \mathfrak{T}^k(V) \to \Sigma^{k}(V)$ como
+	la función:
+	\[
+		\mathrm{Sym}(\alpha) = \frac{1}{k!} \sum_{\sigma \in S_{k}} \sigma(\alpha).
+	\]
+	A esta función le llamamos la \it{simetrización} de $\alpha$.
+\end{definition}
+
+\begin{lemma}
+	Sea $\alpha$ un $k-$tensor covariante en $\mathfrak{T}^{k}(V)$, donde $V$ es un
+	espacio vectorial finito dimensional. Las siguientes afirmaciones son
+	verdaderas.
+	\begin{itemize}
+		\item $\mathrm{Sym}(\alpha) = \alpha$ si y solo si $\alpha$ es simétrico.
+		\item $\mathrm{Sym}(\alpha)$ es un tensor simétrico.
+	\end{itemize}
+\end{lemma}
+
+\begin{proof}
+	Comencemos notando que $\alpha$ es un $k-$tensor simétrico si y solo si
+	para cualquier permutación $\sigma \in S_{k}$ se tiene que:
+	\[
+		\alpha(v_1, \ldots, v_k) = \sigma (\alpha(v_1, \ldots, v_k)) =
+		\alpha(v_{\sigma(1)}, \ldots, v_{\sigma(k)}),
+	\]
+	esto dado que, por definición, un tensor es simétrico si y solo si permanece
+	invariante bajo cualquier transposición y que cada permutación puede ser
+	expresada como el producto de ciclos.
+
+	De este hecho se sigue inmediatamente la primera proposición dado
+	que si $\alpha$ es simétrico, entonces, será igual a cualquiera de sus
+	permutaciones y dado que hay $k!$	permutaciones en $S_k$, obtenemos:
+	\[
+		\alpha = \mathrm{Sym}(\alpha) = \frac{1}{k!} \sum_{\sigma \in
+			S_{k}} \sigma(\alpha)
+	\]
+	Del mismo hecho también es posible deducir que $\mathrm{Sym}(\alpha)$ es un
+	tensor simétrico, dado que si $\tau$ es cualquier permutación en
+	$S_{k}$, el producto $\tau \sigma$ también es una permutación en
+	$S_k$, y, por lo tanto:
+	\begin{align*}
+		\tau(\mathrm{Sym}(\alpha))
+		 & = \tau \l( \frac{1}{k!} \sum_{\sigma\in S_k} \sigma(\alpha) \r) \\
+		 & = \frac{1}{k!} \sum_{\sigma \in S_k} \tau\sigma(\alpha)         \\
+		 & = \frac{1}{k!} \sum_{\mu \in S_k} \mu(\alpha)                   \\
+		 & = \mathrm{Sym}(\alpha)
+	\end{align*}
+\end{proof}
+
+En general, dados dos tensores covariantes $\alpha \in \mathfrak{T}^{k}(V)$ y
+$\beta \in \mathfrak{T}^{l}(V)$ su producto tensorial, $\alpha \ot \beta$ no
+será simétrico, de hecho, no es posible garantizar esto ni siquiera cuando
+$\alpha$ y $\beta$ son tensores simétricos; sin embargo, utilizando la función
+de simetrización definida anteriormente, podemos definir un nuevo producto, al
+cual, por el lema anterior podemos garantizar es simétrico.
+
+Si $\alpha$ es un $k$-tensor covariante simétrico y $\beta$ es un $l-$tensor
+covariante simétrico, definimos el \it{producto simétrico de $\alpha$ y
+	$\beta$}, al cual denotaremos por $\alpha \beta$ como el $(k+l)$-tensor
+covariante dado por
+\[
+	\alpha \beta = \mathrm{Sym}(\alpha \ot \beta)
+\]
+Podemos ser más explícitos con esta definición, recordando como hemos definido el
+producto tensorial de funciones multilineales al inicio de la sección pasada
+y utilizando la definición que hemos dado para el producto simétrico, podemos
+decir que al aplicar el producto simétrico $\alpha \beta$ sobre vectores
+$v_1, \ldots, v_k, v_{k+1}\ldots, v_{k+l} \in V$, su representación será:
+\[
+	\alpha \beta(v_1, \ldots, v_k, v_{k+1}, \ldots, v_{k+l})
+	=
+	\frac{1}{(k+l)!}
+	\sum_{\sigma \in S_{k+l}}
+	\alpha(v_{\sigma(1)}, \ldots, v_{\sigma(k)})
+	\beta(v_{\sigma(k+1)}, \ldots, v_{\sigma(k+l)})
+\]
+
+\begin{lemma}
+	El producto simétrico es bilineal, esto quiere decir que, si $\alpha$,
+	$\beta$ y $\gamma$ son tensores covariantes en $\mathfrak{T}^{k}(V)$,
+	$\mathfrak{T}^{l}(V)$ y $\mathfrak{T}^{m}(V)$ respectivamente, y $a$ y $b$ son
+	escalares en $\mathbb{K}$, entonces
+	\[
+		(a \alpha + b \beta)\gamma = a \alpha \gamma + b \beta \gamma
+	\]
+\end{lemma}
+
+\begin{proof}
+	El producto simétrico es bilineal dado que el producto tensorial de funciones
+	multilineales lo es, por definición tenemos:
+	\begin{align*}
+		(a\alpha + b\beta) \gamma
+		 & = \Sym ((a \alpha + b \beta)\ot \gamma)              \\
+		 & = \Sym (a(\alpha \ot \gamma) + b(\beta \ot \gamma)),
+	\end{align*}
+	por definición de la función de simetrización tendremos que:
+	\begin{align*}
+		(a \alpha + b \beta)\gamma
+		 & = \frac{1}{(k+l+m)!} \sum_{\sigma \in S_{k+l+m}}
+		a \sigma(\alpha) \sigma(\gamma) + b \sigma(\beta) \sigma(\gamma) \\
+		% Segunda linea
+		 & = \frac{a}{(k+l+m)!} \sum_{\sigma \in S_{k+l+m}}
+		\sigma(\alpha) \sigma(\gamma)
+		+ \frac{b}{(k+l+m)!} \sum_{\sigma \in S_{k+l+m}}
+		\sigma(\beta) \sigma(\gamma)                                     \\
+		% Tercera linea
+		 & = \frac{a}{(k+m)!} \sum_{\sigma \in S_{k+m}}
+		\sigma(\alpha) \sigma(\gamma)
+		+ \frac{b}{(l+m)!} \sum_{\sigma \in S_{l+m}}
+		\sigma(\beta) \sigma(\gamma)                                     \\
+		 & = a\Sym(\alpha \ot \gamma) + b\Sym(\beta \ot \gamma)          \\
+		 & = a \alpha \gamma + b \beta \gamma
+	\end{align*}
+\end{proof}
+
+\begin{lemma}\label{Lema: Descomposición de Tensores}
+	Si $\alpha$ y $\beta$ son $1-$tensores covariantes, entonces:
+	\[
+		\alpha \beta = \frac{1}{2} \l(\alpha \ot \beta + \beta \ot \alpha \r)
+	\]
+\end{lemma}
+
+\begin{proof}
+	Si $\alpha$ y $\beta$ son $1-$tensores covariantes, entonces por definición
+	son simplemente funciones lineales, por definición del producto simétrico se
+	tiene:
+	\begin{align*}
+		\alpha \beta
+		 & = \Sym(\alpha \ot \beta)
+		= \Sym \l(\frac{1}{2} \alpha \ot \beta + \frac{1}{2} \alpha \ot \beta \r) \\
+		 & = \frac{1}{2} \alpha \beta + \frac{1}{2} \alpha \beta
+		= \frac{1}{2} \l( \alpha \beta + \beta \alpha \r)                         \\
+		 & = \frac{1}{2} \l( \alpha \ot \beta + \beta \ot \alpha \r)
+	\end{align*}
+\end{proof}

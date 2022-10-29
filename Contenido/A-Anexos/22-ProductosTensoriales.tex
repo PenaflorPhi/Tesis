@@ -1,52 +1,576 @@
-\subsection{Tensores, El Producto Tensorial y la Propiedad Universal}\label{Subsección: Tensores y El Producto Tensorial}
+\section{Productos Tensoriales}
+\label{Sección: Productos Tensoriales}
+Existen diferentes maneras de definir lo que, con los tensores, nosotros
+estudiaremos en esta sección dos maneras de definirlos, cada una con sus
+ventajas y desventajas; al final de esta sección probaremos que las dos
+maneras son, esencialmente, equivalentes.
 
-Existen diferentes maneras de definir lo que son los tensores, una de las maneras más comunes es la que utilizan los físicos, simplemente definiendo un conjunto de objetos que se transforman de una cierta manera. Nosotros estudiaremos dos maneras de definir a los tensores: como mapas multilineales y a través de la propiedad universal.
+La primera definición que daremos es quizá la más sencilla, definiremos a los
+tensores como mapas multilineales, la ventaja principal que nos da esta
+definición es que podemos trabajar con los tensores con herramientas conocidas
+del álgebra lineal y el cálculo; sin embargo, esto tiene la desventaja que las
+representaciones de funciones multilineales dependen de las bases de los
+espacios vectoriales.
 
-Cada una de estas formas de definir a los tensores tiene sus ventajas y desventajas, al definir a los tensores como mapas multilineales estos dependen de las bases que elijamos para los espacios vectoriales, sin embargo, esto también nos permite realizar cálculos con ellos; por otro lado, el tratamiento utilizando la propiedad universal es mucho más general y nos libra de un acercamiento libre de coordenadas además de que es sencillo de generalizar a módulos, sin embargo, esto viene dado a cambio de ser mucho más abstracto. Al final de está subsección probaremos que estas maneras de ver a los tensores son equivalentes bajo un isomorfismo de espacios vectoriales.
-
-\begin{definition}[Producto Tensorial de Funciones]
-	Sean $\{V_i\}_{i=1}^{n}$ y $\{W_j\}_{j=1}^{m}$ espacios vectoriales sobre un campo $\mathbb{K}$, y sean $F \in L(V_1, \ldots, V_n; \mathbb{K})$ y $G \in L(W_1, \ldots, W_m; \mathbb{K})$ definimos la función
+\begin{definition}[Producto Tensorial de Mapas]
+	Sean $V_1, \ldots, V_n$ y $W_1, \ldots, W_m$ espacios vectoriales sobre un
+	campo $\K$, y sean $F \in L(V_1,\ldots,V_n;\K)$ y $G \in
+		L(W_1, \ldots, W_m; \K)$. Definimos a la función:
 	\[
-		F \otimes G : V_1 \times \cdots \times V_n \times W_1 \times \cdots \times W_m \to \mathbb{K}
+		F \ot G:
+		V_1 \times \cdots \times V_n \times W_1 \times \cdots \times W_m
+		\to \K,
 	\]
 	como:
 	\[
-		F \otimes G (v_1, \ldots, v_n, w_1, \ldots, w_m)
-		=
-		F(v_1, \ldots, v_n)G(w_1, \ldots, w_m)
+		F \ot G (v_1,\ldots,v_n,w_1,\ldots,w_m)
+		= F(v_1,\ldots,v_n)G(w_1,\ldots,w_m).
 	\]
-	De la multilinealidad de $F$ y $G$ se sigue que $F \otimes G$ se sigue que $F \otimes G$ es una función multilineal, por lo cual $F \otimes G \in L(V_i,W_j; \mathbb{K})$, a la función $F \otimes G$ le llamamos el \it{producto tensorial de $F$ y $G$}.
+\end{definition}
+De la multilinealidad de $F$ y $G$ se sigue que $F \ot G$ depende
+linealmente de cada uno de los vectores $v_1, \ldots, v_n, w_1, \ldots, w_m$,
+por lo cual $F \ot G$ es un elemento de $L(V_1,\ldots,V_n,W_1,\ldots,W_m;
+	\K)$, a esta función le llamamos el \textit{producto tensorial de $F$
+	y $G$}.
+
+Una consecuencia de que $F$ y $G$ sean elementos de $L(V_1,\ldots,V_n;
+	\K)$ y $L(W_1,\ldots, W_m;\K)$ es que el producto tensorial es
+un mapa bilineal y asociativo.
+
+Mostraremos que el producto tensorial $\ot: L(V_i;\K) \times
+	L(W_j; \K) \to \K$ es lineal en la primera coordenada, la
+linealidad en la segunda coordenada se sigue exactamente de la misma manera.
+
+Sean $F, G \in L(V_i;\K)$ y $H \in L(W_j;\K)$ y sean $(v_1,
+	\ldots, v_n) \in V_1 \times \cdots \times V_n$, $(w_1, \ldots, w_n) \in W_1 \times
+	\cdots \times W_m$ y $a \in \K$, para reducir un poco el tamaño de las
+cuentas, denotaremos a los vectores $(v_1,\ldots,v_n)$ y $(w_1,\ldots,w_m)$
+por $(v_i)$ y $(w_j)$, respectivamente. Por definición de producto tensorial
+tenemos:
+\begin{align*}
+	(aF + G) \ot H ((v_i),(w_j)) & = (aF + G)(v_i) + H(w_j)                  \\
+	                             & = \left[ aF(v_i) + G(v_i) \right] H(w_j)  \\
+	                             & = aF(v_i)H(w_j) + G(v_i)H(w_j)            \\
+	                             & = a(F \ot H)((v_i),(w_j))
+	+ (G \ot H) ((v_i),(w_j))                                                \\
+	                             & = (a (F \ot H) + (G \ot H)) ((v_i),(w_j))
+\end{align*}
+
+La asociatividad del producto tensorial es una consecuencia de la asociatividad
+den el campo $\K$. Sean $V_1, \ldots, V_n$, $W_1,\ldots,W_m$, y $U_1,
+	\ldots,U_p$ espacios vectoriales sobre un campo $\K$, y sean
+$(v_1, \ldots, v_n) \in V_1 \times \cdots \times V_n$, $(w_1, \ldots, w_m)
+	\in W_1 \times \cdots \times W_m$, $(u_1, \ldots, u_p) \in U_1 \times \cdots
+	\times U_p$. Como se hizo anteriormente, abreviaremos a estos vectores
+simplemente por $(v_i)$, $(w_j)$ y $(u_k)$ respectivamente.
+
+Si $F \in L(V_i;\K)$, $G \in L(W_j;\K)$ y $H \in L(U_k;
+	\K)$, tendremos que:
+\begin{align*}
+	(F \ot G) \ot H((v_i),(w_j),(u_k)) & = (F \ot G)((v_i),(w_j))H(u_k)       \\
+	                                   & = \left[ F(v_i)G(w_j) \right] H(u_k) \\
+	                                   & = F(v_i)\left[ G(w_j)H(u_k) \right]  \\
+	                                   & = F(v_i)(G \ot H)((w_j),(u_k))       \\
+	                                   & = F \ot (G \ot H)((v_i),(w_j),(u_k))
+\end{align*}
+
+La asociatividad del producto tensorial tiene una consecuencia muy interesante,
+y es que, si tenemos $n$ funciones multilineales, $F_1, \ldots, F_n$, el
+producto tensorial $F_1 \ot \cdots \ot F_n$ estará bien definido. Este hecho
+nos permite enunciar el siguiente corolario.
+
+\begin{corollary}
+	Sean $V_1, \ldots V_n$ espacios vectoriales y $V_1^{*}, \ldots, V_{n}^{*}$
+	sus espacios duales respectivos. Para cada vector $(v_1, \ldots, v_n) \in V_1
+		\times \cdots \times V_n$ tenemos que el producto tensorial:
+	\[
+		\omega_1 \ot \cdots \ot \omega_n (v_1, \ldots, v_n)
+		=
+		\omega_1(v_1)\cdots \omega_n(v_n),
+	\]
+	donde cada $\omega_i$ es un covector arbitrario en $\in V_i^{*}$, para
+	$1 \leq i \leq n$.
+\end{corollary}
+
+Gracias a este corolario es que podemos encontrar, de manera explícita, una
+base para el espacio de funciones multilineales, como veremos con el siguiente
+teorema.
+
+\begin{theorem}[Base para el espacio de funciones multilineales]
+	\label{Teorema: Base para el espacio de funciones multilineales}
+	Sean $V_1, \ldots, V_k$ espacios vectoriales finito dimensionales sobre un
+	campo $\K$, con dimensiones $n_1, \ldots, n_k$ respectivamente. Para
+	cada $1 \leq j \leq k$ sea $\{E_{1}^{j}, \ldots, E_{n_j}^{j} \}$ una base para el
+	espacio $V_j$, y sea $\{\epsilon_{j}^{1}, \ldots, \epsilon_{j}^{n_j}\}$ la
+	base correspondiente para el espacio dual $V_j^{*}$. El conjunto
+	\[
+		\mathcal{B} = \{\epsilon_{1}^{i_1} \ot \cdots \ot \epsilon_{k}^{i_k}
+		: 1 \leq i_1 \leq n_1, \ldots, 1 \leq i_k \leq n_k\},
+	\]
+	es una base para el espacio $L(V_1,\ldots,V_k;\K)$.
+\end{theorem}
+
+\begin{proof}
+	Demostraremos el caso para dos espacios vectoriales, el caso general se
+	realiza exactamente de la misma manera.
+
+	Sean $V$ y $W$ espacios vectoriales finito dimensiones sobre un campo
+	$\K$, con dimensiones $n$ y $m$ respectivamente, y sean $\{e_1,
+		\ldots, e_n\}$ y $\{f_1, \ldots, f_n\}$ bases para $V$ y $W$. Para cada
+	$1 \leq i \leq n$ y cada $1 \leq j \leq m$, definiremos las funciones
+	multilineales $F_{ij} \in L(V,W;\mathbb{K})$ para las cuales:
+	\[
+		F_{ij} (v,w) = v_i w_j, \quad (v,w) \in V \times W,
+	\]
+	donde $v_i$ y $w_j$ son las $i-$ésimas y $j-$ésimas coordenadas de $v$ y $w$
+	con respecto a las bases elegidas. Notemos que si $\{\epsilon^{1}, \ldots,
+		\epsilon^{n}\}$ y $\{\phi^{1}, \ldots, \phi^{m}\}$ son las bases
+	correspondientes  para los espacios duales $V^{*}$ y $W^{*}$, entonces,
+	$F_{ij}$ coincide con el producto tensorial:
+	\[
+		\epsilon_{i} \ot \phi_{j} (v,w) = \epsilon_{i}(v) \phi_{j}(w)
+		= u_{i}v_{j}.
+	\]
+	Mostraremos que el conjunto de funciones $F_{ij}$ es linealmente
+	independiente, para esto tomemos $nm$ elementos del campo, digamos
+	$\lambda_{1,1}, \ldots, \lambda_{n,m}$ y supongamos que $F_{ij} \in
+		\ker\left(L(V,W;K)\right)$, esto quiere decir que para cada $(v,w) \in
+		V \times W$ se tiene:
+	\[
+		\sum_{i=1}^{n}\sum_{j=1}^{m} \lambda_{i,j} F_{ij} = 0.
+	\]
+	En particular esto se cumple para los vectores de la base, por lo que:
+	\[
+		\sum_{i=1}^{n}\sum_{j=1}^{m}\lambda_{i,j}F_{i,j}(e_{\hat{\imath}}, f_{\hat{\jmath}})
+		= \lambda_{\hat{\imath},\hat{\jmath}} = 0
+	\]
+	para cada $1 \leq \hat{\imath} \leq n$, $1 \leq \hat{\jmath} \leq m$, por lo cual, el
+	conjunto es linealmente independiente.
+
+	Ahora mostraremos que cada función multilineal $F \in L(V,W;\K)$
+	se puede escribir como una combinación lineal de funciones $F_{i,j}$. Sea
+	$F \in L(V,W;\K)$, para cada vector $(v,w) \in \K$ tenemos:
+	\begin{align*}
+		F(u,v) & = F\left(\sum_{i=1}^n v_i e_i,\sum_{j=1}^m w_j f_j \right) \\
+		       & = F(v_1 e_1, w_1 f_1) + \cdots + F(v_n e_n, w_m f_m)       \\
+		       & = F(e_1,f_1)v_1w_1 + \cdots + F(e_n,f_m) v_n w_m           \\
+		       & = F(e_1,f_1)F_{1,1} + \cdots + F(e_n,f_m) F_{n,m}          \\
+		       & = \sum_{i=1}^{n} \sum_{j=1}^{m} F_{i,j} F(e_i,f_j).
+	\end{align*}
+	Por lo tanto, podemos concluir que el conjunto de funciones $F_{ij}$ es
+	una base para $L(V,W;\K)$, y, como ya hemos mencionado, estas
+	funciones coinciden con el producto tensorial de los elementos de la base
+	de los espacios duales.
+\end{proof}
+
+Ahora estudiaremos una segunda manera de definir a los tensores, esto será,
+como elementos de un producto tensorial de espacios vectoriales. Como veremos
+a continuación, esto tiene la ventaja de que los tensores no dependen de las
+bases de los espacios vectoriales, por lo cual, este es un acercamiento libre
+de coordenadas, sin embargo, esta manera de entender a los vectores también es
+más abstracta.
+
+Para poder hablar del producto tensorial de espacios vectoriales es necesario
+que hablemos de la propiedad universal, a través de la cual definiremos al
+producto tensorial.
+
+\begin{definition}[La propiedad universal]
+	Sean $V$ y $W$ espacios vectoriales y sea $\ot: V \times W \to T$, donde
+	$T$ es algún espacio vectorial. Diremos que el mapa $\ot$ posee la
+	\it{propiedad universal} si satisface las siguientes condiciones:
+	\begin{enumerate}
+		\item Los vectores $v \ot w$ generan a $T$, donde $v \in V$ y
+		      $w \in W$.
+		\item Si $\phi$ es algún mapa bilineal de $V \times W$ a cualquier espacio
+		      vectorial $P$, entonces existe un mapa lineal único $f: T \to P$ que
+		      hace que el diagrama \ref{Diagrama de la propiedad universal} sea
+		      conmutativo.
+	\end{enumerate}
 \end{definition}
 
-Notemos que una consecuencia natural de que $F$ y $G$ sean elementos de $L(V_i; \K)$ y $L(W_j; \K)$ es que el producto tensorial sea bilineal y asociativo. La bilinealidad se puede ver fácilmente considerando adicionalmente un mapa $H \in L(V_i;\K)$ y un escalar $a \in \K$, entonces:
-\begin{align*}
-	(aF + H) \otimes G (v_1, \ldots, v_n, w_1, \ldots, w_m)
-	 & =
-	(aF + H) (v_1,\ldots,v_n) G(w_1,\ldots, w_m) \\
-	 & =
-	\left[aF (v_1,\ldots, v_n) +  H(v_1,\ldots,v_n) \right]
-	G(w_1,\ldots, w_m)                           \\
-	 & =
-	aF(v_1,\ldots,v_n)G(w_1,\ldots,w_m)
-	\\ &\quad\quad\quad + H(v_1,\ldots,v_n)G(w_1,\ldots,w_m)\\
-	 & =
-	a(F \otimes G) + (H \otimes G).
-\end{align*}
-Exactamente de la misma manera se muestra que $\otimes$ es lineal en su segunda coordenada. La asociatividad del producto tensorial es una consecuencia de la asociatividad en el campo $\K$, para verlo consideremos espacios vectoriales $\{U_k\}_{k=1}^{p}$ y un mapa $H \in L(U_k;\K)$, tenemos que:
-\begin{align*}
-	(F \otimes G) \otimes H
-	(v_1, \ldots, v_n, w_1, \ldots, w_m, u_1, \ldots, u_p)
-	 & =
-	(F \otimes G) (v_1, \ldots, v_n, w_1, \ldots, w_m) H (u_1, \ldots, u_p) \\
-	 & =
-	\left[F(v_1, \ldots, v_n)G(w_1, \ldots, w_m)\right]
-	H(u_1, \ldots, u_p)                                                     \\
-	 & =
-	F(v_1, \ldots, v_n)
-	\left[G(w_1, \ldots, w_m)H(u_1, \ldots, u_p)\right]                     \\
-	 & =
-	F(v_1,\ldots,v_n)(G \otimes H)(w_1,\ldots,w_m,u_1,\ldots,u_p)           \\
-  &=
-  F \otimes (G \otimes H) 
-	(v_1, \ldots, v_n, w_1, \ldots, w_m, u_1, \ldots, u_p)
-\end{align*}
+\begin{figure}[h]
+	\center
+	\input{Figuras/B-Diagramas/PropiedadUniversal}
+	\caption{Diagrama: Propiedad universal.}
+	\label{Diagrama de la propiedad universal}
+\end{figure}
+
+Esta propiedad es universal en el sentido de que, dado dos espacios vectoriales
+siempre existirá un tercer espacio vectorial y un mapa bilineal, único hasta
+isomorfismo, que vaya del producto cartesiano de los dos espacios al tercer
+espacio vectorial, el cual posea la propiedad universal. Nos gustaría esto, es
+con este fin que demostraremos los siguientes lemas.
+
+\begin{lemma}
+	Sean $V, W$ y $T$ espacios vectoriales, $\ot: V \times W \to T$ un mapa
+	bilineal que posee la propiedad universal, y sean $\{v_1,\ldots,v_n\}$ y
+	$\{w_1,\ldots,w_n\}$ vectores linealmente independientes en $V$ y $W$
+	respectivamente. La relación:
+	\[
+		\sum_{i=1}^{n} v_i \ot w_i = 0
+	\]
+	implica que $v_i = 0$ o que $w_i = 0$ para cada $1 \leq i \leq n$.
+\end{lemma}
+
+\begin{proof}
+	Mostraremos que, si la relación se cumple, y los vectores $v_i$ no son
+	necesariamente nulos, entonces cada $w_i$ debe ser nulo.
+
+	Dado que los vectores $\{v_1,\ldots, v_n\}$ son linealmente independientes,
+	podemos construir $n$ funciones $f_j: V \to \{0,1\}$ tales que:
+	\[
+		f_j (v_i) = \delta_{ij}
+	\]
+	También definiremos una función bilineal $\phi: V \times W \to P$, donde $P$
+	es algún espacio vectorial. Definimos a $\phi$ de la siguiente manera:
+	\[
+		\phi(x,y) = \sum_{j=1}^{n} f_j(x)g_j(y), \quad x \in V, y \in W,
+	\]
+	donde $g_i$ son mapas lineales arbitrarios, definidos en $W$.
+
+	Dado que $\ot$ posee la propiedad universal por hipótesis, existe un mapa
+	lineal $f: T \to P$ tal que para cada $x \in V$ y cada $y \in W$ se tiene:
+	\[
+		f(x \ot y) = \phi(x,y) = \sum_{j=1}^{n} f_j(x)g_j(y)
+	\]
+	Si evaluamos el mapa $f$ en $\sum_{i=1}^{n} v_j \otimes w_j$ por la
+	linealidad de $f$ y como hemos definido a las funciones $f_j$, se tendrá la
+	siguiente cadena de igualdades.
+	\begin{align*}
+		f\l( \sum_{i=1}^{n} v_j \ot w_j \r)
+		 & = \sum_{j=1}^{n} \l( \sum_{i=1}^{n} f_j(v_i) \ot g_j(w_i) \r) \\
+		 & = \sum_{j=1}^{n} \sum_{i=1}^{n} \delta_{ij} g_j(w_i)          \\
+		 & = \sum_{i=1}^{n} g_i(w_i) = 0
+	\end{align*}
+	Hemos dicho que las funciones $g_j$ son funciones lineales cualesquiera,
+	por lo que podemos concluir que $w_i = 0$ para cada $1 \leq i \leq n$.
+\end{proof}
+
+\begin{lemma}
+	Sea $\{e_\alpha\}_{\alpha \in A}$ una base para $V$, donde $A$ es algún
+	conjunto indicador. Cada vector $z \in T$ puede ser escrito como:
+	\[
+		z = \sum_{\alpha} e_{\alpha} \ot w_{\alpha}, \quad w_{\alpha} \in W,
+	\]
+	donde a lo más, una cantidad finita de vectores $w_\alpha$ son no nulos.
+	Los vectores $w_\alpha$ están determinados de manera única por el vector $z$.
+\end{lemma}
+
+\begin{proof}
+	Dado que $\ot$ posee la propiedad universal, los elementos $x \otimes y$
+	generan a $T$, lo cual implica que cada $z \in T$ puede ser escrito como la
+	suma finita:
+	\[
+		z = \sum_{i=1}^{n} x_i \ot y_i, x_i \in V, y_i \in W.
+	\]
+	Expresaremos a cada $x_i$ como una combinación lineal de sus vectores bases,
+	\[
+		x_i = \sum_{\alpha}\lambda_{\alpha}^{i} e_\alpha,
+		\quad
+		\lambda_{\alpha}^{i} \in \K,
+	\]
+	de esta manera podemos escribir al vector $z$ como:
+	\[
+		z = \sum_{i=1}^{n}
+		\l( \sum_{\alpha}\lambda_{\alpha}^{i} e_{\alpha} \r) \ot y_i,
+	\]
+	y dado que el mapa $\ot$ es bilineal la siguiente cadena de igualdades es
+	verdadera:
+	\begin{align*}
+		z & = \sum_{\alpha}\sum_{i=1}^{n} \lambda_{\alpha}^{i} e_\alpha \ot y_i \\
+		  & = \sum_{\alpha}\sum_{i=1}^{n} e_\alpha \ot \lambda_{\alpha}^{i} y_i \\
+		  & = \sum_{\alpha} e_\alpha \ot \sum_{i=1}^{n}\lambda_{\alpha}^{i} y_i \\
+		  & = \sum_{\alpha} e_\alpha \ot w_\alpha,
+	\end{align*}
+	esta última igualdad se obtiene simplemente de realizar la sustitución
+	$w_\alpha = \sum_{i=1}^{n} \lambda_{\alpha}^{i} y_i$.
+
+	Para probar la unicidad de los vectores $w_\alpha$ supongamos que existen
+	vectores $\{w'_{\alpha}\}_{\alpha \in A}$ tales que:
+	\[
+		z = \sum_{\alpha} e_{\alpha} \ot w_\alpha
+		= \sum_{\alpha} e_{\alpha} \ot w'_\alpha.
+	\]
+	Naturalmente esto implica que:
+	\[
+		\sum_{\alpha} e_{\alpha} \ot w_\alpha
+		- \sum_{\alpha} e_{\alpha} \ot w'_\alpha = 0
+	\]
+	Y por la linealidad en la segunda coordenada del mapa $\ot$ obtenemos:
+	\[
+		\sum_{\alpha} e_{\alpha} \ot (w_{\alpha} - w'_{\alpha}) = 0
+	\]
+	Por el lema anterior podemos concluir que $w_{\alpha} = w'_{\alpha}$
+	para cada $\alpha \in A$.
+\end{proof}
+
+\begin{lemma}
+	Todo vector $z \in T$ puede ser escrito de la forma:
+	\[
+		z = \sum_{i=1}^{n} v_i \ot w_i, \quad v_i \in V, w_i \in W,
+	\]
+	donde $\{v_1,\ldots,v_n\}$ y $\{w_1,\ldots,w_n\}$ son vectores linealmente
+	independientes.
+\end{lemma}
+
+\begin{proof}
+	Sabemos que podemos representar a cada vector $z \in T$ como una suma finita
+	\[
+		z = \sum_{i=1}^{n} v_i \ot w_i.
+	\]
+	Nuestra intuición, al tener el vector una forma muy similar a la de una
+	combinación lineal, debería decirnos que si $\{v_1, \ldots, v_n\}$a y
+	$\{w_1, \ldots, w_n\}$ son linealmente independientes entonces $n$ debería
+	ser el mínimo entero positivo para el cual es posible escribir a $z$ como
+	una suma de esta forma.
+
+	Elijamos pues, vectores $\{v_1,\ldots,v_n\}$ y $\{w_1,\ldots,w_n\}$ tales que
+	$n$ sea minimizado.
+
+	Si $n=1$, la independencia lineal se cumple trivialmente. Si por otra parte
+	ocurre que $n \geq 2$ podemos proceder por contradicción. Supongamos que el
+	conjunto $\{v_1, \ldots, v_n\}$ es linealmente independiente, si este es el
+	caso, podemos suponer que:
+	\[
+		v_n = \sum_{i=1}^{n-1} \lambda_i v_i, \quad \lambda_{i} \in \K
+	\]
+	Por lo tanto, podremos escribir al vector $z$ como:
+	\begin{align*}
+		z & = \sum_{i=1}^{n} v_i \ot w_i                                        \\
+		  & = \sum_{i=1}^{n-1} v_i \ot w_i + v_n \ot w_n                        \\
+		  & = \sum_{i=1}^{n-1}v_i\ot w_i +\sum_{i=1}^{n-1}\lambda_i v_i \ot w_n \\
+		  & = \sum_{i=1}^{n-1}v_i\ot (w_i + \lambda_i w_n)
+		= \sum_{i=1}^{n-1} v_i \ot w'_i
+	\end{align*}
+	Pero esto querría decir que los vectores que hemos elegidos no minimizan a
+	$n$, lo cual es una contradicción. Por lo tanto, los vectores $\{v_1,
+		\ldots, v_n\}$ deben ser linealmente independientes.
+	De manera análoga se demuestra que los vectores $\{w_1,\ldots, w_n\}$ son
+	linealmente independientes.
+\end{proof}
+
+\begin{definition}[Producto tensorial de dos espacios vectoriales]
+	Sean $V$ y $W$ espacios vectoriales. El \it{producto tensorial} de $V$ y $W$
+	es un par $(T, \ot)$ donde $T$ es un espacio vectorial y $\ot: V \times W \to
+		T$ es un mapa bilineal que posee la propiedad universal.
+\end{definition}
+
+\begin{theorem}
+	Dado dos espacios vectoriales, su producto tensorial existe y es único hasta
+	isomorfismo.
+\end{theorem}
+
+\begin{proof}
+	Comenzaremos mostrando la unicidad. Sean $V$ y $W$ espacios vectoriales,
+	supongamos que $(T,\ot)$ y $(T',\op)$ son productos tensoriales. Dado que
+	tanto $\ot$ como $\op$ poseen la propiedad universal los siguientes diagramas
+	serán conmutativos.
+	\begin{figure}[h]
+		\center
+		\input{Figuras/B-Diagramas/PropiedadUniversalUnicidad.tex}
+	\end{figure}
+	Por definición de la propiedad universal sabemos que tanto $f$ como $g$ son
+	únicos hasta isomorfismo, así tendremos que $f\ot = \op$ y $g\op = \ot$. De
+	aquí que $gf(\ot) = \ot = \id_{T}(\ot)$ y $fg(\op) = \op = \id_{T'}(\op)$,
+	con lo cual podemos concluir que $gf =\id_{T}$ $fg = \id_{T'}$, por lo tanto
+	$T \cong T'$.
+
+	Ahora mostraremos la existencia. Consideremos el espacio generado por todas
+	las combinaciones lineales formales de $V \times W$, denotaremos a este
+	conjunto por $F(V \times W)$. Definiremos un subespacio de $F(V \times W)$,
+	al cual denotaremos por $G(V \times W)$, este será el subespacio generado por
+	todos los elementos de la forma:
+	\begin{align*}
+		(\lambda v_1 + \mu v_2, w) & - \lambda(v_1, w) - \mu(v_2, w) \\
+		(v, \lambda w_1 + \mu w_2) & - \lambda(v, w_1) - \mu(v, w_2) \\
+	\end{align*}
+	Sean $T$ el espacio cociente $F(V \times W) / G(V \times W)$ y $\pi:
+		F(V \times W) \to T$ el mapa proyección. Definiremos el mapa $\ot: V
+		\times W \to T$ como:
+	\[ v \times w = \pi(v,w) \]
+	Mostraremos que $\ot$ posee la propiedad universal. Claramente el mapa $\ot$
+	es bilineal, para mostrar que los vectores $v \ot w$ generan a $T$ observemos
+	que, por los resultados mostrados anteriormente, cada vector $z \in T$ puede
+	ser escrito como una suma finita:
+	\[ z = \pi \l(\sum_{i=1}^n\sum_{j=1}^{n} \lambda_{ij}(v_i,w_j)\r) \]
+	Por lo tanto, se sigue que:
+	\[
+		z = (\sum_{i=1}^n\sum_{j=1}^{m} \lambda_{ij}\pi(v_i,w_j)
+		= \sum_{i=1}^n\sum_{j=1}^{m} \lambda_{ij} v_i \times w_j,
+	\]
+	por lo cual, $T$ es generado por los vectores $v \ot w$.
+
+	Ahora, para mostrar la segunda condición consideremos un espacio vectorial
+	$P$ y un mapa bilineal $\phi: V \times W \to P$. Podemos extender $\phi$ a
+	un mapa lineal $g: F(V \times W) \to P$ definiendo:
+	\[
+		g\l(\sum_{i=1}^{n}\sum_{j=1}^{m}\lambda_{ij} (v_i,w_j)\r)
+		=
+		\sum_{i=1}^{n}\sum_{j=1}^{m} \lambda_{ij}f(v_i,w_j)
+	\]
+	Notemos que para cada $z \in G(V \times W)$ se tendrá que $g(z) = 0$, esto
+	dado que si $z$ es un elemento generador de $G(V \times W)$, entonces:
+	\begin{align*}
+		g(z) & = g((\lambda v_1 + \mu v_2, w) - \lambda(v_1,w)   -\mu(v_2,w))    \\
+		     & = g(\lambda v_1 + \mu v_2,  w) - \lambda g(v_1,w) -\mu g(v_2,w)   \\
+		     & = \phi(\lambda v_1+\mu v_2, w) -\lambda\phi(v_1,w)-\mu\phi(v_2,w) \\
+		     & = 0
+	\end{align*}
+	Se concluye que $G(V \times W) \subset \ker(g)$, por lo cual $g$ debe inducir un mapa
+	lineal
+	\[ f: F(V \times W) / G (V \times W) \to P, \]
+	tal que:
+	\[
+		f \circ \pi = g.
+	\]
+	Esto muestra que:
+	\[
+		(f \circ \ot)(v,w) = g(v,w) = \phi(v,w)
+	\]
+	Así, $\otimes$ posee la propiedad universal, por lo cual $(T, \ot)$ es el
+	producto tensorial de $V$ y $W$.
+\end{proof}
+
+La idea del producto tensorial de espacios vectoriales puede ser extendida de
+manera muy natural al producto de $n$ espacios vectoriales, al igual que ocurre
+en el caso de dos espacios, este producto tensorial siempre existe y es único
+hasta isomorfismo, la demostración se realiza de la misma manera.
+
+\begin{definition}[Propiedad universal]
+	Sean $V_1, \ldots, V_n$ espacios vectoriales y $\ot: V_1 \times \cdots \times
+		V_n \to T$ un mapa multilineal. Diremos que el mapa $\ot$ posee la propiedad
+	universal si:
+	\begin{itemize}
+		\item Los vectores $v_1 \ot\cdots\ot v_n$ genera a $T$, donde $v_i\in V_i$.
+		\item Cada mapa multilineal $\phi: V_1 \times \cdots \times V_n \to P$,
+		      donde $P$ es un espacio vectorial, puede ser escrito de la forma:
+		      \[ \phi(v_1,\ldots,v_n) = f(v_1 \otimes \cdots \otimes v_n), \]
+		      donde $f: T \to P$ es un mapa lineal.
+	\end{itemize}
+\end{definition}
+
+\begin{definition}[Producto tensorial de espacios vectoriales]
+	Sean $V_1, \ldots, V_n$ espacios vectoriales, el \it{producto tensorial} de
+	$V_1,\ldots,V_n$ es un par $(T, \ot)$, donde $\ot: V_1 \times \cdots \times
+		V_n \to T$ es un mapa multilineal que posee la propiedad universal. Usualmente
+	nos referimos simplemente a $T$ como el producto tensorial de los espacios
+	vectoriales y denotamos a $T$ como $V_1 \ot \cdots \ot V_n$.
+\end{definition}
+
+\begin{theorem}[Base para el producto tensorial de espacios vectoriales]
+	\label{Teorema: Base para el producto tensorial}
+	Sean $V_1, \ldots, V_k$ espacios vectoriales finito dimensionales, con
+	dimensiones $n_1, \ldots, n_k$, respectivamente. Para cada $1 \leq j \leq k$,
+	supongamos que $\{E_{1}^{j}, \ldots E_{n_j}^{j}\}$ es una base para $V_j$.
+	Entonces, una base para el producto tensorial $V_1 \ot \cdots \ot V_k$ es
+	el conjunto:
+	\[
+		\mathcal{C} = \{ E_{i_1}^{1} \ot \cdots \ot E_{i_k}^{k} :
+		1 \leq i_1 \leq n_1, \ldots, 1 \leq i_n \leq n_k \}
+	\]
+\end{theorem}
+
+\begin{proof}
+	Mostraremos el caso para el producto tensorial de dos espacios vectoriales.
+	Sean $V$ y $W$ espacios vectoriales, $\{v_1,\ldots,v_n\}$ y $\{w_1,\ldots,
+		w_n\}$ bases para $V$ y $W$ respectivamente, como hemos visto, cada vector
+	$(v \otimes w) \in V \otimes W$ puede ser expresado como:
+	\[
+		v \ot w = \sum_{i=1}^{n}\sum_{j=1}^{m} \lambda_i \mu_j v_i \ot w_j,
+		\quad \lambda_i, \mu_j \in \K
+	\]
+	donde los escalares $\lambda_i$ y $\mu_j$ están determinados de forma única
+	por la representación de $v$ y $w$ como combinaciones lineales:
+	\[
+		v = \sum_{i=1}^{n} \lambda_i v_i, \quad w = \sum_{j=1}^{n} \mu_i w_i
+	\]
+
+	Ahora mostraremos que el conjunto de vectores $\{v_i \otimes w_j\}$ es
+	linealmente independiente. Procederemos de modo similar a como se hizo en la
+	demostración del teorema \ref{Teorema: Base para el espacio de funciones
+		multilineales}.
+
+	Para cada $1 \leq i \leq n$ y cada $1 \leq j \leq m$ definiremos $n m$
+	bilineales $\Phi_{i j}: V \times W \to \K$, estas funciones estarán dadas por:
+	\[
+		\Phi_{ij}(x,y) = x_i y_j, \quad x \in V, y \in W,
+	\]
+	donde $x_i$ e $y_j$ son las $i-$ésima y $j-$ésimas coordenadas de $x$ e $y$
+	con respecto a las bases elegidas. Dado que cada uno de los mapas $\Phi_{ij}$ es
+	bilineal y que el mapa $\ot$ posee la propiedad universal, existirán $nm$
+	funciones lineales tales que:
+	\[
+		\phi_{ij}(v \ot w) = \Phi_{ij}(v,w)
+	\]
+	Al evaluar cada una de estas funciones $\phi_{ij}$ en cualquier vector del
+	kernel, digamos:
+	\[
+		\sum_{i=1}^{n}\sum_{j=1}^{m} \lambda_i \mu_j (v_i \otimes w_j) = 0,
+	\]
+	obtendremos que:
+	\begin{align*}
+		\phi_{\hat{\imath}\hat{\jmath}}\l(\sum_{i=1}^{n}\sum_{j=1}^{m}\lambda_i\mu_j(v_i \ot w_j)\r)
+		 & = \sum_{i=1}^{n}\sum_{j=1}^{m}\lambda_i\mu_j\phi_{\hat{\imath}\hat{\jmath}}(v_i\ot w_j) \\
+		 & = \sum_{i=1}^{n}\sum_{j=1}^{m}\lambda_i\mu_j\Phi_{\hat{\imath}\hat{\jmath}}(v_i,w_j)
+		= \lambda_{\hat{\imath}} \mu_{\hat{\jmath}} = 0
+	\end{align*}
+	Por lo tanto, podemos concluir que el conjunto de vectores $v_i \ot w_j$ es
+	linealmente independiente, y por lo tanto forman una base para $V \ot W$.
+\end{proof}
+
+Para terminar con esta sección probaremos la afirmación que hicimos al
+principio, que ambas maneras de definir a los tensores, tanto como funciones
+multilineales como elementos de productos tensoriales son esencialmente
+equivalentes.
+
+\begin{theorem}
+	\label{Teorema: Isomorfismo Entre Tensores y Funciones}
+	Si $V_1, \ldots, V_n$ son espacios vectoriales sobre un campo $\K$, entonces,
+	existen isomorfismos canónicos:
+	\[ V_1^* \ot \cdots \ot V_n^* \cong L(V_1, \ldots, V_n; K) \]
+	y
+	\[ V_1 \ot \cdots \ot V_n \cong L(V_1^*, \ldots, V_n^*; K) \]
+\end{theorem}
+
+\begin{proof}
+	Realizaremos la demostración para el primer isomorfismo, el segundo
+	isomorfismo se sigue de manera similar.
+
+	Sea $\phi: V_1^{*} \times \cdots \times V_n^{*} \to L(V_1, \ldots ,V_n; \K)$
+	la función multilineal definida por la relación:
+	\[
+		\phi(\omega_1,\ldots,\omega_n)(v_1,\ldots,v_n)
+		=
+		\omega(v_1)\cdots\omega(v_n)
+	\]
+	Por la propiedad universal de los productos tensoriales sabemos que debe
+	existir una función lineal única $f: V_1 \ot \cdots \ot V_n \to L(V_1, \ldots
+		V_n; K)$ para el cual, el diagrama \ref{Diagrama: Isomorfismo entre el
+		producto tensorial y el espacio de funciones multilineales} es conmutativo.
+	\begin{figure}[h]
+		\center
+		\input{Figuras/B-Diagramas/IsomorfismoTensores.tex}
+		\caption{Diagrama: Isomorfismo entre el producto tensorial y el espacio de
+			funciones multilineales.}
+		\label{Diagrama: Isomorfismo entre el
+			producto tensorial y el espacio de funciones multilineales}
+	\end{figure}
+	Esto quiere decir que para cada $(v_1, \ldots, v_n) \in V_1 \times \cdots
+		\times V_n$ tendremos:
+	\[
+		f(\omega_1 \ot \cdots \ot \omega_n)(v_1,\ldots,v_n)
+		=
+		\omega_1(v_1) \cdots \omega_n(v_n)
+	\]
+	Esta función será un isomorfismo entre los espacios vectoriales $V_1 \ot
+		\cdots \ot V_n$ y $L(V_1,\ldots,V_n; \K)$, dado que es lineal, inyectiva para
+	cada vector $(v_1, \ldots, v_n) \in V_1 \times \cdots \times V_n$ y que, como
+	vimos con los teoremas \ref{Teorema: Base para el espacio de funciones
+		multilineales} y \ref{Teorema: Base para el producto tensorial}, ambos
+	espacios tienen la misma dimensión, a saber, su dimensión es el producto de
+	cada una de las dimensiones de los espacios vectoriales $V_1, \ldots, V_n$.
+\end{proof}
+
+Gracias a este teorema podemos referirnos de manera indistinta a los espacios
+$L(V_1,\ldots,V_n;K)$ y $V_1^* \ot \cdots \ot V_n^*$ de manera indistinta, y
+únicamente haremos la distinción si es que es necesario.

@@ -7,7 +7,6 @@
 *.out
 *.xml
 *.toc
-*.md
 *.lof
 *.fdb_latexmk
 *.fls
@@ -18,3 +17,4 @@ Books/
 
 main.pdf
 Tesis.docx
+__cache__
