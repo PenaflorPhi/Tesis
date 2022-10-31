@@ -1,2 +1,99 @@
-\section{Campos Tensoriales}\label{Sección: Campos Tensoriales}
+\section{Fibrados y Campos Tensoriales}\label{Sección: Campos Tensoriales}
+En esta sección daremos algunas definiciones y resultados análogos a los
+vistos a lo largo del capítulo \ref{Capítulo: Cálculo en Variedades}.
+Definiremos lo que son los \it{fibrados tensoriales} y los \it{campos
+	tensoriales}, estos son generalizaciones de los conceptos de fibrado tangente y
+campos vectoriales, y, de modo similar, nos dan una manera con cual podemos
+asociar a cada punto de una variedad suave un tensor. Omitiremos las
+demostraciones de los resultados en está sección ya que son exactamente iguales
+a los casos ya vistos.
 
+\begin{definition}[Fibrado tensorial]
+	Sea $M$ una variedad suave, el \it{fibrado de $(k,l)-$tensores en
+		$M$} se definirá como la unión disjunta de todos los espacios formados por
+	tensores mixtos	de tipo $(k,l)$ definidos en $M$, esto es,
+	\[
+		\mathfrak{T}^{k}_{l}(TM) = \bigsqcup_{p \in M} \mathfrak{T}^{k}_{l}(T_{p}M)
+	\]
+\end{definition}
+
+Mencionamos que los tensores de tipo $(k,l)$ so una generalización de los
+$k-$tensores covariantes y de los $l-$tensores contravariantes, es por este
+motivo que la definición anterior puede ser divida en dos casos diferentes,
+obteniendo lo que sería un \it{fibrado de $k-$tensores covariantes} cuando $l=0$
+y un \it{fibrado de $l-$tensores contravariantes} cuando $k=0$, más aún, la
+definición de fibrado tensorial también engloba las definiciones de fibrado
+tangente y de fibrado cotangente, por está razón tendremos las siguientes
+igualdades.
+\begin{align*}
+	\mathfrak{T}^{0}_{0} & = M \times \K \\
+	\mathfrak{T}^{0}_{l} & = TM          \\
+	\mathfrak{T}^{k}_{0} & = T^{*}M
+\end{align*}
+Del mismo modo que ocurre con los fibrados tangentes y los fibrados cotangentes,
+hay una proyección natural del fibrado tensorial a la variedad, la cual nos
+induce induce una topología que determina una estructura suave, haciendo del
+fibrado tensorial un fibrado vectorial sobre $M$.
+
+\begin{definition}
+	Sea $M$ una variedad suave, un \it{campo tensorial} es una sección del fibrado
+	tensorial $(\mathfrak{T}^{k}_{l}(TM), M, \pi)$, esto quiere decir que un campo
+	tensorial es un mapa $A: M \to \mathfrak{T}^{k}_{l}(TM)$ tal que $A(p) \in
+		\mathfrak{T}^{k}_{l}(TM)$ para cada $p \in M$. Diremos que el campo es un
+	\it{campo suave} si el mapa $A$ es suave.
+\end{definition}
+
+Denotaremos al conjunto de campos suaves en una variedad por
+$\Gamma^{k}_{l}(M)$, este conjunto es un modulo sobre el anillo de funciones
+suaves, por lo que cada elemento $A \in \Gamma^{k}_{l}(M)$ puede ser expresado
+como una combinación lineal formal de la siguiente forma: Dadas coordenadas
+locales $(\phi_1, \ldots, \phi_n)$ en alguna carta, un campo $A$ puede ser
+expresado en cualquier punto de la carta como:
+\[
+	A = \sum_{i}\sum_{j}
+	A_{i_1, \ldots i_k}^{j_1 \ldots, j_k}
+	\frac{\partial}{\partial \phi_{i_1}} \ot
+	\cdots \ot \frac{\partial}{\partial \phi_{i_k}}
+	d\phi_{j_1} \otimes \cdots \otimes d_\phi{j_l},
+\]
+donde $A_{i_1,\ldots,i_k}^{j_1,\ldots,j_k}$ son funciones suaves,
+$\frac{\partial}{\partial \phi_i}$ son las coordenadas locales en la carta y
+$d\phi_{j}$ los mapas duales a estas coordenadas. No debería ser sorprendente
+que cuando $k=0$ y $l=1$ o $k=1$ y $l=0$ estas representaciones coincidirán con las
+representaciones que hemos dado para los campos vectoriales y los campos de
+covectores.
+
+Para finalizar daremos caracterizaciones de suavidad para el campo tensorial, la
+demostración del teorema se pueden seguir del mismo que como se hizo para el
+teorema \ref{Teorema: Primer Criterio de Suavidad Para Campos Vectoriales} y el
+lema \ref{Lemma: Más Criterios de Suavidad Para Campos Vectoriales}.
+
+\begin{theorem}[Criterios de suavidad para campos tensoriales]
+	Sea $M$ una variedad suave y sea $A: M \to \mathfrak{T}^{k}_{l}(TM)$
+	un campo tensorial, las siguientes propiedades son equivalentes.
+	\begin{enumerate}
+		\item $A$ es un campo suave.
+		\item En cada carta coordenada, las funciones componentes de $A$ son
+		      suave.
+		\item Cada punto de la variedad esta contenido en alguna carta en la cual
+		      $A$ tiene funciones componentes suaves.
+		\item Si $X_1, \ldots, X_k$ son campos vectoriales e $Y_1, \ldots, Y_l$ son
+		      campos de covectores, entonces las funciones $A(X_1, \ldots, X_k,
+          Y_1,\ldots,Y_l):
+			      M \to \K$ definidas por:
+		      \[
+			      A(X_1,\ldots,X_k,Y_1,\ldots,Y_l)(p)
+			      =
+			      A_p 
+            \l( 
+            \l. X_1 \r|_{p}, 
+            \ldots, 
+            \l. X_k \r|_{p},
+            \l. Y_{1} \r|_{p}, 
+            \ldots, 
+            \l. Y_{l} \r|_{p} 
+            \r),
+		      \]
+          son funciones suaves.
+	\end{enumerate}
+\end{theorem}
