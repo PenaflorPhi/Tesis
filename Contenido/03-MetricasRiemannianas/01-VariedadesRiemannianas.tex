@@ -1,7 +1,395 @@
-\chapter{Variedades Riemannianas}\label{Capitulo: Variedades Riemannianas}
+\chapter{Geometría Riemanniana}\label{Capítulo: Geometría Riemanniana}
 
-Nuestro objetivo principal es poder describir las curvas geodésicas en el disco de Poincaré, hasta ahora ahora hemos hablado de lo que son las variedades topológicas y como se les puede dar una estructura suave, hemos trasladado conceptos ya conocidos del cálculo en espacios euclidiano a las variedades; esto tiene ha tenido una finalidad, y es que, en la primera sección de esta tesis lo que realmente hemos hecho es responder a la pregunta \enquote{¿Dónde estamos midiendo?} y en la segunda sección hemos respondido a la pregunta \enquote{¿Qué herramientas podemos utilizar para medir?}. 
+Nuestro objetivo principal en este trabajo es describir las curvas geodésicas en el disco de Poincaré. Hasta ahora hemos desarrollado conceptos básicos de la teoría de variedades suaves y hemos trasladado conceptos conocidos del cálculo usual a las variedades, esto se ha hecho con un fin, y es que, el disco de Poincaré se define como un tipo muy particular de variedad suave, y las herramientas que hemos ido construyendo son las que nos ayudaran a definir y encontrar las geodésicas.
 
-En esta sección nuestro objetivo es desarrollar, utilizando los conocimientos adquiridos en las secciones anteriores, las herramientas que finalmente nos permitirán describir a las curvas geodésicas, no solo del disco de Poincaré, sino también de otras variedades.
+En este capítulo dotaremos a cada espacio tangente a una variedad suave con un producto interno. Los espacios con producto interno, también llamados espacios pre-Hilbert, son bastante estudiados en diferentes áreas de las matemáticas ya que nos permiten dar definiciones para conceptos geométricos como la longitud de vectores, el ángulo entre dos vectores y la ortogonalidad.
 
-\section{El tensor de Riemann}
+Recordaremos brevemente la definición de producto interno:
+
+\begin{definition}[Producto interno]
+	Sea $\mathbb{F}$ el campo de los números reales o el campo de los números complejos. Sea $V$ un espacio vectorial sobre un campo $\mathbb{F}$. Un \textit{producto interno} es una forma bilineal $\langle -,-\rangle: V \times V \to \mathbb{F}$, la cual cumple las siguientes propiedades:
+
+	Para cualesquiera vectores $x,y \in V$:
+
+	\begin{itemize}
+		\item $\langle x,y \rangle = \overline{\langle y, x\rangle}$.
+		\item $\langle x,x \rangle \geq 0$, con la igualdad $\langle x,x \rangle \geq 0$ únicamente cumpliéndose si $x = 0$.
+	\end{itemize}
+\end{definition}
+
+\section{Variedades Riemannianas}
+La manera en que dotaremos a los espacios tangente a una variedad con un producto interno será a través de la \textit{métrica de Riemann} o \textit{métrica Riemanniana}.
+
+\begin{definition}[Métrica de Riemann]
+	Sea $M$ una variedad suave. Una \it{métrica Riemanniana} $g$ en $M$ es un campo suave $2-$tensorial covariante simétrico, el cual es definido positivo.
+
+	El par $(M,g)$, donde $M$ es una variedad suave y $g$ una métrica Riemanniana es llamado una \textit{variedad Riemanniana}.
+\end{definition}
+
+Esta definición merece una explicación y una pequeña aclaración. Si bien cada producto interno induce una norma y a su vez cada norma induce una función distancia, a la cual se le suele llamar métrica, la métrica que acabamos de definir y la métrica que se estudia cuando se habla de espacios métricos no son lo mismo, aunque sí existe una relación. Cuando hablemos de métricas será en el sentido que acabamos de definir y no en el de espacios métricos.
+
+También es importante mencionar que existen más métricas además de la de Riemann, sin embargo, en este trabajo únicamente hablaremos acerca de la métrica de Riemann por lo cual no debería haber ninguna confusión si nos referimos a la métrica Riemanniana únicamente como la métrica.
+
+Ahora, sobre la definición. Estamos diciendo que la métrica Riemanniana es un campo $2-$tensorial covariante $g$, esto quiere decir que en cada punto $p$ de una variedad suave, $g$ es una función:
+\[
+	g_{p}(-,-): T_{p}M \times T_{p}M \to \mathbb{F},
+\]
+donde $\mathbb{F}$ es el campo sobre el cual está definido el espacio tangente $T_{p}M$, consideraremos a $\mathbb{F}$ únicamente como el campo de los números reales.
+
+Además, decimos que $g$ es un campo suave, el teorema \ref{Teorema: Criterios de suavidad para campos tensoriales} nos da algunos criterios de suavidad equivalente para un campo tensorial, esencialmente tendremos que si $(U,\phi)$ es una carta suave en $M$ la cual contiene al punto $p$ y $\{
+	\frac{\partial}{\partial \phi_{1}} |_{p}, \ldots,
+	\frac{\partial}{\partial \phi_{n}} |_{p}
+	\}$ es la base para $T_{p}M$ asociada a las coordenadas locales de la carta, entonces, las funciones:
+\[
+	g_{ij}(p) = g_{p}\left(
+	\left. \frac{\partial}{\partial \phi_{i}}\right|_{p},
+	\left. \frac{\partial}{\partial \phi_{j}}\right|_{p}
+	\right)
+\]
+son suaves, es importante no perder de vista que estas funciones dependen de las coordenadas locales definidas en la carta.
+
+El que el campo tensorial sea simétrico nos está diciendo que, en cada espacio tangente, para cualesquiera vectores $x, y \in T_{p}M$ se cumple que:
+\[
+	g_{p}(x,y) = g_{p}(y,x).
+\]
+Finalmente, el que $g$ sea definido positivo significa que para cada $x \in T_{p}M$ se tiene que $g(x,x) \geq 0$, con la igualdad cumpliéndose si y solo si $x = 0$.
+
+Por tanto, no es difícil ver que la métrica de Riemann nos define un producto interno en cada espacio vectorial, por lo cual se suele denotar a la métrica en un punto como:
+\[
+	g_{p}(-,-) = \langle - , - \rangle_{p}
+\]
+
+En el anexo \ref{Sección: Campos Tensoriales} se menciona que un campo tensorial puede ser escrito como una combinación lineal, esto se haría de la siguiente manera para la métrica Riemanniana.
+
+Sean $M$ una variedad suave, $(U, \phi)$ una carta suave y $p$ algún punto en $U$. Si $\{
+	\frac{\partial}{\partial \phi_{1}} |_{p}, \ldots,
+	\frac{\partial}{\partial \phi_{n}} |_{p}
+	\}$ es la base para $T_{p}M$ asociada a las coordenadas locales de $U$ y $\{d\phi_{1}, \ldots, d\phi_{n}\}$ es la base dual, entonces el campo en $p$ se puede expresar como:
+\[
+	g_{p} = \sum_{i=1}^{n}\sum_{j=1}^{n} g_{ij}(p)
+	\left. d\phi_{i} \right|_{p} \otimes
+	\left. d\phi_{j} \right|_{p},
+\]
+donde $g_{ij}(p)$ son las funciones definidas anteriormente.
+
+Si decidimos omitir mencionar al punto $p$, podemos decir simplemente que, en cada carta suave $(U,\phi)$, la métrica se expresa como:
+\[
+	g = \sum_{i=1}^{n}\sum_{j=1}^{n} g_{ij} d\phi_{i} \otimes d\phi_j,
+\]
+donde $g_{ij}$ son las entradas de la matriz simétrica, definida positiva, formada por las funciones suaves ya mencionadas. Llamaremos a esta matriz la \textit{matriz asociada a la métrica} y la denotaremos por $G$.
+
+Es posible expresar a la métrica sin utilizar el producto tensorial, aprovechando el hecho de que $g$ es simétrico y que $\{d\phi_1,\ldots, d\phi_{n}\}$ son covectores, podemos utilizar el lema \ref{Lema: Descomposición de Tensores}.
+
+\begin{lemma}
+	Sean $M$ una variedad suave y $g$ una métrica Riemanniana en $M$, podemos escribir a la métrica como:
+	\[
+		g = \sum_{i=1}^{n}\sum_{j=1}^{n} g_{ij}d\phi_{i}d\phi_{j}
+	\]
+\end{lemma}
+
+\begin{proof}
+	Ya hemos visto cómo es que, en cada carta suave $(U,\phi)$ podemos escribir a la métrica como la combinación lineal:
+	\[
+		g = \sum_{i=1}^{n}\sum_{j=1}^{n} g_{ij} d\phi_{i} \otimes d\phi_j.
+	\]
+	Es evidente que podemos descomponer esta combinación lineal en dos sumas:
+	\[
+		g = \frac{1}{2}\left(\sum_{i=1}^{n}\sum_{j=1}^{n} g_{ij} d\phi_{i} \otimes d\phi_j \right)
+		+ \frac{1}{2}\left(\sum_{i=1}^{n}\sum_{j=1}^{n} g_{ij} d\phi_{i} \otimes d\phi_j \right)
+	\]
+	Luego, por la simetría del tensor $g_{ij}$ podemos intercambiar los índices, sin pérdida de generalidad, esto se hará en la segunda suma:
+	\[
+		g = \frac{1}{2}\left(\sum_{i=1}^{n}\sum_{j=1}^{n} g_{ij} d\phi_{i} \otimes d\phi_j \right)
+		+ \frac{1}{2}\left(\sum_{i=1}^{n}\sum_{j=1}^{n} g_{ji} d\phi_{i} \otimes d\phi_j \right)
+	\]
+	Si intercambiamos los índices $i$ y $j$ en la segunda suma y aplicamos el lema \ref{Lema: Descomposición de Tensores} obtendremos las siguientes igualdades:
+	\begin{align*}
+		g & = \frac{1}{2}\left(\sum_{i=1}^{n}\sum_{j=1}^{n} g_{ij} d\phi_{i} \otimes d\phi_{j} \right)
+		+
+		\frac{1}{2}\left(\sum_{i=1}^{n}\sum_{j=1}^{n} g_{ij} d\phi_{j} \otimes d\phi_{j} \right)                                      \\
+		  & = \sum_{i=1}^{n}\sum_{j=1}^{n} g_{ij} \frac{1}{2} \left( d\phi_{i} \otimes d\phi_{j} + d\phi_{j} \otimes d\phi_{i}\right) \\
+		  & = \sum_{i=1}^{n}\sum_{j=1}^{n} g_{ij} d\phi_{i}  d\phi_{j}
+	\end{align*}
+\end{proof}
+
+
+\begin{example}[La métrica euclidiana]
+	Dado que la métrica de Riemann define un producto interno en cada espacio tangente y que $\mathbb{R}^{n}$ es isomorfo al espacio tangente $T_{p}\mathbb{R}^{n}$ para cada punto $p \in \mathbb{R}^{n}$, nos gustaría ser capaces de dar una métrica Riemanniana que coincida con el producto punto usual.
+
+	En $\mathbb{R}^{n}$, con las coordenadas estándar definiremos una métrica, a la cual llamaremos la métrica euclidiana, como:
+	\begin{align*}
+		g & = \sum_{i=1}^{n} \sum_{j=1}^{n} \delta_{ij}dx_{i}dx_{j}     \\
+		  & = \sum_{i=1}^{n} dx_{i}dx_{i} = \sum_{i=1}^{n} (dx_{i})^{2}
+	\end{align*}
+	Al aplicarle esta métrica a dos vectores cualesquiera $v = (v_1, \ldots, v_n)$ y $w = (w_1, \ldots, w_n)$ en $\mathbb{R}^{n}$ obtendremos:
+	\begin{align*}
+		g(v,w) & = \sum_{i=1}^{n} dx_{i}(v)dx_{i}(w)   \\
+		       & = \sum_{i=1}^{n} v_i w_i = v \cdot w.
+	\end{align*}
+\end{example}
+
+\begin{example}\label{Ejemplo: Métrica - Producto de Variedades}
+	Sean $(M,g)$ y $(\hat{M}, \hat{g})$ variedades Riemannianas, con $G$ y $\hat{G}$ las matrices asociadas a las respectivas métricas. Podemos definir una métrica $\overline{g}$ en $M \times \hat{M}$ como la suma directa de las otras dos métricas, esto quiere decir que:
+	\[
+		\overline{g}: T_{p}M \oplus T_{q}\hat{M} \to \mathbb{F}.
+	\]
+	La definiremos será entonces simplemente $\overline{g} = g \oplus \hat{g}$, la cual está dada por:
+	\[
+		\overline{g}((u,\hat{u}),(v,\hat{v})) = g(u,v) + \hat{g}(\hat{u},\hat{v}),
+	\]
+	para cualesquiera $(u,\hat{u})$ y $(v,\hat{v})$ en $T_{p}M \oplus T_{q}\hat{M}$. La matriz $\overline{G}$ asociada a la métrica $\overline{g}$ es:
+	\[
+		\overline{G} = \begin{bmatrix}
+			G & 0       \\
+			0 & \hat{G}
+		\end{bmatrix} = \begin{bmatrix}
+			(g_{ij}) & 0              \\
+			0        & (\hat{g}_{ij})
+		\end{bmatrix} \]
+\end{example}
+
+Una pregunta muy natural que podríamos haceros es, ¿A qué variedades es posible dotar de una métrica Riemanniana?, sorprendentemente la respuesta a esta pregunta es que, cualquier variedad suave puede ser equipada con una métrica, como veremos con el siguiente teorema.
+
+\begin{theorem}[Existencia de una métrica Riemanniana]
+	Toda variedad suave puede ser equipada con una métrica Riemanniana.
+\end{theorem}
+
+\begin{proof}
+	Sean $M$ una variedad suave y $\mathcal{A} = \{(U_{\alpha},\phi_{\alpha})\}$ un atlas suave en $M$. Tomemos alguna carta arbitraria en el atlas.
+
+	Sea $p$ un punto en $U_{\alpha}$, sabemos que cualesquiera vectores tangentes $v, w \in T_{p}M$ pueden ser expresados como una combinación lineal única utilizando la base asociada a las coordenadas locales de la carta, esto de la siguiente manera,
+	\[
+		v = \sum_{i=1}^{n} \left. v_{i}\frac{\partial}{\partial \phi_{i}} \right|_{p},
+		\quad
+		w = \sum_{j=1}^{n} \left. v_{i}\frac{\partial}{\partial \phi_{j}} \right|_{p},
+	\]
+	donde $v_{i}$ y $w_{i}$ son constantes. Utilizando estas representaciones definiremos una métrica en $U_{\alpha}$ de la siguiente manera:
+	\begin{align*}
+		g^{\alpha}_{p} (v,w) = \sum_{i=1}^{n}\sum_{j=1}^{n} \delta_{ij} v_{i}w_{j}
+	\end{align*}
+	Es evidente que $g^{\alpha}_{p}$ es una forma bilineal simétrica, y dado que las componentes en cada punto son constantes, el campo $g^{\alpha}$ será suave. De esta manera obtenemos una colección de métricas definidas de manera local en cada carta del atlas. Para extender estas métricas a una única métrica global utilizaremos particiones de la unidad.
+
+	Sea $\{f_{\alpha}\}$ una partición suave de la unidad subordinada al atlas $\mathcal{A}$. Definimos la métrica $g$ en $M$ como:
+	\[
+		g_{p} = \sum_{\alpha}f_{\alpha}g_{p}^{\alpha}
+	\]
+	Dado que las particiones de la unidad son localmente finitas, $g_{p}$ convergerá en el subconjunto $U_{\alpha}$ que contiene a $p$ y por definición será nulo fuera de este conjunto. Dado que $g$ es la suma del producto de funciones suaves con $2-$tensores covariantes simétricos los cuales son suaves en cada carta suave, $g$ define una métrica Riemanniana en $M$.
+\end{proof}
+
+Existen diferentes maneras de dotar de una métrica a una variedad, la primer de ellas puede observarse en el ejemplo \ref{Ejemplo: Métrica - Producto de Variedades}, daremos algunas definiciones que nos darán más alternativas para dotar a una variedad de una métrica.
+
+\begin{definition}[Inmersión y Encaje]
+	Sean $M$ y $N$ variedades suaves y sea $F: M \to N$ un mapa suave. Diremos que
+	\begin{itemize}
+		\item $F$ es una \textit{inmersión} si para cada punto $p \in M$ el diferencial $d_{p}F: T^{p}M \to T_{F(p)}N$ es un mapa inyectivo.
+		\item $F$ es un \textit{encaje (suave)} si $F$ es una inmersión inyectiva en cada punto.
+	\end{itemize}
+\end{definition}
+
+El estudio de las inmersiones y los encajes y no profundizaremos en él, simplemente enunciaremos algunos teoremas que nos serán de utilidad.
+
+Hasta ahora hemos trabajado definiendo a las variedades suave únicamente de manera intrínseca, como un espacio topológico que cumple las propiedades de la definición \ref{Definición: Variedad Topologica} al cual dotamos de una estructura suave, esto nos ha permitido trabajar sin la necesidad de referirnos a algún otro espacio que contenga a la variedad. Los encajes nos dan una alternativa, estos nos permiten definir a las variedades de manera extrínseca, vistas como subconjuntos de alguna variedad más grande, usualmente $\mathbb{R}^{n}$. Este segundo enfoque es, de hecho, el que utilizan libros de geometría diferencial clásicos.
+
+El siguiente teorema, demostrado por Hassler Whitney en su paper \enquote{\textit{Differentiable Manifolds}} (\textcite{whitney1936differentiable}), nos da condiciones suficientes bajo las cuales se garantiza que los dos enfoques mencionados anteriormente son equivalentes.
+
+\begin{theorem}[Teorema de Encaje de Whitney]
+	Sea $M$ una variedad suave $n-$dimensional. Existe un encaje suave $F: M \to \R^{2n}$
+\end{theorem}
+
+Una aclaración sobre este teorema es que, $2n$ es la dimensión mínima para la cual existe un encaje para cualquier variedad de dimensión $n$. Existen ejemplos sencillos de que es posible encontrar encajes de una variedad suave $m-$dimensional a $\mathbb{R}^{n}$, con $n < 2m$, por ejemplo, la $2-$esfera es una variedad suave para la cual existe un encaje en $\mathbb{R}^{3}$.
+
+\begin{definition}[Isometría]
+	Sean $(M,g)$ y $(N,\overline{g})$ variedades Riemannianas. Si $F: M \to N$ es un difeomorfismo, diremos que $M$ y $N$ son \textit{variedades isométricas} si:
+	\[
+		g_{p}(v,w) = \overline{g}_{F(p)}(d_{p}F(v), d_{p}F(w)),
+	\]
+	para todo punto $p \in M$ y cualesquiera vectores $v,w \in T_{p}M$, llamaremos al difeomorfismo $F$ una isometría.
+	Además, diremos que las variedades son \textit{localmente isométricas} si para cada $p \in M$ exista una vecindad $U$ que lo contiene para la cual $F|_{U} : U \to F(U)$ es una isometría.
+\end{definition}
+
+\begin{definition}[Métrica Inducida]
+	Sean $M$ una variedad suave, $(N,g)$ una variedad Riemanniana y $F: M \to N$ una inmersión. Definimos una métrica en $M$ como:
+	\[
+		g_{p}(v,w) = g_{F(p)}(d_{p}F(v), d_{p}F(w)),
+	\]
+	para cada punto $p \in M$ y cualesquiera vectores $v, w \in T_{p}M$. Llamaremos a esta métrica la \textit{métrica inducida}, y si, además $F$ es una isometría, diremos que $F$ es una \textit{inmersión isométrica}.
+\end{definition}
+
+Los \textit{teoremas de encaje de Nash} garantizan que, bajo ciertas condiciones, siempre existen encajes (y por lo tanto inmersiones) isométricas de las variedades a $\mathbb{R}^{n}$, el teorema general nos dice lo siguiente.
+
+\begin{theorem}[Teorema de encaje de Nash]
+	Si $M$ es una variedad Riemanniana $m-$dimensional, entonces existe un número $n \in \mathbb{Z}^{+}$, con $n \leq \frac{m(3m)+11}{2}$, y un encaje isométrico $f: M \to \R^{n}$.
+\end{theorem}
+
+A continuación, daremos algunos ejemplos donde dotaremos a distintas variedades suaves con métrica.
+
+\begin{example}[Gráfica de funciones suaves]\label{Ejemplo: Métrica - Gráfica de funciones suaves}
+	Sea $U \subset \mathbb{R}^{n}$ un subconjunto abierto y sea $f: U \to \mathbb{R}$ una función suave, definimos a la gráfica de la función $f$ como el conjunto:
+	\[
+		\Gamma(f) = \{(p,f(p)): p \in U\}
+	\]
+	Si a esto conjunto se le dota con la topología inducia por $\mathbb{R}^{n+1}$, entonces será una subvariedad topológica de $\mathbb{R}^{n+1}$, además, puede ser dotado de una estructura suave ya que puede ser cubierto por una única carta, a saber, $(U,\phi)$,  donde $\phi: \Gamma(f) \to \R^{n}$ es el mapa proyección dado por:
+	\[
+		\phi(p,f(p)) = p
+	\]
+	Si $\{x_{1},\ldots,x_{n}\}$ es la base estándar para $\R^{n}$, entonces una base para el espacio tangente $T_{p}\Gamma(f)$ será el conjunto formado por las derivadas parciales:
+	\[
+		\left. \frac{\partial \phi_i}{\partial x_i} \right|_{p} =
+		\begin{cases}
+			\delta_{ij},                                     & j \leq n \\
+			\left. \frac{\partial f}{\partial x_i} \right|_p & j=n+1
+		\end{cases}
+	\]
+	Al considerar la inmersión de $\Gamma(f)$ en $\mathbb{R}^{n+1}$ dada por el mapa inclusión, podemos definir una métrica en $\Gamma(f)$, la cuál será inducida por la métrica estándar en $\mathbb{R}^{n+1}$ y los coeficientes de la cuál son:
+	\begin{align*}
+		g_{ij}(p) & = g_{p} \left(
+		\left. \frac{\partial \phi}{\partial x_{i}}\right|_{p},
+		\left. \frac{\partial \phi}{\partial x_{j}}\right|_{p}
+		\right)_{\Gamma(f)}         \\
+		          & = g_{p} \left(
+		\left. \frac{\partial \phi}{\partial x_{i}}\right|_{p},
+		\left. \frac{\partial \phi}{\partial x_{j}}\right|_{p}
+		\right)_{\mathbb{R}^{n+1}}  \\
+		          & = \delta_{ij} +
+		\left. \frac{\partial \phi}{\partial x_{i}}\right|_{p}
+		\left. \frac{\partial \phi}{\partial x_{j}}\right|_{p}
+	\end{align*}
+	esta última igualdad se puede seguir a partir del ejemplo \label{Ejemplo: Métrica - Producto de Variedades}.
+\end{example}
+
+
+
+\begin{example}[Superficies de Revolución]\label{Ejemplo: Métrica - Superficies de Revolución}
+	Sen $I \subseteq \mathbb{R}$ un intervalo abierto y $\gamma: I \to \mathbb{R}^{2}$ una curva suave tal y como se definió en \ref{Definición: Curva en Variedades}. Podemos suponer que la curva está parametrizada como:
+	\[
+		\gamma(t) = (\alpha(t), \beta(t)),
+	\]
+	donde $\alpha$ y $\beta$ son funciones suaves reales. Si $\beta$ es estrictamente positiva definimos la función $\phi: I \times \mathbb{R} \to \mathbb{R}^{3}$ dada por:
+	\[
+		\phi(t,\theta) = (\alpha(t),\beta \cos(\theta), \beta\sin(\theta))
+	\]
+	Si dotamos a la imagen de $\phi$ con la topología de subespacio de $\mathbb{R}^{3}$ este conjunto será una variedad topológica, además, podemos dar una carta que cubra a todo el espacio, a saber, $(I \times \mathbb{R}, \phi^{-1})$, por lo cual la imagen es una variedad suave $2-$dimensional. A esta variedad usualmente le llamamos la \textit{superficie de revolución generada por $\gamma$}, denotaremos a la variedad como $\mathcal{S}_{\gamma}$.
+
+	Podemos restringir el dominio de $\theta$ a intervalos de longitud $2\pi$, sin pérdida de generalidad podemos restringa $\theta$ a $(0,2\pi)$ de tal modo que para cada punto $(t,\theta) \in I \times (0,2\pi)$ una base para el espacio tangente en ese punto sean las derivadas parciales:
+	\begin{align*}
+		\left. \frac{\partial \phi}{\partial t} \right|_{(t,\theta)}
+		 & =
+		(\alpha'(t), \beta'(t) \cos(\theta), \beta'(t)\sin(\theta)) \\
+		\left. \frac{\partial \phi}{\partial \theta} \right|_{(t,\theta)}
+		 & =
+		(0 , -\beta(t) \sin(\theta), \beta(t)\cos(\theta))
+	\end{align*}
+
+	So dotamos a $\mathcal{S}_{\gamma}$ de la métrica inducida por $\mathbb{R}^3$ obtendremos que los coeficientes de la misma son:
+	\begin{align*}
+		g_{1,1}(t,\theta) & = g \left(
+		\left. \frac{\partial \phi}{\partial t}\right|_{(t,\theta)},
+		\left. \frac{\partial \phi}{\partial t}\right|_{(t,\theta)}
+		\right)_{\mathcal{S}_{\gamma}} =
+		g \left(
+		\left. \frac{\partial \phi}{\partial t}\right|_{(t,\theta)},
+		\left. \frac{\partial \phi}{\partial t}\right|_{(t,\theta)}
+		\right)_{\mathbb{R}^{3}}                                   =
+		\left. \frac{\partial \phi}{\partial t}\right|_{(t,\theta)} \cdot
+		\left. \frac{\partial \phi}{\partial t}\right|_{(t,\theta)}      \\[12pt]
+		                  & =
+		(\alpha'(t), \beta'(t) \cos(\theta), \beta'(t)\sin(\theta)) \cdot
+		(\alpha'(t), \beta'(t) \cos(\theta), \beta'(t)\sin(\theta))      \\
+		                  & =
+		(\alpha'(t))^{2} + (\beta'(t))^{2}                               \\[12pt]
+		%==========================================================================
+		g_{1,2}(t,\theta) & = g \left(
+		\left. \frac{\partial \phi}{\partial t}\right|_{(t,\theta)},
+		\left. \frac{\partial \phi}{\partial \theta}\right|_{(t,\theta)}
+		\right)_{\mathcal{S}_{\gamma}} =
+		g \left(
+		\left. \frac{\partial \phi}{\partial t}\right|_{(t,\theta)},
+		\left. \frac{\partial \phi}{\partial \theta}\right|_{(t,\theta)}
+		\right)_{\mathbb{R}^{3}}                                   =
+		\left. \frac{\partial \phi}{\partial t}\right|_{(t,\theta)} \cdot
+		\left. \frac{\partial \phi}{\partial \theta}\right|_{(t,\theta)} \\[12pt]
+		                  & =
+		(\alpha'(t), \beta'(t) \cos(\theta), \beta'(t)\sin(\theta)) \cdot
+		(0, -\beta(t) \sin(\theta), \beta(t)\cos(\theta))                \\[12pt]
+		                  & =
+		0 = g_{2,1}(t,\theta)                                            \\[12pt]
+		%==========================================================================
+		g_{2,2}(t,\theta) & = g \left(
+		\left. \frac{\partial \phi}{\partial \theta}\right|_{(t,\theta)},
+		\left. \frac{\partial \phi}{\partial \theta}\right|_{(t,\theta)}
+		\right)_{\mathcal{S}_{\gamma}} =
+		g \left(
+		\left. \frac{\partial \phi}{\partial \theta}\right|_{(t,\theta)},
+		\left. \frac{\partial \phi}{\partial \theta}\right|_{(t,\theta)}
+		\right)_{\mathbb{R}^{3}}                                   =
+		\left. \frac{\partial \phi}{\partial \theta}\right|_{(t,\theta)} \cdot
+		\left. \frac{\partial \phi}{\partial \theta}\right|_{(t,\theta)} \\[12pt]
+		                  & =
+		(0, -\beta(t) \sin(\theta), \beta(t)\cos(\theta))   \cdot
+		(0, -\beta(t) \sin(\theta), \beta(t)\cos(\theta))                \\[12pt]
+		                  & =
+		(\beta(t))^{2}
+	\end{align*}
+\end{example}
+
+Los dos ejemplos nos servirán para ilustrar un hecho importante, podemos definir distintas métricas en una misma variedad, las cuales dependen de las cartas con las que decidamos cubrir a la variedad.
+
+\begin{example}[Esfera]
+	Podemos describir a la esfera unitaria como el conjunto:
+	\[
+		\mathbb{S}^{2} = \{(x,y,z) \in \mathbb{R}^{3}: x^{2} + y^{2} + z^{2} = 1\},
+	\]
+	Despejando a $z$ obtendremos dos ecuaciones, cada una de las cuales define a un hemisferio de la esfera. Sin pérdida de generalidad consideraremos el hemisferio superior, viendo a $z$ como una función de $x$ e $y$ de la siguiente manera:
+	\[
+		z(x,y) = \sqrt{1 - x^{2} - y^{2}}
+	\]
+	Siguiendo lo visto en el ejemplo \ref{Ejemplo: Métrica - Gráfica de funciones suaves}, calcularemos las derivadas parciales de $z$ con respecto a $x$ e $y$ para obtener bases para los espacios tangentes.
+	\begin{align*}
+		\left. \frac{\partial z}{\partial x} \right|_{(x,y)} & =
+		\frac{-x}{\sqrt{1 - x^{2} - y^{2}}}                      \\
+		\left. \frac{\partial z}{\partial y} \right|_{(x,y)} & =
+		\frac{-y}{\sqrt{1 - x^{2} - y^{2}}}
+	\end{align*}
+	Los coeficientes para la métrica que se obtiene al considerar esta carta son los siguientes:
+	\begin{align*}
+		g_{1,1}(x,y) & = g\left(
+		\frac{\partial z}{\partial x},\frac{\partial z}{\partial x}
+		\right)_{\mathbb{S}^{2}} =
+		g\left(
+		\frac{\partial z}{\partial x},\frac{\partial z}{\partial x}
+		\right)_{\mathbb{R}^{2} \times \mathbb{R}}
+		= 1 + \frac{x^{2}}{1 - x^{2} - y^{2}}         \\[12pt]
+		%============================================================================
+		g_{1,2}(x,y) & = g\left(
+		\frac{\partial z}{\partial x},\frac{\partial z}{\partial y}
+		\right)_{\mathbb{S}^{2}} =
+		g\left(
+		\frac{\partial z}{\partial x},\frac{\partial z}{\partial y}
+		\right)_{\mathbb{R}^{2} \times \mathbb{R}}
+		= \frac{xy}{1 - x^{2} - y^{2}} = g_{2,1}(x,y) \\[12pt]
+		%============================================================================
+		g_{2,2}(x,y) & = g\left(
+		\frac{\partial z}{\partial y},\frac{\partial z}{\partial y}
+		\right)_{\mathbb{S}^{2}} =
+		g\left(
+		\frac{\partial z}{\partial y},\frac{\partial z}{\partial y}
+		\right)_{\mathbb{R}^{2} \times \mathbb{R}}
+		= 1 + \frac{y^{2}}{1 - x^{2} - y^{2}}.
+	\end{align*}
+
+
+	Por otra parte, podemos considerar a la esfera como la superficie de revolución generada por la curva $\gamma(t): (0,\pi) \to \R^{2}$ dada por:
+	\[
+		\gamma(t) = (\cos(t),\sin(t))
+	\]
+	La ecuación para la superficie es:
+	\[
+		f(t,\theta) = (\cos(t), \sin(t)\cos(\theta), \sin(t)\sin(\theta))
+	\]
+	Siguiendo lo visto en el ejemplo \ref{Ejemplo: Métrica - Superficies de Revolución} podemos simplemente calcular los coeficientes $g_{1,1}$ y $g_{2,2}$ para esta métrica, estos coeficientes serán simplemente:
+	\begin{align*}
+		g_{1,1}(t,\theta) & = (-\sin(t))^{2} + (\cos(t))^{2} = 1 \\
+		g_{1,2}(t,\theta) & = 0 = g_{2,1}                        \\
+    g_{2,2}(t,\theta) & = \sin^{2}(t)
+	\end{align*}
+\end{example}

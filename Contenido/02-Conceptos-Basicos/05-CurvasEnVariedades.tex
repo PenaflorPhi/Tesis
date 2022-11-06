@@ -3,6 +3,7 @@ Una de las ideas que podemos trasladar del cálculo ordinario al cálculo que es
 En nuestro caso al estar trabajando con variedades estas serán nuestras \enquote{superficies} y, si bien no podemos simplemente derivar, sí podemos asociar a cada punto de la curva un vector en el espacio tangente.
 
 \begin{definition}[Curva en una Variedad]
+  \label{Definición: Curva en Variedades}
 	Sea $M$ una variedad y sea $\gamma: I \subset \R \to M$ un mapa continuo, donde $I$ es un intervalo abierto, diremos que $\gamma$ es una \it{curva sobre $M$}. Además, si el mapa $\gamma: I \subset \R \to M$ es suave diremos que $\gamma$ es una curva suave.
 \end{definition}
 
@@ -27,7 +28,7 @@ Al estar definida como un vector en el espacio tangente actuará sobre funciones
 	               & = (f \circ \gamma)' (t_0).
 \end{align*}
 
-Esta última igualdad nos dice que esta es una derivada en el sentido usual, dado que $\gamma: \R \to M$ y $f: M \to \R$ por lo que $f \circ \gamma: \R \to \R$. Si consideramos a la variedad $M=\R^n$ o algún subconjunto abierto de $\R^n$ esta definición coincide con la definición dada por \textcite{do2016differential}.
+Esta última igualdad nos dice que esta es una derivada en el sentido usual, dado que $\gamma: \R \to M$ y $f: M \to \R$ por lo que $f \circ \gamma: \R \to \R$. Si consideramos a la variedad $M=\R^n$ o algún subconjunto abierto de $\R^n$ esta definición coincide con la definición dada por do \textcite{do2016differential}.
 
 Si tomamos una carta suave $(U,\phi) = (U,\phi_1,\dots,\phi_n)$ en una variedad suave $M$ y dicha carta contiene a un punto $\gamma(t_0)$, donde $\gamma$ es una curva en $M$, podemos dar la representación coordenada de $\gamma$, en una vecindad suficientemente pequeña de $t_0$ como $\gamma(t) = (\gamma_1(t), \dots, \gamma_n(t))$, y por la fórmula que tenemos para representar al diferencial en coordenadas tendremos que gamma se puede escribir como:
 \[

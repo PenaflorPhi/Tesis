@@ -53,38 +53,36 @@
 
 ### Métricas
 
-#### Métricas Riemannianas
+#### Geometría Riemanniana
 
 - [ ] Variedades Riemannianas
-- [ ] La función de distancia Riemanniana
-- [ ] Métricas pseudo-Riemannianas
-- [ ] Ejemplos
+  - [x] Definición y resultados importantes.
+  - [ ] Ejemplos.
+- [ ] Conexiones Afines y la Conexión de Levi-Civita.
+- [ ] Símbolos de Christoffel
 
 ---
 
 ### Geodésicas
 
-- [ ] Conexiones y Geodésicas
-  - [ ] Símbolos de Christoffel
-  - [ ] Conexión de Levi-Civita
-  - [ ] Geodésicas
-    - [ ] Geodésicas y Distancia
-    - [ ] Geodésicas en la Esfera
-    - [ ] Geodésicas en un Cilindro \*
-    - [ ] Geodésicas de una superficie de revolución. \*
-  - [ ] El Disco de Poincaré
-    - [ ] Geodésicas en el Disco de Poincaré
+- [ ] Geodésicas
+  - [ ] Geodésicas y Distancia
+  - [ ] Geodésicas en la Esfera
+  - [ ] Geodésicas en un Cilindro \*
+  - [ ] Geodésicas de una superficie de revolución. \*
+- [ ] El Disco de Poincaré
+  - [ ] Geodésicas en el Disco de Poincaré
 
 ---
 
 ### Anexos
 
 - [x] Anexo A: Topología de Variedades.
-- [ ] Anexo B: Álgebra Multilineal y Tensores.
+- [x] Anexo B: Álgebra Multilineal y Tensores.
   - [x] Anexo B.1: Mapas Multilineales.
   - [x] Anexo B.2: Productos Tensoriales.
-  - [ ] Anexo B.3: Clasificación de Tensores.
-  - [ ] Anexo B.4: Campos Tensoriales
+  - [x] Anexo B.3: Clasificación de Tensores.
+  - [x] Anexo B.4: Campos Tensoriales
 
 ---
 

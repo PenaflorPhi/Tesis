@@ -1,0 +1,25 @@
+- [ ] Presentación del problema. (5 min)
+    - [ ] Definición de métricas Riemannianas.
+- [ ] Variedades Topológicas. (5 min)
+    - [ ] Definición.
+    - [ ] Ejemplos
+- [ ] Variedades Suaves. (5 min)
+    - [ ] Definición.
+    - [ ] Ejemplos.
+    - [ ] Contraejemplos.
+- [ ] Espacios Tangentes (5 min)
+    - [ ] Definición en $\mathbb{R}^{n}$.
+    - [ ] Definición en variedades.
+    - [ ] Base para los espacios tangentes.
+    - [ ] Espacio Cotangente.
+- [ ] Campos Vectoriales (5 min)
+    - [ ] Fibrado Tangente y Cotangente
+    - [ ] Definición: Campo vectorial y co-vectorial.
+- [ ] Métricas Riemannianas. (5 min)
+    - [ ] Definición de Métrica Riemanniana.
+    - [ ] Ejemplos.
+    - ??
+- [ ] Geodésicas y el disco de Poincaré.
+    - Definición de geodésica.
+    - Definición del disco de Poincaré.
+    - Cálculo de Geodésicas.

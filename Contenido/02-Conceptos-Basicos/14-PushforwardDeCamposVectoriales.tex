@@ -5,9 +5,9 @@ El diferencial de un mapa suave en un punto nos da la mejor aproximación lineal
   Sean $M$ y $N$ variedades suaves, $F: M \to N$ un mapa suave, $p$ un punto en $M$ y $d_pF: T_{p}M \to T_{F(p)}N$ un diferencial de $F$ en el punto $p$. Si $v$ es un vector tangente en $T_p M$, llamaremos a $d_pF(v)$ el \it{pushforward de $v$ en $p$}.
 \end{definition}
 
-En general no podemos extender el pushforward a un campo vectorial, con esto queremos decir que si $X$ es un campo vectorial en $M$ para el cual se tenga que $X(p) = v$, en general, $dF(X)$ no es un campo vectorial en $N$. Esto dado que si $X$ es un campo vectorial en $M$ y $F$ no es inyectiva, entonces existirán puntos de $N$ para los cuales podemos obtener diferentes campos vectoriales al aplicar el pushforward $dF(X)$ en diferentes puntos, y, si $F$ no es sobreyectiva entonces no es posible asignar un vector del espacio tangente a ningún punto en $q$ que pertenezca a $N - F(M)$.
+En general no podemos extender el pushforward a un campo vectorial, con esto queremos decir que si $X$ es un campo vectorial en $M$ para el cual se tenga que $X(p) = v$, no siempre se cumplirá que $dF(X)$ sea un campo vectorial en $N$. Para poder garantizar que el resultado de nuestro pushforward es un campo vectorial es necesario imponer una condición, que $F$ sea un difeomorfismo. 
 
-Para que el resultado de nuestro pushforward sea siempre un campo vectorial es necesario imponer una condición, que $F$ sea un difeomorfismo, para demostrar esto primero daremos la siguiente definición:
+Esto dado que si $X$ es un campo vectorial en $M$ y $F$ no es inyectiva, entonces existirán puntos de $N$ para los cuales podemos obtener diferentes campos vectoriales al aplicar el pushforward $dF(X)$ en diferentes puntos, y, si $F$ no es sobreyectiva entonces no es posible asignar un vector del espacio tangente a ningún punto en $q$ que pertenezca a $N - F(M)$.
 
 \begin{definition}[Campos Vectoriales Relacionados]
 	Sea $F: M \to N$ un mapa suave entre variedades y $X$ un campo vectorial en $M$. Diremos que el campo vectorial $X$ está \it{relacionado por el mapa $F$} a un campo vectorial $Y$ en $N$ si para cada punto $p$ de $M$ se tiene que
