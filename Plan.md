@@ -55,22 +55,25 @@
 
 #### Geometría Riemanniana
 
-- [ ] Variedades Riemannianas
+- [x] Variedades Riemannianas
   - [x] Definición y resultados importantes.
-  - [ ] Ejemplos.
-- [ ] Conexiones Afines y la Conexión de Levi-Civita.
-- [ ] Símbolos de Christoffel
+  - [x] Ejemplos.
+- [ ] Conexiones.
+  - [x] Conexiones.
+  - [ ] Conexión Riemanniana
 
 ---
 
 ### Geodésicas
 
 - [ ] Geodésicas
+  - [ ] Definición.
+  - [ ] Teoremas básicos.
+
+#### Cálculo de Geodésicas
   - [ ] Geodésicas y Distancia
   - [ ] Geodésicas en la Esfera
-  - [ ] Geodésicas en un Cilindro \*
-  - [ ] Geodésicas de una superficie de revolución. \*
-- [ ] El Disco de Poincaré
+  - [ ] Geodésicas del Semiplano de Poincaré.
   - [ ] Geodésicas en el Disco de Poincaré
 
 ---
@@ -83,6 +86,7 @@
   - [x] Anexo B.2: Productos Tensoriales.
   - [x] Anexo B.3: Clasificación de Tensores.
   - [x] Anexo B.4: Campos Tensoriales
+- [ ] Anexo C: Corchete de Lie.
 
 ---
 

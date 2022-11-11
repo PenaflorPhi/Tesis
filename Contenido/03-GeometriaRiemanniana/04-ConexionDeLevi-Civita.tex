@@ -1,0 +1,178 @@
+\subsection{Conexión de Levi-Civita}
+\label{Subsección: Conexión de Levi-Civita}
+Antes de terminar con este capítulo y comenzar a estudiar geodésicas debemos estudiar un último concepto, la conexión de Levi-Civita. Esta es una conexión que se definen en variedades Riemannianas y es canónica para dicha variedad, en el sentido de que es una conexión que cumple propiedades únicas. De hecho, esta conexión es tan importante que el teorema que nos garantiza su existencia y su unicidad es conocido como el \textit{Teorema Fundamental de la Geometría Riemanniana}.
+
+\begin{definition}[Conexión Compatible]
+	Sea $(M,g)$ una variedad Riemanniana equipada con una conexión afín $\nabla$. Diremos que la conexión es \textit{compatible con la métrica} si, para cualesquiera campos vectoriales suaves $X,Y,Z \in \mathfrak{X}(M)$,
+	\[
+		Z(g(X,Y)) = g(\nabla_{Z}X, Y) + g(X,\nabla_{Z}Y)
+	\]
+\end{definition}
+
+\begin{lemma}
+	Sea $(M,g)$ una variedad Riemanniana. Una conexión $\nabla$ en $M$ es compatible con la métrica si y solo si para cualesquiera campos vectoriales $V$ y $W$ a lo largo de una curva suave $\gamma: I \to M$ se tiene:
+	\[
+		\frac{d}{dt}g(V,W) = g\left(\frac{DV}{dt},W \right) +g\left(V, \frac{DW}{dt} \right)
+	\]
+\end{lemma}
+
+\begin{proof}
+	Comencemos suponiendo que $\nabla$ es una conexión compatible con la métrica. Sea $p$ un punto en $M$ y sean $V$ y $W$ campos vectoriales a lo largo de una curva suave $\gamma: I \to M$, supongamos que $\gamma(t) = p$ y que $\gamma'(t_{0}) = X_{p}$ para $t_{0} \in I$ y algún campo suave en $M$. Entonces,
+	\begin{align*}
+		\left. \frac{d}{dt} g(V,W) \right|_{t_{0}}
+		 & = X_{p} g_{\gamma(t_{0})} (V , W)                                                                  \\
+		 & = g_{\gamma(t_{0})} (\nabla_{X_{p}}V, W) + g_{\gamma(t_{0})} (\nabla_{X_{p}}V,W)                   \\
+		 & = g_{\gamma(t_{0})} \left(\frac{DV}{dt}, W\right) +g_{\gamma(t_{0})} \left(V, \frac{DW}{dt}\right)
+	\end{align*}
+	Ahora supongamos que para cualesquiera campos vectoriales a lo largo de una curva $\gamma: I \to M$ se tiene:
+	\[
+		\frac{d}{dt}g(V,W) = g\left(\frac{DV}{dt},W \right) +g\left(V, \frac{DW}{dt} \right).
+	\]
+	Sean $p \in M$ y $\gamma: I \to M$ una curva suave, con $\gamma(t_{0})$ y $\gamma'(t_{0}) = X_{p}$ para $t_{0} \in I$ y algún campo suave $X$ en $M$. Entonces, para cualesquiera campos vectoriales suaves $Y,Z$ en $M$ se tiene,
+	\begin{align*}
+		X_{p} g(Y,Z) & = \left. \frac{d}{dt} g(Y,Z) \right|_{t_{0}}       \\
+		             & = g_{\gamma(t_{0})} \left( \frac{DY}{dt}, Z\right)
+		+ g_{\gamma(t_{0})} \left( Y, \frac{DZ}{dt}\right)                \\
+		             & = g_{\gamma(t_0)}(\nabla_{X_{p}}Y, Z)
+		+ g_{\gamma(t_0)}(Y, \nabla_{X_{p}}Z)
+	\end{align*}
+\end{proof}
+
+\begin{lemma}
+	Sea $(M,g)$ una variedad Riemanniana equipada con una conexión afín. La conexión es compatible con la métrica si y solo si para cualesquiera campos paralelos a lo largo de una curva $\gamma: I \to M$ se tiene
+	\[
+		g(V,W) = k,
+	\]
+	donde $k$ es una constante.
+\end{lemma}
+
+\begin{proof}
+	Por el lema anterior sabemos que la conexión es compatible con la métrica si y solo si para cualesquiera campos suaves $V$ y $W$ se tiene
+	\[
+		\frac{d}{dt}g(V,W) = g(\frac{DV}{dt},W) + g(V,\frac{DW}{dt}),
+	\]
+	si suponemos que tanto $V$ como $W$ son campos paralelos a lo largo de una curva suave $\gamma: I \to M$ y que la conexión es compatible con la métrica, entonces
+	\[
+		\frac{d}{dt}g(V,W) = g(0, W) + g(V, 0) = 0,
+	\]
+	por lo cual $g(V,W)$ debe ser constante.
+
+	Ahora supongamos que la conexión es compatible con la métrica. Sean $p \in M$, $\gamma: I \to M$ una curva suave, con $\gamma(t_0) = p$, donde $t_{0} \in I$, supongamos que $\{X_{1}(t_{0}), \ldots, X_{n}(t_{0})\}$ es una base ortonormal para $T_{p}(M)$. Por el teorema \ref{Teorema: Existencia y Unicidad de Campos Paralelos} sabemos que podemos extender los vectores $X_{1}(t_0), \ldots, X_{n}(t_{0})$ a campos vectoriales a lo largo de $\gamma$.
+
+	Dado que $\nabla$ es una compatible con la métrica, $\{ X_{1}(t), \ldots, X_{n}(t) \}$ será una base ortonormal para $T_{\gamma(t)}M$ para cada $t \in I$, por lo tanto, dados campos $V$ y $W$ a lo largo de $\gamma$ podemos expresarlos como:
+	\[
+		V = \sum_{i=1}^{n} V_{i}X_{i}, \quad W = \sum_{j=1}^{n}W_{j}X_{j},
+	\]
+	donde $V_{i}$ y $W_{j}$ son funciones suaves, se sigue que:
+	\[
+		\frac{DV}{dt} = \sum_{i=1}^{n} \frac{dV_{i}}{dt} X_{i}, \quad
+		\frac{DW}{dt} = \sum_{j=1}^{n} \frac{dW_{j}}{dt} X_{j}
+	\]
+	De aquí se seguirá la siguiente cadena de igualdades:
+	\begin{align*}
+		g\left(\frac{DV}{dt},W\right) + g\left(\frac{DW}{dt},V\right)
+		 & = g\left(\sum_{i=1}^{n}\frac{dV_i}{dt}X_{i}, \sum_{j=1}^{n}W_j X_j\right)
+		+ g\left(\sum_{i=1}^{n}W_i X_i, \sum_{j=1}^{n}\frac{dW_j}{dt}X_{j}\right)    \\
+		 & = \sum_{i=1}^{n}\sum_{j=1}^{n} \frac{dV_i}{dt}W_{j}g(X_{i},X_{j})
+		+ \sum_{i=1}^{n}\sum_{j=1}^{n} V_{i} \frac{dW_j}{dt}g(X_{i},X_{j})           \\
+		 & = \sum_{i=1}^{n} \frac{dV_i}{dt} W_{i} + \ V_{i}\frac{dW_{i}}{dt}         \\
+		 & = \frac{d}{dt} \sum_{i=1}^{n} V_{i} W_{i}                                 \\
+		 & = \frac{d}{dt} g(V,W)
+	\end{align*}
+\end{proof}
+
+\begin{definition}[Conexión Simétrica]
+	Sea $M$ una variedad equipada con una conexión afín. Diremos que la conexión es \textit{simétrica} si para cualesquiera campos suaves $X,Y \in \mathfrak{X}(M)$ se tiene:
+	\[
+		\nabla_{X}Y - \nabla_{Y}X = [X,Y],
+	\]
+	donde $[X,Y]$ es el corchete de Lie. En el Anexo \ref{Anexo: Corchetes de Lie} se define y se demuestran algunas de las propiedades que cumple este operador.
+\end{definition}
+
+\begin{lemma}
+	Sea $(M,g)$ una variedad Riemanniana equipada con una conexión simétrica $\nabla$. Entonces,
+	\[
+		\nabla_{\partial_{j}}\partial_{i} = \nabla_{\partial_{i}}\partial_{j}
+	\]
+\end{lemma}
+
+\begin{proof}
+	Por definición del corchete de Lie tendremos que, para cualquier función suave $f \in C^{\infty}(M)$,
+	\[
+		[\partial_{i},\partial_{j}] = \partial_{i}\partial_{j} f - \partial_{j}\partial_{i}f,
+	\]
+	gracias a que las derivadas parciales conmutan podemos concluir que $[\partial_{i},\partial_{j}] = 0$. Además, por la simetría de la conexión se tendrá que:
+	\[
+		0 = [\partial_{i},\partial_{j}] =
+		\nabla_{\partial_{i}} \partial_{j} -  \nabla_{\partial_{j}} \partial_{i}
+		= \sum_{k=1}^{n} (\Gamma_{ij}^{k} - \Gamma_{ji}^{k}) \partial_{k},
+	\]
+	se concluye que $\nabla_{\partial_{j}}\partial_{i} = \nabla_{\partial_{i}}\partial_{j}$, además, la última igualdad nos está diciendo que los subíndices $ij$ y $ji$ conmutan cuando la conexión es simétrica. Esto es importante ya que nos garantiza que, si la conexión es simétrica, entonces a lo más $\frac{n^{2}(n+1)}{2}$ símbolos de Christoffel son únicos.
+\end{proof}
+
+\begin{definition}[Conexión de Levi-Civita]
+	Sea $(M,g)$ una variedad Riemanniana. Una conexión afín $\nabla$ en $M$ será llamada \textit{conexión de Levi-Civita} o \textit{conexión Riemanniana} si:
+	\begin{itemize}
+		\item $\nabla$ es compatible con la métrica.
+		\item $\nabla$ es una conexión afín simétrica.
+	\end{itemize}
+\end{definition}
+
+\begin{theorem}[Teorema fundamental de la geometría Riemanniana]
+	Dada una variedad Riemanniana $(M,g)$ existe una única conexión afín simétrica y compatible con la métrica.
+\end{theorem}
+
+\begin{proof}
+	Supongamos que $(M,g)$ es una variedad Riemanniana y que está equipada con una conexión afín $\nabla$, la cual es simétrica y compatible con la métrica.
+
+	Sean $X,Y$ y $Z$ campos suaves en $M$. Por la simetría de la conexión tendremos que:
+	\[
+		\nabla_{X}Y - \nabla_{Y} X = [X,Y],
+	\]
+	y de la compatibilidad con la métrica se obtienen las siguientes tres igualdades.
+	\begin{align*}
+		Xg(Y,Z) & = g(\nabla_{X}Y,Z) + g(Y,\nabla_{X}Z) \\
+		Yg(Z,X) & = g(\nabla_{Y}Z,X) + g(Z,\nabla_{Y}X) \\
+		Zg(X,Y) & = g(\nabla_{Z}X,Y) + g(X,\nabla_{Z}Y) \\
+	\end{align*}
+	Utilizando la igualdad dada por la simetría podemos reescribir a $Y_{g}(Z,X)$ de la siguiente forma:
+	\begin{align*}
+		Yg(Z,X) & = g(\nabla_{Y} Z, X) + g(Z, \nabla_{X}Y - [X,Y])       \\
+		        & = g(\nabla_{Y} Z, X) + g(Z, \nabla_{X}Y) - g(Z, [X,Y])
+	\end{align*}
+	De aquí podemos sumar y restar los campos $Xg(Y,Z)$, $Yg(Z,X)$ y $Zg(X,Y)$ para obtener una expresión para $g(\nabla_X Y, Z)$,
+	\begin{align*}
+		Xg(Y,Z) + Yg(Z,X) - Zg(X,Y) & =  g(\nabla_{X}Y,Z) + g(Y,\nabla_{X}Z)  - (g(\nabla_{Z}X,Y) + g(X,\nabla_{Z}Y))         \\
+		                            & \quad + g(\nabla_{Y} Z, X) + g(Z, \nabla_{X}Y) - g(Z, [X,Y])                            \\[12pt]
+		                            & = 2 g(\nabla_{X}Y,Z) + g(Y, \nabla_{X}Z - \nabla_{Z}X) + g(X,\nabla_{Y}Z - \nabla_{Z}Y) \\
+		                            & \quad - g(Z,[X,Y])                                                                      \\[12pt]
+		                            & = 2g(\nabla_{X}Y,Z) + g(Y, [X,Z]) + g(X,[Y,Z]) - g(Z,[X,Y])
+	\end{align*}
+	Despejando obtenemos que, si dicha conexión existe, entonces la conexión estará determinada de forma única por:
+	\begin{align*}
+		g(\nabla_{X}Y, Z) & = \frac{1}{2} \bigl(Xg(Y,Z) + Yg(Z,X) - Zg(X,Y)      \\
+		                  & \qquad + g(Y, [X,Z]) + g(X,[Y,Z]) - g(Z,[X,Y])\bigr)
+	\end{align*}
+	La existencia de dicha conexión simplemente comprobando que la conexión $\nabla$, definida de esta manera, es simétrica y es compatible con la métrica. A esta última ecuación le llamamos la \textit{fórmula de Koszul}.
+\end{proof}
+
+Gracias a la conexión de Levi-Civita podemos dar una representación en coordenadas de los símbolos de Christoffel. Hemos definido a los símbolos de Christoffel a través de la ecuación
+\[
+	\nabla_{\partial_{i}} \partial_{j} = \sum_{k=1}^{n} \Gamma_{ij}^{k} \partial_{k}
+\]
+Utilizando la formula de Koszul en la ecuación anterior tendremos que:
+\[
+	g(\nabla_{\partial_{i}}, \partial_{k}) = \frac{1}{2} \biggl(\partial_{i}g(\partial_{j},\partial_{k}) + \partial_{j}g(\partial_{k},\partial_{i}) - \partial_{k}g(\partial_{i},\partial_{j})\biggr),
+\]
+esto dado que los corchetes de Lie se anulan. Podemos simplificar está expresión recordando que, por definición $g_{ij} = g(\partial_{i}, \partial_{j})$, estos coeficientes forman una matriz, $G$, la cual es definida positiva, por lo cual su matriz inversa existirá, denotaremos a la inversa y a sus elementos por $G^{-1}=(g^{ij})$. Al simplificar la expresión reemplazar por la representación en coordenadas de la conexión se obtiene:
+\[
+  g\biggl(\sum_{l=1}^{n} \Gamma^{l}_{ij}\partial_{l}, \partial_{k}\biggr) = \frac{1}{2} \biggl( \partial_{i}g_{jk} + \partial_{j}g_{ki} - \partial_{k}g_{ij}\biggr),
+\]
+como los símbolos de Christoffel son funciones escalares entonces, por la linealidad de la métrica, estos pueden salir de la evaluación, quedando:
+\[
+	\sum_{l=1}^{n} \Gamma^{l}_{ij} g(\partial_{l}, \partial_{k}) = \frac{1}{2} \biggl( \partial_{i}g_{jk} + \partial_{j}g_{ki} - \partial_{k}g_{ij}\biggr).
+\]
+Es evidente que $\sum_{k=1}^{n}g_{lk}g^{km} = \delta_{lm}$, esto por definición de la matriz inversa, por lo cual podemos concluir que:
+\[
+  \Gamma_{ij}^{m} = \frac{1}{2}\sum_{k=1}^{n} (\partial_{i}g_{jk} + \partial_{j}g_{ki} - \partial_{k}g_{ij})g^{km}
+\]

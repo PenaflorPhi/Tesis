@@ -12,14 +12,14 @@
     - [ ] Definición en variedades.
     - [ ] Base para los espacios tangentes.
     - [ ] Espacio Cotangente.
-- [ ] Campos Vectoriales (5 min)
+- [ ] Campos Vectoriales (2 min)
     - [ ] Fibrado Tangente y Cotangente
     - [ ] Definición: Campo vectorial y co-vectorial.
-- [ ] Métricas Riemannianas. (5 min)
+- [ ] Métricas Riemannianas. (10 min)
     - [ ] Definición de Métrica Riemanniana.
     - [ ] Ejemplos.
-    - ??
-- [ ] Geodésicas y el disco de Poincaré.
+    - [ ] Curvas y Conexiones
+- [ ] Geodésicas y el disco de Poincaré. (10 min)
     - Definición de geodésica.
     - Definición del disco de Poincaré.
     - Cálculo de Geodésicas.

@@ -1,0 +1,67 @@
+\chapter{Corchetes de Lie}\label{Anexo: Corchetes de Lie}
+\begin{definition}[Corchete de Lie]
+	Si $X$ e $Y$ son campos vectoriales suaves en una variedad $M$. Definimos al campo vectorial $[X,Y]$ como:
+	\[
+		[X,Y]f = X(Yf) - Y(Xf),
+	\]
+	donde $f$ es una función suave en $C^{\infty}(M)$. Al campo vectorial $[X,Y]$ le llamamos el \textit{corchete de Lie}.
+\end{definition}
+
+\begin{lemma}
+	Si $X$ e $Y$ son campos vectoriales suaves. Entonces, el corchete de Lie $[X,Y]$ cumple las siguientes propiedades:
+	\begin{itemize}
+		\item $[X,Y]$ es un campo vectorial suave en $M$.
+		\item El corchete de Lie es un mapa bilineal.
+		\item El corchete de Lie es anticonmutativo.
+		\item Si $f,g \in C^{\infty}(M)$. Entonces,
+		      \[
+			      [fX,gY] = fg[X,Y] + fX(g)Y - gY(f)X
+		      \]
+		\item El corchete de Lie cumple la identidad de Jacobi, esto es: Para cualesquiera campos vectoriales suaves $X,Y$ y $Z$ en $M$ se cumple:
+		      \[
+			      [X,[Y,Z]] + [Y,[Z,X]] + [Z,[X,Y]] = 0
+		      \]
+	\end{itemize}
+\end{lemma}
+
+\begin{proof}
+	\phantom{ }
+	\begin{enumerate}
+		\item $[X,Y]$ es un campo vectorial suave, esto es una sencilla consecuencia de la segunda condición del lema \ref{Lemma: Más Criterios de Suavidad Para Campos Vectoriales} y de que la suma de campos vectoriales suaves es un campo vectorial suave.
+		\item Mostraremos la linealidad de en la primera coordenada, la linealidad en la segunda coordenada se sigue de manera idéntica.
+
+		      Sean $X, Y$ y $Z$ campos vectoriales suaves, y sean $\alpha, \beta$ números reales cualesquiera, por definición tenemos que:
+		      \begin{align*}
+			      [aX + bY, Z] & = (aX + bY)Z  - Z(aX + bY) \\
+			                   & = aXY + bYZ - aZX - bZY    \\
+			                   & = a(XY - ZX) + b(YZ - bZY) \\
+			                   & = a[X,Z] + b[Y,Z]
+		      \end{align*}
+		\item La anticonmutatividad del corchete se puede observar fácilmente a partir de la definición:
+		      \[
+			      [X,Y] = XY - YX = -(YX + XY) = -[Y,X]
+		      \]
+		\item Por los resultados observados en la subsección \ref{Subsección: Campos Vectoriales Como Derivaciones} sabemos que los campos vectoriales pueden ser entendidos como derivaciones, utilizando esta definición de los campos vectoriales y la linealidad del corchete tendremos que:
+		      \begin{align*}
+			      [fX,gY] & = fX(gY) - gY(fX)                   \\
+			              & = fg(XY) + fX(g)Y - fgY(X) - gY(f)X \\
+			              & = fg[X,Y] + fX(g)Y - gY(f)X
+		      \end{align*}
+		\item Par mostrar la identidad de Jacobi podemos simplemente expandir cada uno de los términos de la suma:
+		      \begin{align*}
+			      [X,[Y,Z]] & = [X,YZ - ZY]           \\
+			                & = [X,YZ] - [X,ZY]       \\
+			                & = XYZ - YZX - XZY + ZYX \\
+			      [Y,[Z,X]] & = [Y,ZX - XZ]           \\
+			                & = [Y,ZX] - [Y,XZ]       \\
+			                & = YZX - ZXY - YXZ + XZY \\
+			      [Z,[X,Y]] & = [Z,XY- YX]            \\
+			                & = [Z,XY] - [Z,YX]       \\
+			                & = ZXY - XYZ - ZYX + YXZ \\
+		      \end{align*}
+		      No es difícil comprobar que al sumar estos términos todos se anularan, por lo cual:
+		      \[
+			      [X,[Y,Z]] + [Y,[Z,X]] + [Z,[X,Y]] = 0
+		      \]
+	\end{enumerate}
+\end{proof}

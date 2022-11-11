@@ -1,0 +1,102 @@
+\section{Conexiones}\label{Sección: Conexiones}
+Cuando trabajamos en espacios euclidianos, el cálculo usual nos permite estudiar cómo es que una función cambia en la dirección de un vector, dado un punto; esto con ayuda de la derivada direccional. No siempre es posible hacer esto cuando trabajamos con variedades suaves.
+
+Supongamos que $Y$ es un campo vectorial suave en alguna variedad suave $M$. Si quisiéramos tomar la derivada direccional de $Y$ en la dirección de algún vector tangente $X(p) \in T_{p}M$, inmediatamente nos encontraríamos con un problema, y es que, necesitaríamos comparar los valores que $Y$ toma en una vecindad de $p$, sin embargo, esto no siempre es posible. En general, si $q$ es algún punto en una vecindad de $p$, $Y(p)$ e $Y(q)$ pertenecen a espacios tangentes diferentes.
+
+Para solucionar este problema daremos una generalización del concepto de derivada direccional para variedades suaves, las \textit{conexiones afines}.
+
+\subsection{Conexiones Afines}\label{Subsección: Conexiones Afines}
+\begin{definition}[Conexión Afín]
+	Sean $M$ una variedad suave y $\mathfrak{X}(M)$ el conjunto de campos vectoriales suaves en $M$. Una \it{conexión afín en $M$} es un mapa bilineal
+	\[ \nabla: \mathfrak{X}(M) \times \mathfrak{X}(M) \to \mathfrak{X}(M), \]
+	el cual cumple las siguientes propiedades: Para cualesquiera campos suaves $X, Y$ y $Z$ en $\mathfrak{X}(M)$ y para cualesquiera funciones suaves $f$ y $g$ en $C^{\infty}(M)$:
+	\begin{enumerate}
+		\item $\nabla$ es lineal en su primera coordenada con respecto al anillo de funciones suaves, esto quiere decir que:
+		      \[
+			      \nabla(fX + gY, Z) = f \nabla(X,Y) + g \nabla(Y,Z)
+		      \]
+		\item $\nabla$ cumple la siguiente regla del producto en su segunda coordenada:
+		      \[
+			      \nabla(X,fY) = X(f)Y + f \nabla(X,Y)
+		      \]
+	\end{enumerate}
+	Para abreviar denotaremos la conexión afín $\nabla(X,Y)$ por $\nabla_{X}Y$, y llamaremos a este mapa la \textit{derivada covariante de $X$ en la dirección de $Y$}.
+\end{definition}
+
+La notación para describir a las conexiones para volverse extremadamente tediosa. Es por este motivo que nos vemos en la necesidad de realizar la siguiente abreviación: Si damos una variedad suave $M$ y una carta suave $(U,\phi)$ en el atlas, denotaremos a la base para los espacios tangentes asociada a las coordenadas locales de la carta como:
+\[
+	\frac{\partial}{\partial \phi_{i}} = \partial_{i}
+\]
+
+\begin{lemma}\label{Lema: Conexión Afín en Coordenadas}
+	Sea $M$ una variedad suave equipada con una conexión afín. Si $X$ e $Y$ son campos suaves en $\mathfrak{X}(M)$ y expresamos a $X$ e $Y$ en coordenadas como:
+	\[
+		X = \sum_{i=1}^{n} X_{i}\partial_{i}, \quad
+		Y = \sum_{j=1}^{n} Y_{j}\partial_{j},
+	\]
+	entonces, podemos expresar a la derivada covariante $\nabla_{X}Y$ como:
+	\[
+		\nabla_{X}Y = \sum_{i=1}^{n}\sum_{j=1}^{n} X_{i}Y_{j}\nabla_{\partial_{i}}\partial_{j}
+		+ \sum_{j=1}^{n} X(Y_{j})\partial_{j}
+	\]
+\end{lemma}
+
+\begin{proof}
+	Por definición la conexión afín es bilineal, en particular será lineal en su segunda coordenada, por lo cual:
+	\[
+		\nabla_{X}Y = \nabla_{X} \left( \sum_{j=1}^{n} Y_{j} \partial_{j}\right)
+		= \sum_{j=1}^{n} \nabla_{X} (Y_{j} \partial_{j})
+	\]
+	Utilizando la propiedad del producto de la conexión afín obtenemos:
+	\begin{align*}
+		\nabla_{X}Y & = \sum_{j=1}^{n} (X(Y_{j}) \partial_{j} + Y_{j} \nabla_{X}\partial_{j})              \\
+		            & = \sum_{j=1}^{n} X(Y_{j}) \partial_{j} + \sum_{j=1}^{n} Y_{j} \nabla_{X}\partial_{j} \\
+	\end{align*}
+	Expresando a $X$ en coordenadas y utilizando la linealidad de la conexión con respecto al anillo de funciones en la primera coordenada se obtienen las siguientes igualdades:
+	\begin{align*}
+		\nabla_{X}Y
+		 & = \sum_{j=1}^{n} X(Y_{j})\partial_{j} + \sum_{j=1}^{n} Y_{j} \nabla_{\sum_{i=1}^{n} X_{i}\partial_{i}}\partial_{j} \\
+		 & = \sum_{j=1}^{n}X(Y_{j})\partial_{j} + \sum_{j=1}^{n}\sum_{i=1}^{n} X_{i}Y_{j} \nabla_{\partial_{i}}\partial_{j}
+	\end{align*}
+	Reordenando los términos obtenemos la igualdad deseada.
+	\[
+		\nabla_{X}Y = \sum_{i=1}^{n}\sum_{j=1}^{n} X_{i}Y_{j}\nabla_{\partial_{i}}\partial_{j}
+		+ \sum_{j=1}^{n} X(Y_{j})\partial_{j}
+	\]
+\end{proof}
+
+Por definición de la conexión afín sabemos que la derivada covariante $\nabla_{\partial_{i}} \partial_{j}$ es, en sí misma, un campo suave. Expresando a este campo con respecto a algunas coordenadas locales $\{ \partial_{k} \}_{k=1}^{n}$ se tiene:
+\[
+	\nabla_{\partial_{i}}\partial_{j} = \sum_{k=1}^{n} \Gamma_{ij}^{k} \partial_{k}
+\]
+Substituyendo está representación de la derivada covariante $\nabla_{\partial_{i}}\partial_{j}$ en la igualdad obtenida anteriormente obtendremos que la derivada covariante $\nabla_{X}Y$ puede ser expresada por la siguiente igualdad:
+\begin{align*}
+	\nabla_{X}Y
+	 & = \sum_{i=1}^{n}\sum_{j=1}^{n} X_{i}Y_{j} \sum_{k=1}^{n} \Gamma_{ij}^{k} \partial_{k} + \sum_{k=1}^{n} X(Y_{k})\partial_{k} \\
+	 & = \sum_{k=1}^{n} \left( X(Y_{k}) + \sum_{i=1}^{n}\sum_{j=1}^{n} \Gamma_{ij}^{k} X_{i}Y_{j} \right) \partial_{k}
+\end{align*}
+
+Las funciones $\Gamma_{ij}^{k}$ son $n^{3}$ funciones suaves a las cuales llamamos \textit{coeficientes de la conexión} o \textit{símbolos de Christoffel}. Más adelante veremos cómo es que podemos calcular estos coeficientes y como es que, en algunos casos es posible reducir el número de coeficientes a calcular, utilizando ciertas simetrías.
+
+\begin{theorem}
+  Sea $M$ una variedad suave, siempre es posible definir al menos una conexión afín en $M$.
+\end{theorem}
+
+\begin{proof}
+  Sean $M$ una variedad suave $n-$dimensional y $\mathcal{U} = \{U_{\alpha}\}$ una cubierta abierta para $M$. Si consideramos $n^{3}$ funciones suaves $\Gamma_{ij}^{k}$ cualesquiera, definidas en alguno de los subconjuntos $U_{\alpha}$. Dados dos campos suaves $X,Y \in \mathfrak{X}(M)$ podemos definir una conexión afín en $U_{\alpha}$ como:
+  \[
+    \nabla_{X}^{\alpha} Y = \sum_{k=1}^{n} 
+    \left( X(Y_{k}) + \sum_{i=1}^{n}\sum_{j=1}^{n} X_{i}Y_{j} \Gamma_{ij}^{k} \right) \partial_{k}
+  \]
+  Es posible extender las conexiones $\nabla_{X}^{\alpha} Y$ a una conexión global utilizando particiones suaves de la unidad. Sea $\{f_{\alpha}\}$ una partición de la unidad subordinada a $\mathcal{U}$, definimos la conexión afín global en $M$ por:
+  \[
+    \nabla_{X} Y = \sum_{\alpha} f_{\alpha} \nabla_{X}^{\alpha}Y
+  \]
+  Para mostrar que $\nabla_{X}Y$ es, en efecto una conexión bastará con verificar la regla del producto, ya que la bilinealidad del operar y la linealidad con respecto a las funciones suaves se siguen del hecho que $\nabla_{X}^{\alpha}Y$ es una conexión y cumple dichas propiedades. Sea $g \in C^{\infty}(M)$, tenemos que:
+  \begin{align*}
+    \nabla_{X}(gY) & = \sum_{\alpha} f_{\alpha} \nabla_{X}^{\alpha} (gY)\\
+    &= \sum_{\alpha} f_{\alpha} \left((Xg)Y + g\nabla_{X}^{\alpha}Y \right) \\
+    &= \sum_{\alpha} f_{\alpha} (Xg) Y + \sum_{\alpha} f_{\alpha} g \nabla_{X}^{\alpha}Y \\
+    &= (Xg)Y + g \sum_{\alpha} f_{\alpha}\nabla_{X}^{\alpha} Y = (Xg)Y + \nabla_{X}Y
+  \end{align*}
+\end{proof}
