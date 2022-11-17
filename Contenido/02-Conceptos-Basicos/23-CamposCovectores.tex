@@ -7,7 +7,7 @@ Los campos de covectores surgen de una manera bastante natural, de hecho, hemos 
 \[
 	X(p) = \sum_{i=1}^{n} X_i \left. \frac{\partial}{\partial \phi_i} \right|_{p}.
 \]
-Estos coeficientes $X_i$ que dependen de $X(p)$ son funciones lineales $X_i: T_{p}M \to \R$ por lo que son covectores en $p$, haciendo variar al punto $p$ en $U$ tenemos que cada una de las funciones $X_i$ es un campo vectorial sobre $U$.
+Estos coeficientes $X_i$ que dependen de $X(p)$ son funciones lineales $X_i: T_{p}M \to \R$ por lo que son covectores en $p$, haciendo variar al punto $p$ en $U$ tenemos que cada una de las funciones $X_i$ es un campo de covectores sobre $U$.
 
 Para denotar a la $1-$forma $\omega$ en algún punto $p$ de una variedad suave utilizaremos la notación de subíndice $\omega_p$ o $\omega|_{p}$ dependiendo de nuestras necesidades.
 
@@ -148,7 +148,7 @@ Conociendo esta representación podemos dar una caracterización adicional de la
 	\[
 		\Phi(\omega) = (E_1, \ldots, E_n, \omega_1, \ldots, \omega_n),
 	\]
-	donde $\{E_i\}_{i=1}^n$ es el marco dual a $\{\epsilon_i\}_{i=1}^n$, será suave en $U$ cada una de las componentes $\omega_i$ es suave.
+	donde $\{E_i\}_{i=1}^n$ es el marco dual a $\{\epsilon_i\}_{i=1}^n$, será suave en $U$ si y solo si cada una de las componentes $\omega_i$ es suave.
 \end{proof}
 
 Denotaremos al conjunto de todos las $1-$formas en $M$ por $\mathfrak{X}^*(M)$. Como se mostró en la subsección \ref{Subsección: Fibrados Vectoriales} en el teorema \ref{Teorema: Los Fibrados Vectoriales Son Modulos}, las secciones de un fibrado vectorial forman un módulo sobre el anillo de funcione suaves $C^{\infty}(M)$, en particular, esto es cierto para los elementos de $X^{*}(M)$, por lo que si tenemos $1-$formas $\omega,\nu \in \mathfrak{X}^*(M)$ y alguna función suave $f \in C^{\infty}M$ definiremos la suma de $1-$formas y el producto por funciones suaves de la manera usual.
