@@ -58,17 +58,17 @@
 - [x] Variedades Riemannianas
   - [x] Definición y resultados importantes.
   - [x] Ejemplos.
-- [ ] Conexiones.
+- [x] Conexiones.
   - [x] Conexiones.
-  - [ ] Conexión Riemanniana
+  - [x] Conexión Riemanniana
 
 ---
 
 ### Geodésicas
 
-- [ ] Geodésicas
-  - [ ] Definición.
-  - [ ] Teoremas básicos.
+- [x] Geodésicas
+  - [x] Definición.
+  - [x] Teoremas básicos.
 
 #### Cálculo de Geodésicas
   - [ ] Geodésicas y Distancia
