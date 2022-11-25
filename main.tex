@@ -32,6 +32,7 @@
 \newcommand{\programa}{Licenciatura en Matemáticas}
 \newcommand{\titulo}{Cálculo de Geodésicas en el Disco de Poincaré}
 \newcommand{\DirectorUno}{Dr. Francisco Gabriel Hernández Zamora}
+\newcommand{\DirectorDos}{Dr. Evodio Muñoz Aguirre}
 
 % ====================================
 % Documento
@@ -39,121 +40,120 @@
 
 \begin{document}
 
-% % ====================================
-% % Portada, agradecimientos y dedicatoria
-% % ====================================
+% ====================================
+% Portada, agradecimientos y dedicatoria
+% ====================================
+
+\pagenumbering{gobble}
+\input{Contenido/00-Cubierta/00-Portada.tex}
+\input{Contenido/00-Cubierta/01-Legal.tex}
+\input{Contenido/00-Cubierta/Agradecimientos.tex}
+\input{Contenido/00-Cubierta/Dedicatoria.tex}
+\cleardoublepage
 %
-% \pagenumbering{gobble}
-% \input{Contenido/00-Cubierta/00-Portada.tex}
-% \input{Contenido/00-Cubierta/01-Legal.tex}
-% \input{Contenido/00-Cubierta/Agradecimientos.tex}
-% \input{Contenido/00-Cubierta/Dedicatoria.tex}
-% \cleardoublepage
-% %
-% % ====================================
-% % Tabla de Contenidos.
-% % ====================================
+% ====================================
+% Tabla de Contenidos.
+% ====================================
+
+\addcontentsline{toc}{chapter}{\contentsname}
+\setcounter{tocdepth}{3}
+\pagenumbering{roman}
+\setcounter{page}{1}
+
+
+\tableofcontents
+\listoffigures
+
+\cleardoublepage
+\pagenumbering{arabic}
+\pagestyle{plain}
+\setcounter{page}{1}
+
+% ====================================
+% Variedades y Mapas
+% ====================================
+
+\input{Contenido/01-Variedades-y-Mapas/00-Introducción.tex}
+\input{Contenido/01-Variedades-y-Mapas/01-VariedadesTopologicas.tex}
+\cleardoublepage
+\input{Contenido/01-Variedades-y-Mapas/02-VariedadesSuaves.tex}
+\cleardoublepage
+\input{Contenido/01-Variedades-y-Mapas/03-MapasSuaves.tex}
+\input{Contenido/01-Variedades-y-Mapas/04-Difeomorfismos.tex}
+\input{Contenido/01-Variedades-y-Mapas/05-ParticionesDeLaUnidad.tex}
+
+% ====================================
+% Cálculo en Variedades
+% ====================================
+
+\input{Contenido/02-Conceptos-Basicos/01-EspaciosTangentesEnRn.tex}
+\input{Contenido/02-Conceptos-Basicos/02-EspaciosTangentesEnVariedades.tex}
+\input{Contenido/02-Conceptos-Basicos/03-VectoresTangentesEnCoordenadas.tex}
+\input{Contenido/02-Conceptos-Basicos/04-FibradoTangente.tex}
+\input{Contenido/02-Conceptos-Basicos/05-CurvasEnVariedades.tex}
+
+\cleardoublepage
+
+\input{Contenido/02-Conceptos-Basicos/11-FibradosVectoriales.tex}
+\input{Contenido/02-Conceptos-Basicos/12-CamposVectoriales.tex}
+\input{Contenido/02-Conceptos-Basicos/13-CamposVectorialesComoDerivaciones.tex}
+\input{Contenido/02-Conceptos-Basicos/14-PushforwardDeCamposVectoriales.tex}
+
+\cleardoublepage
+
+\input{Contenido/02-Conceptos-Basicos/21-EspacioDual.tex}
+\input{Contenido/02-Conceptos-Basicos/22-EspacioCotangente.tex}
+\input{Contenido/02-Conceptos-Basicos/23-CamposCovectores.tex}
+\input{Contenido/02-Conceptos-Basicos/24-ElDiferencial.tex}
 %
-% \addcontentsline{toc}{chapter}{\contentsname}
-% \setcounter{tocdepth}{3}
-% \pagenumbering{roman}
-% \setcounter{page}{1}
-%
-%
-% \tableofcontents
-% \listoffigures
-%
-% \cleardoublepage
-% \pagenumbering{arabic}
-% \pagestyle{plain}
-% \setcounter{page}{1}
-%
-% % ====================================
-% % Variedades y Mapas
-% % ====================================
-%
-% \input{Contenido/01-Variedades-y-Mapas/00-Introducción.tex}
-% \input{Contenido/01-Variedades-y-Mapas/01-VariedadesTopologicas.tex}
-% \cleardoublepage
-% \input{Contenido/01-Variedades-y-Mapas/02-VariedadesSuaves.tex}
-% \cleardoublepage
-% \input{Contenido/01-Variedades-y-Mapas/03-MapasSuaves.tex}
-% \input{Contenido/01-Variedades-y-Mapas/04-Difeomorfismos.tex}
-% \input{Contenido/01-Variedades-y-Mapas/05-ParticionesDeLaUnidad.tex}
-%
-% % ====================================
-% % Cálculo en Variedades
-% % ====================================
-%
-% \input{Contenido/02-Conceptos-Basicos/01-EspaciosTangentesEnRn.tex}
-% \input{Contenido/02-Conceptos-Basicos/02-EspaciosTangentesEnVariedades.tex}
-% \input{Contenido/02-Conceptos-Basicos/03-VectoresTangentesEnCoordenadas.tex}
-% \input{Contenido/02-Conceptos-Basicos/04-FibradoTangente.tex}
-% \input{Contenido/02-Conceptos-Basicos/05-CurvasEnVariedades.tex}
-%
-% \cleardoublepage
-%
-% \input{Contenido/02-Conceptos-Basicos/11-FibradosVectoriales.tex}
-% \input{Contenido/02-Conceptos-Basicos/12-CamposVectoriales.tex}
-% \input{Contenido/02-Conceptos-Basicos/13-CamposVectorialesComoDerivaciones.tex}
-% \input{Contenido/02-Conceptos-Basicos/14-PushforwardDeCamposVectoriales.tex}
-%
-% \cleardoublepage
-%
-% \input{Contenido/02-Conceptos-Basicos/21-EspacioDual.tex}
-% \input{Contenido/02-Conceptos-Basicos/22-EspacioCotangente.tex}
-% \input{Contenido/02-Conceptos-Basicos/23-CamposCovectores.tex}
-% \input{Contenido/02-Conceptos-Basicos/24-ElDiferencial.tex}
-%
-% % ====================================
-% % Geometría Riemanniana
-% % ====================================
-%
+% ====================================
+% Geometría Riemanniana
+% ====================================
+
 \input{Contenido/03-GeometriaRiemanniana/01-VariedadesRiemannianas.tex}
 \input{Contenido/03-GeometriaRiemanniana/02-Conexiones.tex}
 \input{Contenido/03-GeometriaRiemanniana/03-CurvasYCampos.tex}
 \input{Contenido/03-GeometriaRiemanniana/04-ConexionDeLevi-Civita.tex}
-%
-% % ====================================
-% % Geodésicas
-% % ====================================
+
+% ====================================
+% Geodésicas
+% ====================================
 
 \input{Contenido/04-Geodesicas/01-Geodesicas.tex}
-% \input{Contenido/04-Geodesicas/02-GeodesicasEnRn.tex}
-% \input{Contenido/04-Geodesicas/03-GeodesicasEnLaEsfera.tex}
-% \input{Contenido/04-Geodesicas/04-GeodesicasEnElSemiplano.tex}
-% \input{Contenido/04-Geodesicas/05-GeodesicasEnElDisco.tex}
-%
-% % ====================================
-% % Conclusiones
-% % ====================================
-%
+\input{Contenido/04-Geodesicas/02-GeodesicasEnRn.tex}
+\input{Contenido/04-Geodesicas/03-GeodesicasEnLaEsfera.tex}
+\input{Contenido/04-Geodesicas/04-GeodesicasEnElSemiplano.tex}
+
+% ====================================
+% Conclusiones
+% ====================================
+
 % \input{Contenido/04-Geodesicas/Conclusiones.tex}
-%
-% % ====================================
-% % Anexos
-% % ====================================
-%
-% \input{Contenido/A-Anexos/11-ToplogiaDeVariedades.tex}
-% \input{Contenido/A-Anexos/21-AlgebrasMultilineales.tex}
-% \input{Contenido/A-Anexos/22-ProductosTensoriales.tex}
-% \input{Contenido/A-Anexos/23-ClasificacionDeTensores.tex}
-% \input{Contenido/A-Anexos/24-CamposTensoriales.tex}
-% \input{Contenido/A-Anexos/31-CorchetesDeLie.tex}
-%
-% % ====================================
-% % Bibliografía
-% % ====================================
-%
+
+% ====================================
+% Anexos
+% ====================================
+
+\input{Contenido/A-Anexos/11-ToplogiaDeVariedades.tex}
+\input{Contenido/A-Anexos/21-AlgebrasMultilineales.tex}
+\input{Contenido/A-Anexos/22-ProductosTensoriales.tex}
+\input{Contenido/A-Anexos/23-ClasificacionDeTensores.tex}
+\input{Contenido/A-Anexos/24-CamposTensoriales.tex}
+\input{Contenido/A-Anexos/31-CorchetesDeLie.tex}
+
+% ====================================
+% Bibliografía
+% ====================================
+
 \input{Contenido/B-Bibliografia/Bibliografia.tex}
 \printbibliography
 \cleardoublepage
-%
-% % ====================================
-% % Contraportada
-% % ====================================
-%
-% \pagestyle{empty}
-% \input{Contenido/00-Cubierta/02-Contraportada.tex}
-% \cleardoublepage
+
+% ====================================
+% Contraportada
+% ====================================
+
+\pagestyle{empty}
+\input{Contenido/00-Cubierta/02-Contraportada.tex}
+\cleardoublepage
 \end{document}

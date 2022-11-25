@@ -71,10 +71,9 @@
   - [x] Teoremas básicos.
 
 #### Cálculo de Geodésicas
-  - [ ] Geodésicas y Distancia
-  - [ ] Geodésicas en la Esfera
-  - [ ] Geodésicas del Semiplano de Poincaré.
-  - [ ] Geodésicas en el Disco de Poincaré
+  - [x] Geodésicas y Distancia
+  - [x] Geodésicas en la Esfera
+  - [x] Geodésicas del Semiplano de Poincaré.
 
 ---
 
@@ -86,7 +85,7 @@
   - [x] Anexo B.2: Productos Tensoriales.
   - [x] Anexo B.3: Clasificación de Tensores.
   - [x] Anexo B.4: Campos Tensoriales
-- [ ] Anexo C: Corchete de Lie.
+- [x] Anexo C: Corchete de Lie.
 
 ---
 

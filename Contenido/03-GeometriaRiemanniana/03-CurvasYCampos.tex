@@ -45,7 +45,7 @@ Si $V$ es un campo vectorial a lo largo de una curva $\gamma: I \to M$, entonces
 		 & = \sum_{j=1}^{n} \frac{dV_{j}(t_{0})}{dt} \partial_{j}(t_{0})
 		+ \sum_{j=1}^{n} V_{i}(t_{0}) \left. \frac{D\partial_{j}}{dt} \right|_{t_{0}}
 	\end{align*}
-	Gracias al lema \ref{Lema: Conexión Afín en Coordenadas} sabemos que el valor de la conexión afín $(\nabla_{X}Y)(p)$ depende únicamente de los valores del vector tangente $X(p)$ y el campo $Y$ a lo largo de una curva $\alpha: I \to M$ que satisfaga que $\alpha(0) = t$ y $\alpha'(0) = X(p)$, por lo cual podemos interpretar la tercera propiedad del lema como:
+	Gracias al lema \ref{Lema - Conexión Afín en Coordenadas} sabemos que el valor de la conexión afín $(\nabla_{X}Y)(p)$ depende únicamente de los valores del vector tangente $ X(p) $ y el campo $ Y $ a lo largo de una curva $\alpha: I \to M$ que satisfaga que $\alpha(0) = t$ y $\alpha'(0) = X(p)$, por lo cual podemos interpretar la tercera propiedad del lema como:
 	\[
 		\nabla_{\gamma'(t_{0})}\partial_{j} = \nabla_{X}Y (\gamma(t_{0})),
 	\]
@@ -76,27 +76,27 @@ Si $V$ es un campo vectorial a lo largo de una curva $\gamma: I \to M$, entonces
 \end{proof}
 
 \begin{definition}[Campo Vectorial Paralelo]
-  Sea $M$ una variedad suave equipado con una conexión afín $\nabla$. Diremos que un campo vectorial a lo largo de una curva $\gamma: I \to M$ es un \textit{campo paralelo} si:
-  \[
-    \frac{DV}{dt} \equiv 0
-  \]
+	Sea $M$ una variedad suave equipado con una conexión afín $\nabla$. Diremos que un campo vectorial a lo largo de una curva $\gamma: I \to M$ es un \textit{campo paralelo} si:
+	\[
+		\frac{DV}{dt} \equiv 0
+	\]
 \end{definition}
 
 \begin{theorem}\label{Teorema: Existencia y Unicidad de Campos Paralelos}
-  Sea $M$ una variedad suave equipado con una conexión afín $\nabla$. Sea $\gamma: I \to M$ una curva suave y sea $V_{t_{0}}$ un vector tangente a $M$ en $\gamma(t_{0})$, con $t_{0} \in I$. Entonces, existe un único campo vectorial paralelo $V$ a lo largo de $\gamma$, para el cual $V_{t_{0}} = V(t_{0})$.
+	Sea $M$ una variedad suave equipado con una conexión afín $\nabla$. Sea $\gamma: I \to M$ una curva suave y sea $V_{t_{0}}$ un vector tangente a $M$ en $\gamma(t_{0})$, con $t_{0} \in I$. Entonces, existe un único campo vectorial paralelo $V$ a lo largo de $\gamma$, para el cual $V_{t_{0}} = V(t_{0})$.
 \end{theorem}
 
 \begin{proof}
-  Comencemos suponiendo que la imagen de $\gamma$, $\gamma(I)$, está contenido en alguna carta coordenada. Si este fuera el caso, como se mostró en el lema anterior, podemos representar al campo $\frac{DV}{dt}$ en las coordenadas locales de la carta como:
+	Comencemos suponiendo que la imagen de $\gamma$, $\gamma(I)$, está contenido en alguna carta coordenada. Si este fuera el caso, como se mostró en el lema anterior, podemos representar al campo $\frac{DV}{dt}$ en las coordenadas locales de la carta como:
 	\[
 		\frac{DV}{dt} = \sum_{k=1}^{n} \left(\frac{dV_{k}}{dt}
 		+ \sum_{i=1}^{n}\sum_{j=1}^{n} \frac{d\gamma_{i}}{dt} \Gamma_{ij}^{k} V_{j}\right) \partial_{k},
 	\]
-  por lo cual, la igualdad $\frac{dV}{dt} = 0$ se obtendrá si y solo si:
-  \[
-    \frac{d V_{k}}{dt} + \sum_{i=1}^{n}\sum_{j=1}^{n} \frac{d\gamma_{i}}{dt} \Gamma_{ij}^{k} V_{j} = 0
-  \]
-  para cada $1 \leq k \leq n$, con condiciones iniciales $V_{1}(t_{0}) = V^{1}_{t_{0}}, \ldots, V_{n}(t_{0}) = V^{n}_{t_0}$. 
+	por lo cual, la igualdad $\frac{dV}{dt} = 0$ se obtendrá si y solo si:
+	\[
+		\frac{d V_{k}}{dt} + \sum_{i=1}^{n}\sum_{j=1}^{n} \frac{d\gamma_{i}}{dt} \Gamma_{ij}^{k} V_{j} = 0
+	\]
+	para cada $1 \leq k \leq n$, con condiciones iniciales $V_{1}(t_{0}) = V^{1}_{t_{0}}, \ldots, V_{n}(t_{0}) = V^{n}_{t_0}$.
 
-  El teorema de Picard-Lindelöf nos permite garantizar que este sistema de ecuaciones diferenciales tiene solución y que dicha solución es única. Si, ocurre que $\gamma(I)$ no está contenido en una carta coordenada entonces debe ocurrir que $\gamma(I)$ sea un conjunto compacto, por lo cual podrá ser cubierto por una cantidad de cartas coordenadas, en cada una de las cuales podemos aplicar el argumento anterior para garantizar la existencia y unicidad de las soluciones para los sistemas de ecuaciones.
+	El teorema de Picard-Lindelöf nos permite garantizar que este sistema de ecuaciones diferenciales tiene solución y que dicha solución es única. Si, ocurre que $\gamma(I)$ no está contenido en una carta coordenada entonces debe ocurrir que $\gamma(I)$ sea un conjunto compacto, por lo cual podrá ser cubierto por una cantidad de cartas coordenadas, en cada una de las cuales podemos aplicar el argumento anterior para garantizar la existencia y unicidad de las soluciones para los sistemas de ecuaciones.
 \end{proof}

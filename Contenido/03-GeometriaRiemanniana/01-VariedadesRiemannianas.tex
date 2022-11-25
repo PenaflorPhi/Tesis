@@ -116,7 +116,7 @@ Es posible expresar a la métrica sin utilizar el producto tensorial, aprovechan
 \begin{example}[La métrica euclidiana]
 	Dado que la métrica de Riemann define un producto interno en cada espacio tangente y que $\mathbb{R}^{n}$ es isomorfo al espacio tangente $T_{p}\mathbb{R}^{n}$ para cada punto $p \in \mathbb{R}^{n}$, nos gustaría ser capaces de dar una métrica Riemanniana que coincida con el producto punto usual.
 
-  En $\mathbb{R}^{n}$, con las coordenadas estándar definiremos una métrica, a la cual llamaremos la \textit{métrica euclidiana}, como:
+	En $\mathbb{R}^{n}$, con las coordenadas estándar definiremos una métrica, a la cual llamaremos la \textit{métrica euclidiana}, como:
 	\begin{align*}
 		g & = \sum_{i=1}^{n} \sum_{j=1}^{n} \delta_{ij}dx_{i}dx_{j}     \\
 		  & = \sum_{i=1}^{n} dx_{i}dx_{i} = \sum_{i=1}^{n} (dx_{i})^{2}
@@ -254,10 +254,8 @@ A continuación, daremos algunos ejemplos donde dotaremos a distintas variedades
 		\left. \frac{\partial \phi}{\partial x_{i}}\right|_{p}
 		\left. \frac{\partial \phi}{\partial x_{j}}\right|_{p}
 	\end{align*}
-	esta última igualdad se puede seguir a partir del ejemplo \label{Ejemplo: Métrica - Producto de Variedades}.
+	esta última igualdad se puede seguir a partir del ejemplo \ref{Ejemplo: Métrica - Producto de Variedades}.
 \end{example}
-
-
 
 \begin{example}[Superficies de Revolución]\label{Ejemplo: Métrica - Superficies de Revolución}
 	Sen $I \subseteq \mathbb{R}$ un intervalo y $\gamma: I \to \mathbb{R}^{2}$ una curva suave tal y como se definió en \ref{Definición: Curva en Variedades}. Podemos suponer que la curva está parametrizada como:
@@ -334,7 +332,7 @@ A continuación, daremos algunos ejemplos donde dotaremos a distintas variedades
 
 Los dos ejemplos nos servirán para ilustrar un hecho importante, podemos definir distintas métricas en una misma variedad, las cuales dependen de las cartas con las que decidamos cubrir a la variedad.
 
-\begin{example}[Esfera]
+\begin{example}[$2-$Esfera]\label{Ejemplo: Métrica en la Esfera}
 	Podemos describir a la esfera unitaria como el conjunto:
 	\[
 		\mathbb{S}^{2} = \{(x,y,z) \in \mathbb{R}^{3}: x^{2} + y^{2} + z^{2} = 1\},
@@ -390,6 +388,6 @@ Los dos ejemplos nos servirán para ilustrar un hecho importante, podemos defini
 	\begin{align*}
 		g_{1,1}(t,\theta) & = (-\sin(t))^{2} + (\cos(t))^{2} = 1 \\
 		g_{1,2}(t,\theta) & = 0 = g_{2,1}                        \\
-    g_{2,2}(t,\theta) & = \sin^{2}(t)
+		g_{2,2}(t,\theta) & = \sin^{2}(t)
 	\end{align*}
 \end{example}

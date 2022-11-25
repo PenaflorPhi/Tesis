@@ -1,17 +1,17 @@
 \section{Geodésicas}\label{Sección: Geodésicas}
-En este punto tenemos las herramientas para poder hablar de propiedades geométricas en las variedades, en particular discutiremos a las curvas geodésicas. Si bien las geodésicas pueden ser definidas sobre variedades suaves en general, ya que dependen únicamente de la conexión afín con la cual dotemos a la variedad, nosotros consideraremos variedades Riemannianas, y por lo tanto, consideraremos su conexión canónica, la conexión de Levi-Civita.
+En este punto tenemos las herramientas para poder hablar de propiedades geométricas en las variedades, en particular discutiremos a las curvas geodésicas. Si bien las geodésicas pueden ser definidas sobre variedades suaves en general, ya que dependen únicamente de la conexión afín con la cual dotemos a la variedad, nosotros consideraremos variedades Riemannianas, y, por lo tanto, consideraremos su conexión canónica, la conexión de Levi-Civita.
 
-Entender lo que son y como calcular las curvas geodésicas es de gran útilidad en muchos problemas tanto de las matemáticas como la física y la ingeniería, ya que, su característica más importante es que, al menos de manera local, estas curvas minimizan distancias; en este sentido es que las geodésicas generalizan el concepto de línea recta a las variedades suaves.
+Entender lo que son y como calcular las curvas geodésicas es de gran utilidad en muchos problemas tanto de las matemáticas como la física y la ingeniería, ya que, su característica más importante es que, al menos de manera local, estas curvas minimizan distancias; en este sentido es que las geodésicas generalizan el concepto de línea recta a las variedades suaves.
 
-Es evidente que si queremos ser capaces de hablar un curva que minimice distancias, primero debemos definir como es que mediremos distancias. Para hacer esto aprovecharemos el hecho de que la métrica define un producto interno en el espacio tangente a cada punto de una variedad, esto nos permite dotar a cada espacio tangente con una norma.
+Es evidente que, si queremos ser capaces de hablar una curva que minimice distancias, primero debemos definir como es que mediremos distancias. Para hacer esto aprovecharemos el hecho de que la métrica define un producto interno en el espacio tangente a cada punto de una variedad, esto nos permite dotar a cada espacio tangente con una norma.
 
 \begin{definition}[Longitud de un vector tangente]
-	Sean $(M,g)$ una variedad Riemannian y $p \in M$ un punto arbitrario. Sea $v \in T_{p}M$, definiremos la \textit{longitud de v} como:
-	\[
-		\|v\| = \sqrt{g_{p}(v,v)}
-	\]
+Sean $(M,g)$ una variedad Riemanniana y $p \in M$ un punto arbitrario. Sea $v \in T_{p}M$, definiremos la \textit{longitud de v} como:
+\[
+	\|v\| = \sqrt{g_{p}(v,v)}
+\]
 \end{definition}
-Inmediatamente podemos notar que la longitud de los vectores tangentes esta bien definida dado que la métrica es definida positiva; además, cuando consideramos la métrica euclidiana, está definición usual de longitud de un vector. De modo similar, tomando inspiración de como medimos la longitud de una curva en $\mathbb{R}^{n}$ podemos definir la longitud de una curva suave en una variedad Riemanniana.
+Inmediatamente podemos notar que la longitud de los vectores tangentes está bien definida dado que la métrica es definida positiva; además, cuando consideramos la métrica euclidiana, está definición usual de longitud de un vector. De modo similar, tomando inspiración de como medimos la longitud de una curva en $\mathbb{R}^{n}$ podemos definir la longitud de una curva suave en una variedad Riemanniana.
 \begin{definition}[Longitud de una curva]
 	Sea $\gamma: I \to M$ una curva suave en una variedad Riemanniana. Definimos la \textit{longitud de $\gamma$} en un subintervalo $[a,b] \subset I$ como:
 	\[
@@ -85,7 +85,7 @@ Inmediatamente podemos notar que la longitud de los vectores tangentes esta bien
 	\[
 		s(t) = \int_{a}^{t} \|\gamma'(u) \| du.
 	\]
-	Del teorema fundamental del cálculo se puede deducir que $s'(t) = \| \gamma'(t) \|$. Como se vio en la subsección \ref{Subsección: Curvas En Variedades}, podemos interpreta a $\gamma'(t)$ como la velocidad de la curva en cada punto, siguiendo con esta idea podemos llamarle al escalar dado por $\|\gamma'(t)\|$ la \textit{rapidez} de $\gamma$ en $t$.
+	Del teorema fundamental del cálculo se puede deducir que $s'(t) = \| \gamma'(t) \|$. Como se vio en la subsección \ref{Subsección: Curvas En Variedades}, podemos interpretar a $\gamma'(t)$ como la velocidad de la curva en cada punto, siguiendo con esta idea podemos llamarle al escalar dado por $\|\gamma'(t)\|$ la \textit{rapidez} de $\gamma$ en $t$.
 
 	Diremos que la curva $\gamma$ tiene \textit{rapidez unitaria} si $\|\gamma'(t)\| = 1$ para cada $t \in I$. Es evidente que si la curva tiene rapidez unitaria la función de longitud de arco quedaría como:
 	\[
@@ -114,7 +114,7 @@ Inmediatamente podemos notar que la longitud de los vectores tangentes esta bien
 \end{proof}
 
 \begin{lemma}
-	Sea $(M,g)$ una variedad Riemannian. Cada curva admisible en $M$ tiene una única reparametrización por longitud de arco con rapidez unitaria.
+	Sea $(M,g)$ una variedad Riemanniana. Cada curva admisible en $M$ tiene una única reparametrización por longitud de arco con rapidez unitaria.
 \end{lemma}
 
 \begin{proof}
@@ -129,7 +129,7 @@ Inmediatamente podemos notar que la longitud de los vectores tangentes esta bien
 			\gamma \circ \psi (s-c), & s \in [c, c + d] \\
 		\end{cases}
 	\]
-	es evidente por como se ha definido la función $\overline{\gamma}$ que esta es una reparametrización por longitud de arco de $\gamma$ la cual tiene velocidad unitaria.
+	es evidente, por cómo se ha definido la función $\overline{\gamma}$ que esta es una reparametrización por longitud de arco de $\gamma$ la cual tiene velocidad unitaria.
 
 	Para probar la unicidad supongamos que $\overline{\gamma} = \gamma \circ \phi$ y $\hat{\gamma} = \gamma \circ \psi$ son reparametrizaciones por longitud de arco para la curva $\gamma$ y que ambas tienen velocidad unitaria. Dado que tanto $\overline{\gamma}$ como $\hat{\gamma}$ tiene la misma longitud, $\phi$ y $\psi$ deberán estar definidas en el mismo dominio $[0,c]$, por lo cual ambas funciones serán homeomorfismos por partes de $[0,c]$ a $[a,b]$. Definamos la función $\lambda = \phi^{-1} \circ \psi : [0,c] \to [0,c]$, $\lambda$ es un homeomorfismo que satisface $\hat{\gamma} = \gamma \circ \phi \circ \lambda = \overline{\gamma} \circ \lambda$. Por hipótesis $\overline{\gamma}$ y $\hat{\gamma}$ son curvas admisibles, por lo cual serán regulares excepto quizá en un conjunto de medida cero, por lo cual, utilizando la regla de la cadena se sigue que para cada $s \in [0,c]$:
 	\[
@@ -139,77 +139,77 @@ Inmediatamente podemos notar que la longitud de los vectores tangentes esta bien
 \end{proof}
 
 \begin{lemma}
-  Cualesquiera dos puntos en una variedad suave pueden ser conectados por una curva admisible.
+	Cualesquiera dos puntos en una variedad suave pueden ser conectados por una curva admisible.
 \end{lemma}
 
 \begin{proof}
-  Es evidente que las variedades (topológicas) son tanto conexas como conexas por caminos, esto dado que ambas propiedades se preservan bajo homeomorfismos y, como se muestra en el anexo \ref{Anexo: Topologia De Variedades} las bolas coordenadas forman una base para la topología de la variedad.
+	Es evidente que las variedades (topológicas) son tanto conexas como conexas por caminos, esto dado que ambas propiedades se preservan bajo homeomorfismos y, como se muestra en el anexo \ref{Anexo: Topologia De Variedades} las bolas coordenadas forman una base para la topología de la variedad.
 
-  Sean $p, q \in M$ y sea $\gamma: [a,b] \to M$ una curva que conecte a $p$ y $q$. Por la compacidad de $M$ se tendrá que existe una partición de $[a,b]$ para la cual la imagen de $\gamma([a_{i-1}, a_i])$ esté contenida en una única bola coordenada para cada $i$.
+	Sean $p, q \in M$ y sea $\gamma: [a,b] \to M$ una curva que conecte a $p$ y $q$. Por la compacidad de $M$ se tendrá que existe una partición de $[a,b]$ para la cual la imagen de $\gamma([a_{i-1}, a_i])$ esté contenida en una única bola coordenada para cada $i$.
 
-  Podemos remplazar la curva $\gamma$ por la preimagen de una recta en $\mathbb{R}^{n}$ que coincida con la curva en la frontera de la bola coordenada, considerado la unión de todas estas rectas obtendremos una curva admisible que conectará a los puntos $p$ y $q$.
+	Podemos remplazar la curva $\gamma$ por la preimagen de una recta en $\mathbb{R}^{n}$ que coincida con la curva en la frontera de la bola coordenada, considerado la unión de todas estas rectas obtendremos una curva admisible que conectará a los puntos $p$ y $q$.
 \end{proof}
 
 \begin{definition}[Distancia Riemanniana]
-  Sea $(M,g)$ una variedad Riemanniana. Dados dos puntos $p,q \in M$ la \textit{distancia Riemanniana} se define como el escalar:
-  \[
-    d(p,q) = \inf_{\gamma} \{\ell(\gamma): \gamma: [a,b] \to M, \gamma(a) = p, \gamma(b) = q\},
-  \]
-  donde $\gamma$ es una curva admisible en $M$. A esta curva se le conoce como una \textit{curva minimizante}.
+	Sea $(M,g)$ una variedad Riemanniana. Dados dos puntos $p,q \in M$ la \textit{distancia Riemanniana} se define como el escalar:
+	\[
+		d(p,q) = \inf_{\gamma} \{\ell(\gamma): \gamma: [a,b] \to M, \gamma(a) = p, \gamma(b) = q\},
+	\]
+	donde $\gamma$ es una curva admisible en $M$. A esta curva se le conoce como una \textit{curva minimizante}.
 \end{definition}
 
 \begin{definition}[Geodésica]
-  Sea $M$ una variedad Riemanniana. Decimos que una curva $\gamma: I \to M$ es una \textit{geodésica} si, para cada $t \in I$ se tiene que:
-  \[
-    \frac{D\gamma'(t)}{dt} = 0
-  \]
+	Sea $M$ una variedad Riemanniana. Decimos que una curva $\gamma: I \to M$ es una \textit{geodésica} si, para cada $t \in I$ se tiene que:
+	\[
+		\frac{D\gamma'(t)}{dt} = 0
+	\]
 \end{definition}
-Las geodésicas como mencionábamos son curvas que, al menos de manera local, minimizan distancias. Enunciaremos dos teoremas que caracterizan esta propiedad, sin embargo, no las demostraremos. (El margen de está tesis es demasiado pequeño para contener la demostración).
+Las geodésicas como mencionábamos son curvas que, al menos de manera local, minimizan distancias. Enunciaremos dos teoremas que caracterizan esta propiedad, sin embargo, no las demostraremos. (El margen de esta tesis es demasiado pequeño para contener la demostración).
 
 \begin{theorem}
-  Sea $(M,g)$ una variedad Riemanniana. Toda curva minimizante en $M$ es una geodésica cuando se le da una parametrización con rapidez unitaria.
+	Sea $(M,g)$ una variedad Riemanniana. Toda curva minimizante en $M$ es una geodésica cuando se le da una parametrización con rapidez unitaria.
 \end{theorem}
 
 \begin{theorem}
-  Sea $M$ una variedad Riemannian, $p \in M$ algún punto arbitrario y $B_{p}$ una bola centrada en $p$. Sea $\gamma: [a,b] \to B_{p}$ una geodésica (o la restricción de una geodésica), con $\gamma(a) = p$, además denotaremos a $\gamma(b)$ por $q$. 
+	Sea $M$ una variedad Riemannian, $p \in M$ algún punto arbitrario y $B_{p}$ una bola centrada en $p$. Sea $\gamma: [a,b] \to B_{p}$ una geodésica (o la restricción de una geodésica), con $\gamma(a) = p$, además denotaremos a $\gamma(b)$ por $q$.
 
-  Si $\alpha: [a,b] \to M$ es cualquier curva admisible que una a los puntos $p$ y $q$, entonces:
-  \[
-    \ell(\gamma) \leq \ell(\alpha),
-  \]
-  y, si se da el caso que $\ell(\gamma) = \ell(\alpha)$, entonces se tendrá que $\gamma([a,b]) = \alpha([a,b])$.
+	Si $\alpha: [a,b] \to M$ es cualquier curva admisible que una a los puntos $p$ y $q$, entonces:
+	\[
+		\ell(\gamma) \leq \ell(\alpha),
+	\]
+	y, si se da el caso que $\ell(\gamma) = \ell(\alpha)$, entonces se tendrá que $\gamma([a,b]) = \alpha([a,b])$.
 \end{theorem}
 
 Estos dos resultados nos están diciendo que la distancia más corta entre dos puntos es una geodésica, sin embargo, el segundo teorema también nos está diciendo que esta es una propiedad local. Do \textcite{do1992riemannian} da un ejemplo de que esta propiedad es local en la esfera, dado un punto $p$ en la esfera, las geodésicas dejan de ser minimizantes después de la antípoda de $p$.
 
-Un resultado si mostraremos sobre las geodésicas es su existencia y unicidad, ya que, como veremos, este resultados nos dará una manera explicita para calcular a las geodésicas.
+Un resultado si mostraremos sobre las geodésicas es su existencia y unicidad, ya que, este resultado nos dará una manera explícita para calcular a las geodésicas.
 
-\begin{theorem}[Existencia y unicidad de geodésicas] 
-  Sea $M$ una variedad suave equipada con una conexión afín $\nabla$. Para cada punto $p \in M$, cada vector tangente $v \in T_{p}M$ y cada real $t_0 \in \mathbb{R}$ existe un intervalo abierto $I \subset \mathbb{R}$ que contiene a $t_0$ y una geodésica $\gamma: I \to M$ que satisface $\gamma(t_0) = p$ y $\gamma'(t_0) = v$. Cualesquiera geodésicas que satisfagan las misma condiciones coincidirán en la intersección de sus dominios.
+\begin{theorem}[Existencia y unicidad de geodésicas]
+	Sea $M$ una variedad suave equipada con una conexión afín $\nabla$. Para cada punto $p \in M$, cada vector tangente $v \in T_{p}M$ y cada real $t_0 \in \mathbb{R}$ existe un intervalo abierto $I \subset \mathbb{R}$ que contiene a $t_0$ y una geodésica $\gamma: I \to M$ que satisface $\gamma(t_0) = p$ y $\gamma'(t_0) = v$. Cualesquiera geodésicas que satisfagan las misma condiciones coincidirán en la intersección de sus dominios.
 \end{theorem}
 
 \begin{proof}
-  Sea $(U,\phi)$ una carta suave en $M$ que contenga a $p$. Expresaremos a la geodésica $\gamma$ en la coordenadas locales de la carta como $\gamma(t) = (\gamma_{1}(t), \ldots, \gamma_{n}(t))$. Por definición de geodésica sabemos que para cada $t \in I$ se tiene:
-  \[
-    \frac{D \gamma'(t)}{dt} = 0,
-  \]
-  en los términos estudiados en la sección anterior, esto quiere decir que una geodésica es una curva cuyo campo de velocidades es siempre paralelo. Utilizando la expresión encontrada en el teorema \ref{Teorema: Existencia y Unicidad de Campos Paralelos} podemos representar, en términos de las coordenadas locales de $U$, al campo de velocidades, obteniendo la expresión:
-  \begin{align*}
-    \frac{D\gamma(t)}{dt} &= \sum_{k=1}^{n} \left( 
-    \frac{d\gamma'_k(t)}{dt} + \sum_{i=1}^{n}\sum_{j=1}^{n} \frac{d\gamma_{i}(t)}{dt} \Gamma_{ij}^{k}\gamma_{j}'(t)
-    \right) \partial_{k} \\
-    &= \sum_{k=1}^{n} \left( \gamma''(t) + \sum_{i=1}^{n}\sum_{j=1}^{n} \Gamma_{ij}^{k} \gamma_{i}'(t)\gamma_{j}'(t) 
-    \right)\partial_{k}
-  \end{align*}
-  Luego, este campo será nulo para cada $t \in I$ si y solo si:
-  \[
-    \gamma''(t) + \sum_{i=1}^{n}\sum_{j=1}^{n} \Gamma_{ij}^{k}\gamma_{i}'(t) \gamma_{j}'(t) = 0
-  \]
-  para cada $1 \leq k \leq n$. De este modo tendremos un sistema de ecuaciones diferenciales cuasilineales de segundo orden. Podemos reducir este sistema realizando la sustitución por la variable auxiliar $\gamma_{i}'(t) = x_{i}'(t)$, obteniendo el sistema de ecuaciones diferenciales ordinarias de primer orden:
-  \[
-    x_{k}'(t) + \sum_{i=1}^{n} \sum_{j=1}^{n} \Gamma_{ij}^{k} x_{i}(t) x_{j}(t) = 0.
-  \]
-  Este sistema de ecuaciones tiene solución y dicha solución es única, esto está garantizado por el Teorema de Picard-Lindelöf.
+	Sea $(U,\phi)$ una carta suave en $M$ que contenga a $p$. Expresaremos a la geodésica $\gamma$ en las coordenadas locales de la carta como $\gamma(t) = (\gamma_{1}(t), \ldots, \gamma_{n}(t))$. Por definición de geodésica sabemos que para cada $t \in I$ se tiene:
+	\[
+		\frac{D \gamma'(t)}{dt} = 0,
+	\]
+	en los términos estudiados en la sección anterior, esto quiere decir que una geodésica es una curva cuyo campo de velocidades es siempre paralelo. Utilizando la expresión encontrada en el teorema \ref{Teorema: Existencia y Unicidad de Campos Paralelos} podemos representar, en términos de las coordenadas locales de $U$, al campo de velocidades, obteniendo la expresión:
+	\begin{align*}
+		\frac{D\gamma(t)}{dt} & = \sum_{k=1}^{n} \left(
+		\frac{d\gamma'_k(t)}{dt} + \sum_{i=1}^{n}\sum_{j=1}^{n} \frac{d\gamma_{i}(t)}{dt} \Gamma_{ij}^{k}\gamma_{j}'(t)
+		\right) \partial_{k}                                                                                                                    \\
+		                      & = \sum_{k=1}^{n} \left( \gamma''(t) + \sum_{i=1}^{n}\sum_{j=1}^{n} \Gamma_{ij}^{k} \gamma_{i}'(t)\gamma_{j}'(t)
+		\right)\partial_{k}
+	\end{align*}
+	Luego, este campo será nulo para cada $t \in I$ si y solo si:
+	\[
+		\gamma''(t) + \sum_{i=1}^{n}\sum_{j=1}^{n} \Gamma_{ij}^{k}\gamma_{i}'(t) \gamma_{j}'(t) = 0
+	\]
+	para cada $1 \leq k \leq n$. De este modo tendremos un sistema de ecuaciones diferenciales cuasilineales de segundo orden. Podemos reducir este sistema realizando la sustitución por la variable auxiliar $\gamma_{i}'(t) = x_{i}'(t)$, obteniendo el sistema de ecuaciones diferenciales ordinarias de primer orden:
+	\[
+		x_{k}'(t) + \sum_{i=1}^{n} \sum_{j=1}^{n} \Gamma_{ij}^{k} x_{i}(t) x_{j}(t) = 0.
+	\]
+	Este sistema de ecuaciones tiene solución y dicha solución es única, esto está garantizado por el Teorema de Picard-Lindelöf.
 \end{proof}
 
-A la ecuación sin reducir usualmente se le conoce como la \textit{ecuación geodésica}. A continuación resolveremos la ecuación para ver como podemos encontrar las geodésicas de diferentes variedades.
+A la ecuación sin reducir usualmente se le conoce como la \textit{ecuación geodésica}. A continuación, resolveremos la ecuación para ver cómo podemos encontrar las geodésicas de diferentes variedades.
