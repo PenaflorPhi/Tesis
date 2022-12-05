@@ -1,0 +1,120 @@
+\begin{frame}
+\frametitle{Variedades Topológicas}
+\begin{definition}[Variedad Topológica]
+  Sea $M$ un espacio topológico, diremos que $M$ es una \textbf{variedad topológica de dimensión $n$} si:
+  \begin{itemize}
+    \item $M$ es un \textit{espacio de Hausdorff}.
+    \item $M$ es \textit{segundo numerable}.
+    \item $M$ es \textit{localmente euclidiano de dimensión $n$}, esto quiere decir que, para cada punto $x \in M$ existe una vecindad abierta $U$ que contiene a $x$ y un homeomorfismo $\phi: U \to \phi(U)\subseteq \R^n$.
+  \end{itemize}
+\end{definition}
+\end{frame}
+
+\begin{frame}
+\centering
+\begin{figure}
+  \input{./Figuras/LocalmenteEuclidianoN.tex}
+  \caption{Ejemplo de un homeomorfismo de una variedad a $\R^{2}$.}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejemplo de Variedades Topológicas}
+\begin{columns}[t]
+\column{.5\textwidth}
+\centering
+  \begin{figure}
+    \scalebox{.5}{\input{./Figuras/3D-Plot.tex}}\\
+    \caption{Los Espacios Euclidianos, $\R^n$.}
+  \end{figure}
+  \begin{figure}
+    \scalebox{.5}{\input{./Figuras/Esfera.tex}}\\
+  \caption{La $n-$esferas, $\S^n$.}
+  \end{figure}
+\column{.5\textwidth}
+\centering
+  \begin{figure}
+    \scalebox{.5}{\input{./Figuras/Toro.tex}}\\
+    \caption{El $n-$Toro, $\mathbb{T}^n$.}
+  \end{figure}
+  \begin{figure}
+    \centering
+    \scalebox{.5}{\input{./Figuras/BolaAbierta.tex}}\\
+    \caption{Los subconjuntos abiertos\\ de las variedades.}
+  \end{figure}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejemplo: El Espacio Proyectivo}
+\centering
+\begin{figure}
+  \scalebox{0.75}{\input{./Figuras/EspacioProyectivo.tex}}
+  \caption{Representación del Espacio Proyectivo $\mathbb{RP}^{2}$.}
+.\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Cartas}
+\begin{definition}[Carta]
+  Una \textbf{carta} en $M$ es un par ordenado $(U,\phi)$ donde $U$ es un subconjunto abierto de $M$ y $\phi$ es un homeomorfismo de $U$ a $\R^n$.
+\end{definition}\pause
+
+\begin{definition}[Cartas Suavemente Compatibles]
+  Si $(U,\phi)$ y $(V,\psi)$ son dos cartas en $M$ tales que $U \cap V \neq \varnothing$, llamaremos \textbf{mapa de transición} a la composición de funciones:
+  \[ \psi \circ \phi^{-1}: \phi(U \cap V) \to \psi(U \cap V) \]
+  
+  Y además diremos que las cartas $(U,\phi)$ y $(V,\psi)$ son \textbf{suavemente compatibles} si $U \cap V = \varnothing$ o si el mapa de transición $\psi \circ \phi^{-1}$ es un difeomorfismo.
+\end{definition}
+\end{frame}
+
+\begin{frame}
+  \centering
+  \begin{figure}
+    \input{./Figuras/MapaDeTransicion.tex}  
+    \caption{Mapa de Transición}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Atlas y la Estructura Suave}
+  \begin{definition}[Atlas, Atlas Suave y Atlas Maximal]
+    \begin{itemize}
+      \item Una colección de cartas $(U,\phi)_{\alpha}$ es un \textbf{atlas} $\mathcal{A}$, en $M$ si dichas cartas forman una cubierta para $M$.
+      \item Diremos que el atlas $\mathcal{A}$ es \textbf{suave} si cualesquiera dos cartas son suavemente compatibles, a las cartas de un atlas suaves les llamaremos \textit{cartas suaves}.
+      \item Un atlas suave es llamado \textbf{maximal} si no está propiamente contenido en ningún atlas más grande.
+    \end{itemize}
+  \end{definition}\pause
+
+  \begin{definition}[Variedad Suave]
+    Si $M$ es una variedad topológica y $\mathcal{A}$ es un atlas maximal en $M$, diremos que el par $(M,\mathcal{A})$ es una \textbf{variedad suave}, a dicho atlas maximal le llamaremos la \textbf{estructura suave} en $M$.
+  \end{definition}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Ejemplo de Variedades Suaves}
+\begin{columns}[t]
+\column{.5\textwidth}
+\centering
+  \begin{figure}
+    \scalebox{.5}{\input{./Figuras/3D-Plot.tex}}\\
+    \caption{Los Espacios Euclidianos, $\R^n$.}
+  \end{figure}
+  \begin{figure}
+    \scalebox{.5}{\input{./Figuras/Esfera.tex}}\\
+  \caption{La $n-$esferas, $\S^n$.}
+  \end{figure}
+\column{.5\textwidth}
+\centering
+  \begin{figure}
+    \scalebox{.5}{\input{./Figuras/Toro.tex}}\\
+    \caption{El $n-$Toro, $\mathbb{T}^n$.}
+  \end{figure}
+  \begin{figure}
+    \centering
+    \scalebox{.5}{\input{./Figuras/BolaAbierta.tex}}\\
+    \caption{Subconjuntos abiertos\\ de variedades suaves.}
+  \end{figure}
+\end{columns}
+\end{frame}

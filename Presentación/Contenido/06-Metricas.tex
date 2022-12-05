@@ -1,0 +1,69 @@
+\begin{frame}
+  Habiendo visto todo esto, ahora podemos hablar de como es que vamos a medir. \pause
+
+  \begin{definition}[Métrica Riemanniana]
+    Sea $M$ una variedad suave. Una \bf{Métrica Riemanniana} en $M$ es un campo suave 2-tensorial covariante simétrico que es definida positiva en cada punto.
+  \end{definition} \pause
+
+  ¿Qué quiere decir esto?
+\end{frame}
+
+\begin{frame}
+  \begin{itemize}
+    \item  Que $M$ sea una variedad suave significa que es un espacio topológico que localmente se ve como $\Bbb{R}^n$ y en el cual podemos darle sentido a las derivadas y definir un espacio tangente. \pause
+    \item Que sea un campo suave nos está diciendo que toma funciones suaves en $M$ y las lleva a funciones suaves también en $M$, de modo que estás sean derivaciones. \pause
+    \item Que sea un tensor de rango 2 covariante y simétrico quiere decir que toma como entradas dos elementos de los espacios tangentes y depende linealmente de cada uno de ellos y permanece invariante al cambiar su orden. \pause
+    \item Por ultimo, que sea positiva definida quiere decir que si la función toma en sus dos argumentos al mismo elemento, entonces el resultado es mayor o igual a cero.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \begin{definition}[Variedad Riemanniana]
+    Una \bf{Variedad Riemanniana} es un par $(M,g)$, donde $M$ es una variedad suave y $g$ es una métrica en $M$.
+  \end{definition}
+
+  Si $g$ es una métrica Riemanniana en $M$, entonces para cada punto $p \in M$, el 2-tensor $g_p$ es un producto interno en $T_p M$, por lo que es usual escribir $\langle v,w \rangle_g$ para denotar al número real $g_p (v,w)$
+\end{frame}
+
+\begin{frame}
+  \begin{example}[Métrica Euclidiana]
+  El ejemplo más simple de una métrica de Riemann es es la \bf{Métrica Euclidiana} $\bar{g}$ en $\Bbb{R}^n$, dada en la coordenadas estándar por
+
+  \[
+    \bar{g} = \delta_{ij}dx^{i}dx^j
+  \]
+
+  donde $\delta_{ij}$ es la delta de Kronecker. Es común abreviar el producto simétrico de un tensor $\alpha$ consigo mismo como $\alpha^2$, por lo que la métrica Euclidiana puede ser escrita como:
+  \[
+    \bar{g} = (dx^1)^2 + \hdots + (dx^n)^2
+  \]
+
+  Aplicado a vectores $v,w \in T_p\Bbb{R}^n$, esto nos da:
+  \[
+    \bar{g}_p (v,w) = \delta_{ij}v^i w^j = \sum_{i=1}^n v^i w^i = v \cdot w
+  \]
+  \end{example}
+\end{frame}
+
+\begin{frame}
+  \begin{theorem}[Existencia de Métricas Riemannianas]    
+    Cada variedad suave admite una métrica Riemanniana.
+  \end{theorem} \pause
+
+  Es importante notar que hay muchas maneras de construir una métrica $g$ para una variedad dada, y que, si tenemos métricas diferentes en la misma variedad, estás pueden tener propiedades geométricas completamente diferentes.
+\end{frame}
+
+\begin{frame}
+  Algunas de las construcciones que podemos definir utilizando en una variedad Riemanniana son las siguientes:\pause
+ \begin{itemize}
+   \item La \bf{Longitud} o \bf{Norma} de un vector tangente $v \in T_p M$ se define como:
+     \[
+       |v|_g = \langle v,v \rangle_g^{\frac{1}{2}} = g_p (v,v)^{\frac{1}{2}}
+     \] \pause
+   \item El \bf{Ángulo} entre dos vectores tangentes no nulos $v,w \in T_p M$ está dado como el $\vartheta \in [0,\pi]$ único que satisface:
+     \[
+       \cos \varphi = \frac{\langle v,w \rangle_g}{|v|_g |w|_g}
+     \] \pause
+    \item Dados dos vectores tangentes $v,w \in T_pM$, decimos que estos son \bf{Ortogonales} si $\langle v,w\rangle_g = 0$.
+ \end{itemize} 
+\end{frame}

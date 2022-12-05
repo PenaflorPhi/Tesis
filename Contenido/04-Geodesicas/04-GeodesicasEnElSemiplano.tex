@@ -7,7 +7,7 @@
 	\[
 		g_{ij} = \frac{R\delta_{ij}}{y^{2}},
 	\]
-	donde $R$ es una constante real positiva. Para calcular las geodésicas comenzaremos encontrando la inversa de la matriz asociada a esta métrica, esto es sencillo dado que tenemos una matriz diagonal de $2 \times 2$,
+  donde $R$ es una constante real positiva; al conjunto $\mathbb{H}^{2}$ con esta métrica se le conoce como el \textit{espacio hiperbólico de dimensión 2} o el \textit{modelo de Poincaré del semiplano superior}. Para calcular las geodésicas comenzaremos encontrando la inversa de la matriz asociada a esta métrica, esto es sencillo dado que tenemos una matriz diagonal de $2 \times 2$,
 	\[
 		G = \begin{bmatrix}
 			\frac{R}{y^2} & 0             \\[12pt]
@@ -75,11 +75,11 @@
 			y'' + \frac{1}{y} (x')^2 - \frac{1}{y}(y')^{2} & = 0
 		\end{cases}
 	\]
-	Resolveremos este sistema de ecuaciones diferenciales por casos. Primero supongamos que $x' \neq 0$, esto implica que $x = x_{0}$, donde $x_0$ es una constante. Esto reducirá el sistema de ecuaciones de tal modo que simplemente se deberá encontrar la solución a la ecuación diferencial no lineal de segundo orden:
+	Resolveremos este sistema de ecuaciones diferenciales por casos. Primero supongamos que $x' = 0$, esto implica que $x = x_{0}$, donde $x_0$ es una constante. Esto reducirá el sistema de ecuaciones de tal modo que simplemente se deberá encontrar la solución a la ecuación diferencial no lineal de segundo orden:
 	\[
 		y'' - \frac{1}{y}(y')^{2} = 0
 	\]
-	esta ecuación diferencial tiene por solución $y = y_0 e^{kt}$, donde $y_0$ y $k$ son constantes. Esto quiere decir que cuando $x = x_0$ sea una constante las geodésicas será una curva de la forma $\gamma(t) = (x_0, y_0 e^{kt})$.
+	esta ecuación diferencial tiene por solución $y = y_0 e^{kt}$, donde $y_0$ y $k$ son constantes. Esto quiere decir que cuando $x = x_0$ sea una constante, las geodésicas serán curvas de la forma $\gamma(t) = (x_0, y_0 e^{kt})$.
 
 	Por otro lado, supongamos que $x'(t) \neq 0$. Notemos que si $\gamma$ es una geodésica, entonces $\|\gamma'(t)\|$ es una constante, esto es una sencilla consecuencia, por la compatibilidad de la métrica con la conexión:
 	\begin{align*}
@@ -118,11 +118,19 @@
 	\[
 		(x - C)^{2} + y^{2} = \frac{k_0}{k_{1}^{2}}
 	\]
-	Esto quiere decir que las geodésicas son semi-circunferencias centradas en el punto $C$ de radio $\frac{1}{k^2}$.
+	Esto quiere decir que las geodésicas son semicircunferencias centradas en el punto $C$ de radio $\frac{1}{k^2}$.
 \end{example}
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.9\textwidth]{~/Tesis/Figuras/A-Figuras/GeodesicasSemiPlano.png}
-	\caption{Figura}
+	\input{~/Tesis/Figuras/A-Figuras/GeodesicasEnH2.tex}
+  \caption{Representación de algunas geodésicas en $\mathbb{H}^{2}$}
 \end{figure}
+
+Este ejemplo nos da lugar a enunciar el siguiente lema.
+
+\begin{lemma}
+  Las geodésicas en el espacio hiperbólico de dimensión $2$ son semi-rectas ortogonales al eje de las abscisas y semi-círculos con origen en el eje de las abscisas.
+\end{lemma}
+
+Los tres ejemplos que hemos dado son especialmente significativos, ya que, el \textit{Teorema de Killing$-$Hopf} nos dice que las variedades Riemannianas $n-$dimensionales, bajo ciertas restricciones, son isométricas a $\mathbb{R}^{n}$, $\mathbb{S}^{n}$ o $\mathbb{H}^{n}$, en el caso en que $n=2$ el \textit{Teorema de Uniformización} nos dice que toda variedad Riemanniana $2-$dimensional conexa es difeomorfa al cociente de algunas de las tres variedades anteriores modulo un grupo discreto de isometrías, las demostraciones de estos dos teoremas pueden ser consultadas en \textcite{lee2019introduction}.

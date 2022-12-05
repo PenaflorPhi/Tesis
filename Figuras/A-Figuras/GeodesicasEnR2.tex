@@ -1,0 +1,13 @@
+\begin{tikzpicture}
+\draw[color=black,<->] (-2,0) -- (2,0) node[anchor=west]{$x$};
+\draw[color=black,,<->] (0,-2) -- (0,2) node[anchor=south]{$y$};
+
+
+  \draw[color=red] (1.5,1.5) -- (-1,-0.25);
+  \draw[color=red] (-1,-0.25) -- (1,-1.5);
+  \draw[color=red] (1,-1.5) -- (1.5,1.5);
+
+  \filldraw[black] (1.5,1.5) circle (0.020);
+  \filldraw[black] (-1,-0.25) circle (0.020);
+  \filldraw[black] (1,-1.5) circle (0.020);
+\end{tikzpicture}

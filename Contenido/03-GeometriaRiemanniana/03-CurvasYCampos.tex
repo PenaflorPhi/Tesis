@@ -49,7 +49,7 @@ Si $V$ es un campo vectorial a lo largo de una curva $\gamma: I \to M$, entonces
 	\[
 		\nabla_{\gamma'(t_{0})}\partial_{j} = \nabla_{X}Y (\gamma(t_{0})),
 	\]
-	donde $X$ es cualquier campo suave en $M$ que satisface $X(\gamma(t_{0})) = \gamma'(t_{0})$. Por lo cual, utilizando la tercera propiedad del lema y la primera propiedad de la definición de conexión afín se obtiene las igualdades:
+	donde $X$ es cualquier campo suave en $M$ que satisface $X(\gamma(t_{0})) = \gamma'(t_{0})$. Por lo cual, utilizando la tercera propiedad del lema y la primera propiedad de la definición de conexión afín se obtienen las igualdades:
 	\begin{align*}
 		\left. \frac{D\partial_{j}}{dt} \right|_{t_{0}}
 		 & = (\nabla_{\gamma'(t)}\partial_{j})(t_{0})                                                                 \\
@@ -68,7 +68,7 @@ Si $V$ es un campo vectorial a lo largo de una curva $\gamma: I \to M$, entonces
 		\Gamma_{ij}^{k}(t_{0}) V_{j}(t_{0})
 		\right) \partial_{k}|_{t_0}
 	\]
-	Esto basta para probar la unicidad, dado que si existiera otra asignación que cumpliera las tres propiedades de lema esta debería tener exactamente la misma forma. Más aún, por cómo se ha construido es fácil verificar que $\frac{DV}{dt}$ es un campo vectorial que cumple las propiedades del lema, con:
+	Esto basta para probar la unicidad, dado que si existiera otra asignación que cumpliera las tres propiedades del lema esta debería tener exactamente la misma forma. Más aún, por cómo se ha construido es fácil verificar que $\frac{DV}{dt}$ es un campo vectorial que cumple las propiedades del lema, con:
 	\[
 		\frac{DV}{dt} = \sum_{k=1}^{n} \left(\frac{dV_{k}}{dt}
 		+ \sum_{i=1}^{n}\sum_{j=1}^{n} \frac{d\gamma_{i}}{dt} \Gamma_{ij}^{k} V_{j}\right) \partial_{k}
@@ -76,14 +76,14 @@ Si $V$ es un campo vectorial a lo largo de una curva $\gamma: I \to M$, entonces
 \end{proof}
 
 \begin{definition}[Campo Vectorial Paralelo]
-	Sea $M$ una variedad suave equipado con una conexión afín $\nabla$. Diremos que un campo vectorial a lo largo de una curva $\gamma: I \to M$ es un \textit{campo paralelo} si:
+	Sea $M$ una variedad suave equipada con una conexión afín $\nabla$. Diremos que un campo vectorial a lo largo de una curva $\gamma: I \to M$ es un \textit{campo paralelo} si:
 	\[
 		\frac{DV}{dt} \equiv 0
 	\]
 \end{definition}
 
 \begin{theorem}\label{Teorema: Existencia y Unicidad de Campos Paralelos}
-	Sea $M$ una variedad suave equipado con una conexión afín $\nabla$. Sea $\gamma: I \to M$ una curva suave y sea $V_{t_{0}}$ un vector tangente a $M$ en $\gamma(t_{0})$, con $t_{0} \in I$. Entonces, existe un único campo vectorial paralelo $V$ a lo largo de $\gamma$, para el cual $V_{t_{0}} = V(t_{0})$.
+	Sea $M$ una variedad suave equipada con una conexión afín $\nabla$. Sea $\gamma: I \to M$ una curva suave y sea $V_{t_{0}}$ un vector tangente a $M$ en $\gamma(t_{0})$, con $t_{0} \in I$. Entonces, existe un único campo vectorial paralelo $V$ a lo largo de $\gamma$, para el cual $V_{t_{0}} = V(t_{0})$.
 \end{theorem}
 
 \begin{proof}

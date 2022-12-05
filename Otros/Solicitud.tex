@@ -1,0 +1,108 @@
+\documentclass[
+  12pt,
+  letterpaper,
+  spanish
+]{letter}
+
+% ====================================
+% Paquetes de Latex
+% ====================================
+
+\usepackage[utf8]{inputenc}		
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage[autostyle]{csquotes}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{multicol}
+
+% ====================================
+% Datos personales y de la tesis
+% ====================================
+
+\newcommand{\alumno}{Ángel Emmanuel Peñaflor Zetina}
+\newcommand{\matricula}{S18027265}
+\newcommand{\directorUno}{Francisco Gabriel Hernández Zamora}
+\newcommand{\directorDos}{Evodio Muñoz Aguirre}
+\newcommand{\tituloTesis}{Cálculo de geodésicas en el disco de Poincaré}
+\newcommand{\universidad}{Universidad Veracruzana}
+\newcommand{\facultad}{Facultad de Matemáticas}
+
+% ====================================
+% La Carta
+% ====================================
+
+\begin{document}
+\thispagestyle{empty}
+\begin{letter}
+
+\begin{flushright}
+  Xalapa, Ver, a \today \\ 
+  Asunto: Solicitud de registro de tema de tesis
+\end{flushright}
+
+\begin{flushleft}
+  Dr. Francisco Gabriel Hernández Zamora\\
+  Director de la \facultad \\
+  \universidad \\
+  Presente
+\end{flushleft}
+
+\vspace{12pt}
+
+El que suscribe \alumno, con matrícula \matricula, alumno de la Licenciatura en Matemáticas de la Universidad Veracruzana, por este medio solicita el registro del trabajo recepcional escrito bajo la modalidad de tesis, con título
+
+\begin{center}
+  \enquote{\tituloTesis}
+\end{center}
+
+Además, solicito se nombre a los profesores
+
+\begin{center}
+  - \directorUno \phantom{ }-, \\
+  - \directorDos \phantom{ }-,
+\end{center}
+
+académicos de está facultad, como directores de dicho trabajo recepcional. 
+
+\vspace{12pt}
+
+\begin{center}
+  Quedando en espera de su respuesta, le envío un cordial saludo.
+\end{center}
+
+\begin{flushleft}
+  Atentamente
+  \alumno\\
+  \facultad\\
+  \universidad\\
+\end{flushleft}
+
+\vspace{48pt}
+
+\begin{center}
+\end{center}
+
+
+\begin{multicols}{3}
+\begin{center}
+  \includegraphics[scale=1]{Firma.png}\\
+  \alumno
+\end{center}
+
+  \columnbreak 
+
+\begin{center}
+  \includegraphics[scale=1]{Firma.png}\\
+  Dr. \directorUno
+\end{center}
+  
+  \columnbreak 
+  
+\begin{center}
+  \includegraphics[scale=1]{Firma.png}\\
+  Dr. \directorDos
+\end{center}
+\end{multicols}
+
+\end{letter}
+\end{document}

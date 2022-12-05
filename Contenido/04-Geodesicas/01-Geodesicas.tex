@@ -1,9 +1,9 @@
 \section{Geodésicas}\label{Sección: Geodésicas}
-En este punto tenemos las herramientas para poder hablar de propiedades geométricas en las variedades, en particular discutiremos a las curvas geodésicas. Si bien las geodésicas pueden ser definidas sobre variedades suaves en general, ya que dependen únicamente de la conexión afín con la cual dotemos a la variedad, nosotros consideraremos variedades Riemannianas, y, por lo tanto, consideraremos su conexión canónica, la conexión de Levi-Civita.
+En este punto tenemos las herramientas para poder hablar de propiedades geométricas en las variedades, en particular discutiremos sobre curvas geodésicas. Si bien las geodésicas pueden ser definidas sobre variedades suaves en general, ya que dependen únicamente de la conexión afín con la cual dotemos a la variedad, nosotros consideraremos variedades Riemannianas, y, por lo tanto, consideraremos su conexión canónica, la conexión de Levi-Civita.
 
-Entender lo que son y como calcular las curvas geodésicas es de gran utilidad en muchos problemas tanto de las matemáticas como la física y la ingeniería, ya que, su característica más importante es que, al menos de manera local, estas curvas minimizan distancias; en este sentido es que las geodésicas generalizan el concepto de línea recta a las variedades suaves.
+Entender lo que son y cómo calcular las curvas geodésicas es de gran utilidad en muchos problemas tanto de las matemáticas como la física y la ingeniería, ya que, su característica más importante es que, al menos de manera local, estas curvas minimizan distancias; en este sentido es que las geodésicas generalizan el concepto de línea recta a las variedades suaves.
 
-Es evidente que, si queremos ser capaces de hablar una curva que minimice distancias, primero debemos definir como es que mediremos distancias. Para hacer esto aprovecharemos el hecho de que la métrica define un producto interno en el espacio tangente a cada punto de una variedad, esto nos permite dotar a cada espacio tangente con una norma.
+Es evidente que, si queremos ser capaces de hablar una curva que minimice distancias, primero debemos definir cómo es que mediremos distancias. Para hacer esto aprovecharemos el hecho de que la métrica define un producto interno en el espacio tangente a cada punto de una variedad, lo cual nos permite dotar a cada espacio tangente con una norma.
 
 \begin{definition}[Longitud de un vector tangente]
 Sean $(M,g)$ una variedad Riemanniana y $p \in M$ un punto arbitrario. Sea $v \in T_{p}M$, definiremos la \textit{longitud de v} como:
@@ -11,7 +11,7 @@ Sean $(M,g)$ una variedad Riemanniana y $p \in M$ un punto arbitrario. Sea $v \i
 	\|v\| = \sqrt{g_{p}(v,v)}
 \]
 \end{definition}
-Inmediatamente podemos notar que la longitud de los vectores tangentes está bien definida dado que la métrica es definida positiva; además, cuando consideramos la métrica euclidiana, está definición usual de longitud de un vector. De modo similar, tomando inspiración de como medimos la longitud de una curva en $\mathbb{R}^{n}$ podemos definir la longitud de una curva suave en una variedad Riemanniana.
+Inmediatamente podemos notar que la longitud de los vectores tangentes está bien definida dado que la métrica es definida positiva; además, cuando consideramos la métrica euclidiana, coincide con la definición usual de longitud de un vector. De modo similar, tomando inspiración de como medimos la longitud de una curva en $\mathbb{R}^{n}$ podemos definir la longitud de una curva suave en una variedad Riemanniana.
 \begin{definition}[Longitud de una curva]
 	Sea $\gamma: I \to M$ una curva suave en una variedad Riemanniana. Definimos la \textit{longitud de $\gamma$} en un subintervalo $[a,b] \subset I$ como:
 	\[
@@ -143,9 +143,9 @@ Inmediatamente podemos notar que la longitud de los vectores tangentes está bie
 \end{lemma}
 
 \begin{proof}
-	Es evidente que las variedades (topológicas) son tanto conexas como conexas por caminos, esto dado que ambas propiedades se preservan bajo homeomorfismos y, como se muestra en el anexo \ref{Anexo: Topologia De Variedades} las bolas coordenadas forman una base para la topología de la variedad.
+	Las variedades son tanto conexas como conexas por caminos. 
 
-	Sean $p, q \in M$ y sea $\gamma: [a,b] \to M$ una curva que conecte a $p$ y $q$. Por la compacidad de $M$ se tendrá que existe una partición de $[a,b]$ para la cual la imagen de $\gamma([a_{i-1}, a_i])$ esté contenida en una única bola coordenada para cada $i$.
+	Sean $p, q \in M$ y sea $\gamma: [a,b] \to M$ una curva que conecte a $p$ y $q$. Por la compacidad local de $M$ se tendrá que existe una partición de $[a,b]$ para la cual la imagen de $\gamma([a_{i-1}, a_i])$ esté contenida en una única bola coordenada para cada $i$.
 
 	Podemos remplazar la curva $\gamma$ por la preimagen de una recta en $\mathbb{R}^{n}$ que coincida con la curva en la frontera de la bola coordenada, considerado la unión de todas estas rectas obtendremos una curva admisible que conectará a los puntos $p$ y $q$.
 \end{proof}
@@ -171,7 +171,7 @@ Las geodésicas como mencionábamos son curvas que, al menos de manera local, mi
 \end{theorem}
 
 \begin{theorem}
-	Sea $M$ una variedad Riemannian, $p \in M$ algún punto arbitrario y $B_{p}$ una bola centrada en $p$. Sea $\gamma: [a,b] \to B_{p}$ una geodésica (o la restricción de una geodésica), con $\gamma(a) = p$, además denotaremos a $\gamma(b)$ por $q$.
+	Sea $M$ una variedad Riemanniana, $p \in M$ algún punto arbitrario y $B_{p}$ una bola centrada en $p$. Sea $\gamma: [a,b] \to B_{p}$ una geodésica (o la restricción de una geodésica), con $\gamma(a) = p$, además denotaremos a $\gamma(b)$ por $q$.
 
 	Si $\alpha: [a,b] \to M$ es cualquier curva admisible que una a los puntos $p$ y $q$, entonces:
 	\[
@@ -182,10 +182,10 @@ Las geodésicas como mencionábamos son curvas que, al menos de manera local, mi
 
 Estos dos resultados nos están diciendo que la distancia más corta entre dos puntos es una geodésica, sin embargo, el segundo teorema también nos está diciendo que esta es una propiedad local. Do \textcite{do1992riemannian} da un ejemplo de que esta propiedad es local en la esfera, dado un punto $p$ en la esfera, las geodésicas dejan de ser minimizantes después de la antípoda de $p$.
 
-Un resultado si mostraremos sobre las geodésicas es su existencia y unicidad, ya que, este resultado nos dará una manera explícita para calcular a las geodésicas.
+Un resultado que sí demostraremos sobre las geodésicas es su existencia y unicidad, ya que, este resultado nos dará una manera explícita para calcular a las geodésicas.
 
 \begin{theorem}[Existencia y unicidad de geodésicas]
-	Sea $M$ una variedad suave equipada con una conexión afín $\nabla$. Para cada punto $p \in M$, cada vector tangente $v \in T_{p}M$ y cada real $t_0 \in \mathbb{R}$ existe un intervalo abierto $I \subset \mathbb{R}$ que contiene a $t_0$ y una geodésica $\gamma: I \to M$ que satisface $\gamma(t_0) = p$ y $\gamma'(t_0) = v$. Cualesquiera geodésicas que satisfagan las misma condiciones coincidirán en la intersección de sus dominios.
+	Sea $M$ una variedad suave equipada con una conexión afín $\nabla$. Para cada punto $p \in M$, cada vector tangente $v \in T_{p}M$ y cada real $t_0 \in \mathbb{R}$ existe un intervalo abierto $I \subset \mathbb{R}$ que contiene a $t_0$ y una geodésica $\gamma: I \to M$ que satisface $\gamma(t_0) = p$ y $\gamma'(t_0) = v$. Cualesquiera geodésicas que satisfagan las mismas condiciones coincidirán en la intersección de sus dominios.
 \end{theorem}
 
 \begin{proof}

@@ -1,0 +1,103 @@
+\documentclass[
+  12pt,
+  letterpaper,
+  spanish
+]{letter}
+
+% ====================================
+% Paquetes de Latex
+% ====================================
+
+\usepackage[utf8]{inputenc}		
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage[autostyle]{csquotes}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{multicol}
+
+% ====================================
+% Datos personales y de la tesis
+% ====================================
+
+\newcommand{\alumno}{Ángel Emmanuel Peñaflor Zetina}
+\newcommand{\matricula}{S18027265}
+\newcommand{\directorUno}{Francisco Gabriel Hernández Zamora}
+\newcommand{\directorDos}{Evodio Muñoz Aguirre}
+\newcommand{\titulo}{Cálculo de Geodésicas en el Espacio Hiperbólico de dimensión 2}
+\newcommand{\universidad}{Universidad Veracruzana}
+\newcommand{\facultad}{Facultad de Matemáticas}
+
+% ====================================
+% La Carta
+% ====================================
+
+\begin{document}
+\thispagestyle{empty}
+\begin{letter}
+
+\begin{flushright}
+  Xalapa, Ver, a \today \\ 
+  Asunto: Solicitud de registro de jurado para acreditar la \\ Experiencia Recepcional.
+\end{flushright}
+
+\begin{flushleft}
+  Dr. Francisco Gabriel Hernández Zamora\\
+  Director de la \facultad \\
+  \universidad \\
+  Presente
+\end{flushleft}
+
+\vspace{12pt}
+
+  Por este medio, el que suscribe \alumno, con matrícula \matricula, alumno de la Licenciatura en Matemáticas de la Universidad Veracruzana, solicita el registro del jurado para acreditar la experiencia educativa \textit{Experiencia Recepcional}, bajo la modalidad de tesis, con título:
+
+\begin{center}
+  \enquote{\textbf{\titulo}}
+\end{center}
+
+  Trabajo realizado bajo la asesoría de los profesores
+
+\begin{center}
+  - Dr. \directorUno \phantom{ }-, \\
+  - Dr. \directorDos \phantom{ }-,
+\end{center}
+académicos de esta facultad.
+
+\vspace{12pt}
+
+  Quedando en espera de su respuesta, le envío un cordial saludo.
+
+    \vspace{24pt}
+
+\begin{flushleft}
+  Atentamente
+  \alumno\\
+  \facultad\\
+  \universidad\\
+\end{flushleft}
+
+\vspace{60pt}
+
+\begin{multicols}{3}
+\begin{center}
+  \includegraphics[scale=0.025]{Firma.png}\\
+  \alumno
+\end{center}
+
+  \columnbreak 
+
+\begin{center}
+  \includegraphics[scale=0.025]{FirmaPlaceHolder.png}\\
+  Dr. \directorUno
+\end{center}
+  
+  \columnbreak 
+  
+\begin{center}
+  \includegraphics[scale=0.025]{FirmaPlaceHolder.png}\\
+  Dr. \directorDos
+\end{center}
+\end{multicols}
+
+\end{letter}
+\end{document}

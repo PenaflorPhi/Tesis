@@ -1,6 +1,6 @@
 \chapter{Geometría Riemanniana}\label{Capítulo: Geometría Riemanniana}
 
-Nuestro objetivo principal en este trabajo es describir las curvas geodésicas en el disco de Poincaré. Hasta ahora hemos desarrollado conceptos básicos de la teoría de variedades suaves y hemos trasladado conceptos conocidos del cálculo usual a las variedades, esto se ha hecho con un fin, y es que, el disco de Poincaré se define como un tipo muy particular de variedad suave, y las herramientas que hemos ido construyendo son las que nos ayudaran a definir y encontrar las geodésicas.
+Nuestro objetivo principal en este trabajo es ser capaces de describir las curvas geodésicas en variedades. Hasta ahora hemos desarrollado conceptos básicos de la teoría de variedades suaves y hemos trasladado conceptos conocidos del cálculo usual a las variedades, esto se ha hecho con un fin, y es que, las geodésicas las definiremos en un tipo muy particular de variedad suave, y las herramientas que hemos ido construyendo son las que nos ayudarán a definir y encontrar dichas curvas.
 
 En este capítulo dotaremos a cada espacio tangente a una variedad suave con un producto interno. Los espacios con producto interno, también llamados espacios pre-Hilbert, son bastante estudiados en diferentes áreas de las matemáticas ya que nos permiten dar definiciones para conceptos geométricos como la longitud de vectores, el ángulo entre dos vectores y la ortogonalidad.
 
@@ -18,7 +18,7 @@ Recordaremos brevemente la definición de producto interno:
 \end{definition}
 
 \section{Variedades Riemannianas}
-La manera en que dotaremos a los espacios tangente a una variedad con un producto interno será a través de la \textit{métrica de Riemann} o \textit{métrica Riemanniana}.
+La manera en que dotaremos a los espacios tangentes a una variedad con un producto interno será a través de la \textit{métrica de Riemann} o \textit{métrica Riemanniana}.
 
 \begin{definition}[Métrica de Riemann]
 	Sea $M$ una variedad suave. Una \it{métrica Riemanniana} $g$ en $M$ es un campo suave $2-$tensorial covariante simétrico, el cual es definido positivo.
@@ -133,7 +133,7 @@ Es posible expresar a la métrica sin utilizar el producto tensorial, aprovechan
 	\[
 		\overline{g}: T_{p}M \oplus T_{q}\hat{M} \to \mathbb{F}.
 	\]
-	La definiremos será entonces simplemente $\overline{g} = g \oplus \hat{g}$, la cual está dada por:
+  La definiremos entonces simplemente como $\overline{g} = g \oplus \hat{g}$, la métrica estará dada por:
 	\[
 		\overline{g}((u,\hat{u}),(v,\hat{v})) = g(u,v) + \hat{g}(\hat{u},\hat{v}),
 	\]
@@ -148,7 +148,7 @@ Es posible expresar a la métrica sin utilizar el producto tensorial, aprovechan
 		\end{bmatrix} \]
 \end{example}
 
-Una pregunta muy natural que podríamos haceros es, ¿A qué variedades es posible dotar de una métrica Riemanniana?, sorprendentemente la respuesta a esta pregunta es que, cualquier variedad suave puede ser equipada con una métrica, como veremos con el siguiente teorema.
+Una pregunta muy natural que podríamos hacer es, ¿A qué variedades es posible dotar de una métrica Riemanniana?, sorprendentemente la respuesta a esta pregunta es que, cualquier variedad suave puede ser equipada con una métrica, como veremos con el siguiente teorema.
 
 \begin{theorem}[Existencia de una métrica Riemanniana]
 	Toda variedad suave puede ser equipada con una métrica Riemanniana.
@@ -186,8 +186,6 @@ Existen diferentes maneras de dotar de una métrica a una variedad, la primer de
 	\end{itemize}
 \end{definition}
 
-El estudio de las inmersiones y los encajes y no profundizaremos en él, simplemente enunciaremos algunos teoremas que nos serán de utilidad.
-
 Hasta ahora hemos trabajado definiendo a las variedades suave únicamente de manera intrínseca, como un espacio topológico que cumple las propiedades de la definición \ref{Definición: Variedad Topologica} al cual dotamos de una estructura suave, esto nos ha permitido trabajar sin la necesidad de referirnos a algún otro espacio que contenga a la variedad. Los encajes nos dan una alternativa, estos nos permiten definir a las variedades de manera extrínseca, vistas como subconjuntos de alguna variedad más grande, usualmente $\mathbb{R}^{n}$. Este segundo enfoque es, de hecho, el que utilizan libros de geometría diferencial clásicos.
 
 El siguiente teorema, demostrado por Hassler Whitney en su paper \enquote{\textit{Differentiable Manifolds}} (\textcite{whitney1936differentiable}), nos da condiciones suficientes bajo las cuales se garantiza que los dos enfoques mencionados anteriormente son equivalentes.
@@ -218,7 +216,7 @@ Una aclaración sobre este teorema es que, $2n$ es la dimensión mínima para la
 Los \textit{teoremas de encaje de Nash} garantizan que, bajo ciertas condiciones, siempre existen encajes (y por lo tanto inmersiones) isométricas de las variedades a $\mathbb{R}^{n}$, el teorema general nos dice lo siguiente.
 
 \begin{theorem}[Teorema de encaje de Nash]
-	Si $M$ es una variedad Riemanniana $m-$dimensional, entonces existe un número $n \in \mathbb{Z}^{+}$, con $n \leq \frac{m(3m)+11}{2}$, y un encaje isométrico $f: M \to \R^{n}$.
+  Si $M$ es una variedad Riemanniana $m-$dimensional, entonces existe un número $n \in \mathbb{Z}^{+}$, con $n \leq \frac{m(3m+11)}{2}$, y un encaje isométrico $f: M \to \R^{n}$.
 \end{theorem}
 
 A continuación, daremos algunos ejemplos donde dotaremos a distintas variedades suaves con métrica.
@@ -254,7 +252,7 @@ A continuación, daremos algunos ejemplos donde dotaremos a distintas variedades
 		\left. \frac{\partial \phi}{\partial x_{i}}\right|_{p}
 		\left. \frac{\partial \phi}{\partial x_{j}}\right|_{p}
 	\end{align*}
-	esta última igualdad se puede seguir a partir del ejemplo \ref{Ejemplo: Métrica - Producto de Variedades}.
+	esta última igualdad se sigue a partir del ejemplo \ref{Ejemplo: Métrica - Producto de Variedades}.
 \end{example}
 
 \begin{example}[Superficies de Revolución]\label{Ejemplo: Métrica - Superficies de Revolución}
@@ -278,7 +276,7 @@ A continuación, daremos algunos ejemplos donde dotaremos a distintas variedades
 		(0 , -\beta(t) \sin(\theta), \beta(t)\cos(\theta))
 	\end{align*}
 
-	So dotamos a $\mathcal{S}_{\gamma}$ de la métrica inducida por $\mathbb{R}^3$ obtendremos que los coeficientes de la misma son:
+	Si dotamos a $\mathcal{S}_{\gamma}$ de la métrica inducida por $\mathbb{R}^3$ obtendremos que los coeficientes de la misma son:
 	\begin{align*}
 		g_{1,1}(t,\theta) & = g \left(
 		\left. \frac{\partial \phi}{\partial t}\right|_{(t,\theta)},

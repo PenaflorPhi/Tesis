@@ -1,0 +1,127 @@
+\documentclass[
+  12pt,
+  letterpaper,
+  spanish
+]{article}
+
+% ====================================
+% Paquetes de Latex
+% ====================================
+
+\usepackage[utf8]{inputenc}		
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage[autostyle]{csquotes}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{adjustbox}
+\usepackage[table,xcdraw,dvipsnames]{xcolor}
+\usepackage{lipsum}
+\usepackage[
+  backend=biber,
+  style=apa,
+  citestyle=numeric
+  ]{biblatex}
+\addbibresource{~/Tesis/Contenido/bibliografia.bib}
+\usepackage{float}
+\restylefloat{table}
+
+% ====================================
+% Datos personales y de la tesis
+% ====================================
+
+\newcommand{\alumno}{Ángel Emmanuel Peñaflor Zetina}
+\newcommand{\matricula}{S18027265}
+\newcommand{\directorUno}{Francisco Gabriel Hernández Zamora}
+\newcommand{\directorDos}{Evodio Muñoz Aguirre}
+\newcommand{\tituloTesis}{Cálculo de geodésicas en el disco de Poincaré}
+\newcommand{\universidad}{Universidad Veracruzana}
+\newcommand{\facultad}{Facultad de Matemáticas}
+
+\title{Cálculo de geodésicas en el disco de Poincaré}
+\date{}
+
+% ====================================
+% El protocolo
+% ====================================
+
+\begin{document}
+\pagestyle{empty}				
+\normalsize
+Protocolo para desarrollar el trabajo recepcional escrito
+
+\Large
+\begin{center} \enquote{\tituloTesis} \\ \end{center}
+
+\normalsize
+Para acreditar la EE Experiencia Recepcional de la \universidad.\\
+
+Presenta: \alumno.
+
+\begin{enumerate}
+\item \textbf{Justificación}
+
+  Una de las aplicaciones más importantes de la geometría diferencial es, quizá, el cálculo de geodésicas, las geodésicas son las curvas que representan la distancia más corta entre dos puntos en una superficie. Estás curvas tienen diversas aplicaciones en problemas de las matemáticas, de la física, en particular de Relatividad General, y de la ingeniería, por ejemplo, para encontrar el camino que deben tomar los aviones para minimizar la distancia y el uso de combustible.
+
+    En este trabajo intentaremos desarrollar un marco teórico suficiente que nos permita entender cómo calcular geodésicas, así como realizar los cálculos para encontrar dichas geodésicas en diferentes superficies, con particular interés en el Disco de Poincaré, el cuál es un modelo de la geometría hiperbólica con gran relevancia en diversas áreas de las matemáticas.
+
+\item \textbf{Objetivo General}
+
+  Encontrar las geodésicas en el disco de Poincaré.
+  
+\item \textbf{Objetivos Específicos}
+
+    \begin{itemize}
+      \item Estudiar diversas propiedades geométricas de algunas superficies utilizando técnicas de la teoría de variedades suaves.
+      \item Resolver las ecuaciones geodésicas en el disco de Poincaré.
+      \item Estudiar cómo se comportan los ángulos de los triángulos geodésicos en relación con la superficie sobre la que se encuentran.
+    \end{itemize}
+
+\item \textbf{Indice tentativo}
+
+    \begin{itemize}
+      \item Capítulo 1: Variedades y Mapas.
+      \item Capítulo 2: Propiedades analíticas y algebraicas de las variedades suaves.
+      \item Capítulo 3: Métricas Riemannianas.
+      \item Capítulo 4: El Disco de Poincaré.
+      \item Capítulo 5: Algunas aplicaciones.
+      \item Capítulo 6: Conclusiones.
+      \item Apéndice: Resultados de topología
+      \item Bibliografía
+    \end{itemize}
+
+  \item \textbf{Cronograma de Actividades}
+
+\begin{table}[H]
+\centering
+  \begin{adjustbox}{max width=\textwidth}
+  \begin{tabular}{|l|c|c|}
+  \rowcolor[HTML]{004B7E} 
+  & \textcolor{White}{Agosto}  & \textcolor{White}{Septiembre} \\ \hline
+  Búsqueda Bibliográfica        & $\circ$ & $\circ$ \\ \hline
+  Elaboración del marco teórico & $\circ$ &   \\ \hline
+  Redacción del capítulo 2      & $\circ$ &   \\ \hline
+  Redacción del capítulo 3      & $\circ$ &   \\ \hline
+  Redacción del capítulo 4      &   & $\circ$ \\ \hline
+  Redacción del capítulo 5      &   & $\circ$ \\ \hline
+  Redacción del capítulo 6      &   & $\circ$ \\ \hline
+  \end{tabular}
+  \end{adjustbox}
+\end{table}
+
+\item \textbf{Referencias bibliográficas}
+  \input{~/Tesis/Contenido/00-Preambulo/Bibliografia.tex}
+  \printbibliography[heading=none]
+\end{enumerate}
+
+\vspace{24pt}
+
+\noindent Xalapa, Ver. a \today
+
+\vspace{24pt}
+
+\noindent\alumno \\
+Licenciatura en Matemáticas \\
+Universidad Veracruzana \\
+
+\end{document}
+

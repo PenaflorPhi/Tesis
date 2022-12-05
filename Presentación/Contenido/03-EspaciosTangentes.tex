@@ -1,0 +1,151 @@
+\begin{frame}
+\frametitle{Espacios Tangentes en $\R^n$}
+\begin{definition}[Vectores y Espacios Tangentes en $\R^n$]\label{Definición: Espacio Tangente en Rn}
+Sea $a$ un punto en $\R^n$, definiremos el \textbf{espacio tangente a $\R^n$ en el punto $a$}, denotado por $T_a(\R^n)$, como el conjunto:
+  \[ \{a\} \times \R^n = \{(a,v): v \in \R^n\} \]
+  
+  Un \bf{vector tangente} a $\R^n$ es un elemento de $T_a(\R^n)$ para algún $a \in \R^n$. Denotaremos a un vector tangente $(a,v)$ particular como $v_a$ o simplemente $v$ para abreviar.
+\end{definition}\pause
+
+  Una de las propiedades más importantes del conjunto $T_a(\R^n)$ es que tiene estructura de espacio vectorial bajo las operaciones
+  \[v_a + w_a = (v+w)_a, \quad c(v_a) = (cv)_a\]
+  Además, este espacio vectorial es isomorfo a $\R^n$.
+\end{frame}
+
+\begin{frame}
+\begin{columns}[t]
+\column{.5\textwidth}
+\centering
+  \begin{figure}
+    \centering
+    \scalebox{0.75}{\input{./Figuras/EspacioTangente.tex}}
+    \caption{Representación del espacio \\ tangente $T_a(\R^n)$.}
+  \end{figure}
+\column{.5\textwidth}
+\centering
+  \begin{figure}
+    \centering
+    \scalebox{0.65}{\input{./Figuras/EspacioTangenteAEsfera.tex}}
+    \caption{Representación del espacio \\ tangente a una esfera.}
+  \end{figure}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+  Si tenemos un punto $a = (a_1, \dots, a_n) \in \R^n$ y un vector $\begin{bmatrix} v_1 \dots v_n \end{bmatrix}$ podemos parametrizar la recta que pasa por $a$ con dirección $v$ de la siguiente manera:
+
+  \[\gamma(t) = a_1 + tv_1, \dots, a_n + tv_n \]
+  \pause
+  Teniendo esto en cuenta, y, por nuestros cursos de cálculo sabemos que si $f: \R^n \to \R$ es una función suave definida en un punto $a$ y $v \in T_a(\R^n)$ podemos obtener la derivada direccional de $f$ en $a$ en la dirección de $v$ como:
+  \[
+    D_v f = \left. \frac{d}{dt}\right|_{t=0} f(\gamma(t)) 
+    = \sum_{i=1}^{n} v_i \left. \frac{\partial f}{\partial x_i} \right|_{a}
+  \]
+\end{frame}
+
+\begin{frame}
+  Hay dos propiedades que nos interesan particularmente de la derivada direccional. La derivada direccional es lineal y cumple la regla de Leibniz. Esto quiere decir que si $f$ y $g$ son funciones suaves definida en una vecindad de $a \in \R^n$, $c$ es una constante y $v \in T_{a}(\R^n)$, entonces:
+
+  \begin{itemize}
+    \item $D_v(f+g) = D_v(f) + D_v(g)$
+    \item $D_v(cf) = cD_v(f)$
+    \item $D_v(fg) = f(a)D_v(g) + g(a)D_v(f)$ 
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  Basándonos en las propiedades anteriores de las derivaciones es que se darán las siguientes definiciones.
+  \begin{definition}[Derivación en un punto]
+    Si $a$ es un punto en $\R^n$ y $\omega: C^{\infty}(\R^{n}) \to \R$ es un funcional lineal, diremos que $\omega$ es una \textbf{derivación} en $a$ si cumple la regla de Leibniz. Esto es, si $f$ y $g$ son funciones suaves definidas en una vecindad de $a$ y $c$ es una constante, entonces:
+    \begin{itemize}
+      \item $\omega(cf) = c \omega(f)$
+      \item $\omega(f+g) = \omega(f) + \omega(g)$
+      \item $\omega(fg) = f(a)\omega(g) + g(a)\omega(f)$
+    \end{itemize}
+  \end{definition}
+
+\end{frame}
+
+\begin{frame}
+  El conjunto de todas las derivaciones en $a$, el cual denotamos por $\mathcal{D}_a(\R^n)$ es, curiosamente, un espacio vectorial bajo las operaciones:
+  \begin{align*}
+    (\omega_1 + \omega_2)(f) &= \omega_1(f) + \omega_2(f)\\
+    (c\omega)(f) &= c(\omega(f))
+  \end{align*} \pause
+
+  Y quizá todavía más curioso es el siguiente teorema:
+\end{frame}
+
+\begin{frame}
+\begin{theorem}
+  Los espacios $T_a(\R^n) \to \mathcal{D}_a(\R^n)$ son isomorfos y el isomorfismo de espacios vectoriales está dado por:
+\begin{align*}
+  \phi: T_a(\R^n) &\to \mathcal{D}_a(\R^n)\\
+  v &\mapsto D_v = \sum_{i=1}^n v_i \left. \frac{\partial}{\partial x_i} \right|_{a}
+\end{align*}
+\end{theorem}\pause
+
+  Dos consecuencias de este teorema es que el espacio de derivaciones en un punto $a$, $\mathcal{D}_a(\R^n)$ es isomorfo a $\R^n$ y que para cada $a \in \R^n$, las $n$ derivadas parciales:
+  \[
+    \left. \frac{\partial}{\partial x_1} \right|_a,
+    \dots,
+    \left. \frac{\partial}{\partial x_n} \right|_a
+  \]
+  forman una base para el espacio tangente $T_a(\R^n)$
+\end{frame}
+
+\begin{frame}
+\begin{definition}[Derivación en un punto de una variedad]
+  Sea $M$ una variedad suave y sea $p \in M$ un punto. Diremos que en mapa $\omega: C^{\infty}(M) \to \R$ es una \textbf{derivación} en $p$ si es lineal y además cumple la regla de Leibniz.
+
+  Llamaremos al conjunto de todas las derivaciones en un punto de una variedad el \textbf{espacio tangente} a la variedad en ese punto, y denotaremos al conjunto por $T_p(M)$.
+\end{definition}\pause
+
+  El espacio tangente $T_p(M)$ también es un espacio vectorial bajo operaciones idénticas a las vistas anteriormente.
+\end{frame}
+
+\begin{frame}
+  Ahora quisiéramos estudiar como es que los mapas suaves entre variedades afectan a los vectores del espacio tangente.
+
+  \begin{definition}[Diferencial de un mapa]
+    Si $M$ y $N$ son variedades suaves y $F: M \to N$ es un mapa suave, entonces para cada punto $p \in M$ el mapa $F$ induce un mapeo lineal entre $T_p(M)$ y $T_{F(p)}(N)$, denotado $dF_p: T_p(M) \to T_{F(p)}(N)$, a este mapa le llamamos el \textbf{diferencial de F en p}.
+
+    El mapa $dF_p$ está dado por: Dada un vector tangente $\omega \in T_p(M)$, $dF_p$ será la derivación en el punto $F(p) \in N$ que actúa sobre funciones suaves $f: N \to \R$ del siguiente modo:
+    \[
+      dF_p(\omega)(f) = \omega(f \circ F)
+    \]
+  \end{definition}
+\end{frame}
+
+\begin{frame}
+  \begin{figure}
+    \centering
+    \input{./Figuras/DiferencialDeUnMapa.tex}
+    \caption{Representación del diferencial de un mapa}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  Los espacios tangentes son muy útiles, sin embargo, para nuestros fines será necesario ser capaces de considerar más de un espacio tangente a la vez, esto se puede hacer considerando el fibrado tangente.
+  
+\begin{definition}[Fibrado Tangente]
+  Dada una variedad suave $M$, definimos el \textbf{fibrado tangente de $M$}, el cual denotaremos por $TM$, como la unión disjunta de todos los espacios tangentes a $M$:
+\[ TM = \bigsqcup_{p \in M} T_p(M) = \bigcup_{p \in M} \{p\} \times T_p(M) \]
+\end{definition}
+\end{frame}
+
+\begin{frame}
+  \centering
+  \begin{figure}
+  \includegraphics[width=0.8\textwidth]{./Figuras/TangentBundle.png}
+    \caption{Espacios Tangentes y Fibrado Tangente de $\S^{1}$.}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \begin{theorem}
+    Sea $M^n$ una variedad suave, el fibrado tangente $TM$ tiene una topología natural y una estructura suave que vuelven a $TM$ una variedad suave $2n-$dimensional de tal modo que la proyección $\pi: TM \to M$ es suave con respecto a dicha estructura suave.
+  \end{theorem}
+\end{frame}
+
+
