@@ -1,73 +1,28 @@
 \begin{frame}
-\begin{definition}[Función Suave \textbf{Incorrecta}]
-  Sea $M$ una variedad topológica $n-$dimensional, $k$ un entero positivo y $f: M \to \R^{k}$ una función cualquiera, diremos que la función $f$ es suave si para cada carta $(U,\phi)$ se tiene que la composición $f \circ \phi^{-1}: \phi(U) \subseteq \R^n \to \R^k$ es diferenciable
-\end{definition} \pause
-
-\vspace{12pt}
-\centering
-Consideremos los siguientes atlas suaves en $\R$: 
-\begin{columns}[t]
-  \column{.5\textwidth}
-  \begin{tcolorbox}[height=45pt]
-    \centering
-    \vspace{5pt}
-    $(\R, \id_{\R})$
-  \end{tcolorbox}
-  \column{.5\textwidth}
-  \begin{tcolorbox}[height=45pt]
-    \centering
-    $(\R, \psi)$,\\
-    $\psi(x) = x^3$
-  \end{tcolorbox}
-  \centering
-\end{columns} \pause
-
-  \begin{tcolorbox}[width=0.3\linewidth, colframe=red]
-  \centering
-  $ \id_{\R} \circ \psi^{-1}(y) = y^{\frac{1}{3}}$
-  \end{tcolorbox}
+	\frametitle{Funciones suaves}
+	\begin{definition}[Función Suave]
+		Sean $M$ una variedad suave  $n-$dimensional, $k$ un entero no negativo y $f: M \to \R^{k}$ una función. Diremos que $f$ es \textbf{suave} si para cada punto $p \in M$ existe una carta suave $(U,\phi)$, cuyo dominio contiene a $p$, tal que la composición de funciones $f \circ \phi^{-1}$ es suave en $\phi(U) \subseteq \R^{n}$.
+	\end{definition}
+	\begin{figure}
+		\scalebox{0.6}{\input{Figuras/FunciónSuave.tex}}
+		\caption{Representación de una función suave.}
+	\end{figure}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Funciones Suaves}
-  \begin{definition}[Función Suave]
-    Sean $M$ una variedad suave  $n-$dimensional, $k$ un entero no negativo y $f: M \to \R^{k}$ una función cualquiera. Diremos que $f$ es una \textbf{función suave} si para cada punto $p \in M$ existe una carta suave $(U,\phi)$, cuyo dominio contiene a $p$ y tal que la composición de funciones $f \circ \phi^{-1}$ es suave en el conjunto abierto $\phi(U) \subseteq \R^{n}$.
-  \end{definition} \pause
-
-  Notemos que esta definición coincide con la definición usual de diferenciabilidad cuando $M = \R^n$.
+	\begin{figure}
+		\scalebox{.70}{\input{Figuras/MapaSuave.tex}}
+		\caption{Representación de un mapa suave.}
+	\end{figure}
 \end{frame}
 
 \begin{frame}
-  \begin{figure}
-    \input{./Figuras/FunciónSuave.tex}
-    \caption{Representación de una función suave.}
-  \end{figure}
-\end{frame}
-
-\begin{frame}
-\frametitle{Mapas Suaves}
-  De modo similar, podemos definir los mapas suaves explotando el hecho de que sabemos cuando una función que va de $\R^m$ a $\R^n$ es suave. \pause
-
-\begin{definition}[Mapa Suave]
-  Sean $M$ y $N$ variedades suaves, $F: M \to N$ un mapa cualquiera. Diremos que $F$ es un \textbf{mapa suave} si para cada $p \in M$ existen cartas $(U,\varphi)$ que contiene a $p$ y $(V,\psi)$ que contiene a $F(p)$ tal que $F(U)\subset V$ y la composición $\psi \circ F \circ \varphi^{-1}$ es suave de $\varphi(U)$ a $\psi(V)$.
-\end{definition}
-\end{frame}
-
-\begin{frame}
-  \begin{figure}
-    \scalebox{.70}{\input{./Figuras/MapaSuave.tex}}
-    \caption{Representación de un mapa suave.}
-  \end{figure}
-\end{frame}
-
-\begin{frame}
-\frametitle{Ejemplo de Funciones y Mapas Suaves}
-  \begin{itemize}
-    \item Las mapas constantes.
-    \item El mapa identidad.
-    \item El mapeo de inclusión
-    \item Composición de funciones suaves.
-    \item Las proyecciones.
-    \item Toda función $f: \R^m \to \R^n$ que sea suave en el sentido de usual del cálculo será también un mapa suave en el sentido de variedades.
-  \end{itemize}
+	\frametitle{Ejemplo de funciones y mapas suaves}
+	\begin{itemize}
+		\item El mapa identidad.
+		\item El mapa de inclusión
+		\item Los mapas constantes.
+		\item Las proyecciones.
+		\item La composición de funciones suaves.
+	\end{itemize}
 \end{frame}

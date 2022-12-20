@@ -1,6 +1,5 @@
 \documentclass[
-  draft=false,
-  spanish,
+	spanish,
 ]{beamer}
 
 % ====================================
@@ -9,21 +8,38 @@
 
 \usepackage{Personal}
 \usetheme{Madrid}
+\setbeamertemplate{navigation symbols}{}
+\setbeamercovered{transparent}
+% \setbeamertemplate{footline}{}
 \usetikzlibrary{external}
 \tikzexternalize[prefix=__cache__/]
+
+
+
+% ====================================
+% Bibliografía
+% ====================================
+
+\usepackage[
+  backend=biber,
+  defernumbers=true,
+  style=numeric
+]{biblatex}
+\addbibresource{Contenido/B-Bibliografia/bibliografia.bib}
+\usepackage{hyperref}
 
 % ====================================
 % Portada
 % ====================================
 
-\title{Cálculo de Geodésicas en el Espacio Hiperbólico de Dimensión 2}
-\author{
-Ángel Emmanuel Peñaflor Zetina\\[12pt]
-\footnotesize Directores: \\
-Dr. Francisco Gabriel Hernández Zamora \\
-Dr. Evodio Muñoz Aguirre
+\title[Cálculo de Geodésicas en $\mathbb{H}^{2}$]{Cálculo de Geodésicas en el Espacio Hiperbólico de Dimensión 2}
+\author[Ángel Peñaflor]{
+	Ángel Emmanuel Peñaflor Zetina \\[12pt]
+	\footnotesize Directores: \\
+	Dr. Francisco Gabriel Hernández Zamora \\
+	Dr. Evodio Muñoz Aguirre
 }
-\institute{Universidad Veracruzana \\ Facultad de Matemáticas}
+\institute[UV]{Universidad Veracruzana \\ Facultad de Matemáticas}
 
 % ====================================
 % Documento
@@ -34,8 +50,12 @@ Dr. Evodio Muñoz Aguirre
 \maketitle
 
 \input{Contenido/00-Introducción.tex}
-
-
+\input{Contenido/01-Variedades.tex}
+\input{Contenido/02-MapasSuaves.tex}
+\input{Contenido/03-EspaciosTangentes.tex}
+\input{Contenido/04-VariedadesRiemannianas.tex}
+\input{Contenido/05-Curvas.tex}
+\input{Contenido/06-Geodésicas.tex}
+\input{Contenido/07-Conclusiones.tex}
 
 \end{document}
-
